@@ -1,35 +1,53 @@
-SRC = srcs/main.c
+SRC_LIST = main.c
+SRC_DIR = ./srcs/
+
+OBJS_DIR = ./objs/
+
 IFLAGS =  -I includes/ -I libft/includes
 CFLAGS = -Wall -Wextra -Werror -g3
-MLX_DIR = ./minilibx_mms_20200219
-MLX_OLDDIR = ./minilibx_opengl
+
+MLX_DIR = ./minilibx_linux
+MLX_MAC = ./minilibx_opengl
+
 EXTERN_LIB = -L /usr/X11/include/../lib -lXext -lX11
-EXTERN_OLDLIB = -framework OpenGL -framework AppKit
-CC = cc
-OBJS = $(addprefix $(OBJS_PATH), $(SRC:.c=.o))
+EXTERN_MACLIB = -framework OpenGL -framework AppKit
+
+SRCS = $(addprefix $(SRC_DIR), $(SRC_LIST))
+OBJS = $(addprefix $(OBJS_DIR), $(SRC_LIST:.c=.o))
+
 HEADER = includes/cub3d.h
 LIBFT = ./libft
-OBJS_PATH = ./objs/
-NAME = cub3d
+
 _GREY=	$'\033[30m
 _RED=	$'\033[31m
 _GREEN=	$'\033[32m
 _YELLOW=$'\033[33m
 _BLUE=	$'\033[34m
-
 _PURPLE=$'\033[35m
 _CYAN=	$'\033[36m
 _WHITE=	$'\033[37m
 _END= $'\033[0m
 
-all: $(NAME)
+CC = cc
 
-ifeq ($(shell uname -s), Darwin)
-MLX_DIR = ${MLX_OLDDIR}
-EXTERN_LIB = ${EXTERN_OLDLIB}
+NAME = cub3d
+
+all: 
+	make -j $(NAME)
+	
+debug: 
+	make re
+
+ifeq ($(MAKECMDGOALS), debug)
+CFLAGS += -D DEBUG=1
 endif
 
-$(OBJS_PATH)%.o: %.c $(HEADER)
+ifeq ($(shell uname -s), Darwin)
+MLX_DIR = ${MLX_MAC}
+EXTERN_LIB = ${EXTERN_MACLIB}
+endif
+
+$(OBJS_DIR)%.o: $(SRC_DIR)%.c $(HEADER)
 		mkdir -p $(dir $@)
 		@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 		@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
@@ -44,7 +62,7 @@ $(NAME): $(OBJS) ${HEADER} ${LIBFT}
 		@printf "\n${_GREEN}${_BOLD}[Compilation done !]${_END}\n"
 
 clean :
-	rm -rf $(OBJS_PATH)
+	rm -rf $(OBJS_DIR)
 	make clean -C $(MLX_DIR)
 	make clean -C ./libft
 
@@ -54,6 +72,6 @@ fclean : clean
 	rm -rf $(MLX_DIR)/libmlx.a
 
 re : fclean
-	all
+	make
 
 .PHONY:  clean fclean re all bonus
