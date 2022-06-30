@@ -12,5 +12,30 @@
 
 #ifndef CUB3D_H
 # define CUB3D_H
+# include <fcntl.h>
+# include <stdio.h>
+# include <stdlib.h>
+# define NO_FD -1
+
+enum {
+	NO,
+	SO,
+	EA,
+	WE
+};
+
+enum {
+	F,
+	C
+};
+
+typedef struct s_cub
+{
+	void	*text[4];
+	void	*color[2];
+	char	**maps;
+}	t_cub;
+
+void parsing(char **av, t_cub *cub);
 
 #endif

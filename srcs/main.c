@@ -11,11 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "cub3d.h"
 
 int	main(int ac, char **av)
 {
-	(void)ac;
-	(void)av;
+	t_cub	cub;
+
+	__memset(&cub,0, sizeof(cub));
+	if (ac != 2)
+	{
+		__putstr_fd("Error\nneed maps\n", 2);
+		exit(1);
+	
+	}
+
+	parsing(av, &cub);
 
 	__putstr_fd("Hello Raycasted World\n", 1);
 	return (0);

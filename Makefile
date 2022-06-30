@@ -1,4 +1,6 @@
-SRC_LIST = main.c
+SRC_LIST = main.c\
+	parsing/parsing.c
+
 SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/

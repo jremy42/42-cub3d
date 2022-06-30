@@ -10,104 +10,94 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
-{
-	size_t			i;
-	unsigned char	*d;
-	unsigned char	*s;
-
-	if (!dst && !src)
-		return (dst);
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	i = 0;
-	while (i < n)
-	{
-		*d++ = *s++;
-		i++;
-	}
-	return (dst);
-}
-
-char	*ft_strjoingnl(char *dest, char *src)
-{
-	char	*result;
-	int		size_dest;
-	int		size_src;
-
-	size_dest = ft_strlen(dest);
-	size_src = ft_strlen(src);
-	result = malloc(sizeof(char) * ((size_dest + size_src) + 1));
-	if (!result)
-	{
-		free(dest);
-		return (NULL);
-	}
-	ft_memcpy(result, dest, size_dest);
-	ft_memcpy(result + size_dest, src, size_src);
-	free(dest);
-	result[size_dest + size_src] = '\0';
-	return (result);
-}
-
-int	ft_strchr(char *str, char tofind)
-{
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (1);
-	while (str[i])
-	{
-		if (str[i] == tofind)
-			return (-1);
-		i++;
-	}
-	return (1);
-}
-
-char	*ft_read_file(int fd, char *memory)
-{
-	char	buff[BUFFER_SIZE + 1];
-	int		r;
-
-	r = 1;
-	while (ft_strchr(memory, '\n') > 0 && (r > 0))
-	{
-		r = read(fd, buff, BUFFER_SIZE);
-		if (r <= 0)
-			break ;
-		buff[r] = '\0';
-		memory = ft_strjoingnl(memory, buff);
-		if (!memory)
-		{
-			free(memory);
-			return (NULL);
-		}
-	}
-	return (memory);
-}
-
-char	*get_next_line(int fd)
-{
-	char		*line;
-	static char	*memory = NULL;
-
-	if (fd == -1 && memory)
-	{
-		free(memory);
-		memory = NULL;
-	}
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	memory = ft_read_file(fd, memory);
-	if (ft_strlen(memory) > 0)
-	{
-		line = ft_get_line(memory);
-		memory = ft_save_memory(memory);
-		return (line);
-	}
-	return (NULL);
-}
+ #include <stdlib.h> 
+ #include <unistd.h> 
+ #include "libft.h" 
+  
+ char        *find_nl(char *str) 
+ { 
+         int        i; 
+  
+         i = 0; 
+         while (str[i]) 
+         { 
+                 if (str[i] == '\n') 
+                         return (str + i); 
+                 i++; 
+         } 
+         return (NULL); 
+ } 
+  
+ int        load_input(int fd, char **line, char *buf, int buffer_size) 
+ { 
+         int                read_ret; 
+         int                line_size; 
+         char        *appended_line; 
+         int                i; 
+  
+         read_ret = read(fd, buf, buffer_size); 
+         if (read_ret <= 0) 
+                 return (read_ret); 
+         line_size = __strlen(*line); 
+         appended_line = malloc((line_size + read_ret + 1) * sizeof(char)); 
+         if (!appended_line) 
+                 return (-2); 
+         appended_line[line_size + read_ret] = '\0'; 
+         i = -1; 
+         while (++i < line_size) 
+                 appended_line[i] = (*line)[i]; 
+         while (read_ret--) 
+                 appended_line[i + read_ret] = buf[read_ret]; 
+         free(*line); 
+         *line = appended_line; 
+         return (1); 
+ } 
+  
+ void        tailor_and_assign(char **line, char *buf, int buf_size, char **nxt_line) 
+ { 
+         int                i; 
+         char        *start_new_buf; 
+  
+         start_new_buf = find_nl(*line) + 1; 
+         i = 0; 
+         while (i < buf_size && start_new_buf[i]) 
+         { 
+                 buf[i] = start_new_buf[i]; 
+                 i++; 
+         } 
+         while (i < buf_size) 
+         { 
+                 buf[i] = '\0'; 
+                 i++; 
+         } 
+         find_nl(*line)[1] = '\0'; 
+         *nxt_line = *line; 
+ } 
+  
+ int        sget_next_line(char **next_line, int fd) 
+ { 
+         static char        buf[BUFFER_SIZE] = {}; 
+         char                *line; 
+         int                        load_ret; 
+         int                        cumul_read; 
+  
+         line = __strndup(buf, BUFFER_SIZE); 
+         if (!line) 
+                 return (-2); 
+         load_ret = 1; 
+         cumul_read = 0; 
+         while (load_ret > 0 && !find_nl(line + cumul_read - 1)) 
+         { 
+                 load_ret = load_input(fd, &line, buf, BUFFER_SIZE); 
+                 cumul_read += load_ret; 
+         } 
+         if (load_ret < 0 || (!find_nl(line) && __strlen(line) == 0)) 
+                 return (free(line), load_ret); 
+         if (!find_nl(line)) 
+         { 
+                 __bzero(buf, BUFFER_SIZE); 
+                 *next_line = line; 
+                 return (1); 
+         } 
+         return (tailor_and_assign(&line, buf, BUFFER_SIZE, next_line), 1); 
+ } 

@@ -21,3 +21,13 @@ size_t	__strlen(const char *str)
 		i++;
 	return (i);
 }
+
+size_t	__strnlen(const char *str, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && str[i])
+		i++;
+	return (i);
+}

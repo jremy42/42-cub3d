@@ -31,6 +31,7 @@ typedef struct s_gbc
 }	t_gbc;
 
 void	*__malloc(size_t size, t_gbc *gbc);
+size_t	__strnlen(const char *str, size_t n);
 void	__free(void *addr, t_gbc *gbc);
 int		__isalpha(int c);
 int		__isdigit(int c);
@@ -97,5 +98,7 @@ int		__atol(const char *nb, int *res);
 void	__lstaddsort(t_list **lst, t_list *new_elem,
 			int (*f)(const char *, const char *));
 int		__strcmp_ignore_case(const char *s1, const char *s2);
+int        sget_next_line(char **next_line, int fd);
+char	**__split_charset(char *s, char *charset);
 
 #endif

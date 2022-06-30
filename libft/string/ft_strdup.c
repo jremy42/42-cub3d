@@ -42,7 +42,7 @@ char	*__strndup(const char *src, size_t n)
 	i = 0;
 	if (!src)
 		return (NULL);
-	len = __strlen(src);
+	len = __strnlen(src, n);
 	if (len > n)
 		len = n;
 	result = malloc(sizeof(char) * (len + 1));

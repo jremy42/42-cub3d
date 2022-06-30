@@ -26,6 +26,7 @@ string/ft_substr.c \
 string/ft_strjoin.c \
 string/ft_strtrim.c \
 string/ft_split.c \
+string/ft_splitcharset.c \
 stdlib/ft_itoa.c \
 string/ft_strmapi.c \
 string/ft_striteri.c \
@@ -35,7 +36,6 @@ print/ft_putstr_fd.c \
 print/ft_putendl_fd.c \
 print/ft_putnbr_fd.c \
 gnl/get_next_line.c \
-gnl/get_next_line_utils.c\
 list/ft_lstnew.c \
 list/ft_lstadd_front.c \
 list/ft_lstsize.c \
