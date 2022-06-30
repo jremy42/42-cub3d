@@ -4,7 +4,7 @@ SRC_DIR = ./srcs/
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
@@ -14,6 +14,7 @@ EXTERN_MACLIB = -framework OpenGL -framework AppKit
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJS = $(addprefix $(OBJS_DIR), $(SRC_LIST:.c=.o))
+DEPS = $(patsubst $(OBJS_DIR)%.o, $(OBJS_DIR)%.d, $(OBJS))
 
 HEADER = includes/cub3d.h
 LIBFT = ./libft
@@ -47,7 +48,7 @@ MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
 endif
 
-$(OBJS_DIR)%.o: $(SRC_DIR)%.c $(HEADER)
+$(OBJS_DIR)%.o: $(SRC_DIR)%.c
 		mkdir -p $(dir $@)
 		@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 		@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
@@ -73,5 +74,7 @@ fclean : clean
 
 re : fclean
 	make
+
+-include $(DEPS)
 
 .PHONY:  clean fclean re all bonus
