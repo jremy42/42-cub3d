@@ -1,12 +1,12 @@
-SRC = srcs/*
+SRC = srcs/main.c
 IFLAGS =  -I includes/ -I libft/includes
 CFLAGS = -Wall -Wextra -Werror -g3
-MLX_DIR = ./minilibx-linux
-MLX_OLDDIR = ./minilibx/minilibx_opengl
+MLX_DIR = ./minilibx_mms_20200219
+MLX_OLDDIR = ./minilibx_opengl
 EXTERN_LIB = -L /usr/X11/include/../lib -lXext -lX11
 EXTERN_OLDLIB = -framework OpenGL -framework AppKit
 CC = cc
-OBJ = $(addprefix $(OBJS_PATH), $(SRC:.c=.o))
+OBJS = $(addprefix $(OBJS_PATH), $(SRC:.c=.o))
 HEADER = includes/cub3d.h
 LIBFT = ./libft
 OBJS_PATH = ./objs/
@@ -33,7 +33,8 @@ $(OBJS_PATH)%.o: %.c $(HEADER)
 		mkdir -p $(dir $@)
 		@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 		@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
-$(NAME): $(OBJ) ${HEADER} ${LIBFT}
+
+$(NAME): $(OBJS) ${HEADER} ${LIBFT}
 		@printf "%-15s ${_CYAN}${_BOLD}libft${_END}...\n" "Compiling"
 		@make -C ${LIBFT} > /dev/null
 		@printf "%-15s ${_CYAN}${_BOLD}mlx${_END}...\n" "Compiling"
@@ -43,17 +44,16 @@ $(NAME): $(OBJ) ${HEADER} ${LIBFT}
 		@printf "\n${_GREEN}${_BOLD}[Compilation done !]${_END}\n"
 
 clean :
-	rm -rf ${OBJS}
-	make clean -C ./minilibx/minilibx_opengl
-	make clean -C ./minilibx-linux
+	rm -rf $(OBJS_PATH)
+	make clean -C $(MLX_DIR)
 	make clean -C ./libft
 
 fclean : clean
 	rm -rf ${NAME}
 	rm -rf ./libft/libft.a
-	rm -rf ./minilibx/minilibx_opengl/libmlx.a
-	rm -rf ./minilibx-linux/libmlx.a
+	rm -rf $(MLX_DIR)/libmlx.a
 
-re : fclean all
+re : fclean
+	all
 
 .PHONY:  clean fclean re all bonus

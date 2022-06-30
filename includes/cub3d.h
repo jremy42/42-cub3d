@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: fle-blay <{fle-blay}@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/06/30 10:35:41 by fle-blay         ###   ########.fr       */
+/*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/06/30 10:22:11 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
-int	main(int ac, char **av)
-{
-	(void)ac;
-	(void)av;
-
-	__putstr_fd("Hello Raycasted World\n", 1);
-	return (0);
-}
+#endif
