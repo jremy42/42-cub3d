@@ -16,6 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # define NO_FD -1
+# define DEBUG 0
 
 enum {
 	NO,

@@ -102,7 +102,7 @@ int size_split(char **ret)
 	return (i);
 }
 
-void print_cub(t_cub *cub)
+int print_cub(t_cub *cub)
 {
 	int	i;
 
@@ -119,7 +119,32 @@ void print_cub(t_cub *cub)
 		printf("color[%d] %s\n", i, (char *)cub->color[i]);
 		i++;
 	}
+	return (0);
+}
 
+int load_maps(t_list *input, t_cub *cub)
+{
+	int size;
+	int i;
+
+	i = 0;
+	while (input)
+	{
+		if(!__strcmp((char *)input->content, "\n"))
+			break;
+		input = input->next;
+	}
+	size = __lstsize(input);
+	cub->maps = malloc(sizeof(char *) * size);
+	if (!cub->maps)
+		return (0);
+	while(input)
+	{
+		cub->maps[i] = (char *)input->content;
+		input = input->next;
+		i++;
+	}
+	return (1);
 }
 
 void get_info(t_list *input, t_cub *cub)
@@ -130,7 +155,7 @@ void get_info(t_list *input, t_cub *cub)
 	{
 		curent_string = (char *)input->content;
 		ret = __split_charset(curent_string, " \f\t\n\r\v");
-		printf("size split = [%d]\n", size_split(ret));
+		DEBUG && printf("size split = [%d]\n", size_split(ret));
 		if (__strlen(curent_string) && !ret)
 			__print_error("malloc error", input, NO_FD);
 		if (size_split(ret)== 0)
@@ -143,10 +168,21 @@ void get_info(t_list *input, t_cub *cub)
 			return (free_split(ret), __print_error("wrong info format", input, NO_FD));
 		if (!load_info(ret, cub))
 			return (free_split(ret), __print_error("parsing error", input, NO_FD));
-		print_cub(cub);
+		DEBUG && print_cub(cub);
 		input = input->next;
 	}
+	load_maps(input, cub);
+}
 
+void print_maps(t_cub *cub)
+{
+	int i = 0;
+
+	while (cub->maps[i])
+	{
+		printf("%s", cub->maps[i]);
+		i++;
+	}
 }
 
 void parsing(char **av, t_cub *cub)
@@ -155,5 +191,6 @@ void parsing(char **av, t_cub *cub)
 
 	input = get_input(av);
 	get_info(input, cub);
+	print_maps(cub);
 	//__lstiter(input, __printer);
 }
