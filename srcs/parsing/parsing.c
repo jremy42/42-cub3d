@@ -131,11 +131,16 @@ int load_maps(t_list *input, t_cub *cub)
 	while (input)
 	{
 		if(!__strcmp((char *)input->content, "\n"))
+		{
+			input = input->next;
 			break;
+		}
 		input = input->next;
 	}
 	size = __lstsize(input);
-	cub->maps = malloc(sizeof(char *) * size);
+	printf("size lst = [%d]\n", size);
+	cub->maps = malloc(sizeof(char *) * (size + 1));
+	cub->maps[size] = NULL;
 	if (!cub->maps)
 		return (0);
 	while(input)
@@ -171,7 +176,8 @@ void get_info(t_list *input, t_cub *cub)
 		DEBUG && print_cub(cub);
 		input = input->next;
 	}
-	load_maps(input, cub);
+	if (!load_maps(input, cub))
+	 	return (free_split(ret), __print_error("malloc error", input, NO_FD));
 }
 
 void print_maps(t_cub *cub)
@@ -185,12 +191,67 @@ void print_maps(t_cub *cub)
 	}
 }
 
+int	check_wall(char **maps, int i,int j,int size_c)
+{
+	//printf("check wall %c\n", maps[j][i]);
+	if (i == 0 || i == ((int)__strlen(maps[j]) - 1) || j == 0 || j == size_c - 1)
+		return(1);
+	//printf("i = %d strlen j+1 = %d, strlen j - 1 = %d\n", i, (int)__strlen(maps[j+1]), (int)__strlen(maps[j-1] - 2));
+	//printf("maps[j+1] = [%s]\n",maps[j+1]);
+	if (i >= ((int)__strlen(maps[j + 1]) - 2) || i >= ((int)__strlen(maps[j - 1]) - 2))
+		return (1);
+	if( maps[j + 1][i] == ' '
+		|| maps[j + 1][i + 1] == ' '
+		|| maps[j][i + 1] == ' '
+		|| maps[j][i - 1] == ' ')
+		return (1);
+	return (0);
+}
+
+int	check_maps(t_cub *cub)
+{
+	int size_l;
+	int size_c;
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	size_c = 0;
+	while(cub->maps[size_c])
+	{
+		if(!__strcmp(cub->maps[size_c], "\n"))
+			break;
+		size_c++;
+	}
+	while(j < size_c && cub->maps[j])
+	{			
+		size_l = __strlen(cub->maps[j]);
+		while(cub->maps[j][i])
+		{
+			printf("[%c]\n", cub->maps[j][i]);
+			if (!__strchr(" \n10NSEW",cub->maps[j][i]))
+				return(0);
+			if (cub->maps[j][i] == '0' 
+				&& check_wall(cub->maps, i, j, size_c))
+					return (0);
+			i++;
+		}
+		i = 0;
+		j++;
+	}
+	return (1);
+}
+
 void parsing(char **av, t_cub *cub)
 {
 	t_list	*input;
 
 	input = get_input(av);
 	get_info(input, cub);
-	print_maps(cub);
+		print_maps(cub);
+
+	if (!check_maps(cub))
+		__print_error("Invalid maps", input, NO_FD);
 	//__lstiter(input, __printer);
 }
