@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/04 10:12:29 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/04 12:36:38 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,33 @@ int	print_maps(t_cub *cub)
 		printf("%s", cub->maps[i]);
 		i++;
 	}
+	return (1);
+}
+
+int	print_maps_error(t_cub *cub, int error_j, int error_i)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (cub->maps[j])
+	{
+		i = 0;
+		while (cub->maps[j][i])
+		{
+			if (j == error_j && i == error_i)
+			{
+				__putstr_fd(BACK_RED"[", 2);
+				__putchar_fd(cub->maps[j][i], 2);
+				__putstr_fd("]"RESET, 2);
+			}
+			else
+				__putchar_fd(cub->maps[j][i], 2);
+			i++;
+		}
+		j++;
+	}
+	__putstr_fd("\n", 2);
 	return (1);
 }

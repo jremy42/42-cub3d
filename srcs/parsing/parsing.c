@@ -1,7 +1,15 @@
 #include "libft.h"
 #include "cub3d.h"
 
-void	__print_error(char *error, t_list *lst, int fd)
+void	__exit_error(char *error, t_cub *cub)
+{
+	destroy_cub_data(cub);
+	__putendl_fd("Error", 2);
+	__putendl_fd(error, 2);
+	exit(1);
+}
+
+void	__exit_error_get_input(char *error, t_list *lst, int fd)
 {
 	__lstclear(&lst, free);
 	if (fd >= 0)
@@ -23,17 +31,17 @@ t_list	*get_input(char **av)
 	input = NULL;
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
-		__print_error("open error", NULL, fd);
+		__exit_error_get_input("open error", NULL, fd);
 	while (ret > 0)
 	{
 		ret = sget_next_line(&r_readline, fd);
 		if (ret == 0)
 			break ;
 		if (ret < 0)
-			__print_error("gnl error", input, fd);
+			__exit_error_get_input("gnl error", input, fd);
 		new_input = __lstnew(r_readline);
 		if (!new_input)
-			__print_error("Malloc error", input, fd);
+			__exit_error_get_input("Malloc error", input, fd);
 		__lstadd_back(&input, new_input);
 	}
 	close(fd);
@@ -83,32 +91,48 @@ int	load_info(char **ret, t_cub *cub)
 	return (1);
 }
 
-void get_info(t_list *input, t_cub *cub)
+void	get_info(t_list *input, t_cub *cub)
 {
 	char	**ret;
 	char	*curent_string;
+
 	while (input && missing_info_cub(cub))
 	{
 		curent_string = (char *)input->content;
 		ret = __split_charset(curent_string, " \f\t\n\r\v");
 		DEBUG && printf("size split = [%d]\n", size_split(ret));
 		if (__strlen(curent_string) && !ret)
-			__print_error("malloc error", input, NO_FD);
-		if (size_split(ret)== 0)
+			__exit_error("malloc error", cub);
+		if (size_split(ret) == 0)
 		{
 			free_split(ret);
 			input = input->next;
-			continue;
+			continue ;
 		}
 		if (size_split(ret) != 2)
-			return (free_split(ret), __print_error("wrong info format", input, NO_FD));
+			return (free_split(ret), __exit_error("wrong info format", cub));
 		if (!load_info(ret, cub))
-			return (free_split(ret), __print_error("parsing error", input, NO_FD));
+			return (free_split(ret), __exit_error("parsing error", cub));
 		DEBUG && print_cub(cub);
 		input = input->next;
 	}
 	if (!load_maps(input, cub))
-	 	return (free_split(ret), __print_error("malloc error", input, NO_FD));
+		return (__exit_error("malloc error", cub));
+}
+
+void	destroy_cub_data(t_cub *cub)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 2)
+		free(cub->color[i]);
+	i = -1;
+	while (++i < 4)
+		free(cub->text[i]);
+	free(cub->maps);
+	__lstclear(&cub->input, free);
+	DEBUG && printf("Cub data successfully destroyed\n");
 }
 
 void	parsing(char **av, t_cub *cub)
@@ -116,10 +140,10 @@ void	parsing(char **av, t_cub *cub)
 	t_list	*input;
 
 	input = get_input(av);
+	cub->input = input;
 	get_info(input, cub);
-		print_maps(cub);
-
+	//print_maps(cub);
 	if (!check_maps(cub))
-		__print_error("Invalid maps", input, NO_FD);
+		__exit_error("Invalid map 1", cub);
 	//__lstiter(input, __printer);
 }

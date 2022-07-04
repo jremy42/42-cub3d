@@ -31,56 +31,86 @@ int	load_maps(t_list *input, t_cub *cub)
 	return (1);
 }
 
-int	check_wall(char **maps, int i, int j, int size_c)
+int	check_wall(char **maps, int i, int j, int nb_l)
 {
-	DEBUG && printf("check wall %c\n", maps[j][i]);
+	//DEBUG && printf("check wall %c\n", maps[j][i]);
 	if (i == 0 || i == ((int)__strlen(maps[j]) - 1)
-		|| j == 0 || j == size_c - 1)
-		return (1);
-	DEBUG && printf("i = %d strlen j+1 = %d, strlen j - 1 = %d\n", i, (int)__strlen(maps[j+1]), (int)__strlen(maps[j-1] - 2));
-	DEBUG && printf("maps[j+1] = [%s]\n",maps[j+1]);
+		|| j == 0 || j == nb_l - 1)
+		return (__putstr_fd("0 on border\n", 2), 0);
+	//DEBUG && printf("i = %d strlen j+1 = %d, strlen j - 1 = %d\n", i, (int)__strlen(maps[j+1]), (int)__strlen(maps[j-1] - 2));
+	//DEBUG && printf("maps[j+1] = [%s]\n",maps[j+1]);
 	if (i >= ((int)__strlen(maps[j + 1]) - 2)
 		|| i >= ((int)__strlen(maps[j - 1]) - 2))
-		return (1);
+		return (__putstr_fd("surrouding wall missing\n", 2), 0);
 	if (maps[j + 1][i] == ' '
 		|| maps[j + 1][i + 1] == ' '
 		|| maps[j][i + 1] == ' '
-		|| maps[j][i - 1] == ' ')
-		return (1);
-	return (0);
+		|| maps[j - 1][i + 1] == ' '
+		|| maps[j - 1][i] == ' '
+		|| maps[j - 1][i - 1] == ' '
+		|| maps[j][i - 1] == ' '
+		|| maps[j + 1][i - 1] == ' ')
+		return (__putstr_fd("space near 0\n", 2), 0);
+	return (1);
+}
+
+int	check_player(t_cub *cub, int i, int j, int nb_l)
+{
+	if (cub->player.dir)
+		return (__putstr_fd("to many player\n", 2), 0);
+	printf("char = [%c]\n", cub->maps[j][i]);
+	if (i == 0 || i == ((int)__strlen(cub->maps[j]) - 1)
+		|| j == 0 || j == nb_l - 1)
+		return (__putstr_fd("player on border\n", 2), 0);
+	if (i >= ((int)__strlen(cub->maps[j + 1]) - 2)
+		|| i >= ((int)__strlen(cub->maps[j - 1]) - 2))
+		return (__putstr_fd("surrouding wall missing near player\n", 2), 0);
+	if (cub->maps[j + 1][i] == ' '
+		|| cub->maps[j + 1][i + 1] == ' '
+		|| cub->maps[j][i + 1] == ' '
+		|| cub->maps[j - 1][i + 1] == ' '
+		|| cub->maps[j - 1][i] == ' '
+		|| cub->maps[j - 1][i - 1] == ' '
+		|| cub->maps[j][i - 1] == ' '
+		|| cub->maps[j + 1][i - 1] == ' ')
+		return (__putstr_fd("space near player\n", 2), 0);
+	cub->player.dir = cub->maps[j][i];
+	cub->player.i = i;
+	cub->player.j = j;
+	return (1);
 }
 
 int	check_maps(t_cub *cub)
 {
-	int	size_l;
-	int	size_c;
+	int	nb_l;
 	int	i;
 	int	j;
 
-	i = 0;
 	j = 0;
-	size_c = 0;
-	while (cub->maps[size_c])
+	nb_l = 0;
+	while (cub->maps[nb_l])
 	{
-		if (!__strcmp(cub->maps[size_c], "\n"))
+		if (!__strcmp(cub->maps[nb_l], "\n"))
 			break ;
-		size_c++;
+		nb_l++;
 	}
-	while (j < size_c && cub->maps[j])
+	while (j < nb_l && cub->maps[j])
 	{			
-		size_l = __strlen(cub->maps[j]);
+		i = 0;
 		while (cub->maps[j][i])
 		{
-			printf("[%c]\n", cub->maps[j][i]);
 			if (!__strchr(" \n10NSEW", cub->maps[j][i]))
-				return (0);
-			if (cub->maps[j][i] == '0'
-				&& check_wall(cub->maps, i, j, size_c))
-				return (0);
+				return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, j, i), 0);
+			if (__strchr("NSEW", cub->maps[j][i]) && !check_player(cub, i, j, nb_l))
+				return (print_maps_error(cub, j, i), 0);
+			else if(cub->maps[j][i] == '0'
+				&& !check_wall(cub->maps, i, j, nb_l))
+				return (print_maps_error(cub, j, i), 0);
 			i++;
 		}
-		i = 0;
 		j++;
 	}
+	if (!cub->player.dir)
+		return (__putstr_fd("missing player\n", 2), 0);
 	return (1);
 }
