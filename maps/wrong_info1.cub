@@ -1,5 +1,5 @@
 NO ./path_to_the_north_texture
-S ./path_to_the_south_texture				
+SO SO ./path_to_the_south_texture				
 
 WE ./path_to_the_west_texture
 
