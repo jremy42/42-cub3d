@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/31 16:01:03 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/04 09:52:29 by jremy            ###   ########.fr       */
+/*   Created: 2022/07/04 10:10:35 by jremy             #+#    #+#             */
+/*   Updated: 2022/07/04 10:10:38 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 32
 
 typedef struct s_list
 {

@@ -83,35 +83,32 @@ int	load_info(char **ret, t_cub *cub)
 	return (1);
 }
 
-
-
-void	get_info(t_list *input, t_cub *cub)
+void get_info(t_list *input, t_cub *cub)
 {
 	char	**ret;
 	char	*curent_string;
-
 	while (input && missing_info_cub(cub))
 	{
 		curent_string = (char *)input->content;
 		ret = __split_charset(curent_string, " \f\t\n\r\v");
-		printf("size split = [%d]\n", size_split(ret));
+		DEBUG && printf("size split = [%d]\n", size_split(ret));
 		if (__strlen(curent_string) && !ret)
 			__print_error("malloc error", input, NO_FD);
-		if (size_split(ret) == 0)
+		if (size_split(ret)== 0)
 		{
 			free_split(ret);
 			input = input->next;
-			continue ;
+			continue;
 		}
 		if (size_split(ret) != 2)
-			return (free_split(ret),
-				__print_error("wrong info format", input, NO_FD));
+			return (free_split(ret), __print_error("wrong info format", input, NO_FD));
 		if (!load_info(ret, cub))
-			return (free_split(ret),
-				__print_error("parsing error", input, NO_FD));
-		print_cub(cub);
+			return (free_split(ret), __print_error("parsing error", input, NO_FD));
+		DEBUG && print_cub(cub);
 		input = input->next;
 	}
+	if (!load_maps(input, cub))
+	 	return (free_split(ret), __print_error("malloc error", input, NO_FD));
 }
 
 void	parsing(char **av, t_cub *cub)
@@ -120,5 +117,9 @@ void	parsing(char **av, t_cub *cub)
 
 	input = get_input(av);
 	get_info(input, cub);
+		print_maps(cub);
+
+	if (!check_maps(cub))
+		__print_error("Invalid maps", input, NO_FD);
 	//__lstiter(input, __printer);
 }
