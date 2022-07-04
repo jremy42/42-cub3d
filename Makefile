@@ -1,7 +1,8 @@
 SRC_LIST = main.c\
 	parsing/parsing.c\
 	parsing/debug_parsing.c\
-	parsing/loading_maps.c
+	parsing/loading_maps.c\
+	parsing/check_color.c
 
 SRC_DIR = ./srcs/
 

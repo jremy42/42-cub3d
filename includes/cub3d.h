@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/04 13:19:22 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/04 17:54:50 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,20 @@ typedef struct s_player
 	int		i;
 	int		j;
 }	t_player;
+
+typedef struct s_color
+{
+	int	r;
+	int	g;
+	int	b;
+}	t_color;
+
 typedef struct s_cub
 {
 	void		*text[4];
 	void		*color[2];
+	t_color		ceiling;
+	t_color		floor;
 	char		**maps;
 	t_player	player;
 	t_list		*input;
@@ -88,4 +98,6 @@ void	destroy_cub_data(t_cub *cub);
 
 void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	__exit_error(char *error, t_cub *cub);
+
+int		check_color(t_cub *cub);
 #endif

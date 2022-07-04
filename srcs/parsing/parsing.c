@@ -82,9 +82,17 @@ int	load_info(char **ret, t_cub *cub)
 	if (!pos)
 		return (__putstr_fd("No such a info\n", 2), 0);
 	if (pos > 0 && pos < 5)
+	{
+		if (cub->text[pos - 1])
+			return (__putstr_fd("Too many info\n", 2), 0);
 		cub->text[pos - 1] = ret[1];
+	}
 	else
+	{
+		if (cub->color[pos - 5])
+			return (__putstr_fd("Too many info\n", 2), 0);
 		cub->color[pos - 5] = ret[1];
+	}
 	free(ret[0]);
 	ret[0] = NULL;
 	free(ret);
@@ -144,6 +152,8 @@ void	parsing(char **av, t_cub *cub)
 	get_info(input, cub);
 	//print_maps(cub);
 	if (!check_maps(cub))
-		__exit_error("Invalid map 1", cub);
+		__exit_error("Invalid map", cub);
+	if (!check_color(cub))
+		__exit_error("Invalid color", cub);
 	//__lstiter(input, __printer);
 }

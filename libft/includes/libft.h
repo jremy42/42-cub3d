@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 10:10:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/04 10:10:38 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/04 17:48:00 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ int		__strcmp_ignore_case(const char *s1, const char *s2);
 int		sget_next_line(char **next_line, int fd);
 char	**__split_charset(char *s, char *charset);
 int		size_split(char **ret);
+int		__atobyte(const char *nb, int *res);
 
 #endif
