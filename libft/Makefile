@@ -47,6 +47,7 @@ list/ft_lstiter.c \
 list/ft_lstmap.c\
 list/ft_lstaddsort.c\
 stdlib/ft_atol.c\
+string/ft_size_split.c
 
 
 _GREY=	$'\033[30m

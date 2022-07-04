@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   debug_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/04 09:53:59 by jremy            ###   ########.fr       */
+/*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
+/*   Updated: 2022/07/04 09:48:42 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# define NO_FD -1
+#include "cub3d.h"
 
-enum {
-	NO,
-	SO,
-	EA,
-	WE
-};
-
-enum {
-	F,
-	C
-};
-
-typedef struct s_cub
+void	printer(void *content)
 {
-	void	*text[4];
-	void	*color[2];
-	char	**maps;
-}	t_cub;
+	__putstr_fd((char *) content, 2);
+}
 
-void	parsing(char **av, t_cub *cub);
-void	print_cub(t_cub *cub);
-void	printer(void *content);
-#endif
+void	print_cub(t_cub *cub)
+{
+	int	i;
+
+	i = 0;
+	while (i < 4)
+	{
+		printf("text[%d] %s\n", i, (char *)cub->text[i]);
+		i++;
+	}
+	i = 0;
+	while (i < 2)
+	{
+		printf("color[%d] %s\n", i, (char *)cub->color[i]);
+		i++;
+	}
+}

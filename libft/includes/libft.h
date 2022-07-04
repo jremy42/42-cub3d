@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/31 16:01:03 by jremy             #+#    #+#             */
-/*   Updated: 2022/04/07 17:09:28 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/04 09:52:29 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,8 @@ int		__atol(const char *nb, int *res);
 void	__lstaddsort(t_list **lst, t_list *new_elem,
 			int (*f)(const char *, const char *));
 int		__strcmp_ignore_case(const char *s1, const char *s2);
-int        sget_next_line(char **next_line, int fd);
+int		sget_next_line(char **next_line, int fd);
 char	**__split_charset(char *s, char *charset);
+int		size_split(char **ret);
 
 #endif

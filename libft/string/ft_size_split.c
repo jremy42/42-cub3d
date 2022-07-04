@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_size_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/04 09:53:59 by jremy            ###   ########.fr       */
+/*   Created: 2022/07/04 09:50:38 by jremy             #+#    #+#             */
+/*   Updated: 2022/07/04 09:51:04 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-# include <fcntl.h>
-# include <stdio.h>
-# include <stdlib.h>
-# define NO_FD -1
+#include "libft.h"
 
-enum {
-	NO,
-	SO,
-	EA,
-	WE
-};
-
-enum {
-	F,
-	C
-};
-
-typedef struct s_cub
+int	size_split(char **ret)
 {
-	void	*text[4];
-	void	*color[2];
-	char	**maps;
-}	t_cub;
+	int	i;
 
-void	parsing(char **av, t_cub *cub);
-void	print_cub(t_cub *cub);
-void	printer(void *content);
-#endif
+	if (!ret)
+		return (-1);
+	i = 0;
+	while (ret[i])
+		i++;
+	return (i);
+}
