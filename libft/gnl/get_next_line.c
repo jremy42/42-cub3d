@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:20:24 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/01 11:20:49 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/04 10:04:07 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@
          if (!line) 
                  return (-2); 
          load_ret = 1; 
-         cumul_read = 0; 
-         while (load_ret > 0 && !find_nl(line + cumul_read)) 
+         cumul_read = 1; 
+         while (load_ret > 0 && !find_nl(line + cumul_read - load_ret)) 
          { 
                 load_ret = load_input(fd, &line, buf, BUFFER_SIZE); 
-				cumul_read += (cumul_read == 0) * - 1 + load_ret; 
+				cumul_read += load_ret - 1 * (cumul_read == 1); 
          } 
          if (load_ret < 0 || (!find_nl(line) && __strlen(line) == 0)) 
                  return (free(line), load_ret); 
