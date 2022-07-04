@@ -1,0 +1,1407 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+$(NAME)	Makefile	/^$(NAME): $(OBJS) ${HEADER} ${LIBFT}$/;"	t
+$(NAME)	libft/Makefile	/^$(NAME): $(OBJ) $(HEADER)$/;"	t
+$(NAME)	minilibx-linux/Makefile.mk	/^$(NAME)	: $(OBJ)$/;"	t
+$(NAME)	minilibx-linux/test/Makefile.mk	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	minilibx_linux/Makefile.mk	/^$(NAME)	: $(OBJ)$/;"	t
+$(NAME)	minilibx_linux/test/Makefile.mk	/^$(NAME): $(OBJ)$/;"	t
+$(NOM)	minilibx_opengl/Makefile	/^$(NOM):	$(OBJ)$/;"	t
+$(NOM)	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^$(NOM):	$(OBJ)$/;"	t
+$(OBJS_DIR)%.o	Makefile	/^$(OBJS_DIR)%.o: $(SRC_DIR)%.c$/;"	t
+$(OBJ_DIR)/%.o	minilibx-linux/Makefile.mk	/^$(OBJ_DIR)\/%.o: %.c$/;"	t
+$(OBJ_DIR)/%.o	minilibx_linux/Makefile.mk	/^$(OBJ_DIR)\/%.o: %.c$/;"	t
+%.o	libft/Makefile	/^%.o:%.c$/;"	t
+0	.vscode/tasks.json	/^                "$gcc"$/;"	s	array:tasks.0.problemMatcher
+0	.vscode/tasks.json	/^                "-fdiagnostics-color=always",$/;"	s	array:tasks.0.args
+0	.vscode/tasks.json	/^        {$/;"	o	array:tasks
+1	.vscode/tasks.json	/^                "-g",$/;"	s	array:tasks.0.args
+2	.vscode/tasks.json	/^                "${file}",$/;"	s	array:tasks.0.args
+3	.vscode/tasks.json	/^                "-o",$/;"	s	array:tasks.0.args
+4	.vscode/tasks.json	/^                "${fileDirname}\/${fileBasenameNoExtension}"$/;"	s	array:tasks.0.args
+AUTHOR	minilibx-linux/man/man1/mlx.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man1/mlx_loop.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man1/mlx_new_image.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man1/mlx_new_window.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man3/mlx.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man3/mlx_loop.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man3/mlx_new_image.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man3/mlx_new_window.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man1/mlx.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man1/mlx_loop.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man1/mlx_new_image.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man1/mlx_new_window.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man3/mlx.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man3/mlx_loop.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man3/mlx_new_image.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man3/mlx_new_window.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+AUTHOR	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH AUTHOR$/;"	s	title:MiniLibX
+BACK_BLACK	includes/cub3d.h	/^# define BACK_BLACK /;"	d
+BACK_BLUE	includes/cub3d.h	/^# define BACK_BLUE /;"	d
+BACK_CYAN	includes/cub3d.h	/^# define BACK_CYAN /;"	d
+BACK_GREEN	includes/cub3d.h	/^# define BACK_GREEN /;"	d
+BACK_MAGENTA	includes/cub3d.h	/^# define BACK_MAGENTA /;"	d
+BACK_RED	includes/cub3d.h	/^# define BACK_RED /;"	d
+BACK_WHITE	includes/cub3d.h	/^# define BACK_WHITE /;"	d
+BACK_YELLOW	includes/cub3d.h	/^# define BACK_YELLOW /;"	d
+BLACK	includes/cub3d.h	/^# define BLACK /;"	d
+BLUE	includes/cub3d.h	/^# define BLUE /;"	d
+BOLDBLACK	includes/cub3d.h	/^# define BOLDBLACK /;"	d
+BOLDBLUE	includes/cub3d.h	/^# define BOLDBLUE /;"	d
+BOLDCYAN	includes/cub3d.h	/^# define BOLDCYAN /;"	d
+BOLDGREEN	includes/cub3d.h	/^# define BOLDGREEN /;"	d
+BOLDMAGENTA	includes/cub3d.h	/^# define BOLDMAGENTA /;"	d
+BOLDRED	includes/cub3d.h	/^# define BOLDRED /;"	d
+BOLDWHITE	includes/cub3d.h	/^# define BOLDWHITE /;"	d
+BOLDYELLOW	includes/cub3d.h	/^# define BOLDYELLOW /;"	d
+BUFFER_SIZE	libft/includes/libft.h	/^# define BUFFER_SIZE /;"	d
+C	includes/cub3d.h	/^	C$/;"	e	enum:__anonee8c2b120203
+CC	Makefile	/^CC = cc$/;"	m
+CC	libft/Makefile	/^CC = gcc$/;"	m
+CC	minilibx-linux/Makefile.mk	/^	CC = clang$/;"	m
+CC	minilibx-linux/Makefile.mk	/^CC	= gcc$/;"	m
+CC	minilibx-linux/test/Makefile.mk	/^	CC	= gcc$/;"	m
+CC	minilibx-linux/test/Makefile.mk	/^	CC = clang$/;"	m
+CC	minilibx_linux/Makefile.mk	/^	CC = clang$/;"	m
+CC	minilibx_linux/Makefile.mk	/^CC	= gcc$/;"	m
+CC	minilibx_linux/test/Makefile.mk	/^	CC	= gcc$/;"	m
+CC	minilibx_linux/test/Makefile.mk	/^	CC = clang$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -MMD -Wall -Wextra -Werror -g3$/;"	m
+CFLAGS	libft/Makefile	/^CFLAGS = -Wall -Wextra -Werror$/;"	m
+CFLAGS	minilibx-linux/Makefile.mk	/^CFLAGS	= -O3 -I$(INC)$/;"	m
+CFLAGS	minilibx-linux/test/Makefile.mk	/^CFLAGS= -I$(INC) -O3 -I.. -g$/;"	m
+CFLAGS	minilibx_linux/Makefile.mk	/^CFLAGS	= -O3 -I$(INC)$/;"	m
+CFLAGS	minilibx_linux/test/Makefile.mk	/^CFLAGS= -I$(INC) -O3 -I.. -g$/;"	m
+COLOR	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
+COLOR	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
+COLOR	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
+COLOR	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH COLOR MANAGEMENT$/;"	s	title:MiniLibX
+CUB3D_H	includes/cub3d.h	/^# define CUB3D_H$/;"	d
+CYAN	includes/cub3d.h	/^# define CYAN /;"	d
+DEBUG	includes/cub3d.h	/^# define DEBUG /;"	d
+DEPS	Makefile	/^DEPS = $(patsubst $(OBJS_DIR)%.o, $(OBJS_DIR)%.d, $(OBJS))$/;"	m
+DESCRIPTION	minilibx-linux/man/man1/mlx.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man1/mlx_loop.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man1/mlx_new_image.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man1/mlx_new_window.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man3/mlx.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man3/mlx_loop.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man3/mlx_new_image.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man3/mlx_new_window.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man1/mlx.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man1/mlx_loop.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man1/mlx_new_image.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man1/mlx_new_window.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man3/mlx.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man3/mlx_loop.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man3/mlx_new_image.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man3/mlx_new_window.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+DESCRIPTION	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH DESCRIPTION$/;"	s	title:MiniLibX
+EA	includes/cub3d.h	/^	EA,$/;"	e	enum:__anonee8c2b120103
+ENV_DISPLAY	minilibx-linux/mlx_int.h	/^# define ENV_DISPLAY /;"	d
+ENV_DISPLAY	minilibx_linux/mlx_int.h	/^# define ENV_DISPLAY /;"	d
+EOF	minilibx-linux/configure	/^cat <<EOF$/;"	h
+EOF	minilibx_linux/configure	/^cat <<EOF$/;"	h
+ERR_DATA_FILTER	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_DATA_FILTER	/;"	d	file:
+ERR_DATA_FILTER	minilibx_opengl/mlx_png.c	/^#define	ERR_DATA_FILTER	/;"	d	file:
+ERR_DATA_MISMATCH	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_DATA_MISMATCH	/;"	d	file:
+ERR_DATA_MISMATCH	minilibx_opengl/mlx_png.c	/^#define	ERR_DATA_MISMATCH	/;"	d	file:
+ERR_MAGIC_SIZE	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_MAGIC_SIZE	/;"	d	file:
+ERR_MAGIC_SIZE	minilibx_opengl/mlx_png.c	/^#define	ERR_MAGIC_SIZE	/;"	d	file:
+ERR_MAGIC_WRONG	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_MAGIC_WRONG	/;"	d	file:
+ERR_MAGIC_WRONG	minilibx_opengl/mlx_png.c	/^#define	ERR_MAGIC_WRONG	/;"	d	file:
+ERR_NO_TRUECOLOR	minilibx-linux/mlx_int.h	/^# define ERR_NO_TRUECOLOR /;"	d
+ERR_NO_TRUECOLOR	minilibx_linux/mlx_int.h	/^# define ERR_NO_TRUECOLOR /;"	d
+ERR_STRUCT_CRC	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_CRC	/;"	d	file:
+ERR_STRUCT_CRC	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_CRC	/;"	d	file:
+ERR_STRUCT_DAT	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_DAT	/;"	d	file:
+ERR_STRUCT_DAT	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_DAT	/;"	d	file:
+ERR_STRUCT_END	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_END	/;"	d	file:
+ERR_STRUCT_END	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_END	/;"	d	file:
+ERR_STRUCT_HDR	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_HDR	/;"	d	file:
+ERR_STRUCT_HDR	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_HDR	/;"	d	file:
+ERR_STRUCT_INCIMPL	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_INCIMPL /;"	d	file:
+ERR_STRUCT_INCIMPL	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_INCIMPL /;"	d	file:
+ERR_STRUCT_INCOMPLETE	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_INCOMPLETE	/;"	d	file:
+ERR_STRUCT_INCOMPLETE	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_INCOMPLETE	/;"	d	file:
+ERR_STRUCT_MISSCHK	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_STRUCT_MISSCHK	/;"	d	file:
+ERR_STRUCT_MISSCHK	minilibx_opengl/mlx_png.c	/^#define	ERR_STRUCT_MISSCHK	/;"	d	file:
+ERR_ZLIB	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	ERR_ZLIB	/;"	d	file:
+ERR_ZLIB	minilibx_opengl/mlx_png.c	/^#define	ERR_ZLIB	/;"	d	file:
+EXTERN_LIB	Makefile	/^EXTERN_LIB = ${EXTERN_MACLIB}$/;"	m
+EXTERN_LIB	Makefile	/^EXTERN_LIB = -L \/usr\/X11\/include\/..\/lib -lXext -lX11$/;"	m
+EXTERN_MACLIB	Makefile	/^EXTERN_MACLIB = -framework OpenGL -framework AppKit$/;"	m
+F	includes/cub3d.h	/^	F,$/;"	e	enum:__anonee8c2b120203
+FONT_HEIGHT	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^#define	FONT_HEIGHT	/;"	d
+FONT_HEIGHT	minilibx_opengl/mlx_int.h	/^#define	FONT_HEIGHT	/;"	d
+FONT_WIDTH	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^#define FONT_WIDTH	/;"	d
+FONT_WIDTH	minilibx_opengl/mlx_int.h	/^#define FONT_WIDTH	/;"	d
+GOING	minilibx-linux/man/man1/mlx_loop.1	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
+GOING	minilibx-linux/man/man3/mlx_loop.3	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
+GOING	minilibx_linux/man/man1/mlx_loop.1	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
+GOING	minilibx_linux/man/man3/mlx_loop.3	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
+GREEN	includes/cub3d.h	/^# define GREEN /;"	d
+HEADER	Makefile	/^HEADER = includes\/cub3d.h$/;"	m
+HEADER	libft/Makefile	/^HEADER = includes\/libft.h$/;"	m
+IFLAGS	Makefile	/^IFLAGS =  -I includes\/ -I libft\/includes$/;"	m
+IFLAGS	libft/Makefile	/^IFLAGS = -I includes\/$/;"	m
+IM1_SX	minilibx-linux/test/main.c	/^#define	IM1_SX	/;"	d	file:
+IM1_SX	minilibx_linux/test/main.c	/^#define	IM1_SX	/;"	d	file:
+IM1_SY	minilibx-linux/test/main.c	/^#define	IM1_SY	/;"	d	file:
+IM1_SY	minilibx_linux/test/main.c	/^#define	IM1_SY	/;"	d	file:
+IM3_SX	minilibx-linux/test/main.c	/^#define	IM3_SX	/;"	d	file:
+IM3_SX	minilibx_linux/test/main.c	/^#define	IM3_SX	/;"	d	file:
+IM3_SY	minilibx-linux/test/main.c	/^#define	IM3_SY	/;"	d	file:
+IM3_SY	minilibx_linux/test/main.c	/^#define	IM3_SY	/;"	d	file:
+INC	minilibx-linux/Makefile.mk	/^INC	=%%%%$/;"	m
+INC	minilibx-linux/test/Makefile.mk	/^INC=%%%%$/;"	m
+INC	minilibx_linux/Makefile.mk	/^INC	=%%%%$/;"	m
+INC	minilibx_linux/test/Makefile.mk	/^INC=%%%%$/;"	m
+INCLIB	minilibx-linux/test/Makefile.mk	/^INCLIB=$(INC)\/..\/lib$/;"	m
+INCLIB	minilibx_linux/test/Makefile.mk	/^INCLIB=$(INC)\/..\/lib$/;"	m
+INCLUDE	minilibx-linux/man/man1/mlx.1	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
+INCLUDE	minilibx-linux/man/man3/mlx.3	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
+INCLUDE	minilibx_linux/man/man1/mlx.1	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
+INCLUDE	minilibx_linux/man/man3/mlx.3	/^.SH INCLUDE FILE$/;"	s	title:MiniLibX
+LFLAGS	minilibx-linux/test/Makefile.mk	/^LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm$/;"	m
+LFLAGS	minilibx_linux/test/Makefile.mk	/^LFLAGS = -L.. -lmlx -L$(INCLIB) -lXext -lX11 -lm$/;"	m
+LIBFT	Makefile	/^LIBFT = .\/libft$/;"	m
+LIBFT_H	libft/includes/libft.h	/^# define LIBFT_H$/;"	d
+LIBRARY	minilibx-linux/man/man1/mlx.1	/^.SH LIBRARY FUNCTIONS$/;"	s	title:MiniLibX
+LIBRARY	minilibx-linux/man/man3/mlx.3	/^.SH LIBRARY FUNCTIONS$/;"	s	title:MiniLibX
+LIBRARY	minilibx_linux/man/man1/mlx.1	/^.SH LIBRARY FUNCTIONS$/;"	s	title:MiniLibX
+LIBRARY	minilibx_linux/man/man3/mlx.3	/^.SH LIBRARY FUNCTIONS$/;"	s	title:MiniLibX
+LINKING	minilibx-linux/man/man1/mlx.1	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
+LINKING	minilibx-linux/man/man3/mlx.3	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
+LINKING	minilibx_linux/man/man1/mlx.1	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
+LINKING	minilibx_linux/man/man3/mlx.3	/^.SH LINKING MiniLibX$/;"	s	title:MiniLibX
+LOCALHOST	minilibx-linux/mlx_int.h	/^# define LOCALHOST /;"	d
+LOCALHOST	minilibx_linux/mlx_int.h	/^# define LOCALHOST /;"	d
+MAGENTA	includes/cub3d.h	/^# define MAGENTA /;"	d
+MAX_EVENT	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^#define	MAX_EVENT	/;"	d
+MAX_EVENT	minilibx_opengl/mlx_int.h	/^#define	MAX_EVENT	/;"	d
+MAX_PIXEL_NB	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^#define MAX_PIXEL_NB	/;"	d
+MAX_PIXEL_NB	minilibx_opengl/mlx_int.h	/^#define MAX_PIXEL_NB	/;"	d
+MLX_DIR	Makefile	/^MLX_DIR = ${MLX_MAC}$/;"	m
+MLX_DIR	Makefile	/^MLX_DIR = .\/minilibx_linux$/;"	m
+MLX_H	minilibx-linux/mlx.h	/^#define	MLX_H$/;"	d
+MLX_H	minilibx_linux/mlx.h	/^#define	MLX_H$/;"	d
+MLX_H	minilibx_opengl/minilibx_opengl_20191021/mlx.h	/^#define	MLX_H$/;"	d
+MLX_H	minilibx_opengl/mlx.h	/^#define	MLX_H$/;"	d
+MLX_INT_H	minilibx-linux/mlx_int.h	/^# define MLX_INT_H$/;"	d
+MLX_INT_H	minilibx_linux/mlx_int.h	/^# define MLX_INT_H$/;"	d
+MLX_MAC	Makefile	/^MLX_MAC = .\/minilibx_opengl$/;"	m
+MLX_MAX_EVENT	minilibx-linux/mlx_int.h	/^# define MLX_MAX_EVENT /;"	d
+MLX_MAX_EVENT	minilibx_linux/mlx_int.h	/^# define MLX_MAX_EVENT /;"	d
+MLX_TYPE_SHM	minilibx-linux/mlx_int.h	/^# define MLX_TYPE_SHM /;"	d
+MLX_TYPE_SHM	minilibx_linux/mlx_int.h	/^# define MLX_TYPE_SHM /;"	d
+MLX_TYPE_SHM_PIXMAP	minilibx-linux/mlx_int.h	/^# define MLX_TYPE_SHM_PIXMAP /;"	d
+MLX_TYPE_SHM_PIXMAP	minilibx_linux/mlx_int.h	/^# define MLX_TYPE_SHM_PIXMAP /;"	d
+MLX_TYPE_XIMAGE	minilibx-linux/mlx_int.h	/^# define MLX_TYPE_XIMAGE /;"	d
+MLX_TYPE_XIMAGE	minilibx_linux/mlx_int.h	/^# define MLX_TYPE_XIMAGE /;"	d
+MiniLibX	minilibx-linux/man/man1/mlx.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man1/mlx_loop.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man1/mlx_new_image.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man1/mlx_new_window.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man1/mlx_pixel_put.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man3/mlx.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man3/mlx_loop.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man3/mlx_new_image.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man3/mlx_new_window.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx-linux/man/man3/mlx_pixel_put.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man1/mlx.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man1/mlx_loop.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man1/mlx_new_image.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man1/mlx_new_window.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man1/mlx_pixel_put.1	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man3/mlx.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man3/mlx_loop.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man3/mlx_new_image.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man3/mlx_new_window.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MiniLibX	minilibx_linux/man/man3/mlx_pixel_put.3	/^.TH MiniLibX 3 "September 19, 2002"$/;"	t
+MlxWin	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^@interface MlxWin : NSOpenGLView$/;"	i
+MlxWin	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^@implementation MlxWin$/;"	I
+MlxWin	minilibx_opengl/mlx_new_window.h	/^@interface MlxWin : NSOpenGLView$/;"	i
+MlxWin	minilibx_opengl/mlx_new_window.m	/^@implementation MlxWin$/;"	I
+NAME	Makefile	/^NAME = cub3d$/;"	m
+NAME	libft/Makefile	/^NAME = libft.a$/;"	m
+NAME	minilibx-linux/Makefile.mk	/^NAME		= libmlx.a$/;"	m
+NAME	minilibx-linux/man/man1/mlx.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man1/mlx_loop.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man1/mlx_new_image.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man1/mlx_new_window.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man3/mlx.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man3/mlx_loop.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man3/mlx_new_image.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man3/mlx_new_window.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx-linux/test/Makefile.mk	/^NAME= mlx-test$/;"	m
+NAME	minilibx_linux/Makefile.mk	/^NAME		= libmlx.a$/;"	m
+NAME	minilibx_linux/man/man1/mlx.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man1/mlx_loop.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man1/mlx_new_image.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man1/mlx_new_window.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man3/mlx.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man3/mlx_loop.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man3/mlx_new_image.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man3/mlx_new_window.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH NAME$/;"	s	title:MiniLibX
+NAME	minilibx_linux/test/Makefile.mk	/^NAME= mlx-test$/;"	m
+NAME_UNAME	minilibx-linux/Makefile.mk	/^NAME_UNAME	= libmlx_$(UNAME).a$/;"	m
+NAME_UNAME	minilibx_linux/Makefile.mk	/^NAME_UNAME	= libmlx_$(UNAME).a$/;"	m
+NO	includes/cub3d.h	/^	NO,$/;"	e	enum:__anonee8c2b120103
+NOM	minilibx_opengl/Makefile	/^NOM=libmlx.a$/;"	m
+NOM	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^NOM=libmlx.a$/;"	m
+NSWindowEvent	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^@interface NSWindowEvent : NSWindow$/;"	i
+NSWindowEvent	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^@implementation NSWindowEvent$/;"	I
+NSWindowEvent	minilibx_opengl/mlx_new_window.h	/^@interface NSWindowEvent : NSWindow$/;"	i
+NSWindowEvent	minilibx_opengl/mlx_new_window.m	/^@implementation NSWindowEvent$/;"	I
+OBJ	libft/Makefile	/^OBJ = $(SRC:.c=.o)$/;"	m
+OBJ	minilibx-linux/Makefile.mk	/^OBJ	= $(addprefix $(OBJ_DIR)\/,$(SRC:%.c=%.o))$/;"	m
+OBJ	minilibx-linux/test/Makefile.mk	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+OBJ	minilibx_linux/Makefile.mk	/^OBJ	= $(addprefix $(OBJ_DIR)\/,$(SRC:%.c=%.o))$/;"	m
+OBJ	minilibx_linux/test/Makefile.mk	/^OBJ = $(SRC:%.c=%.o)$/;"	m
+OBJ	minilibx_opengl/Makefile	/^OBJ=$(OBJ1:.m=.o)$/;"	m
+OBJ	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^OBJ=$(OBJ1:.m=.o)$/;"	m
+OBJ1	minilibx_opengl/Makefile	/^OBJ1=$(SRC:.c=.o)$/;"	m
+OBJ1	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^OBJ1=$(SRC:.c=.o)$/;"	m
+OBJBONUS	libft/Makefile	/^OBJBONUS = $(BONUS:.c=.o)$/;"	m
+OBJS	Makefile	/^OBJS = $(addprefix $(OBJS_DIR), $(SRC_LIST:.c=.o))$/;"	m
+OBJS_DIR	Makefile	/^OBJS_DIR = .\/objs\/$/;"	m
+OBJ_DIR	minilibx-linux/Makefile.mk	/^OBJ_DIR = obj$/;"	m
+OBJ_DIR	minilibx_linux/Makefile.mk	/^OBJ_DIR = obj$/;"	m
+PNG_HDR_SIZE	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define PNG_HDR_SIZE	/;"	d	file:
+PNG_HDR_SIZE	minilibx_opengl/mlx_png.c	/^#define PNG_HDR_SIZE	/;"	d	file:
+PNG_MAGIC_SIZE	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	PNG_MAGIC_SIZE	/;"	d	file:
+PNG_MAGIC_SIZE	minilibx_opengl/mlx_png.c	/^#define	PNG_MAGIC_SIZE	/;"	d	file:
+PRINTF_H	libft/includes/printf.h	/^# define PRINTF_H$/;"	d
+RED	includes/cub3d.h	/^# define RED /;"	d
+RESET	includes/cub3d.h	/^# define RESET /;"	d
+RETURN	minilibx-linux/man/man1/mlx.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/man/man1/mlx_new_image.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/man/man1/mlx_new_window.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/man/man3/mlx.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/man/man3/mlx_new_image.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/man/man3/mlx_new_window.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx-linux/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+RETURN	minilibx_linux/man/man1/mlx.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/man/man1/mlx_new_image.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/man/man1/mlx_new_window.1	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/man/man3/mlx.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/man/man3/mlx_new_image.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/man/man3/mlx_new_window.3	/^.SH RETURN VALUES$/;"	s	title:MiniLibX
+RETURN	minilibx_linux/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+RETURN	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+RETURN	minilibx_opengl/mlx_xpm.c	/^#define	RETURN	/;"	d	file:
+SEE	minilibx-linux/man/man1/mlx.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man1/mlx_loop.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man1/mlx_new_image.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man1/mlx_new_window.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man3/mlx.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man3/mlx_loop.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man3/mlx_new_image.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man3/mlx_new_window.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man1/mlx.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man1/mlx_loop.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man1/mlx_new_image.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man1/mlx_new_window.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man3/mlx.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man3/mlx_loop.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man3/mlx_new_image.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man3/mlx_new_window.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SEE	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH SEE ALSO$/;"	s	title:MiniLibX
+SO	includes/cub3d.h	/^	SO,$/;"	e	enum:__anonee8c2b120103
+SRC	libft/Makefile	/^SRC = string\/ft_isalpha.c \\$/;"	m
+SRC	minilibx-linux/Makefile.mk	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
+SRC	minilibx-linux/test/Makefile.mk	/^SRC = main.c$/;"	m
+SRC	minilibx_linux/Makefile.mk	/^SRC	= mlx_init.c mlx_new_window.c mlx_pixel_put.c mlx_loop.c \\$/;"	m
+SRC	minilibx_linux/test/Makefile.mk	/^SRC = main.c$/;"	m
+SRC	minilibx_opengl/Makefile	/^SRC= mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wor/;"	m
+SRC	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^SRC= mlx_shaders.c mlx_new_window.m mlx_init_loop.m mlx_new_image.m mlx_xpm.c mlx_int_str_to_wor/;"	m
+SRCS	Makefile	/^SRCS = $(addprefix $(SRC_DIR), $(SRC_LIST))$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR = .\/srcs\/$/;"	m
+SRC_LIST	Makefile	/^SRC_LIST = main.c\\$/;"	m
+STORING	minilibx-linux/man/man1/mlx_new_image.1	/^.SH STORING COLOR INSIDE IMAGES$/;"	s	title:MiniLibX
+STORING	minilibx-linux/man/man3/mlx_new_image.3	/^.SH STORING COLOR INSIDE IMAGES$/;"	s	title:MiniLibX
+STORING	minilibx_linux/man/man1/mlx_new_image.1	/^.SH STORING COLOR INSIDE IMAGES$/;"	s	title:MiniLibX
+STORING	minilibx_linux/man/man3/mlx_new_image.3	/^.SH STORING COLOR INSIDE IMAGES$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man1/mlx.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man1/mlx_loop.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man1/mlx_new_image.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man1/mlx_new_window.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man1/mlx_pixel_put.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man3/mlx.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man3/mlx_loop.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man3/mlx_new_image.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man3/mlx_new_window.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man1/mlx.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man1/mlx_loop.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man1/mlx_new_image.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man1/mlx_new_window.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man1/mlx_pixel_put.1	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man3/mlx.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man3/mlx_loop.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man3/mlx_new_image.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man3/mlx_new_window.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+SYNOPSYS	minilibx_linux/man/man3/mlx_pixel_put.3	/^.SH SYNOPSYS$/;"	s	title:MiniLibX
+UNAME	minilibx-linux/Makefile.mk	/^UNAME = $(shell uname)$/;"	m
+UNAME	minilibx-linux/test/Makefile.mk	/^UNAME := $(shell uname)$/;"	m
+UNAME	minilibx_linux/Makefile.mk	/^UNAME = $(shell uname)$/;"	m
+UNAME	minilibx_linux/test/Makefile.mk	/^UNAME := $(shell uname)$/;"	m
+UNIQ_BPP	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^#define UNIQ_BPP	/;"	d
+UNIQ_BPP	minilibx_opengl/mlx_int.h	/^#define UNIQ_BPP	/;"	d
+WARN_SHM_ATTACH	minilibx-linux/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
+WARN_SHM_ATTACH	minilibx_linux/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
+WE	includes/cub3d.h	/^	WE$/;"	e	enum:__anonee8c2b120103
+WHITE	includes/cub3d.h	/^# define WHITE /;"	d
+WIN1_SX	minilibx-linux/test/main.c	/^#define	WIN1_SX	/;"	d	file:
+WIN1_SX	minilibx_linux/test/main.c	/^#define	WIN1_SX	/;"	d	file:
+WIN1_SY	minilibx-linux/test/main.c	/^#define	WIN1_SY	/;"	d	file:
+WIN1_SY	minilibx_linux/test/main.c	/^#define	WIN1_SY	/;"	d	file:
+X-WINDOW	minilibx-linux/man/man1/mlx.1	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
+X-WINDOW	minilibx-linux/man/man1/mlx_loop.1	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
+X-WINDOW	minilibx-linux/man/man3/mlx.3	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
+X-WINDOW	minilibx-linux/man/man3/mlx_loop.3	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
+X-WINDOW	minilibx_linux/man/man1/mlx.1	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
+X-WINDOW	minilibx_linux/man/man1/mlx_loop.1	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
+X-WINDOW	minilibx_linux/man/man3/mlx.3	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
+X-WINDOW	minilibx_linux/man/man3/mlx_loop.3	/^.SH X-WINDOW EVENTS$/;"	s	title:MiniLibX
+XPM	minilibx-linux/man/man1/mlx_new_image.1	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
+XPM	minilibx-linux/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
+XPM	minilibx_linux/man/man1/mlx_new_image.1	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
+XPM	minilibx_linux/man/man3/mlx_new_image.3	/^.SH XPM IMAGES$/;"	s	title:MiniLibX
+X_ShmAttach	minilibx-linux/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
+X_ShmAttach	minilibx_linux/mlx_new_image.c	/^#define	X_ShmAttach	/;"	d	file:
+YELLOW	includes/cub3d.h	/^# define YELLOW /;"	d
+Z_CHUNK	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^#define	Z_CHUNK	/;"	d	file:
+Z_CHUNK	minilibx_opengl/mlx_png.c	/^#define	Z_CHUNK	/;"	d	file:
+_BLUE	Makefile	/^_BLUE=	$'\\033[34m$/;"	m
+_BLUE	libft/Makefile	/^_BLUE=	$'\\033[34m$/;"	m
+_CYAN	Makefile	/^_CYAN=	$'\\033[36m$/;"	m
+_CYAN	libft/Makefile	/^_CYAN=	$'\\033[36m$/;"	m
+_END	Makefile	/^_END= $'\\033[0m$/;"	m
+_END	libft/Makefile	/^_END= $'\\033[37m$/;"	m
+_GREEN	Makefile	/^_GREEN=	$'\\033[32m$/;"	m
+_GREEN	libft/Makefile	/^_GREEN=	$'\\033[32m$/;"	m
+_GREY	Makefile	/^_GREY=	$'\\033[30m$/;"	m
+_GREY	libft/Makefile	/^_GREY=	$'\\033[30m$/;"	m
+_PURPLE	Makefile	/^_PURPLE=$'\\033[35m$/;"	m
+_PURPLE	libft/Makefile	/^_PURPLE=$'\\033[35m$/;"	m
+_RED	Makefile	/^_RED=	$'\\033[31m$/;"	m
+_RED	libft/Makefile	/^_RED=	$'\\033[31m$/;"	m
+_WHITE	Makefile	/^_WHITE=	$'\\033[37m$/;"	m
+_WHITE	libft/Makefile	/^_WHITE=	$'\\033[37m$/;"	m
+_YELLOW	Makefile	/^_YELLOW=$'\\033[33m$/;"	m
+_YELLOW	libft/Makefile	/^_YELLOW=$'\\033[33m$/;"	m
+__anon53211bbc0108	minilibx_opengl/font.c	/^static const struct {$/;"	s	file:
+__anondfb1f73a0108	minilibx_opengl/minilibx_opengl_20191021/font.c	/^static const struct {$/;"	s	file:
+__anonee8c2b120103	includes/cub3d.h	/^enum {$/;"	g
+__anonee8c2b120203	includes/cub3d.h	/^enum {$/;"	g
+__atoi	libft/stdlib/ft_atoi.c	/^int	__atoi(const char *nb)$/;"	f	typeref:typename:int
+__atol	libft/stdlib/ft_atol.c	/^int	__atol(const char *nb, int *res)$/;"	f	typeref:typename:int
+__bzero	libft/mem/ft_bzero.c	/^void	__bzero(void *pt, int count)$/;"	f	typeref:typename:void
+__calloc	libft/mem/ft_calloc.c	/^void	*__calloc(size_t count, size_t size)$/;"	f	typeref:typename:void *
+__check_overflow	libft/stdlib/ft_atol.c	/^static	int	__check_overflow(unsigned long result, int sign)$/;"	f	typeref:typename:int	file:
+__count_word	libft/string/ft_split.c	/^static size_t	__count_word(char *s, char c)$/;"	f	typeref:typename:size_t	file:
+__count_word	libft/string/ft_splitcharset.c	/^static size_t	__count_word(char *s, char *charset)$/;"	f	typeref:typename:size_t	file:
+__exit_error	srcs/parsing/parsing.c	/^void	__exit_error(char *error, t_cub *cub)$/;"	f	typeref:typename:void
+__exit_error_get_input	srcs/parsing/parsing.c	/^void	__exit_error_get_input(char *error, t_list *lst, int fd)$/;"	f	typeref:typename:void
+__freetab	libft/string/ft_split.c	/^static char	**__freetab(char**tab, int index)$/;"	f	typeref:typename:char **	file:
+__freetab	libft/string/ft_splitcharset.c	/^static char	**__freetab(char**tab, int index)$/;"	f	typeref:typename:char **	file:
+__getnextstr	libft/string/ft_split.c	/^static char	*__getnextstr(char *s, char c, size_t *len_nextstr)$/;"	f	typeref:typename:char *	file:
+__getnextstr	libft/string/ft_splitcharset.c	/^static char	*__getnextstr(char *s, char *charset, size_t *len_nextstr)$/;"	f	typeref:typename:char *	file:
+__intsize	libft/stdlib/ft_itoa.c	/^static size_t	__intsize(int n, int *sign)$/;"	f	typeref:typename:size_t	file:
+__is_in_charset	libft/string/ft_splitcharset.c	/^size_t	__is_in_charset(char c, char *charset)$/;"	f	typeref:typename:size_t
+__isalnum	libft/string/ft_isalnum.c	/^int	__isalnum(int c)$/;"	f	typeref:typename:int
+__isalpha	libft/string/ft_isalpha.c	/^int	__isalpha(int c)$/;"	f	typeref:typename:int
+__isascii	libft/string/ft_isascii.c	/^int	__isascii(int c)$/;"	f	typeref:typename:int
+__isdigit	libft/string/ft_isdigit.c	/^int	__isdigit(int c)$/;"	f	typeref:typename:int
+__isinset	libft/string/ft_strtrim.c	/^static int	__isinset(unsigned char c, const char *set)$/;"	f	typeref:typename:int	file:
+__isisspace	libft/stdlib/ft_atoi.c	/^static int	__isisspace(char c)$/;"	f	typeref:typename:int	file:
+__isisspace	libft/stdlib/ft_atol.c	/^static int	__isisspace(char c)$/;"	f	typeref:typename:int	file:
+__isprint	libft/string/ft_isprint.c	/^int	__isprint(int c)$/;"	f	typeref:typename:int
+__itoa	libft/stdlib/ft_itoa.c	/^char	*__itoa(int n)$/;"	f	typeref:typename:char *
+__itoa_recu	libft/stdlib/ft_itoa.c	/^static void	__itoa_recu(unsigned int sn, char *result, size_t start)$/;"	f	typeref:typename:void	file:
+__lstadd_back	libft/list/ft_lstadd_back.c	/^void	__lstadd_back(t_list **alst, t_list *new)$/;"	f	typeref:typename:void
+__lstadd_front	libft/list/ft_lstadd_front.c	/^void	__lstadd_front(t_list **alst, t_list *new)$/;"	f	typeref:typename:void
+__lstaddsort	libft/list/ft_lstaddsort.c	/^void	__lstaddsort(t_list **lst, t_list *new_elem,$/;"	f	typeref:typename:void
+__lstclear	libft/list/ft_lstclear.c	/^void	__lstclear(t_list **alst, void (*del)(void *))$/;"	f	typeref:typename:void
+__lstdelone	libft/list/ft_lstdelone.c	/^void	__lstdelone(t_list *alst, void (*del)(void *))$/;"	f	typeref:typename:void
+__lstiter	libft/list/ft_lstiter.c	/^void	__lstiter(t_list *lst, void (*f)(void *))$/;"	f	typeref:typename:void
+__lstlast	libft/list/ft_lstlast.c	/^t_list	*__lstlast(t_list *lst)$/;"	f	typeref:typename:t_list *
+__lstmap	libft/list/ft_lstmap.c	/^t_list	*__lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))$/;"	f	typeref:typename:t_list *
+__lstnew	libft/list/ft_lstnew.c	/^t_list	*__lstnew(void *content)$/;"	f	typeref:typename:t_list *
+__lstsize	libft/list/ft_lstsize.c	/^int	__lstsize(t_list *lst)$/;"	f	typeref:typename:int
+__memchr	libft/mem/ft_memchr.c	/^void	*__memchr(const void *buffer, int c, size_t count)$/;"	f	typeref:typename:void *
+__memcmp	libft/mem/ft_memcmp.c	/^int	__memcmp(const void *buffer1, const void *buffer2, size_t n)$/;"	f	typeref:typename:int
+__memcpy	libft/mem/ft_memcpy.c	/^void	*__memcpy(void *dst, const void *src, size_t n)$/;"	f	typeref:typename:void *
+__memmove	libft/mem/ft_memmove.c	/^void	*__memmove(void *dst, const void *src, size_t size)$/;"	f	typeref:typename:void *
+__memset	libft/mem/ft_memset.c	/^void	*__memset(void *pt, int value, size_t count)$/;"	f	typeref:typename:void *
+__old_strjoin	libft/string/ft_strjoin.c	/^char	*__old_strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+__putchar_fd	libft/print/ft_putchar_fd.c	/^void	__putchar_fd(char c, int fd)$/;"	f	typeref:typename:void
+__putendl_fd	libft/print/ft_putendl_fd.c	/^void	__putendl_fd(char const *s, int fd)$/;"	f	typeref:typename:void
+__putnbr_fd	libft/print/ft_putnbr_fd.c	/^void	__putnbr_fd(int n, int fd)$/;"	f	typeref:typename:void
+__putnbr_recu_fd	libft/print/ft_putnbr_fd.c	/^static void	__putnbr_recu_fd(unsigned int sn, int fd)$/;"	f	typeref:typename:void	file:
+__putstr_fd	libft/print/ft_putstr_fd.c	/^void	__putstr_fd(char const *s, int fd)$/;"	f	typeref:typename:void
+__split	libft/string/ft_split.c	/^char	**__split(char *s, char c)$/;"	f	typeref:typename:char **
+__split_charset	libft/string/ft_splitcharset.c	/^char	**__split_charset(char *s, char *charset)$/;"	f	typeref:typename:char **
+__strcat	libft/string/ft_strjoin.c	/^static char	*__strcat(char *dst, const char *src)$/;"	f	typeref:typename:char *	file:
+__strchr	libft/string/ft_strchr.c	/^char	*__strchr(const char *src, int find)$/;"	f	typeref:typename:char *
+__strcmp	libft/string/ft_strcmp.c	/^int	__strcmp(const char *s1, const char *s2)$/;"	f	typeref:typename:int
+__strcmp_ignore_case	libft/string/ft_strcmp.c	/^int	__strcmp_ignore_case(const char *s1, const char *s2)$/;"	f	typeref:typename:int
+__strcpy	libft/string/ft_strjoin.c	/^static char	*__strcpy(char *dst, const char *src)$/;"	f	typeref:typename:char *	file:
+__strdup	libft/string/ft_strdup.c	/^char	*__strdup(const char *src)$/;"	f	typeref:typename:char *
+__striteri	libft/string/ft_striteri.c	/^void	__striteri(char *s, void (*f)(unsigned int, char *))$/;"	f	typeref:typename:void
+__strjoin	libft/string/ft_strjoin.c	/^char	*__strjoin(char const *s1, char const *s2)$/;"	f	typeref:typename:char *
+__strjoin2	libft/string/ft_strjoin.c	/^char	*__strjoin2(char const *s1, char const *s2, char const *s3)$/;"	f	typeref:typename:char *
+__strlcat	libft/string/ft_strlcat.c	/^size_t	__strlcat(char *dst, const char *src, size_t n)$/;"	f	typeref:typename:size_t
+__strlcpy	libft/string/ft_strlcpy.c	/^size_t	__strlcpy(char *dst, const char *src, size_t size)$/;"	f	typeref:typename:size_t
+__strlen	libft/string/ft_strlen.c	/^size_t	__strlen(const char *str)$/;"	f	typeref:typename:size_t
+__strmapi	libft/string/ft_strmapi.c	/^char	*__strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f	typeref:typename:char *
+__strncmp	libft/string/ft_strncmp.c	/^int	__strncmp(const char *s1, const char *s2, size_t size)$/;"	f	typeref:typename:int
+__strncpy	libft/string/ft_strlcpy.c	/^char	*__strncpy(char *dst, char *src, size_t count)$/;"	f	typeref:typename:char *
+__strndup	libft/string/ft_strdup.c	/^char	*__strndup(const char *src, size_t n)$/;"	f	typeref:typename:char *
+__strnlen	libft/string/ft_strlen.c	/^size_t	__strnlen(const char *str, size_t n)$/;"	f	typeref:typename:size_t
+__strnstr	libft/string/ft_strnstr.c	/^char	*__strnstr(const char *str, const char *find, size_t len)$/;"	f	typeref:typename:char *
+__strrchr	libft/string/ft_strrchr.c	/^char	*__strrchr(const char *src, int find)$/;"	f	typeref:typename:char *
+__strrstr	libft/string/ft_strnstr.c	/^char	*__strrstr(const char *str, const char *find)$/;"	f	typeref:typename:char *
+__strstr	libft/string/ft_strnstr.c	/^char	*__strstr(const char *str, const char *find)$/;"	f	typeref:typename:char *
+__strtrim	libft/string/ft_strtrim.c	/^char	*__strtrim(char const *s1, char const *set)$/;"	f	typeref:typename:char *
+__substr	libft/string/ft_substr.c	/^char	*__substr(char const *s, unsigned int start, size_t len)$/;"	f	typeref:typename:char *
+__swap_lst	libft/list/ft_lstaddsort.c	/^static void	__swap_lst(t_list *new_elem, t_list *previous,$/;"	f	typeref:typename:void	file:
+__tolower	libft/string/ft_tolower.c	/^int	__tolower(int c)$/;"	f	typeref:typename:int
+__toupper	libft/string/ft_toupper.c	/^int	__toupper(int c)$/;"	f	typeref:typename:int
+acceptsFirstResponder	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+acceptsFirstResponder	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+add_img_to_ctx	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^mlx_img_ctx_t	*add_img_to_ctx(mlx_img_list_t *img, mlx_win_list_t *win)$/;"	f
+add_img_to_ctx	minilibx_opengl/mlx_new_image.m	/^mlx_img_ctx_t	*add_img_to_ctx(mlx_img_list_t *img, mlx_win_list_t *win)$/;"	f
+addr	libft/includes/libft.h	/^	void				*addr;$/;"	m	struct:s_gbc	typeref:typename:void *
+all	Makefile	/^all: $/;"	t
+all	libft/Makefile	/^all: $(NAME)$/;"	t
+all	minilibx-linux/Makefile	/^all	: do_configure$/;"	t
+all	minilibx-linux/Makefile.mk	/^all	: $(NAME)$/;"	t
+all	minilibx-linux/test/Makefile.mk	/^all: $(NAME)$/;"	t
+all	minilibx_linux/Makefile	/^all	: do_configure$/;"	t
+all	minilibx_linux/Makefile.mk	/^all	: $(NAME)$/;"	t
+all	minilibx_linux/test/Makefile.mk	/^all: $(NAME)$/;"	t
+all	minilibx_opengl/Makefile	/^all: $(NOM)$/;"	t
+all	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^all: $(NOM)$/;"	t
+appid	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  void			*appid;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+appid	minilibx_opengl/mlx_int.h	/^  void			*appid;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+args	.vscode/tasks.json	/^            "args": [$/;"	a	object:tasks.0
+at_exit	minilibx-linux/test/run_tests.sh	/^at_exit() {$/;"	f
+at_exit	minilibx_linux/test/run_tests.sh	/^at_exit() {$/;"	f
+blank	libft/includes/printf.h	/^	int		blank;$/;"	m	struct:s_flags	typeref:typename:int
+bpp	minilibx-linux/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
+bpp	minilibx_linux/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
+bpp	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  int		bpp;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+bpp	minilibx_opengl/mlx_png.c	/^  int		bpp;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+bpp1	minilibx-linux/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
+bpp1	minilibx_linux/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
+bpp2	minilibx-linux/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
+bpp2	minilibx_linux/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
+bpp3	minilibx-linux/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
+bpp3	minilibx_linux/test/main.c	/^int	bpp3;$/;"	v	typeref:typename:int
+bpp4	minilibx-linux/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
+bpp4	minilibx_linux/test/main.c	/^int	bpp4;$/;"	v	typeref:typename:int
+buffer	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  char			*buffer;$/;"	m	struct:mlx_img_list_s	typeref:typename:char *
+buffer	minilibx_opengl/mlx_int.h	/^  char			*buffer;$/;"	m	struct:mlx_img_list_s	typeref:typename:char *
+bytes_per_pixel	minilibx_opengl/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anon53211bbc0108	typeref:typename:unsigned int	file:
+bytes_per_pixel	minilibx_opengl/minilibx_opengl_20191021/font.c	/^  unsigned int 	 bytes_per_pixel; \/* 2:RGB16, 3:RGB, 4:RGBA *\/ $/;"	m	struct:__anondfb1f73a0108	typeref:typename:unsigned int	file:
+check	minilibx-linux/Makefile.mk	/^check: all$/;"	t
+check	minilibx_linux/Makefile.mk	/^check: all$/;"	t
+check_maps	srcs/parsing/loading_maps.c	/^int	check_maps(t_cub *cub)$/;"	f	typeref:typename:int
+check_player	srcs/parsing/loading_maps.c	/^int	check_player(t_cub *cub, int i, int j, int nb_l)$/;"	f	typeref:typename:int
+check_wall	srcs/parsing/loading_maps.c	/^int	check_wall(char **maps, int i, int j, int nb_l)$/;"	f	typeref:typename:int
+clean	Makefile	/^clean :$/;"	t
+clean	libft/Makefile	/^clean:$/;"	t
+clean	minilibx-linux/Makefile	/^clean	:$/;"	t
+clean	minilibx-linux/Makefile.mk	/^clean	:$/;"	t
+clean	minilibx-linux/configure	/^clean(){$/;"	f
+clean	minilibx-linux/test/Makefile.mk	/^clean:$/;"	t
+clean	minilibx_linux/Makefile	/^clean	:$/;"	t
+clean	minilibx_linux/Makefile.mk	/^clean	:$/;"	t
+clean	minilibx_linux/configure	/^clean(){$/;"	f
+clean	minilibx_linux/test/Makefile.mk	/^clean:$/;"	t
+clean	minilibx_opengl/Makefile	/^clean:$/;"	t
+clean	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^clean:$/;"	t
+clearWin	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+clearWin	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+closeNotification:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) closeNotification:(NSNotification *)note;$/;"	m	interface:NSWindowEvent
+closeNotification:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+closeNotification:	minilibx_opengl/mlx_new_window.h	/^- (void) closeNotification:(NSNotification *)note;$/;"	m	interface:NSWindowEvent
+closeNotification:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+cmap	minilibx-linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar	typeref:typename:Colormap
+cmap	minilibx_linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar	typeref:typename:Colormap
+col	minilibx-linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col	typeref:typename:int
+col	minilibx_linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col	typeref:typename:int
+col	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^  int           col;$/;"	m	struct:s_xpm_col	typeref:typename:int	file:
+col	minilibx_opengl/mlx_xpm.c	/^  int           col;$/;"	m	struct:s_xpm_col	typeref:typename:int	file:
+color	includes/cub3d.h	/^	void		*color[2];$/;"	m	struct:s_cub	typeref:typename:void * [2]
+color	minilibx-linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename:int
+color	minilibx_linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename:int
+color	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  int		color;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+color	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^  int   color;$/;"	m	struct:s_col_name	typeref:typename:int	file:
+color	minilibx_opengl/mlx_png.c	/^  int		color;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+color	minilibx_opengl/mlx_xpm.c	/^  int   color;$/;"	m	struct:s_col_name	typeref:typename:int	file:
+color_map_1	minilibx-linux/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
+color_map_1	minilibx_linux/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
+color_map_2	minilibx-linux/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
+color_map_2	minilibx_linux/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
+command	.vscode/tasks.json	/^            "command": "\/usr\/bin\/clang-12",$/;"	s	object:tasks.0
+configurations	.vscode/launch.json	/^	"configurations": []$/;"	a
+content	libft/includes/libft.h	/^	void			*content;$/;"	m	struct:s_list	typeref:typename:void *
+content	libft/includes/printf.h	/^	char	*content;$/;"	m	struct:s_flags	typeref:typename:char *
+crc_table	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned long crc_table[256] = { 0, 0x77073096, 0xee0e612c, 0x990951ba, 0x76dc419, 0x706af48f, 0/;"	v	typeref:typename:unsigned long[256]
+crc_table	minilibx_opengl/mlx_png.c	/^unsigned long crc_table[256] = { 0, 0x77073096, 0xee0e612c, 0x990951ba, 0x76dc419, 0x706af48f, 0/;"	v	typeref:typename:unsigned long[256]
+ctx	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  NSOpenGLContext	*ctx;$/;"	E	interface:MlxWin
+ctx	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (NSOpenGLContext *) ctx;$/;"	m	interface:MlxWin
+ctx	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+ctx	minilibx_opengl/mlx_new_window.h	/^  NSOpenGLContext	*ctx;$/;"	E	interface:MlxWin
+ctx	minilibx_opengl/mlx_new_window.h	/^- (NSOpenGLContext *) ctx;$/;"	m	interface:MlxWin
+ctx	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+ctxNeedsUpdate	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) ctxNeedsUpdate;$/;"	m	interface:MlxWin
+ctxNeedsUpdate	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+ctxNeedsUpdate	minilibx_opengl/mlx_new_window.h	/^- (void) ctxNeedsUpdate;$/;"	m	interface:MlxWin
+ctxNeedsUpdate	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+cwd	.vscode/tasks.json	/^                "cwd": "${fileDirname}"$/;"	s	object:tasks.0.options
+data	minilibx-linux/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img	typeref:typename:char *
+data	minilibx_linux/mlx_int.h	/^	char			*data;$/;"	m	struct:s_img	typeref:typename:char *
+data1	minilibx-linux/test/main.c	/^char	*data1;$/;"	v	typeref:typename:char *
+data1	minilibx_linux/test/main.c	/^char	*data1;$/;"	v	typeref:typename:char *
+data2	minilibx-linux/test/main.c	/^char	*data2;$/;"	v	typeref:typename:char *
+data2	minilibx_linux/test/main.c	/^char	*data2;$/;"	v	typeref:typename:char *
+data3	minilibx-linux/test/main.c	/^char	*data3;$/;"	v	typeref:typename:char *
+data3	minilibx_linux/test/main.c	/^char	*data3;$/;"	v	typeref:typename:char *
+data4	minilibx-linux/test/main.c	/^char	*data4;$/;"	v	typeref:typename:char *
+data4	minilibx_linux/test/main.c	/^char	*data4;$/;"	v	typeref:typename:char *
+debug	Makefile	/^debug: $/;"	t
+decrgb	minilibx-linux/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typename:int[6]
+decrgb	minilibx_linux/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typename:int[6]
+deminiaturizeNotification:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+deminiaturizeNotification:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+depth	minilibx-linux/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:int
+depth	minilibx_linux/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:int
+depth	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  int		depth;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+depth	minilibx_opengl/mlx_png.c	/^  int		depth;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+destroyMe	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+destroyMe	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+destroyPixelManagement	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+destroyPixelManagement	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+destroy_cub_data	srcs/parsing/parsing.c	/^void	destroy_cub_data(t_cub *cub)$/;"	f	typeref:typename:void
+detail	.vscode/tasks.json	/^            "detail": "Task generated by Debugger."$/;"	s	object:tasks.0
+dir	includes/cub3d.h	/^	char	dir;$/;"	m	struct:s_player	typeref:typename:char
+display	minilibx-linux/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
+display	minilibx_linux/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
+display_log	minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c	/^void display_log(GLuint object, void (*param_func)(), void (*getlog_func)())$/;"	f	typeref:typename:void
+display_log	minilibx_opengl/mlx_shaders.c	/^void display_log(GLuint object, void (*param_func)(), void (*getlog_func)())$/;"	f	typeref:typename:void
+do_configure	minilibx-linux/Makefile	/^do_configure	:$/;"	t
+do_configure	minilibx_linux/Makefile	/^do_configure	:$/;"	t
+do_flush	minilibx-linux/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
+do_flush	minilibx_linux/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
+do_loop_flush	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void do_loop_flush(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void * info)$/;"	f
+do_loop_flush	minilibx_opengl/mlx_init_loop.m	/^void do_loop_flush(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void * info)$/;"	f
+do_loop_hook2	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void	do_loop_hook2(CFRunLoopTimerRef observer, void * info)$/;"	f
+do_loop_hook2	minilibx_opengl/mlx_init_loop.m	/^void	do_loop_hook2(CFRunLoopTimerRef observer, void * info)$/;"	f
+dot	libft/includes/printf.h	/^	int		dot;$/;"	m	struct:s_flags	typeref:typename:int
+end_loop	minilibx-linux/mlx_int.h	/^	int 		end_loop;$/;"	m	struct:s_xvar	typeref:typename:int
+end_loop	minilibx_linux/mlx_int.h	/^	int 		end_loop;$/;"	m	struct:s_xvar	typeref:typename:int
+endian1	minilibx-linux/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
+endian1	minilibx_linux/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
+endian2	minilibx-linux/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
+endian2	minilibx_linux/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
+endian3	minilibx-linux/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
+endian3	minilibx_linux/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
+endian4	minilibx-linux/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
+endian4	minilibx_linux/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
+event_funct	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  func_t	event_funct[MAX_EVENT];$/;"	E	interface:NSWindowEvent
+event_funct	minilibx_opengl/mlx_new_window.h	/^  func_t	event_funct[MAX_EVENT];$/;"	E	interface:NSWindowEvent
+exposeNotification:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) exposeNotification:(NSNotification *)note;$/;"	m	interface:NSWindowEvent
+exposeNotification:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+exposeNotification:	minilibx_opengl/mlx_new_window.h	/^- (void) exposeNotification:(NSNotification *)note;$/;"	m	interface:NSWindowEvent
+exposeNotification:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+expose_hook	minilibx-linux/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+expose_hook	minilibx_linux/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+expose_param	minilibx-linux/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+expose_param	minilibx_linux/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+expose_win1	minilibx-linux/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
+expose_win1	minilibx_linux/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
+expose_win2	minilibx-linux/test/main.c	/^int	expose_win2(void *p)$/;"	f	typeref:typename:int
+expose_win2	minilibx_linux/test/main.c	/^int	expose_win2(void *p)$/;"	f	typeref:typename:int
+fclean	Makefile	/^fclean : clean$/;"	t
+fclean	libft/Makefile	/^fclean: clean$/;"	t
+find_nl	libft/gnl/get_next_line.c	/^ char        *find_nl(char *str) $/;"	f	typeref:typename:char *
+flagsChanged:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+flagsChanged:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+flushGLContext	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) flushGLContext;$/;"	m	interface:MlxWin
+flushGLContext	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+flushGLContext	minilibx_opengl/mlx_new_window.h	/^- (void) flushGLContext;$/;"	m	interface:MlxWin
+flushGLContext	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+font	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_img_list_t *
+font	minilibx_opengl/mlx_int.h	/^  mlx_img_list_t	*font;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_img_list_t *
+font_atlas	minilibx_opengl/font.c	/^} font_atlas = {$/;"	v	typeref:typename:const struct __anon53211bbc0108
+font_atlas	minilibx_opengl/minilibx_opengl_20191021/font.c	/^} font_atlas = {$/;"	v	typeref:typename:const struct __anondfb1f73a0108
+font_fshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+font_fshader	minilibx_opengl/mlx_int.h	/^  GLuint	font_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+font_program	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	font_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+font_program	minilibx_opengl/mlx_int.h	/^  GLuint	font_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+font_vshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	font_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+font_vshader	minilibx_opengl/mlx_int.h	/^  GLuint	font_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+format	minilibx-linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
+format	minilibx_linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
+free_split	libft/string/ft_free_split.c	/^void	free_split(char **split)$/;"	f	typeref:typename:void
+ft_get_line	libft/gnl/get_next_line_utils.c	/^char	*ft_get_line(char *str)$/;"	f	typeref:typename:char *
+ft_save_memory	libft/gnl/get_next_line_utils.c	/^char	*ft_save_memory(char *str)$/;"	f	typeref:typename:char *
+ft_size_line	libft/gnl/get_next_line_utils.c	/^int	ft_size_line(char *str)$/;"	f	typeref:typename:int
+ft_strdup	libft/gnl/get_next_line_utils.c	/^char	*ft_strdup(char *src)$/;"	f	typeref:typename:char *
+ft_strlen	libft/gnl/get_next_line_utils.c	/^int	ft_strlen(char *str)$/;"	f	typeref:typename:int
+func_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef int (*func_t)();$/;"	t	typeref:typename:int (*)()
+func_t	minilibx_opengl/mlx_int.h	/^typedef int (*func_t)();$/;"	t	typeref:typename:int (*)()
+gc	minilibx-linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
+gc	minilibx-linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
+gc	minilibx_linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
+gc	minilibx_linux/mlx_int.h	/^	GC				gc;$/;"	m	struct:s_img	typeref:typename:GC
+gere_mouse	minilibx-linux/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f	typeref:typename:int
+gere_mouse	minilibx_linux/test/new_win.c	/^int gere_mouse(int x,int y,int button,void*toto)$/;"	f	typeref:typename:int
+get_info	srcs/parsing/parsing.c	/^void	get_info(t_list *input, t_cub *cub)$/;"	f	typeref:typename:void
+get_input	srcs/parsing/parsing.c	/^t_list	*get_input(char **av)$/;"	f	typeref:typename:t_list *
+get_mouse_button	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^int get_mouse_button(NSEventType eventtype)$/;"	f
+get_mouse_button	minilibx_opengl/mlx_new_window.m	/^int get_mouse_button(NSEventType eventtype)$/;"	f
+get_xlib_include_path	minilibx-linux/configure	/^get_xlib_include_path(){$/;"	f
+get_xlib_include_path	minilibx_linux/configure	/^get_xlib_include_path(){$/;"	f
+glsl	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  glsl_info_t		glsl;$/;"	E	interface:MlxWin
+glsl	minilibx_opengl/mlx_new_window.h	/^  glsl_info_t		glsl;$/;"	E	interface:MlxWin
+glsl_info_s	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef struct	glsl_info_s$/;"	s
+glsl_info_s	minilibx_opengl/mlx_int.h	/^typedef struct	glsl_info_s$/;"	s
+glsl_info_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^} glsl_info_t;$/;"	t	typeref:struct:glsl_info_s
+glsl_info_t	minilibx_opengl/mlx_int.h	/^} glsl_info_t;$/;"	t	typeref:struct:glsl_info_s
+group	.vscode/tasks.json	/^            "group": {$/;"	o	object:tasks.0
+hash	libft/includes/printf.h	/^	int		hash;$/;"	m	struct:s_flags	typeref:typename:int
+height	minilibx-linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
+height	minilibx_linux/mlx_int.h	/^	int				height;$/;"	m	struct:s_img	typeref:typename:int
+height	minilibx_opengl/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anon53211bbc0108	typeref:typename:unsigned int	file:
+height	minilibx_opengl/minilibx_opengl_20191021/font.c	/^  unsigned int 	 height;$/;"	m	struct:__anondfb1f73a0108	typeref:typename:unsigned int	file:
+height	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  int			height;$/;"	m	struct:mlx_img_list_s	typeref:typename:int
+height	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  unsigned int	height;$/;"	m	struct:png_info_s	typeref:typename:unsigned int	file:
+height	minilibx_opengl/mlx_int.h	/^  int			height;$/;"	m	struct:mlx_img_list_s	typeref:typename:int
+height	minilibx_opengl/mlx_png.c	/^  unsigned int	height;$/;"	m	struct:png_info_s	typeref:typename:unsigned int	file:
+hook	minilibx-linux/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
+hook	minilibx_linux/mlx_int.h	/^	int		(*hook)();$/;"	m	struct:s_event_list	typeref:typename:int (*)()
+hooks	minilibx-linux/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
+hooks	minilibx_linux/mlx_int.h	/^	t_event_list		hooks[MLX_MAX_EVENT];$/;"	m	struct:s_win_list	typeref:typename:t_event_list[]
+i	includes/cub3d.h	/^	int		i;$/;"	m	struct:s_player	typeref:typename:int
+im1	minilibx-linux/test/main.c	/^void    *im1;$/;"	v	typeref:typename:void *
+im1	minilibx_linux/test/main.c	/^void    *im1;$/;"	v	typeref:typename:void *
+im2	minilibx-linux/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
+im2	minilibx_linux/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
+im3	minilibx-linux/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
+im3	minilibx_linux/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
+im4	minilibx-linux/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
+im4	minilibx_linux/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
+image	minilibx-linux/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
+image	minilibx_linux/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
+image_fshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	image_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+image_fshader	minilibx_opengl/mlx_int.h	/^  GLuint	image_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+image_program	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	image_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+image_program	minilibx_opengl/mlx_int.h	/^  GLuint	image_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+image_vshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	image_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+image_vshader	minilibx_opengl/mlx_int.h	/^  GLuint	image_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+img	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  mlx_img_list_t	*img;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:mlx_img_list_t *
+img	minilibx_opengl/mlx_int.h	/^  mlx_img_list_t	*img;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:mlx_img_list_t *
+img_list	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  mlx_img_ctx_t		*img_list;$/;"	m	struct:mlx_win_list_s	typeref:typename:mlx_img_ctx_t *
+img_list	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  mlx_img_list_t	*img_list;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_img_list_t *
+img_list	minilibx_opengl/mlx_int.h	/^  mlx_img_ctx_t		*img_list;$/;"	m	struct:mlx_win_list_s	typeref:typename:mlx_img_ctx_t *
+img_list	minilibx_opengl/mlx_int.h	/^  mlx_img_list_t	*img_list;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_img_list_t *
+initWithContentRect:styleMask:backing:defer:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (NSWindowEvent *) initWithContentRect:(NSRect)rect styleMask:(NSUInteger)winstyle backing:(NSB/;"	m	interface:NSWindowEvent
+initWithContentRect:styleMask:backing:defer:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+initWithContentRect:styleMask:backing:defer:	minilibx_opengl/mlx_new_window.h	/^- (NSWindowEvent *) initWithContentRect:(NSRect)rect styleMask:(NSUInteger)winstyle backing:(NSB/;"	m	interface:NSWindowEvent
+initWithContentRect:styleMask:backing:defer:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+initWithRect:andTitle:pfaAttrs:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (id) initWithRect: (NSRect)rect andTitle: (NSString *)title pfaAttrs: (NSOpenGLPixelFormatAttr/;"	m	interface:MlxWin
+initWithRect:andTitle:pfaAttrs:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+initWithRect:andTitle:pfaAttrs:	minilibx_opengl/mlx_new_window.h	/^- (id) initWithRect: (NSRect)rect andTitle: (NSString *)title pfaAttrs: (NSOpenGLPixelFormatAttr/;"	m	interface:MlxWin
+initWithRect:andTitle:pfaAttrs:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+input	includes/cub3d.h	/^	t_list		*input;$/;"	m	struct:s_cub	typeref:typename:t_list *
+interlace	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+interlace	minilibx_opengl/mlx_png.c	/^  int		interlace;$/;"	m	struct:png_info_s	typeref:typename:int	file:
+isDefault	.vscode/tasks.json	/^                "isDefault": true$/;"	b	object:tasks.0.group
+j	includes/cub3d.h	/^	int		j;$/;"	m	struct:s_player	typeref:typename:int
+keyDown:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+keyDown:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+keyUp:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+keyUp:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+key_hook	minilibx-linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+key_hook	minilibx_linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+key_param	minilibx-linux/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+key_param	minilibx_linux/mlx_int.h	/^	void				*key_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+key_win1	minilibx-linux/test/main.c	/^int	key_win1(int key,void *p)$/;"	f	typeref:typename:int
+key_win1	minilibx_linux/test/main.c	/^int	key_win1(int key,void *p)$/;"	f	typeref:typename:int
+key_win2	minilibx-linux/test/main.c	/^int	key_win2(int key,void *p)$/;"	f	typeref:typename:int
+key_win2	minilibx_linux/test/main.c	/^int	key_win2(int key,void *p)$/;"	f	typeref:typename:int
+key_win3	minilibx-linux/test/main.c	/^int	key_win3(int key,void *p)$/;"	f	typeref:typename:int
+key_win3	minilibx_linux/test/main.c	/^int	key_win3(int key,void *p)$/;"	f	typeref:typename:int
+keyflag	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int		keyflag;$/;"	E	interface:NSWindowEvent
+keyflag	minilibx_opengl/mlx_new_window.h	/^  int		keyflag;$/;"	E	interface:NSWindowEvent
+keyrepeat	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int		keyrepeat;$/;"	E	interface:NSWindowEvent
+keyrepeat	minilibx_opengl/mlx_new_window.h	/^  int		keyrepeat;$/;"	E	interface:NSWindowEvent
+kind	.vscode/tasks.json	/^                "kind": "build",$/;"	s	object:tasks.0.group
+label	.vscode/tasks.json	/^            "label": "C\/C++: clang-12 build active file",$/;"	s	object:tasks.0
+load_info	srcs/parsing/parsing.c	/^int	load_info(char **ret, t_cub *cub)$/;"	f	typeref:typename:int
+load_input	libft/gnl/get_next_line.c	/^ int        load_input(int fd, char **line, char *buf, int buffer_size) $/;"	f	typeref:typename:int
+load_maps	srcs/parsing/loading_maps.c	/^int	load_maps(t_list *input, t_cub *cub)$/;"	f	typeref:typename:int
+loc_font_atlassize	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_atlassize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_atlassize	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_atlassize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_color	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_color;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_color	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_color;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_posinatlas	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_posinatlas;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_posinatlas	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_posinatlas;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_posinwin	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_posinwin;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_posinwin	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_posinwin;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_position	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_position	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_texture	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_texture	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_winhalfsize	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_font_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_font_winhalfsize	minilibx_opengl/mlx_int.h	/^  GLint		loc_font_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_pos	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_image_pos;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_pos	minilibx_opengl/mlx_int.h	/^  GLint		loc_image_pos;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_position	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_image_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_position	minilibx_opengl/mlx_int.h	/^  GLint		loc_image_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_size	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_image_size;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_size	minilibx_opengl/mlx_int.h	/^  GLint		loc_image_size;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_texture	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_image_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_texture	minilibx_opengl/mlx_int.h	/^  GLint		loc_image_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_winhalfsize	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_image_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_image_winhalfsize	minilibx_opengl/mlx_int.h	/^  GLint		loc_image_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_position	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_pixel_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_position	minilibx_opengl/mlx_int.h	/^  GLint		loc_pixel_position;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_texture	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_pixel_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_texture	minilibx_opengl/mlx_int.h	/^  GLint		loc_pixel_texture;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_winhalfsize	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLint		loc_pixel_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+loc_pixel_winhalfsize	minilibx_opengl/mlx_int.h	/^  GLint		loc_pixel_winhalfsize;$/;"	m	struct:glsl_info_s	typeref:typename:GLint
+local_endian	minilibx-linux/test/main.c	/^int	local_endian;$/;"	v	typeref:typename:int
+local_endian	minilibx_linux/test/main.c	/^int	local_endian;$/;"	v	typeref:typename:int
+log_error	minilibx-linux/configure	/^log_error(){$/;"	f
+log_error	minilibx-linux/test/run_tests.sh	/^log_error(){$/;"	f
+log_error	minilibx_linux/configure	/^log_error(){$/;"	f
+log_error	minilibx_linux/test/run_tests.sh	/^log_error(){$/;"	f
+log_info	minilibx-linux/configure	/^log_info(){$/;"	f
+log_info	minilibx-linux/test/run_tests.sh	/^log_info(){$/;"	f
+log_info	minilibx_linux/configure	/^log_info(){$/;"	f
+log_info	minilibx_linux/test/run_tests.sh	/^log_info(){$/;"	f
+logging	minilibx-linux/configure	/^logging(){$/;"	f
+logging	minilibx-linux/test/run_tests.sh	/^logging(){$/;"	f
+logging	minilibx_linux/configure	/^logging(){$/;"	f
+logging	minilibx_linux/test/run_tests.sh	/^logging(){$/;"	f
+loop_hook	minilibx-linux/mlx_int.h	/^	int			(*loop_hook)();$/;"	m	struct:s_xvar	typeref:typename:int (*)()
+loop_hook	minilibx_linux/mlx_int.h	/^	int			(*loop_hook)();$/;"	m	struct:s_xvar	typeref:typename:int (*)()
+loop_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  void			(*loop_hook)(void *);$/;"	m	struct:mlx_ptr_s	typeref:typename:void (*)(void *)
+loop_hook	minilibx_opengl/mlx_int.h	/^  void			(*loop_hook)(void *);$/;"	m	struct:mlx_ptr_s	typeref:typename:void (*)(void *)
+loop_hook_data	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  void			*loop_hook_data;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+loop_hook_data	minilibx_opengl/mlx_int.h	/^  void			*loop_hook_data;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+loop_param	minilibx-linux/mlx_int.h	/^	void		*loop_param;$/;"	m	struct:s_xvar	typeref:typename:void *
+loop_param	minilibx_linux/mlx_int.h	/^	void		*loop_param;$/;"	m	struct:s_xvar	typeref:typename:void *
+loop_timer	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  void			*loop_timer;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+loop_timer	minilibx_opengl/mlx_int.h	/^  void			*loop_timer;$/;"	m	struct:mlx_ptr_s	typeref:typename:void *
+magic	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char magic[PNG_MAGIC_SIZE] = {137, 80, 78, 71, 13, 10, 26, 10};$/;"	v	typeref:typename:unsigned char[]
+magic	minilibx_opengl/mlx_png.c	/^unsigned char magic[PNG_MAGIC_SIZE] = {137, 80, 78, 71, 13, 10, 26, 10};$/;"	v	typeref:typename:unsigned char[]
+main	minilibx-linux/configure	/^main(){$/;"	f
+main	minilibx-linux/test/main.c	/^int	main()$/;"	f	typeref:typename:int
+main	minilibx-linux/test/new_win.c	/^int main()$/;"	f	typeref:typename:int
+main	minilibx-linux/test/run_tests.sh	/^main(){$/;"	f
+main	minilibx_linux/configure	/^main(){$/;"	f
+main	minilibx_linux/test/main.c	/^int	main()$/;"	f	typeref:typename:int
+main	minilibx_linux/test/new_win.c	/^int main()$/;"	f	typeref:typename:int
+main	minilibx_linux/test/run_tests.sh	/^main(){$/;"	f
+main	srcs/main.c	/^int	main(int ac, char **av)$/;"	f	typeref:typename:int
+main_loop_active	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  int			main_loop_active;$/;"	m	struct:mlx_ptr_s	typeref:typename:int
+main_loop_active	minilibx_opengl/mlx_int.h	/^  int			main_loop_active;$/;"	m	struct:mlx_ptr_s	typeref:typename:int
+makefile.extensionOutputFolder	.vscode/settings.json	/^	"makefile.extensionOutputFolder": ".\/.vscode"$/;"	s
+maps	includes/cub3d.h	/^	char		**maps;$/;"	m	struct:s_cub	typeref:typename:char **
+mask	minilibx-linux/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
+mask	minilibx_linux/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
+minus	libft/includes/printf.h	/^	int		minus;$/;"	m	struct:s_flags	typeref:typename:int
+mipng_crc	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_crc(unsigned char *ptr, int len)$/;"	f	typeref:typename:int
+mipng_crc	minilibx_opengl/mlx_png.c	/^int	mipng_crc(unsigned char *ptr, int len)$/;"	f	typeref:typename:int
+mipng_data	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_data(mlx_img_list_t *img, unsigned char *dat, png_info_t *pi)$/;"	f	typeref:typename:int
+mipng_data	minilibx_opengl/mlx_png.c	/^int	mipng_data(mlx_img_list_t *img, unsigned char *dat, png_info_t *pi)$/;"	f	typeref:typename:int
+mipng_defilter	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char (*(mipng_defilter[]))(unsigned char *buff, int pos, int a, int b, int c) =$/;"	v	typeref:typename:unsigned char (* ([]))(unsigned char * buff,int pos,int a,int b,int c)
+mipng_defilter	minilibx_opengl/mlx_png.c	/^unsigned char (*(mipng_defilter[]))(unsigned char *buff, int pos, int a, int b, int c) =$/;"	v	typeref:typename:unsigned char (* ([]))(unsigned char * buff,int pos,int a,int b,int c)
+mipng_defilter_average	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char mipng_defilter_average(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_average	minilibx_opengl/mlx_png.c	/^unsigned char mipng_defilter_average(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_none	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char mipng_defilter_none(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_none	minilibx_opengl/mlx_png.c	/^unsigned char mipng_defilter_none(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_paeth	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char mipng_defilter_paeth(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_paeth	minilibx_opengl/mlx_png.c	/^unsigned char mipng_defilter_paeth(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_sub	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char mipng_defilter_sub(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_sub	minilibx_opengl/mlx_png.c	/^unsigned char mipng_defilter_sub(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_up	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^unsigned char mipng_defilter_up(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_defilter_up	minilibx_opengl/mlx_png.c	/^unsigned char mipng_defilter_up(unsigned char *buff, int pos, int a, int b, int c)$/;"	f	typeref:typename:unsigned char
+mipng_err	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^char *(mipng_err[]) =$/;"	v	typeref:typename:char * ([])
+mipng_err	minilibx_opengl/mlx_png.c	/^char *(mipng_err[]) =$/;"	v	typeref:typename:char * ([])
+mipng_fill_img	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_fill_img(mlx_img_list_t *img, unsigned char *buf, png_info_t *pi)$/;"	f	typeref:typename:int
+mipng_fill_img	minilibx_opengl/mlx_png.c	/^int	mipng_fill_img(mlx_img_list_t *img, unsigned char *buf, png_info_t *pi)$/;"	f	typeref:typename:int
+mipng_is_type	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_is_type(unsigned char *ptr, char *type)$/;"	f	typeref:typename:int
+mipng_is_type	minilibx_opengl/mlx_png.c	/^int	mipng_is_type(unsigned char *ptr, char *type)$/;"	f	typeref:typename:int
+mipng_magic	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_magic(unsigned char *ptr, int size)$/;"	f	typeref:typename:int
+mipng_magic	minilibx_opengl/mlx_png.c	/^int	mipng_magic(unsigned char *ptr, int size)$/;"	f	typeref:typename:int
+mipng_structure	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_structure(unsigned char *ptr, int size, unsigned char **hdr, unsigned char **dat)$/;"	f	typeref:typename:int
+mipng_structure	minilibx_opengl/mlx_png.c	/^int	mipng_structure(unsigned char *ptr, int size, unsigned char **hdr, unsigned char **dat)$/;"	f	typeref:typename:int
+mipng_verif_hdr	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^int	mipng_verif_hdr(unsigned char *hdr, png_info_t *pi)$/;"	f	typeref:typename:int
+mipng_verif_hdr	minilibx_opengl/mlx_png.c	/^int	mipng_verif_hdr(unsigned char *hdr, png_info_t *pi)$/;"	f	typeref:typename:int
+missing_info_cub	srcs/parsing/parsing.c	/^int	missing_info_cub(t_cub *cub)$/;"	f	typeref:typename:int
+mlx	minilibx-linux/test/main.c	/^void	*mlx;$/;"	v	typeref:typename:void *
+mlx	minilibx-linux/test/new_win.c	/^void *mlx;$/;"	v	typeref:typename:void *
+mlx	minilibx_linux/test/main.c	/^void	*mlx;$/;"	v	typeref:typename:void *
+mlx	minilibx_linux/test/new_win.c	/^void *mlx;$/;"	v	typeref:typename:void *
+mlx_X_error	minilibx-linux/mlx_new_image.c	/^int	mlx_X_error;$/;"	v	typeref:typename:int
+mlx_X_error	minilibx_linux/mlx_new_image.c	/^int	mlx_X_error;$/;"	v	typeref:typename:int
+mlx_clear_window	minilibx-linux/mlx_clear_window.c	/^int		mlx_clear_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
+mlx_clear_window	minilibx_linux/mlx_clear_window.c	/^int		mlx_clear_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
+mlx_clear_window	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void mlx_clear_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr)$/;"	f
+mlx_clear_window	minilibx_opengl/mlx_new_window.m	/^void mlx_clear_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr)$/;"	f
+mlx_col_name	minilibx-linux/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
+mlx_col_name	minilibx_linux/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
+mlx_col_name	minilibx_opengl/minilibx_opengl_20191021/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
+mlx_col_name	minilibx_opengl/mlx_rgb.c	/^struct s_col_name mlx_col_name[] =$/;"	v	typeref:struct:s_col_name[]
+mlx_destroy_display	minilibx-linux/mlx_destroy_display.c	/^int	mlx_destroy_display(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_destroy_display	minilibx_linux/mlx_destroy_display.c	/^int	mlx_destroy_display(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_destroy_image	minilibx-linux/mlx_destroy_image.c	/^int	mlx_destroy_image(t_xvar *xvar, t_img *img)$/;"	f	typeref:typename:int
+mlx_destroy_image	minilibx_linux/mlx_destroy_image.c	/^int	mlx_destroy_image(t_xvar *xvar, t_img *img)$/;"	f	typeref:typename:int
+mlx_destroy_image	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^int     mlx_destroy_image(mlx_ptr_t *mlx_ptr, mlx_img_list_t *img_todel)$/;"	f
+mlx_destroy_image	minilibx_opengl/mlx_new_image.m	/^int     mlx_destroy_image(mlx_ptr_t *mlx_ptr, mlx_img_list_t *img_todel)$/;"	f
+mlx_destroy_window	minilibx-linux/mlx_destroy_window.c	/^int	mlx_destroy_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
+mlx_destroy_window	minilibx_linux/mlx_destroy_window.c	/^int	mlx_destroy_window(t_xvar *xvar,t_win_list *win)$/;"	f	typeref:typename:int
+mlx_destroy_window	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^int     mlx_destroy_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_to_del)$/;"	f
+mlx_destroy_window	minilibx_opengl/mlx_new_window.m	/^int     mlx_destroy_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_to_del)$/;"	f
+mlx_do_key_autorepeatoff	minilibx-linux/mlx_hook.c	/^int	mlx_do_key_autorepeatoff(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_key_autorepeatoff	minilibx_linux/mlx_hook.c	/^int	mlx_do_key_autorepeatoff(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_key_autorepeatoff	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^int     mlx_do_key_autorepeatoff(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_do_key_autorepeatoff	minilibx_opengl/mlx_new_window.m	/^int     mlx_do_key_autorepeatoff(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_do_key_autorepeaton	minilibx-linux/mlx_hook.c	/^int	mlx_do_key_autorepeaton(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_key_autorepeaton	minilibx_linux/mlx_hook.c	/^int	mlx_do_key_autorepeaton(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_key_autorepeaton	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^int     mlx_do_key_autorepeaton(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_do_key_autorepeaton	minilibx_opengl/mlx_new_window.m	/^int     mlx_do_key_autorepeaton(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_do_sync	minilibx-linux/mlx_hook.c	/^int	mlx_do_sync(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_sync	minilibx_linux/mlx_hook.c	/^int	mlx_do_sync(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_do_sync	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^int     mlx_do_sync(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_do_sync	minilibx_opengl/mlx_init_loop.m	/^int     mlx_do_sync(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_expose_hook	minilibx-linux/mlx_expose_hook.c	/^int		mlx_expose_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_expose_hook	minilibx_linux/mlx_expose_hook.c	/^int		mlx_expose_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_expose_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void mlx_expose_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_expose_hook	minilibx_opengl/mlx_new_window.m	/^void mlx_expose_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_ext_fullscreen	minilibx-linux/mlx_ext_randr.c	/^int			mlx_ext_fullscreen(t_xvar *xvar, t_win_list *win, int fullscreen)$/;"	f	typeref:typename:int
+mlx_ext_fullscreen	minilibx_linux/mlx_ext_randr.c	/^int			mlx_ext_fullscreen(t_xvar *xvar, t_win_list *win, int fullscreen)$/;"	f	typeref:typename:int
+mlx_flush_event	minilibx-linux/mlx_flush_event.c	/^int	mlx_flush_event(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_flush_event	minilibx_linux/mlx_flush_event.c	/^int	mlx_flush_event(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_get_color_value	minilibx-linux/mlx_get_color_value.c	/^int             mlx_get_color_value(t_xvar *xvar,int color)$/;"	f	typeref:typename:int
+mlx_get_color_value	minilibx_linux/mlx_get_color_value.c	/^int             mlx_get_color_value(t_xvar *xvar,int color)$/;"	f	typeref:typename:int
+mlx_get_color_value	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^unsigned int    mlx_get_color_value(mlx_ptr_t *mlx_ptr, int color)$/;"	f
+mlx_get_color_value	minilibx_opengl/mlx_new_image.m	/^unsigned int    mlx_get_color_value(mlx_ptr_t *mlx_ptr, int color)$/;"	f
+mlx_get_data_addr	minilibx-linux/mlx_get_data_addr.c	/^char	*mlx_get_data_addr(t_img *img,int *bits_per_pixel,$/;"	f	typeref:typename:char *
+mlx_get_data_addr	minilibx_linux/mlx_get_data_addr.c	/^char	*mlx_get_data_addr(t_img *img,int *bits_per_pixel,$/;"	f	typeref:typename:char *
+mlx_get_data_addr	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^char    *mlx_get_data_addr(mlx_img_list_t *img_ptr, int *bits_per_pixel, int *size_line, int *en/;"	f
+mlx_get_data_addr	minilibx_opengl/mlx_new_image.m	/^char    *mlx_get_data_addr(mlx_img_list_t *img_ptr, int *bits_per_pixel, int *size_line, int *en/;"	f
+mlx_get_screen_size	minilibx-linux/mlx_screen_size.c	/^int		mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey)$/;"	f	typeref:typename:int
+mlx_get_screen_size	minilibx_linux/mlx_screen_size.c	/^int		mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey)$/;"	f	typeref:typename:int
+mlx_gl_draw	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) mlx_gl_draw;$/;"	m	interface:MlxWin
+mlx_gl_draw	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_gl_draw	minilibx_opengl/mlx_new_window.h	/^- (void) mlx_gl_draw;$/;"	m	interface:MlxWin
+mlx_gl_draw	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_gl_draw_font:andCtx:andX:andY:andColor:glyphX:glyphY:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) mlx_gl_draw_font:(mlx_img_list_t *)img andCtx:(mlx_img_ctx_t *)imgctx andX:(int)x andY:/;"	m	interface:MlxWin
+mlx_gl_draw_font:andCtx:andX:andY:andColor:glyphX:glyphY:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_gl_draw_font:andCtx:andX:andY:andColor:glyphX:glyphY:	minilibx_opengl/mlx_new_window.h	/^- (void) mlx_gl_draw_font:(mlx_img_list_t *)img andCtx:(mlx_img_ctx_t *)imgctx andX:(int)x andY:/;"	m	interface:MlxWin
+mlx_gl_draw_font:andCtx:andX:andY:andColor:glyphX:glyphY:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_gl_draw_img:andCtx:andX:andY:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) mlx_gl_draw_img:(mlx_img_list_t *)img andCtx:(mlx_img_ctx_t *)imgctx andX:(int)x andY:(/;"	m	interface:MlxWin
+mlx_gl_draw_img:andCtx:andX:andY:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_gl_draw_img:andCtx:andX:andY:	minilibx_opengl/mlx_new_window.h	/^- (void) mlx_gl_draw_img:(mlx_img_list_t *)img andCtx:(mlx_img_ctx_t *)imgctx andX:(int)x andY:(/;"	m	interface:MlxWin
+mlx_gl_draw_img:andCtx:andX:andY:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+mlx_hook	minilibx-linux/mlx_hook.c	/^int	mlx_hook(t_win_list *win, int x_event, int x_mask, $/;"	f	typeref:typename:int
+mlx_hook	minilibx_linux/mlx_hook.c	/^int	mlx_hook(t_win_list *win, int x_event, int x_mask, $/;"	f	typeref:typename:int
+mlx_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*funct_ptr)(), void *param)$/;"	f
+mlx_hook	minilibx_opengl/mlx_new_window.m	/^void mlx_hook(mlx_win_list_t *win_ptr, int x_event, int x_mask, int (*funct_ptr)(), void *param)$/;"	f
+mlx_img_ctx_s	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef struct	mlx_img_ctx_s$/;"	s
+mlx_img_ctx_s	minilibx_opengl/mlx_int.h	/^typedef struct	mlx_img_ctx_s$/;"	s
+mlx_img_ctx_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^} mlx_img_ctx_t;$/;"	t	typeref:struct:mlx_img_ctx_s
+mlx_img_ctx_t	minilibx_opengl/mlx_int.h	/^} mlx_img_ctx_t;$/;"	t	typeref:struct:mlx_img_ctx_s
+mlx_img_list_s	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef struct	mlx_img_list_s$/;"	s
+mlx_img_list_s	minilibx_opengl/mlx_int.h	/^typedef struct	mlx_img_list_s$/;"	s
+mlx_img_list_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^} mlx_img_list_t;$/;"	t	typeref:struct:mlx_img_list_s
+mlx_img_list_t	minilibx_opengl/mlx_int.h	/^} mlx_img_list_t;$/;"	t	typeref:struct:mlx_img_list_s
+mlx_init	minilibx-linux/mlx_init.c	/^void	*mlx_init()$/;"	f	typeref:typename:void *
+mlx_init	minilibx_linux/mlx_init.c	/^void	*mlx_init()$/;"	f	typeref:typename:void *
+mlx_init	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void *mlx_init()$/;"	f
+mlx_init	minilibx_opengl/mlx_init_loop.m	/^void *mlx_init()$/;"	f
+mlx_int_anti_resize_win	minilibx-linux/mlx_int_anti_resize_win.c	/^int	mlx_int_anti_resize_win(t_xvar *xvar,Window win,int w,int h)$/;"	f	typeref:typename:int
+mlx_int_anti_resize_win	minilibx_linux/mlx_int_anti_resize_win.c	/^int	mlx_int_anti_resize_win(t_xvar *xvar,Window win,int w,int h)$/;"	f	typeref:typename:int
+mlx_int_deal_shm	minilibx-linux/mlx_init.c	/^int		mlx_int_deal_shm(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_deal_shm	minilibx_linux/mlx_init.c	/^int		mlx_int_deal_shm(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_do_nothing	minilibx-linux/mlx_int_do_nothing.c	/^int	mlx_int_do_nothing(void *param)$/;"	f	typeref:typename:int
+mlx_int_do_nothing	minilibx_linux/mlx_int_do_nothing.c	/^int	mlx_int_do_nothing(void *param)$/;"	f	typeref:typename:int
+mlx_int_egal_img	minilibx-linux/mlx_lib_xpm.c	/^int	mlx_int_egal_img(XImage *img1,XImage *img2)$/;"	f	typeref:typename:int
+mlx_int_egal_img	minilibx_linux/mlx_lib_xpm.c	/^int	mlx_int_egal_img(XImage *img1,XImage *img2)$/;"	f	typeref:typename:int
+mlx_int_file_get_rid_comment	minilibx-linux/mlx_xpm.c	/^int	mlx_int_file_get_rid_comment(char *ptr, int size)$/;"	f	typeref:typename:int
+mlx_int_file_get_rid_comment	minilibx_linux/mlx_xpm.c	/^int	mlx_int_file_get_rid_comment(char *ptr, int size)$/;"	f	typeref:typename:int
+mlx_int_file_get_rid_comment	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^void	mlx_int_file_get_rid_comment(char *ptr, int size)$/;"	f	typeref:typename:void
+mlx_int_file_get_rid_comment	minilibx_opengl/mlx_xpm.c	/^void	mlx_int_file_get_rid_comment(char *ptr, int size)$/;"	f	typeref:typename:void
+mlx_int_get_col_name	minilibx-linux/mlx_xpm.c	/^int	mlx_int_get_col_name(char *str,int size)$/;"	f	typeref:typename:int
+mlx_int_get_col_name	minilibx_linux/mlx_xpm.c	/^int	mlx_int_get_col_name(char *str,int size)$/;"	f	typeref:typename:int
+mlx_int_get_col_name	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^int	mlx_int_get_col_name(char *str,int size)$/;"	f	typeref:typename:int
+mlx_int_get_col_name	minilibx_opengl/mlx_xpm.c	/^int	mlx_int_get_col_name(char *str,int size)$/;"	f	typeref:typename:int
+mlx_int_get_good_color	minilibx-linux/mlx_get_color_value.c	/^int		mlx_int_get_good_color(t_xvar *xvar,int color)$/;"	f	typeref:typename:int
+mlx_int_get_good_color	minilibx_linux/mlx_get_color_value.c	/^int		mlx_int_get_good_color(t_xvar *xvar,int color)$/;"	f	typeref:typename:int
+mlx_int_get_line	minilibx-linux/mlx_xpm.c	/^char	*mlx_int_get_line(char *ptr,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_get_line	minilibx_linux/mlx_xpm.c	/^char	*mlx_int_get_line(char *ptr,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_get_line	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^char	*mlx_int_get_line(char *ptr,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_get_line	minilibx_opengl/mlx_xpm.c	/^char	*mlx_int_get_line(char *ptr,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_get_text_rgb	minilibx-linux/mlx_xpm.c	/^int	mlx_int_get_text_rgb(char *name, char *end)$/;"	f	typeref:typename:int
+mlx_int_get_text_rgb	minilibx_linux/mlx_xpm.c	/^int	mlx_int_get_text_rgb(char *name, char *end)$/;"	f	typeref:typename:int
+mlx_int_get_text_rgb	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^int	mlx_int_get_text_rgb(char *name, char *end)$/;"	f	typeref:typename:int
+mlx_int_get_text_rgb	minilibx_opengl/mlx_xpm.c	/^int	mlx_int_get_text_rgb(char *name, char *end)$/;"	f	typeref:typename:int
+mlx_int_get_visual	minilibx-linux/mlx_int_get_visual.c	/^int		mlx_int_get_visual(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_get_visual	minilibx_linux/mlx_int_get_visual.c	/^int		mlx_int_get_visual(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_loop_once	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void	mlx_int_loop_once()$/;"	f
+mlx_int_loop_once	minilibx_opengl/mlx_init_loop.m	/^void	mlx_int_loop_once()$/;"	f
+mlx_int_new_image	minilibx-linux/mlx_new_image.c	/^void	*mlx_int_new_image(t_xvar *xvar,int width, int height,int format)$/;"	f	typeref:typename:void *
+mlx_int_new_image	minilibx_linux/mlx_new_image.c	/^void	*mlx_int_new_image(t_xvar *xvar,int width, int height,int format)$/;"	f	typeref:typename:void *
+mlx_int_new_xshm_image	minilibx-linux/mlx_new_image.c	/^void	*mlx_int_new_xshm_image(t_xvar *xvar,int width,int height,int format)$/;"	f	typeref:typename:void *
+mlx_int_new_xshm_image	minilibx_linux/mlx_new_image.c	/^void	*mlx_int_new_xshm_image(t_xvar *xvar,int width,int height,int format)$/;"	f	typeref:typename:void *
+mlx_int_param_ButtonPress	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_ButtonPress(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_ButtonPress	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_ButtonPress(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_ButtonRelease	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_ButtonRelease(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_ButtonRelease	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_ButtonRelease(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_Expose	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_Expose(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_Expose	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_Expose(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_KeyPress	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_KeyPress(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_KeyPress	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_KeyPress(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_KeyRelease	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_KeyRelease(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_KeyRelease	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_KeyRelease(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_MotionNotify	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_MotionNotify(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_MotionNotify	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_MotionNotify(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_event	minilibx-linux/mlx_int_param_event.c	/^int	(*(mlx_int_param_event[]))() =$/;"	v	typeref:typename:int (* ([]))()
+mlx_int_param_event	minilibx_linux/mlx_int_param_event.c	/^int	(*(mlx_int_param_event[]))() =$/;"	v	typeref:typename:int (* ([]))()
+mlx_int_param_generic	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_generic(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_generic	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_generic(t_xvar *xvar, XEvent *ev, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_int_param_undef	minilibx-linux/mlx_int_param_event.c	/^int	mlx_int_param_undef()$/;"	f	typeref:typename:int
+mlx_int_param_undef	minilibx_linux/mlx_int_param_event.c	/^int	mlx_int_param_undef()$/;"	f	typeref:typename:int
+mlx_int_parse_png	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^mlx_img_list_t	*mlx_int_parse_png(mlx_ptr_t *xvar, unsigned char *fptr, int size)$/;"	f	typeref:typename:mlx_img_list_t *
+mlx_int_parse_png	minilibx_opengl/mlx_png.c	/^mlx_img_list_t	*mlx_int_parse_png(mlx_ptr_t *xvar, unsigned char *fptr, int size)$/;"	f	typeref:typename:mlx_img_list_t *
+mlx_int_parse_xpm	minilibx-linux/mlx_xpm.c	/^void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())$/;"	f	typeref:typename:void *
+mlx_int_parse_xpm	minilibx_linux/mlx_xpm.c	/^void	*mlx_int_parse_xpm(t_xvar *xvar,void *info,int info_size,char *(*f)())$/;"	f	typeref:typename:void *
+mlx_int_parse_xpm	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^void	*mlx_int_parse_xpm(mlx_ptr_t *xvar,void *info,int info_size,char *(*f)())$/;"	f	typeref:typename:void *
+mlx_int_parse_xpm	minilibx_opengl/mlx_xpm.c	/^void	*mlx_int_parse_xpm(mlx_ptr_t *xvar,void *info,int info_size,char *(*f)())$/;"	f	typeref:typename:void *
+mlx_int_rgb_conversion	minilibx-linux/mlx_init.c	/^int		mlx_int_rgb_conversion(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_rgb_conversion	minilibx_linux/mlx_init.c	/^int		mlx_int_rgb_conversion(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_set_win_event_mask	minilibx-linux/mlx_int_set_win_event_mask.c	/^int	mlx_int_set_win_event_mask(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_set_win_event_mask	minilibx_linux/mlx_int_set_win_event_mask.c	/^int	mlx_int_set_win_event_mask(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_int_static_line	minilibx-linux/mlx_xpm.c	/^char	*mlx_int_static_line(char **xpm_data,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_static_line	minilibx_linux/mlx_xpm.c	/^char	*mlx_int_static_line(char **xpm_data,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_static_line	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^char	*mlx_int_static_line(char **xpm_data,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_static_line	minilibx_opengl/mlx_xpm.c	/^char	*mlx_int_static_line(char **xpm_data,int *pos,int size)$/;"	f	typeref:typename:char *
+mlx_int_str_str	minilibx-linux/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str	minilibx_linux/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str	minilibx_opengl/minilibx_opengl_20191021/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str	minilibx_opengl/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str_cote	minilibx-linux/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str_cote(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str_cote	minilibx_linux/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str_cote(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str_cote	minilibx_opengl/minilibx_opengl_20191021/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str_cote(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_str_cote	minilibx_opengl/mlx_int_str_to_wordtab.c	/^int	mlx_int_str_str_cote(char *str,char *find,int len)$/;"	f	typeref:typename:int
+mlx_int_str_to_wordtab	minilibx-linux/mlx_int_str_to_wordtab.c	/^char	**mlx_int_str_to_wordtab(char *str)$/;"	f	typeref:typename:char **
+mlx_int_str_to_wordtab	minilibx_linux/mlx_int_str_to_wordtab.c	/^char	**mlx_int_str_to_wordtab(char *str)$/;"	f	typeref:typename:char **
+mlx_int_str_to_wordtab	minilibx_opengl/minilibx_opengl_20191021/mlx_int_str_to_wordtab.c	/^char	**mlx_int_str_to_wordtab(char *str)$/;"	f	typeref:typename:char **
+mlx_int_str_to_wordtab	minilibx_opengl/mlx_int_str_to_wordtab.c	/^char	**mlx_int_str_to_wordtab(char *str)$/;"	f	typeref:typename:char **
+mlx_int_wait_first_expose	minilibx-linux/mlx_int_wait_first_expose.c	/^int	mlx_int_wait_first_expose(t_xvar *xvar,Window win)$/;"	f	typeref:typename:int
+mlx_int_wait_first_expose	minilibx_linux/mlx_int_wait_first_expose.c	/^int	mlx_int_wait_first_expose(t_xvar *xvar,Window win)$/;"	f	typeref:typename:int
+mlx_int_xpm_f_image	minilibx-linux/mlx_lib_xpm.c	/^void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,$/;"	f	typeref:typename:void *
+mlx_int_xpm_f_image	minilibx_linux/mlx_lib_xpm.c	/^void		*mlx_int_xpm_f_image(t_xvar *xvar,int *width,int *height,$/;"	f	typeref:typename:void *
+mlx_int_xpm_set_pixel	minilibx-linux/mlx_xpm.c	/^int	mlx_int_xpm_set_pixel(t_img *img, char *data, int opp, int col, int x)$/;"	f	typeref:typename:int
+mlx_int_xpm_set_pixel	minilibx_linux/mlx_xpm.c	/^int	mlx_int_xpm_set_pixel(t_img *img, char *data, int opp, int col, int x)$/;"	f	typeref:typename:int
+mlx_int_xpm_set_pixel	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^void	mlx_int_xpm_set_pixel(mlx_img_list_t *img, char *data, int opp, int col, int x)$/;"	f	typeref:typename:void
+mlx_int_xpm_set_pixel	minilibx_opengl/mlx_xpm.c	/^void	mlx_int_xpm_set_pixel(mlx_img_list_t *img, char *data, int opp, int col, int x)$/;"	f	typeref:typename:void
+mlx_key_hook	minilibx-linux/mlx_key_hook.c	/^int		mlx_key_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_key_hook	minilibx_linux/mlx_key_hook.c	/^int		mlx_key_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_key_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void mlx_key_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_key_hook	minilibx_opengl/mlx_new_window.m	/^void mlx_key_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_loop	minilibx-linux/mlx_loop.c	/^int			mlx_loop(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_loop	minilibx_linux/mlx_loop.c	/^int			mlx_loop(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_loop	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void mlx_loop(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_loop	minilibx_opengl/mlx_init_loop.m	/^void mlx_loop(mlx_ptr_t *mlx_ptr)$/;"	f
+mlx_loop_end	minilibx-linux/mlx_loop.c	/^int			mlx_loop_end(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_loop_end	minilibx_linux/mlx_loop.c	/^int			mlx_loop_end(t_xvar *xvar)$/;"	f	typeref:typename:int
+mlx_loop_hook	minilibx-linux/mlx_loop_hook.c	/^int	mlx_loop_hook(t_xvar *xvar,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_loop_hook	minilibx_linux/mlx_loop_hook.c	/^int	mlx_loop_hook(t_xvar *xvar,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_loop_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^int mlx_loop_hook(mlx_ptr_t *mlx_ptr, void (*fct)(void *), void *param)$/;"	f
+mlx_loop_hook	minilibx_opengl/mlx_init_loop.m	/^int mlx_loop_hook(mlx_ptr_t *mlx_ptr, void (*fct)(void *), void *param)$/;"	f
+mlx_mouse_get_pos	minilibx-linux/mlx_mouse.c	/^int		mlx_mouse_get_pos(t_xvar *xvar, t_win_list *win, \\$/;"	f	typeref:typename:int
+mlx_mouse_get_pos	minilibx_linux/mlx_mouse.c	/^int		mlx_mouse_get_pos(t_xvar *xvar, t_win_list *win, \\$/;"	f	typeref:typename:int
+mlx_mouse_get_pos	minilibx_opengl/minilibx_opengl_20191021/mlx_mouse.m	/^int	mlx_mouse_get_pos(mlx_win_list_t *win, int *x, int *y)$/;"	f
+mlx_mouse_get_pos	minilibx_opengl/mlx_mouse.m	/^int	mlx_mouse_get_pos(mlx_win_list_t *win, int *x, int *y)$/;"	f
+mlx_mouse_hide	minilibx-linux/mlx_mouse.c	/^int		mlx_mouse_hide(t_xvar *xvar, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_mouse_hide	minilibx_linux/mlx_mouse.c	/^int		mlx_mouse_hide(t_xvar *xvar, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_mouse_hide	minilibx_opengl/minilibx_opengl_20191021/mlx_mouse.m	/^int	mlx_mouse_hide()$/;"	f
+mlx_mouse_hide	minilibx_opengl/mlx_mouse.m	/^int	mlx_mouse_hide()$/;"	f
+mlx_mouse_hook	minilibx-linux/mlx_mouse_hook.c	/^int		mlx_mouse_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_mouse_hook	minilibx_linux/mlx_mouse_hook.c	/^int		mlx_mouse_hook(t_win_list *win,int (*funct)(),void *param)$/;"	f	typeref:typename:int
+mlx_mouse_hook	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void mlx_mouse_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_mouse_hook	minilibx_opengl/mlx_new_window.m	/^void mlx_mouse_hook(mlx_win_list_t *win_ptr, int (*funct_ptr)(), void *param)$/;"	f
+mlx_mouse_move	minilibx-linux/mlx_mouse.c	/^int		mlx_mouse_move(t_xvar *xvar, t_win_list *win, int x, int y)$/;"	f	typeref:typename:int
+mlx_mouse_move	minilibx_linux/mlx_mouse.c	/^int		mlx_mouse_move(t_xvar *xvar, t_win_list *win, int x, int y)$/;"	f	typeref:typename:int
+mlx_mouse_move	minilibx_opengl/minilibx_opengl_20191021/mlx_mouse.m	/^int	mlx_mouse_move(mlx_win_list_t *win, int x, int y)$/;"	f
+mlx_mouse_move	minilibx_opengl/mlx_mouse.m	/^int	mlx_mouse_move(mlx_win_list_t *win, int x, int y)$/;"	f
+mlx_mouse_show	minilibx-linux/mlx_mouse.c	/^int		mlx_mouse_show(t_xvar *xvar, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_mouse_show	minilibx_linux/mlx_mouse.c	/^int		mlx_mouse_show(t_xvar *xvar, t_win_list *win)$/;"	f	typeref:typename:int
+mlx_mouse_show	minilibx_opengl/minilibx_opengl_20191021/mlx_mouse.m	/^int	mlx_mouse_show()$/;"	f
+mlx_mouse_show	minilibx_opengl/mlx_mouse.m	/^int	mlx_mouse_show()$/;"	f
+mlx_new_image	minilibx-linux/mlx_new_image.c	/^void	*mlx_new_image(t_xvar *xvar,int width, int height)$/;"	f	typeref:typename:void *
+mlx_new_image	minilibx_linux/mlx_new_image.c	/^void	*mlx_new_image(t_xvar *xvar,int width, int height)$/;"	f	typeref:typename:void *
+mlx_new_image	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^void    *mlx_new_image(mlx_ptr_t *mlx_ptr, int width, int height)$/;"	f
+mlx_new_image	minilibx_opengl/mlx_new_image.m	/^void    *mlx_new_image(mlx_ptr_t *mlx_ptr, int width, int height)$/;"	f
+mlx_new_image2	minilibx-linux/mlx_new_image.c	/^void	*mlx_new_image2(t_xvar *xvar,int width, int height)$/;"	f	typeref:typename:void *
+mlx_new_image2	minilibx_linux/mlx_new_image.c	/^void	*mlx_new_image2(t_xvar *xvar,int width, int height)$/;"	f	typeref:typename:void *
+mlx_new_opengl_window	minilibx_opengl/minilibx_opengl_20191021/mlx_opengl.m	/^void	*mlx_new_opengl_window(mlx_ptr_t *mlx_ptr, int size_x, int size_y, char *title)$/;"	f
+mlx_new_opengl_window	minilibx_opengl/mlx_opengl.m	/^void	*mlx_new_opengl_window(mlx_ptr_t *mlx_ptr, int size_x, int size_y, char *title)$/;"	f
+mlx_new_window	minilibx-linux/mlx_new_window.c	/^void	*mlx_new_window(t_xvar *xvar,int size_x,int size_y,char *title)$/;"	f	typeref:typename:void *
+mlx_new_window	minilibx_linux/mlx_new_window.c	/^void	*mlx_new_window(t_xvar *xvar,int size_x,int size_y,char *title)$/;"	f	typeref:typename:void *
+mlx_new_window	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^void *mlx_new_window(mlx_ptr_t *mlx_ptr, int size_x, int size_y, char *title)$/;"	f
+mlx_new_window	minilibx_opengl/mlx_new_window.m	/^void *mlx_new_window(mlx_ptr_t *mlx_ptr, int size_x, int size_y, char *title)$/;"	f
+mlx_opengl_swap_buffers	minilibx_opengl/minilibx_opengl_20191021/mlx_opengl.m	/^int	mlx_opengl_swap_buffers(mlx_win_list_t *win_ptr)$/;"	f
+mlx_opengl_swap_buffers	minilibx_opengl/mlx_opengl.m	/^int	mlx_opengl_swap_buffers(mlx_win_list_t *win_ptr)$/;"	f
+mlx_opengl_window_set_context	minilibx_opengl/minilibx_opengl_20191021/mlx_opengl.m	/^int	mlx_opengl_window_set_context(mlx_win_list_t *win_ptr)$/;"	f
+mlx_opengl_window_set_context	minilibx_opengl/mlx_opengl.m	/^int	mlx_opengl_window_set_context(mlx_win_list_t *win_ptr)$/;"	f
+mlx_pixel_put	minilibx-linux/mlx_pixel_put.c	/^int		mlx_pixel_put(t_xvar *xvar,t_win_list *win,$/;"	f	typeref:typename:int
+mlx_pixel_put	minilibx_linux/mlx_pixel_put.c	/^int		mlx_pixel_put(t_xvar *xvar,t_win_list *win,$/;"	f	typeref:typename:int
+mlx_pixel_put	minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m	/^void mlx_pixel_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color)$/;"	f
+mlx_pixel_put	minilibx_opengl/mlx_init_loop.m	/^void mlx_pixel_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color)$/;"	f
+mlx_png_file_to_image	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^void	*mlx_png_file_to_image(mlx_ptr_t *xvar, char *file, int *width, int *height)$/;"	f	typeref:typename:void *
+mlx_png_file_to_image	minilibx_opengl/mlx_png.c	/^void	*mlx_png_file_to_image(mlx_ptr_t *xvar, char *file, int *width, int *height)$/;"	f	typeref:typename:void *
+mlx_ptr_s	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef struct		mlx_ptr_s$/;"	s
+mlx_ptr_s	minilibx_opengl/mlx_int.h	/^typedef struct		mlx_ptr_s$/;"	s
+mlx_ptr_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^} mlx_ptr_t;$/;"	t	typeref:struct:mlx_ptr_s
+mlx_ptr_t	minilibx_opengl/mlx_int.h	/^} mlx_ptr_t;$/;"	t	typeref:struct:mlx_ptr_s
+mlx_put_image_to_window	minilibx-linux/mlx_put_image_to_window.c	/^int	mlx_put_image_to_window(t_xvar *xvar,t_win_list *win,t_img *img,$/;"	f	typeref:typename:int
+mlx_put_image_to_window	minilibx_linux/mlx_put_image_to_window.c	/^int	mlx_put_image_to_window(t_xvar *xvar,t_win_list *win,t_img *img,$/;"	f	typeref:typename:int
+mlx_put_image_to_window	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^void    mlx_put_image_to_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, mlx_img_list_t *img/;"	f
+mlx_put_image_to_window	minilibx_opengl/mlx_new_image.m	/^void    mlx_put_image_to_window(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, mlx_img_list_t *img/;"	f
+mlx_set_font	minilibx-linux/mlx_set_font.c	/^void	mlx_set_font(t_xvar *xvar, t_win_list *win, char *name)$/;"	f	typeref:typename:void
+mlx_set_font	minilibx_linux/mlx_set_font.c	/^void	mlx_set_font(t_xvar *xvar, t_win_list *win, char *name)$/;"	f	typeref:typename:void
+mlx_shaders	minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c	/^int mlx_shaders(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders	minilibx_opengl/mlx_shaders.c	/^int mlx_shaders(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_font	minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c	/^int mlx_shaders_font(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_font	minilibx_opengl/mlx_shaders.c	/^int mlx_shaders_font(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_image	minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c	/^int mlx_shaders_image(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_image	minilibx_opengl/mlx_shaders.c	/^int mlx_shaders_image(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_pixel	minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c	/^int mlx_shaders_pixel(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_shaders_pixel	minilibx_opengl/mlx_shaders.c	/^int mlx_shaders_pixel(glsl_info_t *glsl)$/;"	f	typeref:typename:int
+mlx_string_put	minilibx-linux/mlx_string_put.c	/^int		mlx_string_put(t_xvar *xvar,t_win_list *win,$/;"	f	typeref:typename:int
+mlx_string_put	minilibx_linux/mlx_string_put.c	/^int		mlx_string_put(t_xvar *xvar,t_win_list *win,$/;"	f	typeref:typename:int
+mlx_string_put	minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m	/^int mlx_string_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color, unsigne/;"	f
+mlx_string_put	minilibx_opengl/mlx_new_image.m	/^int mlx_string_put(mlx_ptr_t *mlx_ptr, mlx_win_list_t *win_ptr, int x, int y, int color, unsigne/;"	f
+mlx_win_list_s	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^typedef struct	mlx_win_list_s$/;"	s
+mlx_win_list_s	minilibx_opengl/mlx_int.h	/^typedef struct	mlx_win_list_s$/;"	s
+mlx_win_list_t	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^} mlx_win_list_t;$/;"	t	typeref:struct:mlx_win_list_s
+mlx_win_list_t	minilibx_opengl/mlx_int.h	/^} mlx_win_list_t;$/;"	t	typeref:struct:mlx_win_list_s
+mlx_xpm_file_to_image	minilibx-linux/mlx_lib_xpm.c	/^void	*mlx_xpm_file_to_image(t_xvar *xvar,char *filename,$/;"	f	typeref:typename:void *
+mlx_xpm_file_to_image	minilibx-linux/mlx_xpm.c	/^void	*mlx_xpm_file_to_image(t_xvar *xvar,char *file,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_file_to_image	minilibx_linux/mlx_lib_xpm.c	/^void	*mlx_xpm_file_to_image(t_xvar *xvar,char *filename,$/;"	f	typeref:typename:void *
+mlx_xpm_file_to_image	minilibx_linux/mlx_xpm.c	/^void	*mlx_xpm_file_to_image(t_xvar *xvar,char *file,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_file_to_image	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^void	*mlx_xpm_file_to_image(mlx_ptr_t *xvar,char *file,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_file_to_image	minilibx_opengl/mlx_xpm.c	/^void	*mlx_xpm_file_to_image(mlx_ptr_t *xvar,char *file,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx-linux/mlx_lib_xpm.c	/^void	*mlx_xpm_to_image(t_xvar *xvar,char **data,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx-linux/mlx_xpm.c	/^void	*mlx_xpm_to_image(t_xvar *xvar,char **xpm_data,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx_linux/mlx_lib_xpm.c	/^void	*mlx_xpm_to_image(t_xvar *xvar,char **data,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx_linux/mlx_xpm.c	/^void	*mlx_xpm_to_image(t_xvar *xvar,char **xpm_data,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^void	*mlx_xpm_to_image(mlx_ptr_t *xvar,char **xpm_data,int *width,int *height)$/;"	f	typeref:typename:void *
+mlx_xpm_to_image	minilibx_opengl/mlx_xpm.c	/^void	*mlx_xpm_to_image(mlx_ptr_t *xvar,char **xpm_data,int *width,int *height)$/;"	f	typeref:typename:void *
+mouseDown:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseDown:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseDragged:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseDragged:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseMoved:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseMoved:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseUp:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouseUp:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+mouse_hook	minilibx-linux/mlx_int.h	/^	int					(*mouse_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+mouse_hook	minilibx_linux/mlx_int.h	/^	int					(*mouse_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
+mouse_param	minilibx-linux/mlx_int.h	/^	void				*mouse_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+mouse_param	minilibx_linux/mlx_int.h	/^	void				*mouse_param;$/;"	m	struct:s_win_list	typeref:typename:void *
+mouse_win1	minilibx-linux/test/main.c	/^int	mouse_win1(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
+mouse_win1	minilibx_linux/test/main.c	/^int	mouse_win1(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
+mouse_win2	minilibx-linux/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
+mouse_win2	minilibx_linux/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
+mouse_win3	minilibx-linux/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f	typeref:typename:int
+mouse_win3	minilibx_linux/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f	typeref:typename:int
+name	minilibx-linux/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:char *
+name	minilibx-linux/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
+name	minilibx_linux/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:char *
+name	minilibx_linux/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
+name	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^  char  *name;$/;"	m	struct:s_col_name	typeref:typename:char *	file:
+name	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^  int           name;$/;"	m	struct:s_xpm_col	typeref:typename:int	file:
+name	minilibx_opengl/mlx_xpm.c	/^  char  *name;$/;"	m	struct:s_col_name	typeref:typename:char *	file:
+name	minilibx_opengl/mlx_xpm.c	/^  int           name;$/;"	m	struct:s_xpm_col	typeref:typename:int	file:
+nb_flush	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  int			nb_flush;$/;"	m	struct:mlx_win_list_s	typeref:typename:int
+nb_flush	minilibx_opengl/mlx_int.h	/^  int			nb_flush;$/;"	m	struct:mlx_win_list_s	typeref:typename:int
+ndot	libft/includes/printf.h	/^	int		ndot;$/;"	m	struct:s_flags	typeref:typename:int
+negatif	libft/includes/printf.h	/^	int		negatif;$/;"	m	struct:s_flags	typeref:typename:int
+next	libft/includes/libft.h	/^	struct s_gbc		*next;$/;"	m	struct:s_gbc	typeref:struct:s_gbc *
+next	libft/includes/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list *
+next	minilibx-linux/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
+next	minilibx_linux/mlx_int.h	/^	struct s_win_list	*next;$/;"	m	struct:s_win_list	typeref:struct:s_win_list *
+next	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx_s	typeref:struct:mlx_img_ctx_s *
+next	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s *
+next	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s *
+next	minilibx_opengl/mlx_int.h	/^  struct mlx_img_ctx_s	*next;$/;"	m	struct:mlx_img_ctx_s	typeref:struct:mlx_img_ctx_s *
+next	minilibx_opengl/mlx_int.h	/^  struct mlx_img_list_s	*next;$/;"	m	struct:mlx_img_list_s	typeref:struct:mlx_img_list_s *
+next	minilibx_opengl/mlx_int.h	/^  struct mlx_win_list_s	*next;$/;"	m	struct:mlx_win_list_s	typeref:struct:mlx_win_list_s *
+nullbit	libft/includes/printf.h	/^	int		nullbit;$/;"	m	struct:s_flags	typeref:typename:int
+openglwin	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int			openglwin;$/;"	E	interface:MlxWin
+openglwin	minilibx_opengl/mlx_new_window.h	/^  int			openglwin;$/;"	E	interface:MlxWin
+options	.vscode/tasks.json	/^            "options": {$/;"	o	object:tasks.0
+otherMouseDown:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+otherMouseDown:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+otherMouseDragged:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+otherMouseDragged:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+otherMouseUp:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+otherMouseUp:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+param	minilibx-linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref:typename:void *
+param	minilibx_linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref:typename:void *
+parse_args	minilibx-linux/configure	/^parse_args(){$/;"	f
+parse_args	minilibx_linux/configure	/^parse_args(){$/;"	f
+parsing	srcs/parsing/parsing.c	/^void	parsing(char **av, t_cub *cub)$/;"	f	typeref:typename:void
+pix	minilibx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
+pix	minilibx_linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
+pixelPutColor:X:Y:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) pixelPutColor: (int)color X:(int)x Y:(int)y;$/;"	m	interface:MlxWin
+pixelPutColor:X:Y:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+pixelPutColor:X:Y:	minilibx_opengl/mlx_new_window.h	/^- (void) pixelPutColor: (int)color X:(int)x Y:(int)y;$/;"	m	interface:MlxWin
+pixelPutColor:X:Y:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+pixel_data	minilibx_opengl/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anon53211bbc0108	typeref:typename:unsigned char[]	file:
+pixel_data	minilibx_opengl/minilibx_opengl_20191021/font.c	/^  unsigned char	 pixel_data[1140 * 20 * 4 + 1];$/;"	m	struct:__anondfb1f73a0108	typeref:typename:unsigned char[]	file:
+pixel_fshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixel_fshader	minilibx_opengl/mlx_int.h	/^  GLuint	pixel_fshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixel_management	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+pixel_management	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+pixel_nb	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int			pixel_nb;$/;"	E	interface:MlxWin
+pixel_nb	minilibx_opengl/mlx_new_window.h	/^  int			pixel_nb;$/;"	E	interface:MlxWin
+pixel_program	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixel_program	minilibx_opengl/mlx_int.h	/^  GLuint	pixel_program;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixel_texture	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  GLuint		pixel_texture;$/;"	E	interface:MlxWin
+pixel_texture	minilibx_opengl/mlx_new_window.h	/^  GLuint		pixel_texture;$/;"	E	interface:MlxWin
+pixel_vbuffer	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  GLuint		pixel_vbuffer;$/;"	E	interface:MlxWin
+pixel_vbuffer	minilibx_opengl/mlx_new_window.h	/^  GLuint		pixel_vbuffer;$/;"	E	interface:MlxWin
+pixel_vshader	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint	pixel_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixel_vshader	minilibx_opengl/mlx_int.h	/^  GLuint	pixel_vshader;$/;"	m	struct:glsl_info_s	typeref:typename:GLuint
+pixmgt	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s	typeref:typename:int
+pixmgt	minilibx_opengl/mlx_int.h	/^  int			pixmgt;$/;"	m	struct:mlx_win_list_s	typeref:typename:int
+pixtexbuff	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  unsigned int		*pixtexbuff;$/;"	E	interface:MlxWin
+pixtexbuff	minilibx_opengl/mlx_new_window.h	/^  unsigned int		*pixtexbuff;$/;"	E	interface:MlxWin
+player	includes/cub3d.h	/^	t_player	player;$/;"	m	struct:s_cub	typeref:typename:t_player
+plus	libft/includes/printf.h	/^	int		plus;$/;"	m	struct:s_flags	typeref:typename:int
+png_info_s	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
+png_info_s	minilibx_opengl/mlx_png.c	/^typedef struct png_info_s$/;"	s	file:
+png_info_t	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^} png_info_t;$/;"	t	typeref:struct:png_info_s	file:
+png_info_t	minilibx_opengl/mlx_png.c	/^} png_info_t;$/;"	t	typeref:struct:png_info_s	file:
+print_cub	srcs/parsing/debug_parsing.c	/^int	print_cub(t_cub *cub)$/;"	f	typeref:typename:int
+print_maps	srcs/parsing/debug_parsing.c	/^int	print_maps(t_cub *cub)$/;"	f	typeref:typename:int
+print_maps_error	srcs/parsing/debug_parsing.c	/^int	print_maps_error(t_cub *cub, int error_j, int error_i)$/;"	f	typeref:typename:int
+printer	srcs/parsing/debug_parsing.c	/^void	printer(void *content)$/;"	f	typeref:typename:void
+private_cmap	minilibx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
+private_cmap	minilibx_linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
+problemMatcher	.vscode/tasks.json	/^            "problemMatcher": [$/;"	a	object:tasks.0
+pshm_format	minilibx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
+pshm_format	minilibx_linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
+re	Makefile	/^re : fclean$/;"	t
+re	libft/Makefile	/^re: fclean all$/;"	t
+re	minilibx-linux/Makefile	/^re	: clean all$/;"	t
+re	minilibx-linux/test/Makefile.mk	/^re: clean all$/;"	t
+re	minilibx_linux/Makefile	/^re	: clean all$/;"	t
+re	minilibx_linux/test/Makefile.mk	/^re: clean all$/;"	t
+re	minilibx_opengl/Makefile	/^re: clean all$/;"	t
+re	minilibx_opengl/minilibx_opengl_20191021/Makefile	/^re: clean all$/;"	t
+rightMouseDown:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+rightMouseDown:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+rightMouseDragged:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+rightMouseDragged:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+rightMouseUp:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+rightMouseUp:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+root	minilibx-linux/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar	typeref:typename:Window
+root	minilibx_linux/mlx_int.h	/^	Window		root;$/;"	m	struct:s_xvar	typeref:typename:Window
+s_col_name	minilibx-linux/mlx_int.h	/^struct	s_col_name$/;"	s
+s_col_name	minilibx_linux/mlx_int.h	/^struct	s_col_name$/;"	s
+s_col_name	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^struct  s_col_name$/;"	s	file:
+s_col_name	minilibx_opengl/mlx_xpm.c	/^struct  s_col_name$/;"	s	file:
+s_cub	includes/cub3d.h	/^typedef struct s_cub$/;"	s
+s_event_list	minilibx-linux/mlx_int.h	/^typedef struct	s_event_list$/;"	s
+s_event_list	minilibx_linux/mlx_int.h	/^typedef struct	s_event_list$/;"	s
+s_flags	libft/includes/printf.h	/^typedef struct s_flags$/;"	s
+s_gbc	libft/includes/libft.h	/^typedef struct s_gbc$/;"	s
+s_img	minilibx-linux/mlx_int.h	/^typedef struct	s_img$/;"	s
+s_img	minilibx_linux/mlx_int.h	/^typedef struct	s_img$/;"	s
+s_list	libft/includes/libft.h	/^typedef struct s_list$/;"	s
+s_player	includes/cub3d.h	/^typedef struct s_player$/;"	s
+s_win_list	minilibx-linux/mlx_int.h	/^typedef struct	s_win_list$/;"	s
+s_win_list	minilibx_linux/mlx_int.h	/^typedef struct	s_win_list$/;"	s
+s_xpm_col	minilibx-linux/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
+s_xpm_col	minilibx_linux/mlx_int.h	/^typedef	struct	s_xpm_col$/;"	s
+s_xpm_col	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
+s_xpm_col	minilibx_opengl/mlx_xpm.c	/^typedef struct  s_xpm_col$/;"	s	file:
+s_xvar	minilibx-linux/mlx_int.h	/^typedef struct	s_xvar$/;"	s
+s_xvar	minilibx_linux/mlx_int.h	/^typedef struct	s_xvar$/;"	s
+saved_mode	minilibx-linux/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v	typeref:typename:RRMode
+saved_mode	minilibx_linux/mlx_ext_randr.c	/^RRMode	saved_mode = 0;$/;"	v	typeref:typename:RRMode
+screen	minilibx-linux/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar	typeref:typename:int
+screen	minilibx_linux/mlx_int.h	/^	int			screen;$/;"	m	struct:s_xvar	typeref:typename:int
+scrollWheel:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+scrollWheel:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+selectGLContext	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) selectGLContext;$/;"	m	interface:MlxWin
+selectGLContext	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+selectGLContext	minilibx_opengl/mlx_new_window.h	/^- (void) selectGLContext;$/;"	m	interface:MlxWin
+selectGLContext	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+setEvent:andFunc:andParam:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) setEvent:(int)event andFunc:(func_t)func andParam:(void *)param;$/;"	m	interface:MlxWin
+setEvent:andFunc:andParam:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) setEvent:(int)event andFunc:(func_t)func andParam:(void *)param;$/;"	m	interface:NSWindowEvent
+setEvent:andFunc:andParam:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+setEvent:andFunc:andParam:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+setEvent:andFunc:andParam:	minilibx_opengl/mlx_new_window.h	/^- (void) setEvent:(int)event andFunc:(func_t)func andParam:(void *)param;$/;"	m	interface:MlxWin
+setEvent:andFunc:andParam:	minilibx_opengl/mlx_new_window.h	/^- (void) setEvent:(int)event andFunc:(func_t)func andParam:(void *)param;$/;"	m	interface:NSWindowEvent
+setEvent:andFunc:andParam:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+setEvent:andFunc:andParam:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+setKeyRepeat:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) setKeyRepeat:(int)mode;$/;"	m	interface:MlxWin
+setKeyRepeat:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (void) setKeyRepeat:(int)mode;$/;"	m	interface:NSWindowEvent
+setKeyRepeat:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+setKeyRepeat:	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+setKeyRepeat:	minilibx_opengl/mlx_new_window.h	/^- (void) setKeyRepeat:(int)mode;$/;"	m	interface:MlxWin
+setKeyRepeat:	minilibx_opengl/mlx_new_window.h	/^- (void) setKeyRepeat:(int)mode;$/;"	m	interface:NSWindowEvent
+setKeyRepeat:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+setKeyRepeat:	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:NSWindowEvent
+sget_next_line	libft/gnl/get_next_line.c	/^ int        sget_next_line(char **next_line, int fd) $/;"	f	typeref:typename:int
+shm	minilibx-linux/mlx_int.h	/^	XShmSegmentInfo	shm;$/;"	m	struct:s_img	typeref:typename:XShmSegmentInfo
+shm	minilibx_linux/mlx_int.h	/^	XShmSegmentInfo	shm;$/;"	m	struct:s_img	typeref:typename:XShmSegmentInfo
+shm_att_pb	minilibx-linux/mlx_new_image.c	/^int	shm_att_pb(Display *d,XErrorEvent *ev)$/;"	f	typeref:typename:int
+shm_att_pb	minilibx_linux/mlx_new_image.c	/^int	shm_att_pb(Display *d,XErrorEvent *ev)$/;"	f	typeref:typename:int
+show	minilibx-linux/Makefile.mk	/^show:$/;"	t
+show	minilibx-linux/test/Makefile.mk	/^show:$/;"	t
+show	minilibx_linux/Makefile.mk	/^show:$/;"	t
+show	minilibx_linux/test/Makefile.mk	/^show:$/;"	t
+show_help	minilibx-linux/configure	/^show_help(){$/;"	f
+show_help	minilibx_linux/configure	/^show_help(){$/;"	f
+sigint_handler	minilibx-linux/test/run_tests.sh	/^sigint_handler(){$/;"	f
+sigint_handler	minilibx_linux/test/run_tests.sh	/^sigint_handler(){$/;"	f
+size_line	minilibx-linux/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img	typeref:typename:int
+size_line	minilibx_linux/mlx_int.h	/^	int				size_line;$/;"	m	struct:s_img	typeref:typename:int
+size_split	libft/string/ft_size_split.c	/^int	size_split(char **ret)$/;"	f	typeref:typename:int
+size_x	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int			size_x;$/;"	E	interface:MlxWin
+size_x	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int		size_x;$/;"	E	interface:NSWindowEvent
+size_x	minilibx_opengl/mlx_new_window.h	/^  int			size_x;$/;"	E	interface:MlxWin
+size_x	minilibx_opengl/mlx_new_window.h	/^  int		size_x;$/;"	E	interface:NSWindowEvent
+size_y	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int			size_y;$/;"	E	interface:MlxWin
+size_y	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  int		size_y;$/;"	E	interface:NSWindowEvent
+size_y	minilibx_opengl/mlx_new_window.h	/^  int			size_y;$/;"	E	interface:MlxWin
+size_y	minilibx_opengl/mlx_new_window.h	/^  int		size_y;$/;"	E	interface:NSWindowEvent
+sl1	minilibx-linux/test/main.c	/^int	sl1;$/;"	v	typeref:typename:int
+sl1	minilibx_linux/test/main.c	/^int	sl1;$/;"	v	typeref:typename:int
+sl2	minilibx-linux/test/main.c	/^int	sl2;$/;"	v	typeref:typename:int
+sl2	minilibx_linux/test/main.c	/^int	sl2;$/;"	v	typeref:typename:int
+sl3	minilibx-linux/test/main.c	/^int	sl3;$/;"	v	typeref:typename:int
+sl3	minilibx_linux/test/main.c	/^int	sl3;$/;"	v	typeref:typename:int
+sl4	minilibx-linux/test/main.c	/^int	sl4;$/;"	v	typeref:typename:int
+sl4	minilibx_linux/test/main.c	/^int	sl4;$/;"	v	typeref:typename:int
+strlcpy_is_not_posix	minilibx-linux/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f	typeref:typename:unsigned int
+strlcpy_is_not_posix	minilibx_linux/mlx_xpm.c	/^unsigned int	strlcpy_is_not_posix(char *dest, char *src, unsigned int size)$/;"	f	typeref:typename:unsigned int
+t_cub	includes/cub3d.h	/^}	t_cub;$/;"	t	typeref:struct:s_cub
+t_event_list	minilibx-linux/mlx_int.h	/^}				t_event_list;$/;"	t	typeref:struct:s_event_list
+t_event_list	minilibx_linux/mlx_int.h	/^}				t_event_list;$/;"	t	typeref:struct:s_event_list
+t_flags	libft/includes/printf.h	/^}	t_flags;$/;"	t	typeref:struct:s_flags
+t_gbc	libft/includes/libft.h	/^}	t_gbc;$/;"	t	typeref:struct:s_gbc
+t_img	minilibx-linux/mlx_int.h	/^}				t_img;$/;"	t	typeref:struct:s_img
+t_img	minilibx_linux/mlx_int.h	/^}				t_img;$/;"	t	typeref:struct:s_img
+t_list	libft/includes/libft.h	/^}	t_list;$/;"	t	typeref:struct:s_list
+t_player	includes/cub3d.h	/^}	t_player;$/;"	t	typeref:struct:s_player
+t_win_list	minilibx-linux/mlx_int.h	/^}				t_win_list;$/;"	t	typeref:struct:s_win_list
+t_win_list	minilibx_linux/mlx_int.h	/^}				t_win_list;$/;"	t	typeref:struct:s_win_list
+t_xpm_col	minilibx-linux/mlx_int.h	/^}				t_xpm_col;$/;"	t	typeref:struct:s_xpm_col
+t_xpm_col	minilibx_linux/mlx_int.h	/^}				t_xpm_col;$/;"	t	typeref:struct:s_xpm_col
+t_xpm_col	minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c	/^} t_xpm_col;$/;"	t	typeref:struct:s_xpm_col	file:
+t_xpm_col	minilibx_opengl/mlx_xpm.c	/^} t_xpm_col;$/;"	t	typeref:struct:s_xpm_col	file:
+t_xvar	minilibx-linux/mlx_int.h	/^}				t_xvar;$/;"	t	typeref:struct:s_xvar
+t_xvar	minilibx_linux/mlx_int.h	/^}				t_xvar;$/;"	t	typeref:struct:s_xvar
+tailor_and_assign	libft/gnl/get_next_line.c	/^ void        tailor_and_assign(char **line, char *buf, int buf_size, char **nxt_line) $/;"	f	typeref:typename:void
+tasks	.vscode/tasks.json	/^    "tasks": [$/;"	a
+test_default_main	minilibx-linux/test/run_tests.sh	/^test_default_main(){$/;"	f
+test_default_main	minilibx_linux/test/run_tests.sh	/^test_default_main(){$/;"	f
+text	includes/cub3d.h	/^	void		*text[4];$/;"	m	struct:s_cub	typeref:typename:void * [4]
+texture	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint		texture;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:GLuint
+texture	minilibx_opengl/mlx_int.h	/^  GLuint		texture;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:GLuint
+type	.vscode/tasks.json	/^            "type": "cppbuild",$/;"	s	object:tasks.0
+type	libft/includes/printf.h	/^	char	type;$/;"	m	struct:s_flags	typeref:typename:char
+type	minilibx-linux/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
+type	minilibx_linux/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typename:int
+use_xshm	minilibx-linux/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
+use_xshm	minilibx_linux/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
+value	libft/includes/printf.h	/^	size_t	value;$/;"	m	struct:s_flags	typeref:typename:size_t
+vbuffer	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLuint		vbuffer;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:GLuint
+vbuffer	minilibx_opengl/mlx_int.h	/^  GLuint		vbuffer;$/;"	m	struct:mlx_img_ctx_s	typeref:typename:GLuint
+version	.vscode/tasks.json	/^    "version": "2.0.0"$/;"	s
+vertexes	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  GLfloat		vertexes[8];$/;"	m	struct:mlx_img_list_s	typeref:typename:GLfloat[8]
+vertexes	minilibx_opengl/mlx_int.h	/^  GLfloat		vertexes[8];$/;"	m	struct:mlx_img_list_s	typeref:typename:GLfloat[8]
+visual	minilibx-linux/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
+visual	minilibx_linux/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
+void	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  void		*(event_param[MAX_EVENT]);$/;"	E	interface:NSWindowEvent
+void	minilibx_opengl/mlx_new_window.h	/^  void		*(event_param[MAX_EVENT]);$/;"	E	interface:NSWindowEvent
+widht	libft/includes/printf.h	/^	int		widht;$/;"	m	struct:s_flags	typeref:typename:int
+width	minilibx-linux/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
+width	minilibx_linux/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
+width	minilibx_opengl/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anon53211bbc0108	typeref:typename:unsigned int	file:
+width	minilibx_opengl/minilibx_opengl_20191021/font.c	/^  unsigned int 	 width;$/;"	m	struct:__anondfb1f73a0108	typeref:typename:unsigned int	file:
+width	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s	typeref:typename:int
+width	minilibx_opengl/minilibx_opengl_20191021/mlx_png.c	/^  unsigned int	width;$/;"	m	struct:png_info_s	typeref:typename:unsigned int	file:
+width	minilibx_opengl/mlx_int.h	/^  int			width;$/;"	m	struct:mlx_img_list_s	typeref:typename:int
+width	minilibx_opengl/mlx_png.c	/^  unsigned int	width;$/;"	m	struct:png_info_s	typeref:typename:unsigned int	file:
+win	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^  NSWindowEvent		*win;$/;"	E	interface:MlxWin
+win	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h	/^- (NSWindowEvent *) win;$/;"	m	interface:MlxWin
+win	minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+win	minilibx_opengl/mlx_new_window.h	/^  NSWindowEvent		*win;$/;"	E	interface:MlxWin
+win	minilibx_opengl/mlx_new_window.h	/^- (NSWindowEvent *) win;$/;"	m	interface:MlxWin
+win	minilibx_opengl/mlx_new_window.m	/^{$/;"	m	implementation:MlxWin
+win1	minilibx-linux/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *
+win1	minilibx-linux/test/new_win.c	/^void *win1;$/;"	v	typeref:typename:void *
+win1	minilibx_linux/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *
+win1	minilibx_linux/test/new_win.c	/^void *win1;$/;"	v	typeref:typename:void *
+win2	minilibx-linux/test/main.c	/^void    *win2;$/;"	v	typeref:typename:void *
+win2	minilibx-linux/test/new_win.c	/^void *win2;$/;"	v	typeref:typename:void *
+win2	minilibx_linux/test/main.c	/^void    *win2;$/;"	v	typeref:typename:void *
+win2	minilibx_linux/test/new_win.c	/^void *win2;$/;"	v	typeref:typename:void *
+win3	minilibx-linux/test/main.c	/^void    *win3;$/;"	v	typeref:typename:void *
+win3	minilibx_linux/test/main.c	/^void    *win3;$/;"	v	typeref:typename:void *
+win_count	minilibx-linux/mlx_loop.c	/^static int	win_count(t_xvar *xvar)$/;"	f	typeref:typename:int	file:
+win_count	minilibx_linux/mlx_loop.c	/^static int	win_count(t_xvar *xvar)$/;"	f	typeref:typename:int	file:
+win_list	minilibx-linux/mlx_int.h	/^	t_win_list	*win_list;$/;"	m	struct:s_xvar	typeref:typename:t_win_list *
+win_list	minilibx_linux/mlx_int.h	/^	t_win_list	*win_list;$/;"	m	struct:s_xvar	typeref:typename:t_win_list *
+win_list	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  mlx_win_list_t	*win_list;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_win_list_t *
+win_list	minilibx_opengl/mlx_int.h	/^  mlx_win_list_t	*win_list;$/;"	m	struct:mlx_ptr_s	typeref:typename:mlx_win_list_t *
+window	minilibx-linux/mlx_int.h	/^	Window				window;$/;"	m	struct:s_win_list	typeref:typename:Window
+window	minilibx_linux/mlx_int.h	/^	Window				window;$/;"	m	struct:s_win_list	typeref:typename:Window
+winid	minilibx_opengl/minilibx_opengl_20191021/mlx_int.h	/^  void			*winid;$/;"	m	struct:mlx_win_list_s	typeref:typename:void *
+winid	minilibx_opengl/mlx_int.h	/^  void			*winid;$/;"	m	struct:mlx_win_list_s	typeref:typename:void *
+wm_delete_window	minilibx-linux/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xvar	typeref:typename:Atom
+wm_delete_window	minilibx_linux/mlx_int.h	/^	Atom		wm_delete_window;$/;"	m	struct:s_xvar	typeref:typename:Atom
+wm_protocols	minilibx-linux/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar	typeref:typename:Atom
+wm_protocols	minilibx_linux/mlx_int.h	/^	Atom		wm_protocols;$/;"	m	struct:s_xvar	typeref:typename:Atom
+xpm1_x	minilibx-linux/test/main.c	/^int	xpm1_x;$/;"	v	typeref:typename:int
+xpm1_x	minilibx_linux/test/main.c	/^int	xpm1_x;$/;"	v	typeref:typename:int
+xpm1_y	minilibx-linux/test/main.c	/^int	xpm1_y;$/;"	v	typeref:typename:int
+xpm1_y	minilibx_linux/test/main.c	/^int	xpm1_y;$/;"	v	typeref:typename:int
+zero	libft/includes/printf.h	/^	int		zero;$/;"	m	struct:s_flags	typeref:typename:int
