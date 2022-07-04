@@ -79,6 +79,28 @@ int	check_player(t_cub *cub, int i, int j, int nb_l)
 	return (1);
 }
 
+int	maps_size(char **maps)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (maps[i])
+	{
+		if (!__strcmp(maps[i], "\n"))
+			break ;
+		i++;
+	}
+	j = i;
+	while (maps[j])
+	{
+		if (!__strcmp(maps[j], "\n"))
+			return (-1) ;
+		j++;
+	}
+	return (i);
+}
+
 int	check_maps(t_cub *cub)
 {
 	int	nb_l;
@@ -86,13 +108,9 @@ int	check_maps(t_cub *cub)
 	int	j;
 
 	i = 0;
-	nb_l = 0;
-	while (cub->maps[nb_l])
-	{
-		if (!__strcmp(cub->maps[nb_l], "\n"))
-			break ;
-		nb_l++;
-	}
+	nb_l = maps_size(cub->maps);
+	if (nb_l <= 0)
+		return (__putstr_fd("wrong maps size\n", 2), 0);
 	while (i < nb_l && cub->maps[i])
 	{			
 		j = 0;
