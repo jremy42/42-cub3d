@@ -143,6 +143,30 @@ void	destroy_cub_data(t_cub *cub)
 	DEBUG && printf("Cub data successfully destroyed\n");
 }
 
+void	load_player_info(t_cub *cub)
+{
+	if (cub->player.dir == 'N')
+	{
+		cub->player.dir_x = 0;
+		cub->player.dir_y = -1;
+	}
+	if (cub->player.dir == 'E')
+	{
+		cub->player.dir_x = 1;
+		cub->player.dir_y = 0;
+	}
+	if (cub->player.dir == 'W')
+	{
+		cub->player.dir_x = -1;
+		cub->player.dir_y = 0;
+	}
+	if (cub->player.dir == 'S')
+	{
+		cub->player.dir_x = 0;
+		cub->player.dir_y = 1;
+	}
+}
+
 void	parsing(char **av, t_cub *cub)
 {
 	t_list	*input;
@@ -155,5 +179,6 @@ void	parsing(char **av, t_cub *cub)
 		__exit_error("Invalid map", cub);
 	if (!check_color(cub))
 		__exit_error("Invalid color", cub);
+	load_player_info(cub);
 	//__lstiter(input, __printer);
 }

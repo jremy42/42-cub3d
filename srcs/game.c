@@ -28,6 +28,26 @@ void	minimap_square_put(t_img *img, int x, int y, int color)
 	}
 }
 
+void	player_square_put(t_img *img, int x, int y, int color)
+{
+	int		offset_y;
+	int		offset_x;
+
+	offset_x = 0;
+	offset_y = 0;
+
+	while (offset_y < SIZE_PLAYER)
+	{
+		offset_x = 0;
+		while (offset_x < SIZE_PLAYER)
+		{
+			my_mlx_pixel_put(img, x * SIZE_MINI_MAP + offset_x, y * SIZE_MINI_MAP + offset_y, color);
+			offset_x++;
+		}
+		offset_y++;	
+	}
+}
+
 void	update_minimap(t_cub *cub)
 {
 	int	x;
@@ -47,7 +67,7 @@ void	update_minimap(t_cub *cub)
 			if (cub->maps[y][x] == '0')
 				minimap_square_put(&cub->minimap, x, y, 0xFF << 0);
 			if (__strchr("NSWE", cub->maps[y][x]))
-				minimap_square_put(&cub->minimap, x, y, 0xFFaef8);
+				player_put(&cub->minimap, x, y, 0xFFaef8);
 			x++;
 		}
 		y++;

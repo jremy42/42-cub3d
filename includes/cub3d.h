@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/05 16:00:42 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 17:53:59 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define HEIGHT 480
 # define SPEED 1
 # define SIZE_MINI_MAP 8
+# define ROTATE_ANGLE 0.2f
 
 # define BLACK   "\033[30m"      /* Black */
 # define RED     "\033[31m"      /* Red */
@@ -65,10 +66,14 @@ enum {
 
 typedef struct s_player
 {
-	char	dir;
-	float	rotate_angle;
-	int		i;
-	int		j;
+	char	start_orientation;
+	float	dir_x;
+	float	dir_y;
+	float	plane_x;
+	float	plane_y;
+	float	pos_x;
+	float	pos_y;
+
 }	t_player;
 
 typedef struct s_color

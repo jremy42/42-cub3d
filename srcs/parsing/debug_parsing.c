@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/04 17:58:31 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 16:56:04 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	print_cub(t_cub *cub)
 	printf("Player start status : [%c] @ (%d:%d)\n", cub->player.dir, cub->player.i, cub->player.j);
 	printf("color ceiling r:[%d] g:[%d] b:[%d]\n", cub->ceiling.r, cub->ceiling.g, cub->ceiling.b);
 	printf("color floor r:[%d] g:[%d] b:[%d]\n", cub->floor.r, cub->floor.g, cub->floor.b);
+	printf("color playerd dir_x[%f] dir_y[%f] \n", cub->player.dir_x, cub->player.dir_y);
 
 	print_maps(cub);
 	return (1);
