@@ -2,7 +2,8 @@ SRC_LIST = main.c\
 	parsing/parsing.c\
 	parsing/debug_parsing.c\
 	parsing/loading_maps.c\
-	parsing/check_color.c
+	parsing/check_color.c\
+	create_img.c
 
 SRC_DIR = ./srcs/
 
@@ -51,6 +52,7 @@ endif
 ifeq ($(shell uname -s), Darwin)
 MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
+CFLAGS+= -D LINUX=0
 endif
 
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c

@@ -6,12 +6,38 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/04 15:29:30 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 14:58:45 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "cub3d.h"
+#include "mlx.h"
+
+
+void	destroy_mlx_data(t_cub *cub)
+{
+	//fprintf(stderr, "mlx = [%d], win = [%d]", (int)cub->mlx, (int)cub->win);
+	if (cub->backgd.mlx_img)
+		mlx_destroy_image(cub->mlx, cub->backgd.mlx_img);
+	if (cub->screen.mlx_img)
+		mlx_destroy_image(cub->mlx, cub->screen.mlx_img);
+	if (cub->minimap.mlx_img)
+		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);	
+	if (cub->win)
+		mlx_destroy_window(cub->mlx, cub->win);
+	if (cub->mlx)
+		LINUX && mlx_destroy_display(cub->mlx);
+	free(cub->mlx);
+	exit(0);
+}
+
+int	__quit(t_cub* cub)
+{
+	destroy_cub_data(cub);
+	destroy_mlx_data(cub);
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
@@ -30,6 +56,16 @@ int	main(int ac, char **av)
 	parsing(av, &cub);
 	print_cub(&cub);
 	__putstr_fd("Hello Raycasted World\n", 1);
-	destroy_cub_data(&cub);
+	cub.mlx = mlx_init();
+	if (!cub.mlx)
+		return (__exit_error("Mlx init", &cub), 1);
+	cub.win = mlx_new_window(cub.mlx, 640, 480, "My little cube");
+	if (!cub.win)
+		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
+	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
+	if (!create_cub_images(&cub))
+		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
+	mlx_loop_hook(cub.mlx, game, &cub);
+	mlx_loop(cub.mlx);
 	return (0);
 }

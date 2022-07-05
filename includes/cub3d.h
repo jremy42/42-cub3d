@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/04 17:54:50 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 14:52:06 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,16 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
+
+# ifndef LINUX
+#  define LINUX 1
+# endif
+
 # define DEBUG 0
 # define RESET   "\033[0m"
+# define WIDTH 640
+# define HEIGHT 480
+# define SPEED 1
 
 # define BLACK   "\033[30m"      /* Black */
 # define RED     "\033[31m"      /* Red */
@@ -61,6 +69,7 @@ enum {
 typedef struct s_player
 {
 	char	dir;
+	float	rotate_angle;
 	int		i;
 	int		j;
 }	t_player;
@@ -70,7 +79,19 @@ typedef struct s_color
 	int	r;
 	int	g;
 	int	b;
+	int	t;
+	int	trgb;
 }	t_color;
+
+typedef struct s_img
+{
+	void	*mlx_img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
+
 
 typedef struct s_cub
 {
@@ -81,6 +102,11 @@ typedef struct s_cub
 	char		**maps;
 	t_player	player;
 	t_list		*input;
+	void		*mlx;
+	void		*win;
+	t_img		screen;
+	t_img		minimap;
+	t_img		backgd;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -89,15 +115,17 @@ int		load_maps(t_list *input, t_cub *cub);
 int		check_maps(t_cub *cub);
 
 //DEBUG PARSING 
-int	print_cub(t_cub *cub);
+int		print_cub(t_cub *cub);
 void	printer(void *content);
 int		print_maps(t_cub *cub);
-int	print_maps_error(t_cub *cub, int error_j, int error_i);
+int		print_maps_error(t_cub *cub, int error_j, int error_i);
 void	destroy_cub_data(t_cub *cub);
-
 
 void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	__exit_error(char *error, t_cub *cub);
 
 int		check_color(t_cub *cub);
+
+int		create_cub_images(t_cub *cub);
+
 #endif

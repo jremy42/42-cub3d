@@ -35,11 +35,18 @@ int	load_color(char *color_str, t_color *color_struct)
 	return (free_split(split_color), 1);
 }
 
+int	create_color(t_color color)
+{
+	return (color.t << 24 | color.r << 16 | color.g << 8 | color.b);
+}
+
 int	check_color(t_cub *cub)
 {
 	if (!load_color(cub->color[0], &cub->ceiling))
 		return (0);
 	if (!load_color(cub->color[1], &cub->floor))
 		return (0);
+	cub->ceiling.trgb = create_color(cub->ceiling);
+	cub->floor.trgb = create_color(cub->floor);
 	return (1);
 }
