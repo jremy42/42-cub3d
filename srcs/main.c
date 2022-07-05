@@ -6,14 +6,13 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/05 14:58:45 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 15:23:42 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "cub3d.h"
 #include "mlx.h"
-
 
 void	destroy_mlx_data(t_cub *cub)
 {
@@ -26,11 +25,14 @@ void	destroy_mlx_data(t_cub *cub)
 		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);	
 	if (cub->win)
 		mlx_destroy_window(cub->mlx, cub->win);
+	#ifdef __linux__
 	if (cub->mlx)
-		LINUX && mlx_destroy_display(cub->mlx);
+		mlx_destroy_display(cub->mlx);
+	#endif
 	free(cub->mlx);
 	exit(0);
 }
+
 
 int	__quit(t_cub* cub)
 {

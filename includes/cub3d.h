@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/05 14:52:06 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/05 16:00:42 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@
 # include <stdlib.h>
 # include "libft.h"
 
-# ifndef LINUX
-#  define LINUX 1
-# endif
-
 # define DEBUG 0
 # define RESET   "\033[0m"
 # define WIDTH 640
 # define HEIGHT 480
 # define SPEED 1
+# define SIZE_MINI_MAP 8
 
 # define BLACK   "\033[30m"      /* Black */
 # define RED     "\033[31m"      /* Red */
@@ -127,5 +124,6 @@ void	__exit_error(char *error, t_cub *cub);
 int		check_color(t_cub *cub);
 
 int		create_cub_images(t_cub *cub);
+int		game(t_cub *cub);
 
 #endif
