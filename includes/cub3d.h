@@ -20,7 +20,10 @@
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
-
+# define UP 0
+# define DOWN 1
+# define LEFT 2
+# define RIGHT 3
 # define WIDTH 640
 # define HEIGHT 480
 # define SPEED 1
@@ -103,6 +106,7 @@ void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	__exit_error(char *error, t_cub *cub);
 
 int		check_color(t_cub *cub);
+int		hooking(int keycode, t_cub *cub);
 
 int		create_cub_images(t_cub *cub);
 int		game(t_cub *cub);

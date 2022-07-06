@@ -4,7 +4,8 @@ SRC_LIST = main.c\
 	parsing/loading_maps.c\
 	parsing/check_color.c\
 	create_img.c\
-	game.c
+	game.c\
+	hook.c
 
 SRC_DIR = ./srcs/
 

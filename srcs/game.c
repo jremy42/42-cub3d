@@ -5,7 +5,7 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
 	char	*dst;
 
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel / 8));
+	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
 	*(unsigned int*)dst = color;
 }
 
@@ -76,6 +76,7 @@ void	update_minimap(t_cub *cub)
 
 int	game(t_cub *cub)
 {
+	mlx_hook(cub->win, 2, 1L << 0, &hooking, cub);
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 	return (1);
