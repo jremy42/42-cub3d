@@ -1,6 +1,7 @@
 
 #include "cub3d.h"
 #include "mlx.h"
+#include "keycode.h"
 
 void	__hookleft(t_cub *cub)
 {
