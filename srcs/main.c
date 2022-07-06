@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 09:44:12 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:06:12 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	destroy_mlx_data(t_cub *cub)
 		mlx_destroy_window(cub->mlx, cub->win);
 	#ifdef __linux__
 	if (cub->mlx)
+	{
+		DEBUG && printf("LINUX : Destroying display\n");
 		mlx_destroy_display(cub->mlx);
+	}
 	#endif
 	free(cub->mlx);
 	DEBUG && printf("Mlx data successfully destroyed\n");

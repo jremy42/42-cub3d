@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 09:50:33 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:09:53 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,12 @@ int	print_cub(t_cub *cub)
 {
 	int	i;
 
-	i = 0;
-	while (i < 4)
-	{
+	i = -1;
+	while (++i < 4)
 		printf("text[%d] %s\n", i, (char *)cub->text[i]);
-		i++;
-	}
-	i = 0;
-	while (i < 2)
-	{
+	i = -1;
+	while (++i < 2)
 		printf("color[%d] %s\n", i, (char *)cub->color[i]);
-		i++;
-	}
 	printf("Color ceiling r:[%d] g:[%d] b:[%d]\n", cub->ceiling.r, cub->ceiling.g, cub->ceiling.b);
 	printf("Color floor r:[%d] g:[%d] b:[%d]\n", cub->floor.r, cub->floor.g, cub->floor.b);
 	printf("Player start status : [%c] @ (%f:%f)\n", cub->player.start_orientation, cub->player.pos_x, cub->player.pos_y);
@@ -46,10 +40,7 @@ int	print_maps(t_cub *cub)
 	int	i = 0;
 
 	while (cub->maps[i])
-	{
-		printf("%s\n", cub->maps[i]);
-		i++;
-	}
+		printf("%s\n", cub->maps[i++]);
 	return (1);
 }
 
