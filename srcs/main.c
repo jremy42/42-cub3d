@@ -6,13 +6,14 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:06:12 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:20:30 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "cub3d.h"
 #include "mlx.h"
+#include "keycodes.h"
 
 void	destroy_mlx_data(t_cub *cub)
 {
