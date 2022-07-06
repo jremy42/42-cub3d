@@ -4,6 +4,56 @@
 #include "keycodes.h"
 #include "math.h"
 
+void	print_coord_hit(t_cub *cub)
+{
+	int		hit;
+	float	side_dist_x;
+	float	side_dist_y;
+	int		coord_x;
+	int		coord_y;
+	int		step_y;
+	int		step_x;
+
+	t_player	*p;
+
+	p = &cub->player;
+	if (p->dir_x > 0)
+		step_x = 1;
+	else
+		step_x = -1;
+	if (p->dir_y > 0)
+		step_y = 1;
+	else
+		step_y = -1;
+	//distance parcourue pour taper la prochaine case
+	side_dist_x = p->delta_dist_x;
+	side_dist_y = p->delta_dist_y;
+
+	coord_x = 0;
+	coord_y = 0;
+	hit = 0;
+
+	while (hit < 3)
+	{
+		if (side_dist_x < side_dist_y)
+		{
+			printf("next hit is on x side\n");
+			coord_x += step_x;
+			coord_y += step_y * p->slope_dir;
+			side_dist_x += p->delta_dist_x;
+		}
+		else
+		{
+			printf("next hit is on y side\n");
+			coord_y += step_y;
+			coord_x += step_x * (1/p->slope_dir);
+			side_dist_y += p->delta_dist_y;
+		}
+		printf("hit on %d:%d\n", (int)floor(coord_x), (int)floor(coord_y));
+		hit++;
+	}
+}
+
 void	update_slope(t_cub *cub)
 {
 	cub->player.slope_dir = cub->player.dir_y / cub->player.dir_x;
@@ -81,6 +131,7 @@ int	__key_press(int keycode, t_cub *cub)
 		f_hook[RIGHT](cub);
 	if (keycode == KEY_U || keycode == 126)
 		f_hook[UP](cub);
+	print_coord_hit(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
 	if (keycode == KEY_ESC)
