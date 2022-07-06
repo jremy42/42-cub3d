@@ -51,6 +51,7 @@ endif
 
 all: 
 	make -j -s $(NAME)
+	@printf "Done\n"
 	
 debug: fclean $(NAME)
 

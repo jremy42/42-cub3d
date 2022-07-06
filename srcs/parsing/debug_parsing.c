@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:44:52 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:53:15 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ void	clear_screen(void)
 
 int	print_debug_info(t_cub *cub)
 {
-	(void)cub;
-	printf("Start of debug info\n");
+	printf("pos_x/pos_y: (%f:%f)\n", cub->player.pos_x, cub->player.pos_y);
+	printf("dir_x/dir_y: (%f:%f)\n", cub->player.dir_x, cub->player.dir_y);
+	printf("plane_x/plane_y: (%f:%f)\n", cub->player.plane_x, cub->player.plane_y);
 	return (1);
 }
 
