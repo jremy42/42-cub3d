@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/06 09:13:14 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:45:05 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int		load_maps(t_list *input, t_cub *cub);
 int		check_maps(t_cub *cub);
 
 //DEBUG PARSING 
+void	clear_screen(void);
+int		print_debug_info(t_cub *cub);
 int		print_cub(t_cub *cub);
 void	printer(void *content);
 int		print_maps(t_cub *cub);
