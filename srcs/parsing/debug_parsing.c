@@ -6,16 +6,32 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:09:53 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:44:52 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "colors.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <libft.h>
 
 void	printer(void *content)
 {
 	__putstr_fd((char *) content, 2);
+}
+
+void	clear_screen(void)
+{
+	__putstr_fd("\x1b[2J", 1);
+	__putstr_fd("\x1b[1;1H", 1);
+}
+
+int	print_debug_info(t_cub *cub)
+{
+	(void)cub;
+	printf("Start of debug info\n");
+	return (1);
 }
 
 int	print_cub(t_cub *cub)

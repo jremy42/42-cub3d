@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:29:34 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 10:45:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	__quit(t_cub *cub)
 
 int	__key_press(int keycode, t_cub *cub)
 {
+	clear_screen();
+	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
