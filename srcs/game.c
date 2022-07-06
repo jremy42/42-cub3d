@@ -67,7 +67,7 @@ void	update_minimap(t_cub *cub)
 			if (cub->maps[y][x] == '0')
 				minimap_square_put(&cub->minimap, x, y, 0xFF << 0);
 			if (__strchr("NSWE", cub->maps[y][x]))
-				player_put(&cub->minimap, x, y, 0xFFaef8);
+				player_square_put(&cub->minimap, x, y, 0xFFaef8);
 			x++;
 		}
 		y++;

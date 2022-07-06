@@ -145,25 +145,25 @@ void	destroy_cub_data(t_cub *cub)
 
 void	load_player_info(t_cub *cub)
 {
-	if (cub->player.dir == 'N')
+	if (cub->player.start_orientation == 'N')
 	{
-		cub->player.dir_x = 0;
-		cub->player.dir_y = -1;
+		cub->player.pos_x = 0;
+		cub->player.pos_y = -1;
 	}
-	if (cub->player.dir == 'E')
+	if (cub->player.start_orientation == 'E')
 	{
-		cub->player.dir_x = 1;
-		cub->player.dir_y = 0;
+		cub->player.pos_x = 1;
+		cub->player.pos_y = 0;
 	}
-	if (cub->player.dir == 'W')
+	if (cub->player.start_orientation == 'W')
 	{
-		cub->player.dir_x = -1;
-		cub->player.dir_y = 0;
+		cub->player.pos_x = -1;
+		cub->player.pos_y = 0;
 	}
-	if (cub->player.dir == 'S')
+	if (cub->player.start_orientation == 'S')
 	{
-		cub->player.dir_x = 0;
-		cub->player.dir_y = 1;
+		cub->player.pos_x = 0;
+		cub->player.pos_y = 1;
 	}
 }
 

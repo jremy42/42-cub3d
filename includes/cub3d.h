@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/05 17:53:59 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/06 08:36:05 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define HEIGHT 480
 # define SPEED 1
 # define SIZE_MINI_MAP 8
+# define SIZE_PLAYER 2
 # define ROTATE_ANGLE 0.2f
 
 # define BLACK   "\033[30m"      /* Black */

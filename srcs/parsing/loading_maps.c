@@ -57,7 +57,7 @@ int	check_wall(char **maps, int i, int j, int nb_l)
 
 int	check_player(t_cub *cub, int i, int j, int nb_l)
 {
-	if (cub->player.dir)
+	if (cub->player.start_orientation)
 		return (__putstr_fd("to many player\n", 2), 0);
 	if (j == 0 || j == ((int)__strlen(cub->maps[i]) - 1)
 		|| i == 0 || i == nb_l - 1)
@@ -74,9 +74,9 @@ int	check_player(t_cub *cub, int i, int j, int nb_l)
 		|| cub->maps[i][j - 1] == ' '
 		|| cub->maps[i + 1][j - 1] == ' ')
 		return (__putstr_fd("space near player\n", 2), 0);
-	cub->player.dir = cub->maps[i][j];
-	cub->player.i = i;
-	cub->player.j = j;
+	cub->player.start_orientation = cub->maps[i][j];
+	cub->player.pos_x = i;
+	cub->player.pos_y = j;
 	return (1);
 }
 
@@ -131,7 +131,7 @@ int	check_maps(t_cub *cub)
 		}
 		i++;
 	}
-	if (!cub->player.dir)
+	if (!cub->player.start_orientation)
 		return (__putstr_fd("missing player\n", 2),  0);
 	return (1);
 }
