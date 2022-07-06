@@ -172,11 +172,9 @@ void	parsing(char **av, t_cub *cub)
 	input = get_input(av);
 	cub->input = input;
 	get_info(input, cub);
-	//print_maps(cub);
 	if (!check_maps(cub))
 		__exit_error("Invalid map", cub);
 	if (!check_color(cub))
 		__exit_error("Invalid color", cub);
 	load_player_info(cub);
-	//__lstiter(input, __printer);
 }

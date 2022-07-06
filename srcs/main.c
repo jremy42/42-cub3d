@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 09:05:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 09:44:12 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	destroy_mlx_data(t_cub *cub)
 {
-	DEBUG && printf("mlx = [%p], win = [%p]\n", cub->mlx, cub->win);
+	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n", cub->mlx, cub->win);
 	if (cub->backgd.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->backgd.mlx_img);
 	if (cub->screen.mlx_img)
@@ -30,6 +30,7 @@ void	destroy_mlx_data(t_cub *cub)
 		mlx_destroy_display(cub->mlx);
 	#endif
 	free(cub->mlx);
+	DEBUG && printf("Mlx data successfully destroyed\n");
 	exit(0);
 }
 
@@ -56,7 +57,7 @@ int	main(int ac, char **av)
 		|| __strcmp(av[1] + __strlen(av[1]) - 4, ".cub"))
 		return (__putstr_fd("Error\nWrong map name extension\n", 2), 1);
 	parsing(av, &cub);
-	print_cub(&cub);
+	DEBUG && print_cub(&cub);
 	__putstr_fd("Hello Raycasted World\n", 1);
 	cub.mlx = mlx_init();
 	if (!cub.mlx)
