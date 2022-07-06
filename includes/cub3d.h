@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/06 13:57:21 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:22:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ typedef struct s_player
 	float	plane_y;
 	float	pos_x;
 	float	pos_y;
+	int		vector[9][9];
 
 }	t_player;
 

@@ -4,13 +4,35 @@
 #include "keycodes.h"
 #include "math.h"
 
+void	print_vector(t_cub *cub)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < 9)
+	{
+		j = 0;
+		while (j < 9)
+		{
+			printf("%d ",cub->player.vector[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+	printf("\n");
+}
+
 void	print_coord_hit(t_cub *cub)
 {
 	int		hit;
 	float	side_dist_x;
 	float	side_dist_y;
-	int		coord_x;
-	int		coord_y;
+	float	coord_x;
+	float	coord_y;
+	int		tab_coord_x;
+	int		tab_coord_y;
 	int		step_y;
 	int		step_x;
 
@@ -33,23 +55,34 @@ void	print_coord_hit(t_cub *cub)
 	coord_y = 0;
 	hit = 0;
 
-	while (hit < 3)
+	__memset(p->vector, 0, sizeof(p->vector));
+
+	tab_coord_x = (int)floor(p->dir_x);
+	tab_coord_y = (int)floor(p->dir_y);
+	printf("hit on %d:%d\nAbout to put 1 in %d:%d\n", tab_coord_x, tab_coord_y, tab_coord_y % 9 + 4, tab_coord_x % 9 +4);
+	p->vector[tab_coord_y % 9 + 4][tab_coord_x % 9 + 4] = hit + 1;
+	hit++;
+	while (hit < 4)
 	{
+		printf("side dist_x/side_dist_y : (%f:%f)\n", side_dist_x, side_dist_y);
 		if (side_dist_x < side_dist_y)
 		{
 			printf("next hit is on x side\n");
 			coord_x += step_x;
-			coord_y += step_y * p->slope_dir;
+			coord_y += step_x * p->slope_dir;
 			side_dist_x += p->delta_dist_x;
 		}
 		else
 		{
 			printf("next hit is on y side\n");
 			coord_y += step_y;
-			coord_x += step_x * (1/p->slope_dir);
+			coord_x += step_y * (1/p->slope_dir);
 			side_dist_y += p->delta_dist_y;
 		}
-		printf("hit on %d:%d\n", (int)floor(coord_x), (int)floor(coord_y));
+		tab_coord_x = (int)floor(coord_x);
+		tab_coord_y = (int)floor(coord_y);
+		printf("hit on %d:%d\n", tab_coord_x, tab_coord_y);
+		p->vector[tab_coord_y % 9 + 4][tab_coord_x % 9 + 4] = hit + 1;
 		hit++;
 	}
 }
@@ -132,6 +165,7 @@ int	__key_press(int keycode, t_cub *cub)
 	if (keycode == KEY_U || keycode == 126)
 		f_hook[UP](cub);
 	print_coord_hit(cub);
+	print_vector(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
 	if (keycode == KEY_ESC)
