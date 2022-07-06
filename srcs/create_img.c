@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:53:50 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/05 15:51:45 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/06 09:07:11 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	create_image(t_cub *cub, t_img *img, int width, int height)
 		return (0);
 	img->addr = mlx_get_data_addr(img->mlx_img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);
-	//fprintf(stderr, "addr [%p]\n bits_per_pixel [%d]\n line_length [%d] \n endian [%d]", cub->img.mlx_img, cub->img.bits_per_pixel, cub->img.line_length, cub->img.endian);
+	DEBUG && printf("img addr [%p]\n bits_per_pixel [%d]\n line_length [%d]\n endian [%d]", img->mlx_img, img->bits_per_pixel, img->line_length, img->endian);
 	return (1);
 }
 
@@ -35,26 +35,3 @@ int	create_cub_images(t_cub *cub)
 		return (0);
 	return (1);
 }
-
-
-/*
-while (y < 480)
-	{
-			int x;
-	int	y;
-
-	x = 0;
-	y = 0;
-		x = 0;
-		while (x < 640)
-		{	
-			my_mlx_pixel_put(&cub->img, x, y, cub->floor.trgb);
-			x++;
-		}
-		y++;
-	}
-
-	create_minimaps(cub);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->img.mlx_img, 0, 0);
-
-*/

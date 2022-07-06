@@ -108,7 +108,6 @@ void	get_info(t_list *input, t_cub *cub)
 	{
 		curent_string = (char *)input->content;
 		ret = __split_charset(curent_string, " \f\t\n\r\v");
-		DEBUG && printf("size split = [%d]\n", size_split(ret));
 		if (__strlen(curent_string) && !ret)
 			__exit_error("malloc error", cub);
 		if (size_split(ret) == 0)
@@ -121,7 +120,6 @@ void	get_info(t_list *input, t_cub *cub)
 			return (free_split(ret), __exit_error("wrong info format", cub));
 		if (!load_info(ret, cub))
 			return (free_split(ret), __exit_error("parsing error", cub));
-		DEBUG && print_cub(cub);
 		input = input->next;
 	}
 	if (!load_maps(input, cub))

@@ -6,11 +6,12 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 08:35:31 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 09:13:54 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include "colors.h"
 
 void	printer(void *content)
 {

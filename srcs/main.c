@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/05 16:51:38 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/06 09:05:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 void	destroy_mlx_data(t_cub *cub)
 {
-	//fprintf(stderr, "mlx = [%d], win = [%d]", (int)cub->mlx, (int)cub->win);
+	DEBUG && printf("mlx = [%p], win = [%p]\n", cub->mlx, cub->win);
 	if (cub->backgd.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->backgd.mlx_img);
 	if (cub->screen.mlx_img)

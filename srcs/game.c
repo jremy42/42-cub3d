@@ -74,7 +74,6 @@ void	update_minimap(t_cub *cub)
 	}
 }
 
-
 int	game(t_cub *cub)
 {
 	update_minimap(cub);

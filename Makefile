@@ -40,12 +40,6 @@ CC = cc
 
 NAME = cub3d
 
-all: 
-	make -j $(NAME)
-	
-debug: 
-	make re
-
 ifeq ($(MAKECMDGOALS), debug)
 CFLAGS += -D DEBUG=1
 endif
@@ -55,19 +49,25 @@ MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
 endif
 
+all: 
+	make -j $(NAME)
+	
+debug: fclean $(NAME)
+		
+
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c
-		@mkdir -p $(dir $@)
-		@$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
-		@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
+		mkdir -p $(dir $@)
+		$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+		#@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
 
 $(NAME): $(OBJS) ${HEADER} ${LIBFT}
-		@printf "%-15s ${_CYAN}${_BOLD}libft${_END}...\n" "Compiling"
+		#@printf "%-15s ${_CYAN}${_BOLD}libft${_END}...\n" "Compiling"
 		@make -C ${LIBFT} > /dev/null
-		@printf "%-15s ${_CYAN}${_BOLD}mlx${_END}...\n" "Compiling"
+		#@printf "%-15s ${_CYAN}${_BOLD}mlx${_END}...\n" "Compiling"
 		@make -C ${MLX_DIR} > /dev/null 2>&1
-		@printf "%-15s ${_PURPLE}${_BOLD}${NAME}${_END}...\n" "Compiling"
+		#@printf "%-15s ${_PURPLE}${_BOLD}${NAME}${_END}...\n" "Compiling"
 		${CC} ${CFLAGS} ${OBJS} -L ./libft -lft -L ${MLX_DIR} -lmlx ${EXTERN_LIB} -o ${NAME}
-		@printf "\n${_GREEN}${_BOLD}[Compilation done !]${_END}\n"
+		#@printf "\n${_GREEN}${_BOLD}[Compilation done !]${_END}\n"
 
 clean :
 	rm -rf $(OBJS_DIR)

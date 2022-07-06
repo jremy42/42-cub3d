@@ -35,11 +35,10 @@ int	load_maps(t_list *input, t_cub *cub)
 
 int	check_wall(char **maps, int i, int j, int nb_l)
 {
-	//DEBUG && printf("check wall %c\n", maps[j][i]);
+	DEBUG && printf("check wall %c\n", maps[i][j]);
 	if (j == 0 || j == ((int)__strlen(maps[i]) - 1)
 		|| i == 0 || i == nb_l - 1)
 		return (__putstr_fd("0 on border\n", 2), 0);
-	//DEBUG && printf("i = %d strlen j+1 = %d, strlen j - 1 = %d\n", i, (int)__strlen(maps[j+1]), (int)__strlen(maps[j-1] - 2));
 	if (j >= ((int)__strlen(maps[i + 1]) - 1)
 		|| j >= ((int)__strlen(maps[i - 1]) - 1))
 		return (__putstr_fd("surrouding wall missing\n", 2), 0);
@@ -93,7 +92,6 @@ int	maps_size(char **maps)
 		i++;
 	}
 	j = i;
-	//fprintf(stderr,"maps[%d] = [%s]\n", i, maps[i]);
 	while (maps[j])
 	{
 		if (__strcmp(maps[j], "\n"))
