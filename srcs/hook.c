@@ -15,7 +15,20 @@ void	print_vector(t_cub *cub)
 		j = 0;
 		while (j < 9)
 		{
-			printf("%d ",cub->player.vector[i][j]);
+			if(cub->player.vector[i][j] > 0 )
+			{
+				printf("\e[32m");
+				printf("%d ",abs(cub->player.vector[i][j]));
+				printf("\e[0m");
+			}
+			else if(cub->player.vector[i][j] < 0 )
+			{
+				printf("\e[33m");
+				printf("%d ",abs(cub->player.vector[i][j]));
+				printf("\e[0m");
+			}
+			else
+				printf("  ");
 			j++;
 		}
 		printf("\n");
@@ -35,6 +48,7 @@ void	print_coord_hit(t_cub *cub)
 	int		tab_coord_y;
 	int		step_y;
 	int		step_x;
+	int		side;
 
 	t_player	*p;
 
@@ -57,34 +71,34 @@ void	print_coord_hit(t_cub *cub)
 
 	__memset(p->vector, 0, sizeof(p->vector));
 
-	tab_coord_x = (int)floor(p->dir_x);
-	tab_coord_y = (int)floor(p->dir_y);
-	printf("hit on %d:%d\nAbout to put 1 in %d:%d\n", tab_coord_x, tab_coord_y, tab_coord_y % 9 + 4, tab_coord_x % 9 +4);
-	p->vector[tab_coord_y % 9 + 4][tab_coord_x % 9 + 4] = hit + 1;
-	hit++;
-	while (hit < 4)
+	while (1)
 	{
 		printf("side dist_x/side_dist_y : (%f:%f)\n", side_dist_x, side_dist_y);
 		if (side_dist_x < side_dist_y)
 		{
-			printf("next hit is on x side\n");
+			printf("next hit is on x side with %d\n", hit+1);
 			coord_x += step_x;
-			coord_y += step_x * p->slope_dir;
+			//coord_y = coord_x * p->slope_dir;
 			side_dist_x += p->delta_dist_x;
+			side = -1;
 		}
 		else
 		{
-			printf("next hit is on y side\n");
+			printf("next hit is on y side with %d\n", hit+1);
 			coord_y += step_y;
-			coord_x += step_y * (1/p->slope_dir);
+			//coord_x = coord_y * (1/p->slope_dir);
 			side_dist_y += p->delta_dist_y;
+			side = 1;
 		}
 		tab_coord_x = (int)floor(coord_x);
 		tab_coord_y = (int)floor(coord_y);
-		printf("hit on %d:%d\n", tab_coord_x, tab_coord_y);
-		p->vector[tab_coord_y % 9 + 4][tab_coord_x % 9 + 4] = hit + 1;
+		if (tab_coord_x > 4 || tab_coord_y > 4 || tab_coord_x < -4 || tab_coord_y < - 4)
+			break ;
+		printf("fill in %d:%d\n", tab_coord_x + 4, tab_coord_y + 4);
+		p->vector[tab_coord_y + 4 ][tab_coord_x + 4 ] = (hit + 1) * side;
 		hit++;
 	}
+	printf("End of loop\n");
 }
 
 void	update_slope(t_cub *cub)
