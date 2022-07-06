@@ -4,6 +4,13 @@
 #include "keycodes.h"
 #include "math.h"
 
+void	update_slope(t_cub *cub)
+{
+	cub->player.slope_dir = cub->player.dir_y / cub->player.dir_x;
+	cub->player.delta_dist_x = sqrt(1 + pow(cub->player.slope_dir,2));
+	cub->player.delta_dist_y = sqrt(1 + pow(1/cub->player.slope_dir,2));
+}
+
 void	rotate(t_cub *cub, float angle)
 {
 	float	old_dir_x;
@@ -29,12 +36,14 @@ void	rotate(t_cub *cub, float angle)
 void	__hookleft(t_cub *cub)
 {
 	rotate(cub, -ROTATE_ANGLE);
+	update_slope(cub);
     DEBUG && printf("left\n");
 }
 
 void	__hookright(t_cub *cub)
 {
 	rotate(cub, ROTATE_ANGLE);
+	update_slope(cub);
     DEBUG && printf("right\n");
 
 }

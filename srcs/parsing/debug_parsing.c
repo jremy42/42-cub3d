@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:53:15 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 14:00:18 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,14 @@ void	clear_screen(void)
 
 int	print_debug_info(t_cub *cub)
 {
-	printf("pos_x/pos_y: (%f:%f)\n", cub->player.pos_x, cub->player.pos_y);
-	printf("dir_x/dir_y: (%f:%f)\n", cub->player.dir_x, cub->player.dir_y);
-	printf("plane_x/plane_y: (%f:%f)\n", cub->player.plane_x, cub->player.plane_y);
+	t_player	*p;
+
+	p = &cub->player;
+	printf("pos_x/pos_y: (%f:%f)\n", p->pos_x, p->pos_y);
+	printf("dir_x/dir_y: (%f:%f)\n", p->dir_x, p->dir_y);
+	printf("plane_x/plane_y: (%f:%f)\n", p->plane_x, p->plane_y);
+	printf("pente y/x : (%f)\n", p->slope_dir);
+	printf("delta_dist_x/delta_dist_y: (%f:%f)\n", p->delta_dist_x, p->delta_dist_y);
 	return (1);
 }
 
