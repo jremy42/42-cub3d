@@ -46,15 +46,6 @@ int	__quit(t_cub *cub)
 	return (0);
 }
 
-int	__key_press(int keycode, t_cub *cub)
-{
-	clear_screen();
-	DEBUG && print_debug_info(cub);
-	DEBUG && printf("Key pressed [%d]\n", keycode);
-	if (keycode == KEY_ESC)
-		return (__quit(cub));
-	return (1);
-}
 
 int	main(int ac, char **av)
 {

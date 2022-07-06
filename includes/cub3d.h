@@ -26,9 +26,9 @@
 # define RIGHT 3
 # define WIDTH 640
 # define HEIGHT 480
-# define SPEED 1
+# define SPEED 0.5f
 # define SIZE_MINI_MAP 8
-# define SIZE_PLAYER 2
+# define SIZE_PLAYER 8
 # define ROTATE_ANGLE 0.2f
 
 enum {
@@ -108,9 +108,10 @@ void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	__exit_error(char *error, t_cub *cub);
 
 int		check_color(t_cub *cub);
-int		hooking(int keycode, t_cub *cub);
+int		__key_press(int keycode, t_cub *cub);
 
 int		create_cub_images(t_cub *cub);
 int		game(t_cub *cub);
+int		__quit(t_cub *cub);
 
 #endif

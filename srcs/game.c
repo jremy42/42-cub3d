@@ -64,9 +64,9 @@ void	update_minimap(t_cub *cub)
 				minimap_square_put(&cub->minimap, x, y, 0xFF << 16);
 			if (cub->maps[y][x] == '1')
 				minimap_square_put(&cub->minimap, x, y, 0xFF << 8);
-			if (cub->maps[y][x] == '0')
+			if (cub->maps[y][x] == '0' || cub->maps[y][x] == 'N')
 				minimap_square_put(&cub->minimap, x, y, 0xFF << 0);
-			if (__strchr("NSWE", cub->maps[y][x]))
+			if ((int)cub->player.pos_x == x && (int)cub->player.pos_y == y)
 				player_square_put(&cub->minimap, x, y, 0xFFaef8);
 			x++;
 		}
@@ -76,7 +76,6 @@ void	update_minimap(t_cub *cub)
 
 int	game(t_cub *cub)
 {
-	mlx_hook(cub->win, 2, 1L << 0, &hooking, cub);
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 	return (1);
