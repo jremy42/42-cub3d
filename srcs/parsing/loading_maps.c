@@ -73,8 +73,8 @@ int	check_player(t_cub *cub, int i, int j, int nb_l)
 		|| cub->maps[i + 1][j - 1] == ' ')
 		return (__putstr_fd("space near player\n", 2), 0);
 	cub->player.start_orientation = cub->maps[i][j];
-	cub->player.pos_x = i;
-	cub->player.pos_y = j;
+	cub->player.pos_x = j;
+	cub->player.pos_y = i;
 	return (1);
 }
 

@@ -163,6 +163,8 @@ void	load_player_info(t_cub *cub)
 		cub->player.dir_x = 0;
 		cub->player.dir_y = 1;
 	}
+	cub->player.plane_x = - cub->player.dir_y;
+	cub->player.plane_y = cub->player.dir_x;
 }
 
 void	parsing(char **av, t_cub *cub)

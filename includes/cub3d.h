@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/06 10:45:05 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/06 12:16:56 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define SPEED 0.5f
 # define SIZE_MINI_MAP 8
 # define SIZE_PLAYER 8
-# define ROTATE_ANGLE 0.2f
+# define ROTATE_ANGLE M_PI/8
 
 enum {
 	NO,
