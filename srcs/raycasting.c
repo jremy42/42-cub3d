@@ -27,7 +27,7 @@ void	calculate_ray_features(t_player *player, int x)
 	player->r_slope_dir = player->r_dir_y / player->r_dir_x;
 	player->r_delta_dist_x = sqrt(1 + pow(player->r_slope_dir,2));
 	player->r_delta_dist_y = sqrt(1 + pow(1/player->r_slope_dir,2));
-	DEBUG && printf("delta_dist_x/delta_dist_y : %f:%f\n", player->r_delta_dist_x, player->delta_dist_y);
+	//DEBUG && printf("delta_dist_x/delta_dist_y : %f:%f\n", player->r_delta_dist_x, player->delta_dist_y);
 }
 
 void	init_step_and_side_dist(t_player *player)
@@ -87,15 +87,9 @@ void	calculate_wall_height(t_player *player)
 	float	perpWallDist;
 
 	if (player->r_side_hit == X_HIT)
-	{
 		perpWallDist = (player->r_side_dist_x - player->r_delta_dist_x) * player->cos_alpha;
-		DEBUG && printf(RED"X : perpWallDist : [%f]\n"RESET, perpWallDist);
-	}
 	else
-	{
 		perpWallDist = (player->r_side_dist_y - player->r_delta_dist_y) * player->cos_alpha;
-		DEBUG && printf(GREEN"Y : perpWallDist : [%f]\n"RESET, perpWallDist);
-	}
 	wall_height = HEIGHT/perpWallDist;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
 	if (player->r_wall_y_start < 0)
