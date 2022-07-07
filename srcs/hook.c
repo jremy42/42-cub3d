@@ -152,18 +152,52 @@ void	__hookright(t_cub *cub)
 
 void	__hookdown(t_cub *cub)
 {
-    cub->player.pos_x -= SPEED * cub->player.dir_x;
-    cub->player.pos_y -= SPEED * cub->player.dir_y;
-    DEBUG && printf("down\n");
+    float	next_pos_x;
+	float	next_pos_y;
+
+	next_pos_x = cub->player.pos_x - SPEED * cub->player.dir_x;
+	next_pos_y = cub->player.pos_y - SPEED * cub->player.dir_y;
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '1')
+		return ;
+	cub->player.pos_x = next_pos_x;
+	cub->player.pos_y = next_pos_y;
+	DEBUG && printf("down\n");
 
 }
 
 void	__hookup(t_cub *cub)
 {
-	(void)cub;
-    cub->player.pos_x += SPEED * cub->player.dir_x;
-    cub->player.pos_y += SPEED * cub->player.dir_y;
+	float	next_pos_x;
+	float	next_pos_y;
+
+	next_pos_x = cub->player.pos_x + SPEED * cub->player.dir_x;
+	next_pos_y = cub->player.pos_y + SPEED * cub->player.dir_y;
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '1')
+		return ;
+	cub->player.pos_x = next_pos_x;
+	cub->player.pos_y = next_pos_y;
     DEBUG && printf("up\n");
+}
+
+void load_background(t_cub *cub)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < HEIGHT)
+	{
+		x = 0;
+		while (x < WIDTH)
+		{
+			if(y < HEIGHT/2)
+				my_mlx_pixel_put(&cub->screen,x, y, cub->ceiling.trgb);
+			else
+				my_mlx_pixel_put(&cub->screen, x, y, cub->floor.trgb);
+			x++;
+		}
+		y++;
+	}
 }
 
 int	__key_press(int keycode, t_cub *cub)
@@ -187,10 +221,10 @@ int	__key_press(int keycode, t_cub *cub)
 	DEBUG && print_vector(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
+	load_background(cub);
 	raycast(cub);
 	//test
 	update_minimap(cub);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->backgd.mlx_img, 0, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 	//test

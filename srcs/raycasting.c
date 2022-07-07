@@ -113,8 +113,8 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	{
 		if (y >= player->r_wall_y_start && y <= player->r_wall_y_end)
 			my_mlx_pixel_put(&cub->screen, x, y, color);
-		else
-			my_mlx_pixel_put(&cub->screen, x, y, 0);
+		//else
+		//	my_mlx_pixel_put(&cub->screen, x, y,0);
 		y++;
 	}
 }

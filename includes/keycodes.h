@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:17:20 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/07 10:37:38 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/07 18:46:21 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@
 #  define ARROW_DOWN 65364
 #  define ARROW_LEFT 65361
 #  define ARROW_RIGHT 65363
+#  define SCROLL_UP 5
+#  define SCROLL_DOWN 4
 # endif
 
 #endif

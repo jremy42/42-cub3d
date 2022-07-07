@@ -77,8 +77,8 @@ int	load_info(char **ret, t_cub *cub)
 		+ !__strcmp(ret[0], "SO") * 2
 		+ !__strcmp(ret[0], "EA") * 3
 		+ !__strcmp(ret[0], "WE") * 4
-		+ !__strcmp(ret[0], "F") * 5
-		+ !__strcmp(ret[0], "C") * 6;
+		+ !__strcmp(ret[0], "C") * 5
+		+ !__strcmp(ret[0], "F") * 6;
 	if (!pos)
 		return (__putstr_fd("No such a info\n", 2), 0);
 	if (pos > 0 && pos < 5)
@@ -163,6 +163,7 @@ void	load_player_info(t_cub *cub)
 		cub->player.dir_x = 0;
 		cub->player.dir_y = 1;
 	}
+	cub->player.fov = FOV;
 	cub->player.plane_x = (- cub->player.dir_y) * FOV;
 	cub->player.plane_y = cub->player.dir_x * FOV;
 }
