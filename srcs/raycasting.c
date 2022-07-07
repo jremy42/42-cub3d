@@ -88,12 +88,12 @@ void	calculate_wall_height(t_player *player)
 
 	if (player->r_side_hit == X_HIT)
 	{
-		perpWallDist = player->r_side_dist_x * player->cos_alpha;
+		perpWallDist = (player->r_side_dist_x - player->r_delta_dist_x) * player->cos_alpha;
 		DEBUG && printf(RED"X : perpWallDist : [%f]\n"RESET, perpWallDist);
 	}
 	else
 	{
-		perpWallDist = player->r_side_dist_y * player->cos_alpha;
+		perpWallDist = (player->r_side_dist_y - player->r_delta_dist_y) * player->cos_alpha;
 		DEBUG && printf(GREEN"Y : perpWallDist : [%f]\n"RESET, perpWallDist);
 	}
 	wall_height = HEIGHT/perpWallDist;
