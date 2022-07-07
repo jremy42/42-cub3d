@@ -188,6 +188,12 @@ int	__key_press(int keycode, t_cub *cub)
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
 	raycast(cub);
+	//test
+	update_minimap(cub);
+	mlx_put_image_to_window(cub->mlx,cub->win, cub->backgd.mlx_img, 0, 0);
+	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
+	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+	//test
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
 	return (1);

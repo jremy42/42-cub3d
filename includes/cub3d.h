@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/07 15:20:26 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/07 16:46:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,4 +142,5 @@ int		game(t_cub *cub);
 int		__quit(t_cub *cub);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int raycast(t_cub *cub);
+void	update_minimap(t_cub *cub);
 #endif

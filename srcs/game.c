@@ -74,9 +74,12 @@ void	update_minimap(t_cub *cub)
 
 int	game(t_cub *cub)
 {
+	(void)cub;
+	/*
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->backgd.mlx_img, 0, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+	*/
 	return (1);
 }
