@@ -8,3 +8,4 @@ cmd + b = mask / unmask sidebar
  alt + click = multicursor 
  cmd + f = recherche
  cmd + c = comment/uncomment
+ ctrl shift k = supper ligne

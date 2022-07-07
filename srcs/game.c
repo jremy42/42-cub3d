@@ -35,7 +35,6 @@ void	player_square_put(t_img *img, int x, int y, int color)
 
 	offset_x = 0;
 	offset_y = 0;
-
 	while (offset_y < SIZE_PLAYER)
 	{
 		offset_x = 0;
@@ -52,7 +51,6 @@ void	update_minimap(t_cub *cub)
 {
 	int	x;
 	int	y;
-
 
 	y = 0;
 	while (cub->maps[y])

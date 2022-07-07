@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:53:50 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 09:46:57 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/07 10:56:46 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	create_cub_images(t_cub *cub)
 	if (!create_image(cub, &cub->backgd, WIDTH, HEIGHT))
 		return (0);
 	DEBUG && printf("backgd mlx image ok\n");
-	if (!create_image(cub, &cub->minimap, WIDTH, HEIGHT))
+	if (!create_image(cub, &cub->minimap, WIDTH/4, HEIGHT/4))
 		return (0);
 	DEBUG && printf("minimap mlx image ok\n");
 	return (1);

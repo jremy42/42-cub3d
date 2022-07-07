@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 10:45:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/07 12:40:00 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	__quit(t_cub *cub)
 	return (0);
 }
 
-
 int	main(int ac, char **av)
 {
 	t_cub	cub;
@@ -67,7 +66,7 @@ int	main(int ac, char **av)
 	cub.mlx = mlx_init();
 	if (!cub.mlx)
 		return (__exit_error("Mlx init", &cub), 1);
-	cub.win = mlx_new_window(cub.mlx, 640, 480, "My little cube");
+	cub.win = mlx_new_window(cub.mlx, WIDTH, HEIGHT, "My little cube");
 	if (!cub.win)
 		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
 	if (!create_cub_images(&cub))

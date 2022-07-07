@@ -175,18 +175,19 @@ int	__key_press(int keycode, t_cub *cub)
 	f_hook[DOWN] = __hookdown;
 	f_hook[LEFT] = __hookleft;
 	f_hook[RIGHT] = __hookright;
-	if (keycode == KEY_L || keycode == 123)
+	if (keycode == KEY_L || keycode == ARROW_LEFT)
 		f_hook[LEFT](cub);
-	if (keycode == KEY_D || keycode == 125)
+	if (keycode == KEY_D || keycode == ARROW_DOWN)
 		f_hook[DOWN](cub);
-	if (keycode == KEY_R || keycode == 124)
+	if (keycode == KEY_R || keycode == ARROW_RIGHT)
 		f_hook[RIGHT](cub);
-	if (keycode == KEY_U || keycode == 126)
+	if (keycode == KEY_U || keycode == ARROW_UP)
 		f_hook[UP](cub);
 	DEBUG && print_coord_hit(cub);
 	DEBUG && print_vector(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
+	raycast(cub);
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
 	return (1);

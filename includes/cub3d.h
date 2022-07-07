@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/06 16:22:49 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/07 12:56:34 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,15 @@
 # define DOWN 1
 # define LEFT 2
 # define RIGHT 3
-# define WIDTH 640
-# define HEIGHT 480
+# define WIDTH 1280
+# define HEIGHT 720
 # define SPEED 0.5f
-# define SIZE_MINI_MAP 8
-# define SIZE_PLAYER 8
+# define SIZE_MINI_MAP 16
+# define SIZE_PLAYER 16
 # define ROTATE_ANGLE M_PI/32
+# define FOV 0.66f
+# define X_HIT 1
+# define Y_HIT 2
 
 enum {
 	NO,
@@ -56,6 +59,20 @@ typedef struct s_player
 	float	pos_x;
 	float	pos_y;
 	int		vector[9][9];
+	
+	float	r_dir_x;
+	float	r_dir_y;
+	float	r_slope_dir;
+	float	r_delta_dist_x;
+	float	r_delta_dist_y;
+	float	r_step_x;
+	float	r_step_y;
+	float	r_side_dist_x;
+	float	r_side_dist_y;
+	float	cam_x;
+	int		r_map_x;
+	int		r_map_y;
+	float	r_side_hit;
 
 }	t_player;
 
@@ -118,4 +135,5 @@ int		create_cub_images(t_cub *cub);
 int		game(t_cub *cub);
 int		__quit(t_cub *cub);
 
+int	raycast(t_cub *cub);
 #endif
