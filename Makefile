@@ -12,7 +12,7 @@ SRC_DIR = ./srcs/
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes
-CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
@@ -67,7 +67,7 @@ $(NAME): $(OBJS) ${HEADER} ${LIBFT}
 		printf "%-15s ${_CYAN}${_BOLD}mlx${_END}...\n" "Compiling"
 		make -C ${MLX_DIR} > /dev/null 2>&1
 		printf "%-15s ${_PURPLE}${_BOLD}${NAME}${_END}...\n" "Compiling"
-		${CC} ${CFLAGS} ${OBJS} -L ./libft -lft -L ${MLX_DIR} -lmlx ${EXTERN_LIB} -o ${NAME}
+		${CC} ${CFLAGS} ${OBJS} -L ./libft -lft -L ${MLX_DIR} -lmlx ${EXTERN_LIB} -lm -o ${NAME}
 		printf "\n${_GREEN}${_BOLD}[Compilation done !]${_END}\n"
 
 clean :
