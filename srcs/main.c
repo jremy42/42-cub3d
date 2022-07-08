@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/08 13:19:43 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/08 13:25:20 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,21 @@ int	__quit(t_cub *cub)
 
 int __mouse_hook(int button, int x, int y, t_cub *cub)
 {
-	clear_screen();
 	printf("button pressed : [%d]\n", button);
 	printf("Mouse coordinates x/y : (%d:%d)\n", x, y);
 	printf("cub player = %p\n", &cub->player);
 	printf("cub player.fov = %f\n", cub->player.fov);
-	/*
-	if (keycode == SCROLL_UP)
+	if (button == SCROLL_UP)
 	{
 		cub->player.fov += 0.05;
 	}
-	if (keycode == SCROLL_DOWN)
+	if (button == SCROLL_DOWN)
 	{
 		cub->player.fov -= 0.05;
 	}
 	cub->player.plane_x = (- cub->player.dir_y) * cub->player.fov;
 	cub->player.plane_y = cub->player.dir_x * cub->player.fov;
-	*/
+	__key_press(2147483647, cub);
 	return (1);
 }
 
