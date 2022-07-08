@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/07 19:14:18 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/08 10:47:30 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int	__quit(t_cub *cub)
 
 int __mouse_hook(int keycode, t_cub *cub)
 {
+	printf("cub player = %p\n", &cub->player);
+	printf("cub player.fov = %f\n", cub->player.fov);
 	if (keycode == SCROLL_UP)
 	{
 		cub->player.fov += 0.05;
@@ -86,7 +88,7 @@ int	main(int ac, char **av)
 		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
 	if (!create_cub_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
-	//mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
+	mlx_mouse_hook(cub.win, &__key_press, &cub);
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
 	mlx_loop_hook(cub.mlx, game, &cub);

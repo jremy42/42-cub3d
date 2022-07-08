@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_img.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:53:50 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/07 18:25:25 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/08 10:03:19 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	create_cub_images(t_cub *cub)
 	if (!create_image(cub, &cub->backgd, WIDTH, HEIGHT))
 		return (0);
 	DEBUG && printf("backgd mlx image ok\n");
-	if (!create_image(cub, &cub->minimap, WIDTH/4, HEIGHT/4))
+	if (!create_image(cub, &cub->minimap, WIDTH/3, HEIGHT/3))
 		return (0);
 	DEBUG && printf("minimap mlx image ok\n");
 	return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycodes.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:17:20 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/07 18:46:21 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/07 22:19:27 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 #  define KEY_L 0
 #  define KEY_D 1
 #  define KEY_U 13
+#  define ARROW_UP 126
+#  define ARROW_DOWN 125
+#  define ARROW_LEFT 123
+#  define ARROW_RIGHT 124
+#  define SCROLL_UP 5
+#  define SCROLL_DOWN 4
 #  define KEY_ESC 53
 # endif
 

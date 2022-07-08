@@ -30,7 +30,7 @@ LIBFT = ./libft
 
 _GREY=	$'\033[30m
 _RED=	$'\033[31m
-_GREEN=	$'\033[32m
+_GREEN=	$'\033[32um
 _YELLOW=$'\033[33m
 _BLUE=	$'\033[34m
 _PURPLE=$'\033[35m
