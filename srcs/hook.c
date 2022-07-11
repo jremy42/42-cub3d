@@ -227,11 +227,14 @@ int	__key_press(int keycode, t_cub *cub)
 	//test
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
-	//mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+	
+	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+	/*
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[0].mlx_img, 0, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[1].mlx_img, 64, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[2].mlx_img, 128, 0);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[3].mlx_img, 192, 0);
+	*/
 	//test
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
