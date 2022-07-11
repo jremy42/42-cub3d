@@ -61,24 +61,25 @@ void	find_coef(t_player *player)
 	printf("hit = [%f] \n", player->r_side_hit);
 	if (player->r_side_hit == Y_HIT)
 	{
-		player->r_hit_y = player->r_map_y - player->r_step_y;
+		player->r_hit_y = (float)player->r_map_y - player->r_step_y;
+		//player->r_hit_y = (float)player->r_map_y;
 		player->r_hit_x = (player->r_hit_y - player->pos_y ) / player->r_slope_dir + player->pos_x;
-		//printf("\e[31mr_hit_y = [%f] | dir_y [%f] | r_slope_dir [%f] | dir_x = [%f]| r_hit_x/y :[%f][%f]\e[0m\n",player->r_hit_y, player->dir_y,player->r_slope_dir, player->dir_x, player->r_hit_x, player->r_hit_y);
+		printf("\e[31mr_hit_y = [%f] | dir_y [%f] | r_slope_dir [%f] | dir_x = [%f]| r_hit_x/y :[%f][%f]\e[0m\n",player->r_hit_y, player->dir_y,player->r_slope_dir, player->dir_x, player->r_hit_x, player->r_hit_y);
 		player->r_hit_coef = player->r_hit_x - floor(player->r_hit_x);
-		if (player->r_dir_y > 0)
-			player->r_hit_coef = 1 - player->r_hit_coef;
+		//if (player->r_dir_y > 0)
+		//	player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 	else
 	{
-		player->r_hit_x = player->r_map_x - player->r_step_x;
+		//player->r_hit_x = (float)player->r_map_x - player->r_step_x;
+		player->r_hit_x = (float)player->r_map_x;
+		printf("\e[32m r_map_x = [%d] - r_step_x [%f] \e[0m\n",player->r_map_x, player->r_step_x);
 		player->r_hit_y = (player->r_hit_x - player->pos_x ) * player->r_slope_dir + player->pos_y;
 		player->r_hit_coef = player->r_hit_y - floor(player->r_hit_y);
-
-		printf("player->r_hit_coef = [%f]\n",player->r_hit_coef);
 		printf("\e[32mr_hit_y = [%f] | pos_y [%f] | r_slope_dir [%f] | pos_x = [%f]| r_hit_x/y :[%f][%f]\e[0m\n",player->r_hit_y, player->pos_y,player->r_slope_dir, player->pos_x, player->r_hit_x, player->r_hit_y);
 
-		if (player->r_dir_x < 0)
-			player->r_hit_coef = 1 - player->r_hit_coef;
+		//if (player->r_dir_x < 0)
+		//	player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 }
 
@@ -136,10 +137,10 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 	int 	x;
 	int		y;
 
-	x = r_hit_coef * (float)img->width;
-	if (cub->player.r_side_hit == X_HIT && (int)floor(step) == 0)
+	x = r_hit_coef * img->width;
+	// check x value;
+	if (cub->player.r_side_hit == X_HIT)
 		printf("x = [%d] | r_hit_coef[%f] img->width = [%d]\n",x, r_hit_coef, img->width);
-
 	y = (int)floor(step);
 	//printf("x = [%d] y =  [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
