@@ -6,6 +6,7 @@ SRC_LIST = main.c\
 	create_img.c\
 	raycasting.c\
 	game.c\
+	load_textures.c\
 	hook.c
 
 SRC_DIR = ./srcs/

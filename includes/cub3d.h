@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/08 11:39:24 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/11 12:42:22 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ typedef struct s_player
 	float	pos_x;
 	float	pos_y;
 	int		vector[9][9];
-	
+
 	float	r_dir_x;
 	float	r_dir_y;
 	float	r_slope_dir;
@@ -79,6 +79,11 @@ typedef struct s_player
 	int		r_wall_y_end;
 	float	cos_alpha;
 	float	fov;
+	//texture
+	float	r_hit_x;
+	float	r_hit_y;
+	float	r_hit_coef;
+	int		wall_height;
 
 }	t_player;
 
@@ -98,6 +103,8 @@ typedef struct s_img
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	int		height;
+	int		width;
 }				t_img;
 
 
@@ -115,6 +122,7 @@ typedef struct s_cub
 	t_img		screen;
 	t_img		minimap;
 	t_img		backgd;
+	t_img		text_img[4];
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -143,4 +151,5 @@ int		__quit(t_cub *cub);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int raycast(t_cub *cub);
 void	update_minimap(t_cub *cub);
+int	load_textures(t_cub *cub);
 #endif

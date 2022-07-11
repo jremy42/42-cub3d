@@ -1,9 +1,9 @@
-NO ./textures/redbrick.png
-SO ./textures/bluestone.png				
+NO ./textures/xpm/mossy.xpm
+SO ./textures/xpm/greystone.xpm				
 
-WE ./textures/purplestone.png
+WE ./textures/xpm/wood.xpm
 
-EA ./textures/eagle.png
+EA ./textures/xpm/eagle.xpm
 
 F 81,81,81
 C 120,120,120

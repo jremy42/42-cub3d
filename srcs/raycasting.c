@@ -56,6 +56,26 @@ void	init_step_and_side_dist(t_player *player)
 	}
 }
 
+void	find_coef(t_player *player)
+{
+	if (player->r_side_hit == Y_HIT)
+	{
+		player->r_hit_y = player->r_map_y - player->r_step_y;
+		player->r_hit_x = (player->r_hit_y - player->dir_y ) / player->r_slope_dir + player->dir_x;
+		player->r_hit_coef = player->r_hit_x - floor(player->r_hit_x);
+		if (player->r_dir_y > 0)
+			player->r_hit_coef = 1 - player->r_hit_coef;
+	}
+	else
+	{
+		player->r_hit_x = player->r_map_x - player->r_step_x;
+		player->r_hit_y = (player->r_hit_x - player->dir_x ) * player->r_slope_dir + player->dir_y;
+		player->r_hit_coef = player->r_hit_y - floor(player->r_hit_y);
+		if (player->r_dir_x < 0)
+			player->r_hit_coef = 1 - player->r_hit_coef;
+	}
+}
+
 int	dda(t_player *player, char **map)
 {
 	int	hit;
@@ -75,8 +95,11 @@ int	dda(t_player *player, char **map)
 			player->r_map_y += player->r_step_y;
 			player->r_side_hit = Y_HIT;
 		}
-		if(map[player->r_map_y][player->r_map_x] == '1')
+		if (map[player->r_map_y][player->r_map_x] == '1')
+		{
+			find_coef(player);
 			hit = 1;
+		}
 	}
 	return (hit);
 }
@@ -91,6 +114,7 @@ void	calculate_wall_height(t_player *player)
 	else
 		perpWallDist = (player->r_side_dist_y - player->r_delta_dist_y) * player->cos_alpha;
 	wall_height = HEIGHT/perpWallDist;
+	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
 	if (player->r_wall_y_start < 0)
 		player->r_wall_y_start = 0;
@@ -101,10 +125,13 @@ void	calculate_wall_height(t_player *player)
 
 void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 {
-	int	color;
-	int	y;
+	int		color;
+	int		y;
+	float	step;
 
 	y = 0;
+	step = 0;
+
 	if (player->r_side_hit == X_HIT)
 		color = X_HIT_COLOR;
 	else
@@ -112,7 +139,12 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	while (y < HEIGHT)
 	{
 		if (y >= player->r_wall_y_start && y <= player->r_wall_y_end)
+		{
 			my_mlx_pixel_put(&cub->screen, x, y, color);
+			step += (y - player->r_wall_y_start) * (cub->text_img[0].height - 1) / (cub->player.wall_height - 1) * 1.0;
+			if (x == 1279)
+				printf("step = [%f]\n", step);
+		}
 		//else
 		//	my_mlx_pixel_put(&cub->screen, x, y,0);
 		y++;
@@ -132,6 +164,7 @@ int	raycast(t_cub *cub)
 		update_cos(&cub->player);
 		calculate_wall_height(&cub->player);
 		draw_wall_hit(x, &cub->player, cub);
+		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
 	}
 	printf("dda done for x\n");
 	return (0);

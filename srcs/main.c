@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/08 13:25:20 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/11 10:57:58 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include "cub3d.h"
 #include "mlx.h"
 #include "keycodes.h"
+
+void	destroy_text_tab(void *mlx, t_img text_img[], int size)
+{
+	int	i;
+
+	i = 0;
+	while(i < size)
+	{
+		if (mlx && text_img[i].mlx_img)
+			mlx_destroy_image(mlx, text_img[i].mlx_img);	
+		i++;
+	}
+}
 
 void	destroy_mlx_data(t_cub *cub)
 {
@@ -23,7 +36,8 @@ void	destroy_mlx_data(t_cub *cub)
 	if (cub->screen.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->screen.mlx_img);
 	if (cub->minimap.mlx_img)
-		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);	
+		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);
+	destroy_text_tab(cub->mlx, cub->text_img, 4);
 	if (cub->win)
 		mlx_destroy_window(cub->mlx, cub->win);
 	#ifdef __linux__
@@ -91,6 +105,8 @@ int	main(int ac, char **av)
 		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
 	if (!create_cub_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
+	if (!load_textures(&cub))
+		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
