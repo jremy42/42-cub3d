@@ -1,11 +1,9 @@
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture				
+NO ./textures/redbrick.png
+SO ./textures/bluestone.png				
 
-WE ./path_to_the_west_texture
+WE ./textures/purplestone.png
 
-EA ./path_to_the_east_texture
-
-
+EA ./textures/eagle.png
 
 F 81,81,81
 C 120,120,120
