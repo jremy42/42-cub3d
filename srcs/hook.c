@@ -204,7 +204,8 @@ int	__key_press(int keycode, t_cub *cub)
 {
     void	(*f_hook[4])(t_cub *cub);
 
-    clear_screen();
+    if (keycode != 2147483647)
+		clear_screen();
 	f_hook[UP] = __hookup;
 	f_hook[DOWN] = __hookdown;
 	f_hook[LEFT] = __hookleft;

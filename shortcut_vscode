@@ -8,4 +8,6 @@ cmd + b = mask / unmask sidebar
  alt + click = multicursor 
  cmd + f = recherche
  cmd + c = comment/uncomment
- ctrl shift k = supper ligne
+ctrl shift k = supper ligne
+cmd + l = selectionner ligne
+CMD + FLECHE = DEPLACEMENT FICHIER

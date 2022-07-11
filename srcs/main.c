@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/07 19:14:18 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/08 13:25:20 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,23 @@ int	__quit(t_cub *cub)
 	return (0);
 }
 
-int __mouse_hook(int keycode, t_cub *cub)
+int __mouse_hook(int button, int x, int y, t_cub *cub)
 {
-	if (keycode == SCROLL_UP)
+	printf("button pressed : [%d]\n", button);
+	printf("Mouse coordinates x/y : (%d:%d)\n", x, y);
+	printf("cub player = %p\n", &cub->player);
+	printf("cub player.fov = %f\n", cub->player.fov);
+	if (button == SCROLL_UP)
 	{
 		cub->player.fov += 0.05;
 	}
-	if (keycode == SCROLL_DOWN)
+	if (button == SCROLL_DOWN)
 	{
 		cub->player.fov -= 0.05;
 	}
 	cub->player.plane_x = (- cub->player.dir_y) * cub->player.fov;
 	cub->player.plane_y = cub->player.dir_x * cub->player.fov;
+	__key_press(2147483647, cub);
 	return (1);
 }
 
@@ -86,7 +91,7 @@ int	main(int ac, char **av)
 		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
 	if (!create_cub_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
-	//mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
+	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
 	mlx_loop_hook(cub.mlx, game, &cub);

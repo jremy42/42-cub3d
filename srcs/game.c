@@ -1,5 +1,6 @@
 #include "cub3d.h"
 #include "mlx.h"
+#include "math.h"
 
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
@@ -28,19 +29,53 @@ void	minimap_square_put(t_img *img, int x, int y, int color)
 	}
 }
 
+float square(float a)
+{
+	return (a * a);
+}
+
+float sq_dist(float x1, float y1, float x2, float y2)
+{
+	float dist_x;
+	float dist_y;
+
+	dist_x = square(x1 - x2);
+	dist_y = square(y1 - y2);
+	return (dist_x + dist_y);
+}
+
+int is_in_circle(float x, float y)
+{
+	float	distance;
+	float	distance_sqrt;
+
+	distance_sqrt = sqrtf(sq_dist(x, y, SIZE_PLAYER/2, SIZE_PLAYER/2));
+	distance = distance_sqrt - 7;
+	if (distance <= 0.00000000)
+	{
+		if (distance <= -1.00000000)
+			return (1); // Inside
+		return (2);		// Border
+	}
+	return (0);
+}
+
 void	player_square_put(t_img *img, int x, int y, int color)
 {
 	int		offset_y;
 	int		offset_x;
+	int		is_in;
 
-	offset_x = 0;
 	offset_y = 0;
 	while (offset_y < SIZE_PLAYER)
 	{
 		offset_x = 0;
 		while (offset_x < SIZE_PLAYER)
 		{
-			my_mlx_pixel_put(img, x * SIZE_MINI_MAP + offset_x, y * SIZE_MINI_MAP + offset_y, color);
+
+			is_in = is_in_circle((float)offset_x, (float)offset_y);
+			if (is_in)
+				my_mlx_pixel_put(img, x * SIZE_MINI_MAP + offset_x, y * SIZE_MINI_MAP + offset_y, color);
 			offset_x++;
 		}
 		offset_y++;	
