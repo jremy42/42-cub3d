@@ -75,6 +75,7 @@ int	check_player(t_cub *cub, int i, int j, int nb_l)
 	cub->player.start_orientation = cub->maps[i][j];
 	cub->player.pos_x = j;
 	cub->player.pos_y = i;
+	cub->maps[i][j] = '0';
 	return (1);
 }
 
@@ -117,7 +118,7 @@ int	check_maps(t_cub *cub)
 		j = 0;
 		while (cub->maps[i][j])
 		{
-			if (!__strchr(" 10NSEW", cub->maps[i][j]))
+			if (!__strchr(" 3210NSEW", cub->maps[i][j]))
 				return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
 			if (__strchr("NSEW", cub->maps[i][j]) && !check_player(cub, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);

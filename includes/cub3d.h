@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/11 18:33:19 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 11:20:14 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 # define RIGHT 3
 # define WIDTH 1280
 # define HEIGHT 720
-# define SPEED 0.5f
+# define SPEED 0.1f
 # define SIZE_MINI_MAP 16
 # define SIZE_PLAYER 16
-# define ROTATE_ANGLE M_PI/32
+# define ROTATE_ANGLE M_PI/64
 # define FOV 0.9f
 # define X_HIT 1
 # define Y_HIT 2
@@ -84,7 +84,8 @@ typedef struct s_player
 	float	r_hit_y;
 	float	r_hit_coef;
 	int		wall_height;
-	int			perp_wall_dist;
+	int		perp_wall_dist;
+	int		sprite;
 
 }	t_player;
 
