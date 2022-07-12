@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/12 13:02:49 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 15:25:33 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "cub3d.h"
 #include "mlx.h"
 #include "keycodes.h"
+#include "math.h"
 
 void	destroy_text_tab(void *mlx, t_img text_img[], int size)
 {
@@ -80,12 +81,21 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 	return (1);
 }
 
-int __mouse_move(int x, int y, t_cub *cub)
+int __mouse_move(t_cub *cub)
 {
-	printf("Mouse MOOOOVE coordinates x/y : (%d:%d)\n", x, y);
-	
-	(void)cub;
-	//__key_press(2147483647, cub);
+	int x;
+	int y;
+
+	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
+		if (x < WIDTH/2)
+			rotate(cub, ((-ROTATE_ANGLE)));
+		else if ( x > WIDTH/2)
+			rotate(cub, ((ROTATE_ANGLE)));
+		else
+			return (1);
+		update_slope(cub);
+		__key_press(2147483647, cub);
+		mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
 	return (1);
 }
 
@@ -117,10 +127,12 @@ int	main(int ac, char **av)
 	if (!load_textures(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
+	mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
+	mlx_mouse_hide(cub.mlx, cub.win);
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
-	mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
+	//mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
-	mlx_loop_hook(cub.mlx, game, &cub);
+	mlx_loop_hook(cub.mlx, __mouse_move, &cub);
 	mlx_loop(cub.mlx);
 	return (0);
 }

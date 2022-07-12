@@ -110,6 +110,12 @@ void	update_minimap(t_cub *cub)
 int	game(t_cub *cub)
 {
 	(void)cub;
+	int x;
+	int y;
+
+	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
+
+	printf("x/y [%d]/[%d]\n", x, y);
 	/*
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->backgd.mlx_img, 0, 0);

@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/12 11:20:14 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 14:52:11 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,4 +154,9 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int raycast(t_cub *cub);
 void	update_minimap(t_cub *cub);
 int	load_textures(t_cub *cub);
+
+void	rotate(t_cub *cub, float angle);
+void	update_minimap(t_cub *cub);
+void	update_slope(t_cub *cub);
+
 #endif
