@@ -91,6 +91,25 @@ void	find_coef(t_player *player)
 	}
 }
 
+int	find_texture(t_player *player)
+{
+	if (player->r_side_hit == X_HIT)
+	{
+		if(player->r_dir_x < 0)
+			return (EA);
+		else
+			return (WE);
+	}
+	else
+	{
+		if(player->r_dir_y < 0)
+		{
+			return (SO);
+		}
+		else
+			return (NO);
+	}
+}
 int	dda(t_player *player, char **map)
 {
 	int	hit;
@@ -114,13 +133,7 @@ int	dda(t_player *player, char **map)
 		{
 			find_coef(player);
 			hit = 1;
-			if (map[player->r_map_y][player->r_map_x] == '1')
-				player->sprite = 2;
-			if (map[player->r_map_y][player->r_map_x] == '2')
-				player->sprite = 3;
-			if (map[player->r_map_y][player->r_map_x] == '3')
-				player->sprite = 1;
-
+			player->sprite = find_texture(player);
 		}
 	}
 	return (hit);
@@ -139,11 +152,14 @@ void	calculate_wall_height(t_player *player)
 	wall_height = HEIGHT/perpWallDist;
 	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
+	player->r_wall_y_end = (HEIGHT / 2) + (wall_height / 2);
+	/*
 	if (player->r_wall_y_start < 0)
 		player->r_wall_y_start = 0;
-	player->r_wall_y_end = (HEIGHT / 2) + (wall_height / 2);
+
 	if (player->r_wall_y_end > HEIGHT -1)
 		player->r_wall_y_end = HEIGHT - 1;
+	*/
 }
 
 int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
@@ -173,16 +189,18 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	int		y;
 	float	step;
 
-	y = 0;
+	y = player->r_wall_y_start;
 	step = 0;
 
 	if (player->r_side_hit == X_HIT)
 		color = X_HIT_COLOR;
 	else
 		color = Y_HIT_COLOR;
-	while (y < HEIGHT)
+	(DEBUG >= 2) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
+	while (y < player->r_wall_y_end)
 	{
-		if (y >= player->r_wall_y_start && y <= player->r_wall_y_end)
+
+		if (y >= player->r_wall_y_start && y >= 0 && y <= HEIGHT)
 		{
 			step = (y - player->r_wall_y_start) * (cub->text_img[0].height - 1) * 1.0f / (cub->player.wall_height - 1);
 			color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->sprite], cub);

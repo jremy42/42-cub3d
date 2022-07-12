@@ -157,27 +157,38 @@ void	__hookdown(t_cub *cub)
 
 	next_pos_x = cub->player.pos_x - SPEED * cub->player.dir_x;
 	next_pos_y = cub->player.pos_y - SPEED * cub->player.dir_y;
-	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '1')
-		return ;
-	cub->player.pos_x = next_pos_x;
-	cub->player.pos_y = next_pos_y;
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '0')
+	{	
+		cub->player.pos_x = next_pos_x;
+		cub->player.pos_y = next_pos_y;
+	}
+	else if (cub->maps[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)] == '0')
+		cub->player.pos_x = next_pos_x;
+	else if (cub->maps[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)] == '0')
+		cub->player.pos_y = next_pos_y;
 	DEBUG && printf("down\n");
 
 }
 
 void	__hookup(t_cub *cub)
 {
-	float	next_pos_x;
+  	float	next_pos_x;
 	float	next_pos_y;
 
 	next_pos_x = cub->player.pos_x + SPEED * cub->player.dir_x;
 	next_pos_y = cub->player.pos_y + SPEED * cub->player.dir_y;
-	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '1')
-		return ;
-	cub->player.pos_x = next_pos_x;
-	cub->player.pos_y = next_pos_y;
-    DEBUG && printf("up\n");
-}
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '0')
+	{	
+		cub->player.pos_x = next_pos_x;
+		cub->player.pos_y = next_pos_y;
+	}
+	else if (cub->maps[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)] == '0')
+		cub->player.pos_x = next_pos_x;
+	else if (cub->maps[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)] == '0')
+		cub->player.pos_y = next_pos_y;
+	DEBUG && printf("up\n");
+
+};
 
 void load_background(t_cub *cub)
 {

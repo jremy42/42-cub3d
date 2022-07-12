@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/11 10:57:58 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 13:02:49 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,15 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 	return (1);
 }
 
+int __mouse_move(int x, int y, t_cub *cub)
+{
+	printf("Mouse MOOOOVE coordinates x/y : (%d:%d)\n", x, y);
+	
+	(void)cub;
+	//__key_press(2147483647, cub);
+	return (1);
+}
+
 int	main(int ac, char **av)
 {
 	t_cub	cub;
@@ -109,6 +118,7 @@ int	main(int ac, char **av)
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
+	mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
 	mlx_loop_hook(cub.mlx, game, &cub);
 	mlx_loop(cub.mlx);
