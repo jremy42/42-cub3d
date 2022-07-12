@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/12 15:47:59 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 17:54:33 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define DOWN 1
 # define LEFT 2
 # define RIGHT 3
+# define OPEN_DOOR 4
 # define WIDTH 1280
 # define HEIGHT 720
 # define SPEED 0.1f
@@ -121,6 +122,7 @@ typedef struct s_cub
 	t_color		ceiling;
 	t_color		floor;
 	char		**maps;
+	float		**door_map;
 	t_player	player;
 	t_list		*input;
 	void		*mlx;

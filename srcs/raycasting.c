@@ -110,7 +110,7 @@ int	find_texture(t_player *player)
 			return (NO);
 	}
 }
-int	dda(t_player *player, char **map)
+int	dda(t_player *player, char **map, float **door_map)
 {
 	int	hit;
 
@@ -129,14 +129,18 @@ int	dda(t_player *player, char **map)
 			player->r_map_y += player->r_step_y;
 			player->r_side_hit = Y_HIT;
 		}
-		if (map[player->r_map_y][player->r_map_x] != '0')
+		if (map[player->r_map_y][player->r_map_x] == '1')
 		{
 			find_coef(player);
+			player->sprite = find_texture(player);
 			hit = 1;
-			if (map[player->r_map_y][player->r_map_x] == '2')
-				player->sprite = DO;
-			else
-				player->sprite = find_texture(player);
+		}
+		else if (map[player->r_map_y][player->r_map_x] == '2')
+		{
+			find_coef(player);
+			if (player->r_hit_coef > door_map[player->r_map_y][player->r_map_x])
+				hit = 1;
+			player->sprite = DO;
 		}
 	}
 	return (hit);
@@ -229,7 +233,7 @@ int	raycast(t_cub *cub)
 	{
 		calculate_ray_features(&cub->player, x);
 		init_step_and_side_dist(&cub->player);
-		dda(&cub->player, cub->maps);
+		dda(&cub->player, cub->maps, cub->door_map);
 		update_cos(&cub->player);
 		calculate_wall_height(&cub->player);
 		draw_wall_hit(x, &cub->player, cub);

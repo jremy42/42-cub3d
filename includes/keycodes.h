@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keycodes.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:17:20 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/07 22:19:27 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/12 17:28:37 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@
 #  define ARROW_RIGHT 65363
 #  define SCROLL_UP 5
 #  define SCROLL_DOWN 4
+#  define SPACE_BAR 32
 # endif
 
 #endif

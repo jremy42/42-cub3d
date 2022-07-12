@@ -80,17 +80,17 @@ int	print_coord_hit(t_cub *cub)
 	p->vector[4][4] = 42;
 	while (1)
 	{
-		printf("side dist_x/side_dist_y : (%f:%f)\n", side_dist_x, side_dist_y);
+		//printf("side dist_x/side_dist_y : (%f:%f)\n", side_dist_x, side_dist_y);
 		if (side_dist_x < side_dist_y)
 		{
-			printf("next hit is on x side with %d\n", hit+1);
+			//printf("next hit is on x side with %d\n", hit+1);
 			coord_x += step_x;
 			side_dist_x += p->delta_dist_x;
 			side = -1;
 		}
 		else
 		{
-			printf("next hit is on y side with %d\n", hit+1);
+			//printf("next hit is on y side with %d\n", hit+1);
 			coord_y += step_y;
 			side_dist_y += p->delta_dist_y;
 			side = 1;
@@ -99,11 +99,11 @@ int	print_coord_hit(t_cub *cub)
 		tab_coord_y = (int)floor(coord_y);
 		if (tab_coord_x > 4 || tab_coord_y > 4 || tab_coord_x < -4 || tab_coord_y < - 4)
 			break ;
-		printf("fill in %d:%d\n", tab_coord_x + 4, tab_coord_y + 4);
+		//printf("fill in %d:%d\n", tab_coord_x + 4, tab_coord_y + 4);
 		p->vector[tab_coord_y + 4 ][tab_coord_x + 4 ] = (hit + 1) * side;
 		hit++;
 	}
-	return(printf("End of loop\n"));
+	return(1);
 }
 
 void	update_slope(t_cub *cub)
@@ -211,16 +211,45 @@ void load_background(t_cub *cub)
 	}
 }
 
+void	__switch_door(t_cub *cub)
+{
+	int i;
+	int	x_try;
+	int y_try;
+
+	x_try = floor(cub->player.pos_x);
+	y_try = floor(cub->player.pos_y);
+
+	i = 0;
+	while (i < 10)
+	{
+		if (cub->maps[y_try][x_try] == '2')
+			cub->door_map[y_try][x_try] += 0.10;
+		if (cub->maps[y_try + 1][x_try] == '2')
+			cub->door_map[y_try + 1][x_try] += 0.10;
+		if (cub->maps[y_try][x_try + 1] == '2')
+			cub->door_map[y_try][x_try + 1] += 0.10;
+		if (cub->maps[y_try + 1][x_try + 1] == '2')
+			cub->door_map[y_try + 1][x_try + 1] += 0.10;
+		__key_press(2147483647,cub);
+		++i;
+	}
+
+	DEBUG && printf("open\n");
+
+};
+
 int	__key_press(int keycode, t_cub *cub)
 {
-    void	(*f_hook[4])(t_cub *cub);
+    static void	(*f_hook[5])(t_cub *cub);
 
-    if (keycode != 2147483647)
+    //if (keycode != 2147483647)
 		clear_screen();
 	f_hook[UP] = __hookup;
 	f_hook[DOWN] = __hookdown;
 	f_hook[LEFT] = __hookleft;
 	f_hook[RIGHT] = __hookright;
+	f_hook[OPEN_DOOR] = __switch_door;
 	if (keycode == KEY_L || keycode == ARROW_LEFT)
 		f_hook[LEFT](cub);
 	if (keycode == KEY_D || keycode == ARROW_DOWN)
@@ -229,6 +258,8 @@ int	__key_press(int keycode, t_cub *cub)
 		f_hook[RIGHT](cub);
 	if (keycode == KEY_U || keycode == ARROW_UP)
 		f_hook[UP](cub);
+	if (keycode == SPACE_BAR)
+		f_hook[OPEN_DOOR](cub);
 	DEBUG && print_coord_hit(cub);
 	DEBUG && print_vector(cub);
 	DEBUG && print_debug_info(cub);

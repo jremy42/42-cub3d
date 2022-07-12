@@ -20,16 +20,22 @@ int	load_maps(t_list *input, t_cub *cub)
 	size = __lstsize(input);
 	cub->maps = malloc(sizeof(char *) * (size + 1));
 	cub->maps[size] = NULL;
-	if (!cub->maps)
-		return (0);
+	cub->door_map = malloc (sizeof(float *) * (size + 1));
+	if (!cub->maps || !cub->door_map)
+		return (free(cub->maps), free(cub->door_map), 0);
 	while (input)
 	{
 		cub->maps[i] = (char *)input->content;
 		if (__strlen(cub->maps[i]) > 1 && __strrchr(cub->maps[i], '\n'))
 			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
+		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
+		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
+		// MALLOC CHECK
+		
 		input = input->next;
 		i++;
 	}
+
 	return (1);
 }
 
@@ -125,6 +131,8 @@ int	check_maps(t_cub *cub)
 			else if(cub->maps[i][j] == '0'
 				&& !check_wall(cub->maps, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);
+			if (cub->maps[i][j] == '2')
+				cub->door_map[i][j] = 0;
 			j++;
 		}
 		i++;
