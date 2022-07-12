@@ -1,8 +1,8 @@
 SRC_LIST = main.c\
-	parsing/parsing.c\
-	parsing/debug_parsing.c\
-	parsing/loading_maps.c\
-	parsing/check_color.c\
+	parsing_bonus/parsing.c\
+	parsing_bonus/debug_parsing.c\
+	parsing_bonus/loading_maps.c\
+	parsing_bonus/check_color.c\
 	create_img.c\
 	raycasting.c\
 	game.c\

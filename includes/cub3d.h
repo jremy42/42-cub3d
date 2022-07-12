@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/12 14:52:11 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/12 15:47:59 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
+# define BONUS 1
 # define UP 0
 # define DOWN 1
 # define LEFT 2
@@ -40,7 +41,8 @@ enum {
 	NO,
 	SO,
 	EA,
-	WE
+	WE,
+	DO
 };
 
 enum {
@@ -113,6 +115,8 @@ typedef struct s_img
 typedef struct s_cub
 {
 	void		*text[4];
+	void		*door;
+	t_img		door_img;
 	void		*color[2];
 	t_color		ceiling;
 	t_color		floor;
