@@ -287,27 +287,34 @@ void	__update_door_value(t_cub *cub)
 	}
 }
 
+int	__key_release(int keycode, t_cub *cub)
+{
+	if (keycode == KEY_L || keycode == ARROW_LEFT)
+		cub->action -= 1 << 0;
+	if (keycode == KEY_D || keycode == ARROW_DOWN)
+			cub->action -= 1 << 1;
+	if (keycode == KEY_R || keycode == ARROW_RIGHT)
+			cub->action -= 1 << 2;
+	if (keycode == KEY_U || keycode == ARROW_UP)
+			cub->action -= 1 << 3;
+	if (keycode == SPACE_BAR)
+			cub->action -= 1 << 4;
+	return (1);
+}
+
 int	__key_press(int keycode, t_cub *cub)
 {
-    static void	(*f_hook[5])(t_cub *cub);
-
-    //if (keycode != 2147483647)
-		clear_screen();
-	f_hook[UP] = __hookup;
-	f_hook[DOWN] = __hookdown;
-	f_hook[LEFT] = __hookleft;
-	f_hook[RIGHT] = __hookright;
-	f_hook[OPEN_DOOR] = __switch_door;
+	clear_screen();
 	if (keycode == KEY_L || keycode == ARROW_LEFT)
-		f_hook[LEFT](cub);
+		cub->action |= 1 << 0;
 	if (keycode == KEY_D || keycode == ARROW_DOWN)
-		f_hook[DOWN](cub);
+			cub->action |= 1 << 1;
 	if (keycode == KEY_R || keycode == ARROW_RIGHT)
-		f_hook[RIGHT](cub);
+			cub->action |= 1 << 2;
 	if (keycode == KEY_U || keycode == ARROW_UP)
-		f_hook[UP](cub);
+			cub->action |= 1 << 3;
 	if (keycode == SPACE_BAR)
-		f_hook[OPEN_DOOR](cub);
+			cub->action |= 1 << 4;
 	DEBUG && print_coord_hit(cub);
 	DEBUG && print_vector(cub);
 	DEBUG && print_debug_info(cub);

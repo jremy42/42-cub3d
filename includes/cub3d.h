@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/13 13:29:53 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/13 15:54:10 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 #  define DEBUG 0
 # endif
 # define BONUS 1
-# define UP 0
+# define UP 3
 # define DOWN 1
-# define LEFT 2
-# define RIGHT 3
+# define LEFT 0
+# define RIGHT 2
 # define OPEN_DOOR 4
 # define WIDTH 1280
 # define HEIGHT 720
@@ -132,6 +132,8 @@ typedef struct s_cub
 	t_img		minimap;
 	t_img		backgd;
 	t_img		text_img[4];
+	void		(*hook_fx[5])();
+	int			action;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -171,4 +173,10 @@ int __mouse_move(t_cub *cub);
 void	load_background(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
+void	__hookleft(t_cub *cub);
+void	__hookright(t_cub *cub);
+void	__hookdown(t_cub *cub);
+void	__hookup(t_cub *cub);
+void	__switch_door(t_cub *cub);
+int	__key_release(int keycode, t_cub *cub);
 #endif

@@ -114,6 +114,9 @@ int	render_frame(t_cub *cub)
 	static size_t	next_frame = 0;
 	static size_t	first_get_time = 0;
 	size_t			current_time;
+	int				i;
+
+	i = -1;
 
 	current_time = __get_time();
 
@@ -121,7 +124,12 @@ int	render_frame(t_cub *cub)
 		first_get_time = current_time;
 
 	if (current_time >= next_frame)
-	{		
+	{
+		while (++i < 5)
+		{
+			if (cub->action & (1 << i))
+				cub->hook_fx[i](cub);
+		}
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
 		__mouse_move(cub);

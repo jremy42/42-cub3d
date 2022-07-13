@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/13 10:51:00 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/13 15:57:07 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	destroy_mlx_data(t_cub *cub)
 	destroy_text_tab(cub->mlx, cub->text_img, 4);
 	if (cub->win)
 		mlx_destroy_window(cub->mlx, cub->win);
+	mlx_do_key_autorepeaton(cub->mlx);
 	#ifdef __linux__
 	if (cub->mlx)
 	{
@@ -105,6 +106,11 @@ int	main(int ac, char **av)
 	t_cub	cub;
 
 	__memset(&cub, 0, sizeof(cub));
+	cub.hook_fx[UP] = __hookup;
+	cub.hook_fx[DOWN] = __hookdown;
+	cub.hook_fx[LEFT] = __hookleft;
+	cub.hook_fx[RIGHT] = __hookright;
+	cub.hook_fx[OPEN_DOOR] = __switch_door;
 	if (ac != 2)
 	{
 		__putstr_fd("Error\nneed maps\n", 2);
@@ -133,6 +139,8 @@ int	main(int ac, char **av)
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	//mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
+	mlx_hook(cub.win, 3, 1L << 0, &__key_release, &cub);
+	mlx_do_key_autorepeatoff(cub.mlx);
 	mlx_loop_hook(cub.mlx, render_frame, &cub);
 	mlx_loop(cub.mlx);
 	return (0);
