@@ -7,6 +7,7 @@ SRC_LIST = main.c\
 	raycasting.c\
 	game.c\
 	load_textures.c\
+	time.c\
 	hook.c
 
 SRC_DIR = ./srcs/
@@ -29,15 +30,15 @@ DEPS = $(patsubst $(OBJS_DIR)%.o, $(OBJS_DIR)%.d, $(OBJS))
 HEADER = includes/cub3d.h
 LIBFT = ./libft
 
-_GREY=	$'\033[30m
-_RED=	$'\033[31m
-_GREEN=	$'\033[32um
-_YELLOW=$'\033[33m
-_BLUE=	$'\033[34m
-_PURPLE=$'\033[35m
-_CYAN=	$'\033[36m
-_WHITE=	$'\033[37m
-_END= $'\033[0m
+_GREY=\033[30m
+_RED=\033[31m
+_GREEN=\033[32m
+_YELLOW=\033[33m
+_BLUE=\033[34m
+_PURPLE=\033[35m
+_CYAN=\033[36m
+_WHITE=\033[37m
+_END=\033[0m
 
 CC = cc
 

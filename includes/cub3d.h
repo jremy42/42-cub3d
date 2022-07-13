@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/12 17:54:33 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/13 10:53:41 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 1
+# define DEBUG 0
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
@@ -36,7 +36,8 @@
 # define X_HIT 1
 # define Y_HIT 2
 # define X_HIT_COLOR 0xEA6A36
-# define Y_HIT_COLOR 0xf08c25 
+# define Y_HIT_COLOR 0xf08c25
+# define FPS 60
 
 enum {
 	NO,
@@ -164,5 +165,9 @@ int	load_textures(t_cub *cub);
 void	rotate(t_cub *cub, float angle);
 void	update_minimap(t_cub *cub);
 void	update_slope(t_cub *cub);
+size_t	__get_time(void);
+int	render_frame(t_cub *cub);
+int __mouse_move(t_cub *cub);
+void	load_background(t_cub *cub);
 
 #endif

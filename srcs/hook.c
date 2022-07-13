@@ -137,15 +137,48 @@ void	rotate(t_cub *cub, float angle)
 
 void	__hookleft(t_cub *cub)
 {
-	rotate(cub, -ROTATE_ANGLE);
-	update_slope(cub);
+	//rotate(cub, -ROTATE_ANGLE);
+	//update_slope(cub);
+	float	next_pos_x;
+	float	next_pos_y;
+
+	next_pos_x = cub->player.pos_x - SPEED * cub->player.plane_x;
+	next_pos_y = cub->player.pos_y - SPEED * cub->player.plane_y;
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '0')
+	{	
+		cub->player.pos_x = next_pos_x;
+		cub->player.pos_y = next_pos_y;
+	}
+	else if (cub->maps[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)] == '0')
+		cub->player.pos_x = next_pos_x;
+	else if (cub->maps[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)] == '0')
+		cub->player.pos_y = next_pos_y;
+
+
+
     DEBUG && printf("left\n");
 }
 
 void	__hookright(t_cub *cub)
 {
-	rotate(cub, ROTATE_ANGLE);
-	update_slope(cub);
+	//rotate(cub, ROTATE_ANGLE);
+	//update_slope(cub);
+	float	next_pos_x;
+	float	next_pos_y;
+
+	next_pos_x = cub->player.pos_x + SPEED * cub->player.plane_x;
+	next_pos_y = cub->player.pos_y + SPEED * cub->player.plane_y;
+	if (cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)] == '0')
+	{	
+		cub->player.pos_x = next_pos_x;
+		cub->player.pos_y = next_pos_y;
+	}
+	else if (cub->maps[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)] == '0')
+		cub->player.pos_x = next_pos_x;
+	else if (cub->maps[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)] == '0')
+		cub->player.pos_y = next_pos_y;
+
+
     DEBUG && printf("right\n");
 
 }
@@ -231,7 +264,6 @@ void	__switch_door(t_cub *cub)
 			cub->door_map[y_try][x_try + 1] += 0.10;
 		if (cub->maps[y_try + 1][x_try + 1] == '2')
 			cub->door_map[y_try + 1][x_try + 1] += 0.10;
-		__key_press(2147483647,cub);
 		++i;
 	}
 
@@ -264,20 +296,14 @@ int	__key_press(int keycode, t_cub *cub)
 	DEBUG && print_vector(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
+	/*
 	load_background(cub);
 	raycast(cub);
-	//test
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 	
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
-	/*
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[0].mlx_img, 0, 0);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[1].mlx_img, 64, 0);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[2].mlx_img, 128, 0);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->text_img[3].mlx_img, 192, 0);
 	*/
-	//test
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
 	return (1);

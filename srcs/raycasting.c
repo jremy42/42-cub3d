@@ -239,7 +239,7 @@ int	raycast(t_cub *cub)
 		draw_wall_hit(x, &cub->player, cub);
 		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
 	}
-	printf("dda done for x\n");
+	DEBUG && printf("dda done for x\n");
 	return (0);
 }
 

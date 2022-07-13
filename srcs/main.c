@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/12 15:25:33 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/13 10:51:00 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	__quit(t_cub *cub)
 {
 	destroy_cub_data(cub);
 	destroy_mlx_data(cub);
+	//destroy texture1
 	return (0);
 }
 
@@ -77,7 +78,7 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 	}
 	cub->player.plane_x = (- cub->player.dir_y) * cub->player.fov;
 	cub->player.plane_y = cub->player.dir_x * cub->player.fov;
-	__key_press(2147483647, cub);
+	//__key_press(2147483647, cub);
 	return (1);
 }
 
@@ -88,13 +89,13 @@ int __mouse_move(t_cub *cub)
 
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
 		if (x < WIDTH/2)
-			rotate(cub, ((-ROTATE_ANGLE)));
+			rotate(cub, ((-ROTATE_ANGLE) * 2));
 		else if ( x > WIDTH/2)
-			rotate(cub, ((ROTATE_ANGLE)));
+			rotate(cub, ((ROTATE_ANGLE) * 2));
 		else
 			return (1);
 		update_slope(cub);
-		__key_press(2147483647, cub);
+		//__key_press(2147483647, cub);
 		mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
 	return (1);
 }
@@ -132,7 +133,7 @@ int	main(int ac, char **av)
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	//mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
-	mlx_loop_hook(cub.mlx, __mouse_move, &cub);
+	mlx_loop_hook(cub.mlx, render_frame, &cub);
 	mlx_loop(cub.mlx);
 	return (0);
 }

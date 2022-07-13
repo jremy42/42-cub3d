@@ -2,6 +2,7 @@
 #include "mlx.h"
 #include "math.h"
 
+
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
 	char	*dst;
@@ -107,15 +108,29 @@ void	update_minimap(t_cub *cub)
 	}
 }
 
-int	game(t_cub *cub)
+int	render_frame(t_cub *cub)
 {
 	(void)cub;
-	int x;
-	int y;
+	static size_t	next_frame = 0;
+	static size_t	first_get_time = 0;
+	size_t			current_time;
 
-	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
+	current_time = __get_time();
 
-	printf("x/y [%d]/[%d]\n", x, y);
+	if (!next_frame)
+		first_get_time = current_time;
+
+	if (current_time >= next_frame)
+	{		
+		next_frame = current_time + 1000/FPS;
+		__mouse_move(cub);
+		load_background(cub);
+		raycast(cub);
+		update_minimap(cub);
+		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
+		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
+	}
 	/*
 	update_minimap(cub);
 	mlx_put_image_to_window(cub->mlx,cub->win, cub->backgd.mlx_img, 0, 0);

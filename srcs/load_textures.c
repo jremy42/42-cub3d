@@ -33,6 +33,5 @@ int	load_textures(t_cub *cub)
 		cub->door_img.addr = mlx_get_data_addr(cub->door_img.mlx_img, &cub->door_img.bits_per_pixel,
 			   &cub->door_img.line_length, &cub->door_img.endian);
 	}
-
 	return (1);
 }
