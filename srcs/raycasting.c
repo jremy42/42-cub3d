@@ -141,7 +141,10 @@ int	dda(t_player *player, char **map, float **door_map)
 			find_coef(player);
 			if (player->r_hit_coef <  door_map[player->r_map_y][player->r_map_x] - floor(door_map[player->r_map_y][player->r_map_x])
 				|| (door_map[player->r_map_y][player->r_map_x] != 0 && door_map[player->r_map_y][player->r_map_x] == floor(door_map[player->r_map_y][player->r_map_x])))
+			{	
 				hit = 1;
+				player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - 1;
+			}
 			player->sprite = DO;
 		}
 	}
@@ -181,7 +184,7 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 
 	
 
-	x = r_hit_coef * (img->width - 0);
+	x = (r_hit_coef) * (img->width - 0);
 	// check x value;
 	//if (cub->player.r_side_hit == X_HIT)
 		//printf("x = [%d] | r_hit_coef[%f] img->width = [%d]\n",x, r_hit_coef, img->width);
@@ -212,11 +215,22 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 
 		if (y >= player->r_wall_y_start && y >= 0 && y <= HEIGHT)
 		{
-			step = (y - player->r_wall_y_start) * (cub->text_img[0].height - 1) * 1.0f / (cub->player.wall_height - 1);
 			if (player->sprite == DO)
+			{
+				step = (y - player->r_wall_y_start) * (cub->door_img.height - 1) * 1.0f / (cub->player.wall_height - 1);
 				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);			
+
+			}
 			else
+			{
+				step = (y - player->r_wall_y_start) * (cub->text_img[0].height - 1) * 1.0f / (cub->player.wall_height - 1);
 				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->sprite], cub);
+			}
+			if (player->r_side_hit == Y_HIT)
+			{
+				color >>= 1;
+				color &= (127 << 16 | 127 << 8 | 127);
+			}
 			my_mlx_pixel_put(&cub->screen, x, y, color);
 			//if (y == HEIGHT/2)
 			//	DEBUG && printf(" x: [%d] | r_wall_y_start [%d] | text_img.height [%d]  / wall_height: [%d] step = [%f] r_hit_coef[%f]\n",x , player->r_wall_y_start, cub->text_img[0].height, cub->player.wall_height, step, cub->player.r_hit_coef);
