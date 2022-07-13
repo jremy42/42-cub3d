@@ -124,15 +124,15 @@ int	check_maps(t_cub *cub)
 		j = 0;
 		while (cub->maps[i][j])
 		{
-			if (!__strchr(" 3210NSEW", cub->maps[i][j]))
+			if (!__strchr(" D3210NSEW", cub->maps[i][j]))
 				return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
 			if (__strchr("NSEW", cub->maps[i][j]) && !check_player(cub, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);
 			else if(cub->maps[i][j] == '0'
 				&& !check_wall(cub->maps, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);
-			if (cub->maps[i][j] == '2')
-				cub->door_map[i][j] = 0;
+			if (cub->maps[i][j] == 'D')
+				cub->door_map[i][j] = 2;
 			j++;
 		}
 		i++;

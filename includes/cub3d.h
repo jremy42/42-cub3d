@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/13 10:53:41 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/13 12:30:15 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 0
+# define DEBUG 1
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
@@ -169,5 +169,6 @@ size_t	__get_time(void);
 int	render_frame(t_cub *cub);
 int __mouse_move(t_cub *cub);
 void	load_background(t_cub *cub);
+void	__update_door_value(t_cub *cub);
 
 #endif

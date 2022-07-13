@@ -116,7 +116,8 @@ int	dda(t_player *player, char **map, float **door_map)
 
 	hit = 0;
 	while (!hit)
-	{	
+	{
+	
 		if (player->r_side_dist_x < player->r_side_dist_y)
 		{
 			player->r_side_dist_x += player->r_delta_dist_x;
@@ -135,10 +136,11 @@ int	dda(t_player *player, char **map, float **door_map)
 			player->sprite = find_texture(player);
 			hit = 1;
 		}
-		else if (map[player->r_map_y][player->r_map_x] == '2')
+		else if (map[player->r_map_y][player->r_map_x] == 'D')
 		{
 			find_coef(player);
-			if (player->r_hit_coef > door_map[player->r_map_y][player->r_map_x])
+			if (player->r_hit_coef <  door_map[player->r_map_y][player->r_map_x] - floor(door_map[player->r_map_y][player->r_map_x])
+				|| (door_map[player->r_map_y][player->r_map_x] != 0 && door_map[player->r_map_y][player->r_map_x] == floor(door_map[player->r_map_y][player->r_map_x])))
 				hit = 1;
 			player->sprite = DO;
 		}
@@ -197,6 +199,7 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	float	step;
 
 	y = player->r_wall_y_start;
+	y = 0;
 	step = 0;
 
 	if (player->r_side_hit == X_HIT)
@@ -204,7 +207,7 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	else
 		color = Y_HIT_COLOR;
 	(DEBUG >= 2) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
-	while (y < player->r_wall_y_end)
+	while (y < player->r_wall_y_end && y <= HEIGHT)
 	{
 
 		if (y >= player->r_wall_y_start && y >= 0 && y <= HEIGHT)

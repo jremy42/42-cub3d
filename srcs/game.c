@@ -123,12 +123,13 @@ int	render_frame(t_cub *cub)
 	if (current_time >= next_frame)
 	{		
 		next_frame = current_time + 1000/FPS;
+		__update_door_value(cub);
 		__mouse_move(cub);
 		load_background(cub);
 		raycast(cub);
 		update_minimap(cub);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
-		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+		//mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}
 	/*
