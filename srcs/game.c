@@ -26,7 +26,7 @@ int	render_frame(t_cub *cub)
 	//if (!next_frame)
 	//	first_get_time = current_time;
 	//printf("current time =  %lu\n", current_time);
-	DEBUG && printf("Rendering : time ok\n");
+	(DEBUG == 2) && printf("Rendering : time ok\n");
 	if (current_time >= next_frame)
 	{
 		while (++i < 5)
@@ -34,8 +34,6 @@ int	render_frame(t_cub *cub)
 			if (cub->action & (1 << i))
 				cub->hook_fx[i](cub);
 		}
-		calculate_sprite_info(cub, &cub->sprite1);
-		DEBUG && print_sprite_info(&cub->sprite1);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
 		//__mouse_move(cub);
@@ -47,6 +45,13 @@ int	render_frame(t_cub *cub)
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+		calculate_sprite_info(cub, &cub->sprite1);
+
+		clear_screen();
+		DEBUG && print_coord_hit(cub);
+		DEBUG && print_vector(cub);
+		DEBUG && print_debug_info(cub);
+		DEBUG && print_sprite_info(&cub->sprite1);
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}
 	// exit(0);

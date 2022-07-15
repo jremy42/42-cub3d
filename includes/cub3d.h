@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 18:01:27 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 18:45:27 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,6 +200,8 @@ void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
 int		__key_release(int keycode, t_cub *cub);
 void	update_minimap(t_cub *cub);
+int	print_coord_hit(t_cub *cub);
+int	print_vector(t_cub *cub);
 
 // SPRITE AND VECTORE MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);

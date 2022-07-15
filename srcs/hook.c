@@ -94,7 +94,6 @@ int	print_coord_hit(t_cub *cub)
 	int		side;
 
 	t_player	*p;
-
 	p = &cub->player;
 	if (p->dir_x > 0)
 		step_x = 1;
@@ -181,6 +180,7 @@ void	__hookleft(t_cub *cub)
 	#endif
 	#ifdef __MACH__
 	rotate(cub, -0.1f);
+	update_slope(cub);
 	#endif
     (DEBUG == 2) && printf("left\n");
 }
@@ -192,6 +192,7 @@ void	__hookright(t_cub *cub)
 	#endif
 	#ifdef __MACH__
 	rotate(cub, 0.1f);
+	update_slope(cub);
 	#endif
     (DEBUG == 2) && printf("right\n");
 
@@ -323,7 +324,6 @@ int	__key_release(int keycode, t_cub *cub)
 
 int	__key_press(int keycode, t_cub *cub)
 {
-	clear_screen();
 	if (keycode == KEY_L || keycode == ARROW_LEFT)
 		cub->action |= 1 << 0;
 	if (keycode == KEY_D || keycode == ARROW_DOWN)
@@ -334,9 +334,6 @@ int	__key_press(int keycode, t_cub *cub)
 			cub->action |= 1 << 3;
 	if (keycode == SPACE_BAR)
 			cub->action |= 1 << 4;
-	DEBUG && print_coord_hit(cub);
-	DEBUG && print_vector(cub);
-	DEBUG && print_debug_info(cub);
 	DEBUG && printf("Key pressed [%d]\n", keycode);
 	/*
 	load_background(cub);
