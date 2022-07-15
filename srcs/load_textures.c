@@ -1,9 +1,6 @@
 #include "cub3d.h"
 #include "mlx.h"
 
-
-
-
 int	load_textures(t_cub *cub)
 {
 

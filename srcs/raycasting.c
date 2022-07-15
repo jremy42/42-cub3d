@@ -143,7 +143,8 @@ int	dda(t_player *player, char **map, float **door_map)
 				|| (door_map[player->r_map_y][player->r_map_x] != 0 && door_map[player->r_map_y][player->r_map_x] == floor(door_map[player->r_map_y][player->r_map_x])))
 			{	
 				hit = 1;
-				player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - 1;
+				player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - floor(door_map[player->r_map_y][player->r_map_x]);
+				//player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - 1;
 			}
 			player->sprite = DO;
 		}
@@ -191,6 +192,7 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 	y = (int)floor(step);
 	//printf("x = [%d] y =  [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
+	(DEBUG == 2)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
 	return(*(unsigned int*)dst);
 }
 
@@ -209,21 +211,21 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 		color = X_HIT_COLOR;
 	else
 		color = Y_HIT_COLOR;
-	(DEBUG >= 2) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
-	while (y < player->r_wall_y_end && y <= HEIGHT)
+	(DEBUG == 2) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
+	while (y < player->r_wall_y_end && y < HEIGHT)
 	{
 
-		if (y >= player->r_wall_y_start && y >= 0 && y <= HEIGHT)
+		if (y >= player->r_wall_y_start && y >= 0 && y < HEIGHT)
 		{
 			if (player->sprite == DO)
 			{
-				step = (y - player->r_wall_y_start) * (cub->door_img.height - 1) * 1.0f / (cub->player.wall_height - 1);
+				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
 				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);			
 
 			}
 			else
 			{
-				step = (y - player->r_wall_y_start) * (cub->text_img[0].height - 1) * 1.0f / (cub->player.wall_height - 1);
+				step = (y - player->r_wall_y_start) * (cub->text_img[0].height - 0) * 1.0f / (cub->player.wall_height - 0);
 				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->sprite], cub);
 			}
 			if (player->r_side_hit == Y_HIT)

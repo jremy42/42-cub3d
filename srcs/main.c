@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/15 12:11:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 15:17:23 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,22 @@ int __mouse_move(t_cub *cub)
 	int x;
 	int y;
 
+	x = WIDTH/2;
+	y = 0;
+	y++;
+	#ifdef __linux__
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
-		if (x < WIDTH/2)
-			rotate(cub, ((-ROTATE_ANGLE) * 0.2));
-		else if ( x > WIDTH/2)
-			rotate(cub, ((ROTATE_ANGLE) * 0.2));
-		else
-			return (1);
-		update_slope(cub);
-		//__key_press(2147483647, cub);
-		mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
+	#endif
+	if (x < WIDTH/2)
+		rotate(cub, ((-ROTATE_ANGLE) * 0.2));
+	else if ( x > WIDTH/2)
+		rotate(cub, ((ROTATE_ANGLE) * 0.2));
+	else
+		return (1);
+	update_slope(cub);
+	#ifdef __linux__
+	mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
+	#endif
 	return (1);
 }
 
@@ -123,25 +129,40 @@ int	main(int ac, char **av)
 	parsing(av, &cub);
 	DEBUG && print_cub(&cub);
 	__putstr_fd("Hello Raycasted World\n", 1);
+	DEBUG && printf("sizeof unsigned int : [%lu]\n", sizeof(unsigned int));
 	cub.mlx = mlx_init();
 	if (!cub.mlx)
 		return (__exit_error("Mlx init", &cub), 1);
+	DEBUG && printf("mlx init ok\n");
 	cub.win = mlx_new_window(cub.mlx, WIDTH, HEIGHT, "My little cube");
 	if (!cub.win)
 		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
+	DEBUG && printf("mlx win ok\n");
 	if (!create_cub_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
+	DEBUG && printf("mlx image loading ok\n");
 	if (!load_textures(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
+	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
+	DEBUG && printf("mlx hooking mouse ok\n");
+	#ifdef __linux__
 	mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
+	#endif
+	DEBUG && printf("mlx centering mouse ok\n");
 	mlx_mouse_hide(cub.mlx, cub.win);
+	DEBUG && printf("mlx mouse hiding ok\n");
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
-	//mlx_hook(cub.win, 6, 0L, &__mouse_move, &cub);
+	DEBUG && printf("mlx hook quit ok\n");
 	mlx_hook(cub.win, 2, 1L << 0, &__key_press, &cub);
+	DEBUG && printf("mlx key press ok\n");
 	mlx_hook(cub.win, 3, 1L << 0, &__key_release, &cub);
+	DEBUG && printf("mlx key release ok\n");
 	mlx_do_key_autorepeatoff(cub.mlx);
+	DEBUG && printf("mlx autorepeat off ok\n");
 	mlx_loop_hook(cub.mlx, render_frame, &cub);
+	DEBUG && printf("mlx rendering loop hook ok\n");
 	mlx_loop(cub.mlx);
+	DEBUG && printf("mlx looping done (this should not occur)\n");
 	return (0);
 }
