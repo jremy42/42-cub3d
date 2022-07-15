@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/15 16:46:38 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 17:22:52 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,10 @@ int	main(int ac, char **av)
 	DEBUG && printf("mlx image loading ok\n");
 	if (!load_textures(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
+	cub.minimap_height = HEIGHT/4;
+	cub.minimap_width = WIDTH/4;
+	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
+	//mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	DEBUG && printf("mlx hooking mouse ok\n");

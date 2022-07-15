@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 17:19:28 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 17:56:49 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,18 @@
 # define HEIGHT 720
 # define SPEED 0.1f
 # define SIZE_MINI_MAP 16
-# define SIZE_PLAYER 16
+# define SIZE_PLAYER 8
 # define ROTATE_ANGLE M_PI/32
 # define FOV 0.9f
 # define X_HIT 1
 # define Y_HIT 2
 # define X_HIT_COLOR 0xEA6A36
 # define Y_HIT_COLOR 0xf08c25
+# define MINIMAP_WALL_COLOR 0xFFFFFF
+# define MINIMAP_DOOR_COLOR 0x7a7a7a
+# define MINIMAP_PLAYER_COLOR 0x7e0b80
+# define MINIMAP_EMPTY_COLOR 0x212e26
+# define MINIMAP_GROUND_COLOR 0xe6e6e6
 # define FPS 60
 
 enum {
@@ -146,6 +151,8 @@ typedef struct s_cub
 	t_img		text_img[4];
 	void		(*hook_fx[5])();
 	int			action;
+	int			minimap_height;
+	int			minimap_width;
 	t_sprite	sprite1;
 }	t_cub;
 
@@ -181,7 +188,7 @@ void	rotate(t_cub *cub, float angle);
 void	update_minimap(t_cub *cub);
 void	update_slope(t_cub *cub);
 size_t	__get_time(void);
-int	render_frame(t_cub *cub);
+int		render_frame(t_cub *cub);
 int __mouse_move(t_cub *cub);
 void	load_background(t_cub *cub);
 void	__update_door_value(t_cub *cub);
@@ -192,10 +199,7 @@ void	__hookdown(t_cub *cub);
 void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
 int	__key_release(int keycode, t_cub *cub);
-
-// SPRITE AND VECTORE MATH
-void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
-float	vector_det(float u_x, float u_y, float v_x, float v_y);
-float	vector_dot(float u_x, float u_y, float v_x, float v_y);
+void	update_minimap(t_cub *cub);
 int		print_sprite_info(t_sprite *sprite);
+void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
 #endif
