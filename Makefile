@@ -8,6 +8,7 @@ SRC_LIST = main.c\
 	game.c\
 	load_textures.c\
 	time.c\
+	minimaps.c\
 	sprite.c\
 	hook.c
 
@@ -16,7 +17,7 @@ SRC_DIR = ./srcs/
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes
-CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
