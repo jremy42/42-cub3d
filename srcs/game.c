@@ -46,7 +46,6 @@ int	render_frame(t_cub *cub)
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 		calculate_sprite_info(cub, &cub->sprite1);
-
 		clear_screen();
 		DEBUG && print_coord_hit(cub);
 		DEBUG && print_vector(cub);
