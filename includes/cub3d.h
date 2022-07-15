@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 17:19:28 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 17:55:44 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,7 +191,7 @@ void	__hookright(t_cub *cub);
 void	__hookdown(t_cub *cub);
 void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
-int	__key_release(int keycode, t_cub *cub);
+int		__key_release(int keycode, t_cub *cub);
 
 // SPRITE AND VECTORE MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
