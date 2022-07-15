@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 16:10:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/15 17:19:28 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 0
+# define DEBUG 1
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
@@ -52,16 +52,29 @@ enum {
 	C
 };
 
+typedef struct s_sprite
+{
+	float	norm;
+	int		pos_x;
+	int		pos_y;
+	float	cam_pos_x;
+	float	cam_pos_y;
+	float	plane_proj;
+	float	dir_proj;
+}	t_sprite;
+
 typedef struct s_player
 {
 	char	start_orientation;
 	float	dir_x;
 	float	dir_y;
+	float	dir_norm;
 	float	slope_dir;
 	float	delta_dist_x;
 	float	delta_dist_y;
 	float	plane_x;
 	float	plane_y;
+	float	plane_norm;
 	float	pos_x;
 	float	pos_y;
 	int		vector[9][9];
@@ -89,8 +102,8 @@ typedef struct s_player
 	float	r_hit_coef;
 	int		wall_height;
 	int		perp_wall_dist;
-	int		sprite;
 
+	int		sprite; // A RENOMMER -> CONFUSION !!!!!!!!!!
 }	t_player;
 
 typedef struct s_color
@@ -113,7 +126,6 @@ typedef struct s_img
 	int		width;
 }				t_img;
 
-
 typedef struct s_cub
 {
 	void		*text[4];
@@ -134,6 +146,7 @@ typedef struct s_cub
 	t_img		text_img[4];
 	void		(*hook_fx[5])();
 	int			action;
+	t_sprite	sprite1;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -179,4 +192,10 @@ void	__hookdown(t_cub *cub);
 void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
 int	__key_release(int keycode, t_cub *cub);
+
+// SPRITE AND VECTORE MATH
+void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
+float	vector_det(float u_x, float u_y, float v_x, float v_y);
+float	vector_dot(float u_x, float u_y, float v_x, float v_y);
+int		print_sprite_info(t_sprite *sprite);
 #endif

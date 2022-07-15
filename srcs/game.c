@@ -7,7 +7,7 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
 	char	*dst;
 
-	(DEBUG == 2) && printf("x : [%d], y : [%d]\n", x, y);
+	(DEBUG == 3) && printf("x : [%d], y : [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
 	*(unsigned int*)dst = color;
 }
@@ -117,7 +117,7 @@ int	render_frame(t_cub *cub)
 
 	i = -1;
 	current_time = __get_time();
-	DEBUG && printf("Rendering : time ok\n");
+	(DEBUG == 3) && printf("Rendering : time ok\n");
 	if (current_time >= next_frame)
 	{
 		while (++i < 5)
@@ -125,19 +125,21 @@ int	render_frame(t_cub *cub)
 			if (cub->action & (1 << i))
 				cub->hook_fx[i](cub);
 		}
+		calculate_sprite_info(cub, &cub->sprite1);
+		DEBUG && print_sprite_info(&cub->sprite1);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
-		DEBUG && printf("Rendering : doors update ok\n");
+		(DEBUG == 3) && printf("Rendering : doors update ok\n");
 		__mouse_move(cub);
-		DEBUG && printf("Rendering : mouse update ok\n");
+		(DEBUG == 3) && printf("Rendering : mouse update ok\n");
 		load_background(cub);
-		DEBUG && printf("Rendering : background ok\n");
+		(DEBUG == 3) && printf("Rendering : background ok\n");
 		raycast(cub);
-		DEBUG && printf("Rendering : raycasting ok\n");
+		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
-		DEBUG && printf("Rendering : minimap ok\n");
+		(DEBUG == 3) && printf("Rendering : minimap ok\n");
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
-		DEBUG && printf("Rendering : outputing screen ok\n");
+		(DEBUG == 3) && printf("Rendering : outputing screen ok\n");
 		//mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}

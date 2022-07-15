@@ -8,6 +8,7 @@ SRC_LIST = main.c\
 	game.c\
 	load_textures.c\
 	time.c\
+	sprite.c\
 	hook.c
 
 SRC_DIR = ./srcs/

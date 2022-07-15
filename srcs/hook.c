@@ -162,6 +162,8 @@ void	rotate(t_cub *cub, float angle)
 						-old_plane_y * sin(angle);
 	cub->player.plane_y = old_plane_x * sin(angle)
 						+old_plane_y * cos(angle);
+	cub->player.dir_norm = sqrt(pow(cub->player.dir_x, 2) + pow(cub->player.dir_y, 2));
+	cub->player.plane_norm = sqrt(pow(cub->player.plane_x, 2) + pow(cub->player.plane_y, 2));
 }
 
 void	__hookleft(t_cub *cub)
@@ -172,7 +174,7 @@ void	__hookleft(t_cub *cub)
 	#ifdef __MACH__
 	rotate(cub, -0.1f);
 	#endif
-    DEBUG && printf("left\n");
+    (DEBUG == 2) && printf("left\n");
 }
 
 void	__hookright(t_cub *cub)
@@ -183,7 +185,7 @@ void	__hookright(t_cub *cub)
 	#ifdef __MACH__
 	rotate(cub, 0.1f);
 	#endif
-    DEBUG && printf("right\n");
+    (DEBUG == 2) && printf("right\n");
 
 }
 
@@ -193,14 +195,14 @@ void	__hookdown(t_cub *cub)
 {
   	__move(cub, -cub->player.dir_x, -cub->player.dir_y);
 
-	DEBUG && printf("down\n");
+	(DEBUG == 2) && printf("down\n");
 
 }
 
 void	__hookup(t_cub *cub)
 {
   	__move(cub, cub->player.dir_x, cub->player.dir_y);
-	DEBUG && printf("up\n");
+	(DEBUG == 2) && printf("up\n");
 
 }
 

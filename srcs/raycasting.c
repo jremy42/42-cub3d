@@ -192,7 +192,7 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 	y = (int)floor(step);
 	//printf("x = [%d] y =  [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
-	(DEBUG == 2)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
+	(DEBUG == 3)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
 	return(*(unsigned int*)dst);
 }
 
@@ -211,7 +211,7 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 		color = X_HIT_COLOR;
 	else
 		color = Y_HIT_COLOR;
-	(DEBUG == 2) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
+	(DEBUG == 3) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
 	while (y < player->r_wall_y_end && y < HEIGHT)
 	{
 
@@ -258,7 +258,7 @@ int	raycast(t_cub *cub)
 		draw_wall_hit(x, &cub->player, cub);
 		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
 	}
-	DEBUG && printf("dda done for x\n");
+	(DEBUG == 2) && printf("dda done for x\n");
 	return (0);
 }
 
