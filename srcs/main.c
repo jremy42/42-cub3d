@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/13 15:57:07 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/15 12:11:37 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ int __mouse_move(t_cub *cub)
 
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
 		if (x < WIDTH/2)
-			rotate(cub, ((-ROTATE_ANGLE) * 2));
+			rotate(cub, ((-ROTATE_ANGLE) * 0.2));
 		else if ( x > WIDTH/2)
-			rotate(cub, ((ROTATE_ANGLE) * 2));
+			rotate(cub, ((ROTATE_ANGLE) * 0.2));
 		else
 			return (1);
 		update_slope(cub);
