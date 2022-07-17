@@ -68,6 +68,8 @@ int	missing_info_cub(t_cub *cub)
 	}
 	if(!cub->door)
 		return(1);
+	if(!cub->gun)
+		return(1);
 	return (0);
 }
 
@@ -81,9 +83,12 @@ int	load_info(char **ret, t_cub *cub)
 		+ !__strcmp(ret[0], "WE") * 4
 		+ !__strcmp(ret[0], "C") * 5
 		+ !__strcmp(ret[0], "F") * 6
-		+ !__strcmp(ret[0], "D") * 7;
+		+ !__strcmp(ret[0], "D") * 7
+		+ !__strcmp(ret[0], "G") * 8;
 	if (!pos)
 		return (__putstr_fd("No such a info\n", 2), 0);
+	if (pos == 8)
+		cub->gun = ret[1];
 	if (pos == 7)
 		cub->door = ret[1];
 	else if (pos > 0 && pos < 5)

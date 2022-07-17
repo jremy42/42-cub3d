@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 17:56:49 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/17 12:19:11 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@
 # define MINIMAP_EMPTY_COLOR 0x212e26
 # define MINIMAP_GROUND_COLOR 0xe6e6e6
 # define FPS 60
+# define SIZE_WEAPON 0.5
 
 enum {
 	NO,
@@ -135,7 +136,9 @@ typedef struct s_cub
 {
 	void		*text[4];
 	void		*door;
+	void		*gun;
 	t_img		door_img;
+	t_img		gun_img[4];
 	void		*color[2];
 	t_color		ceiling;
 	t_color		floor;
@@ -202,4 +205,5 @@ int	__key_release(int keycode, t_cub *cub);
 void	update_minimap(t_cub *cub);
 int		print_sprite_info(t_sprite *sprite);
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
+int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
 #endif

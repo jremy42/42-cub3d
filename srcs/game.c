@@ -12,13 +12,52 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
+int	get_color_from_sprite(int y, int x, t_img *img, t_cub *cub)
+{
+	char	*dst;
 
+	(void)cub;
+	// check x value;
+	y /=3;
+	x /=3;
+	//if (cub->player.r_side_hit == X_HIT)
+	//printf("x = [%d] [%d]\n",x,y);
+	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
+	//(DEBUG == 3)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
+	return(*(unsigned int*)dst);
+}
+void draw_gun(t_cub *cub, int img)
+{
+	int x;
+	int y;
+	int color;
+	int offset_x;
+	int offset_y;
+
+	y = 0;
+	offset_x = (WIDTH - cub->gun_img[img].width * 3)/2;
+	offset_y = (HEIGHT - cub->gun_img[img].height * 3);
+	printf("draw gun\n");
+	while (y < cub->gun_img[img].height * 3 - 1)
+	{
+		x = 0;
+		while(x < cub->gun_img[img].width * 3- 1)
+		{
+			color = get_color_from_sprite(y, x, &(cub->gun_img[img]), cub);
+			if (color >= 0)
+				my_mlx_pixel_put(&cub->screen, x +  offset_x, y + offset_y, color);
+			x++;
+		}
+		y++;
+	}
+}
 
 int	render_frame(t_cub *cub)
 {
 	static size_t	next_frame = 0;
 	size_t			current_time;
 	int				i;
+	static int		gun = 0;
 
 	i = -1;
 	current_time = __get_time();
@@ -34,6 +73,8 @@ int	render_frame(t_cub *cub)
 			if (cub->action & (1 << i))
 				cub->hook_fx[i](cub);
 		}
+		if (gun > 3)
+			gun = 0;
 		calculate_sprite_info(cub, &cub->sprite1);
 		DEBUG && print_sprite_info(&cub->sprite1);
 		next_frame = current_time + 1000/FPS;
@@ -45,8 +86,10 @@ int	render_frame(t_cub *cub)
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");
+		draw_gun(cub, gun);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+		gun++;
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}
 	// exit(0);

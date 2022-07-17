@@ -1,6 +1,37 @@
 #include "cub3d.h"
 #include "mlx.h"
 
+int	load_gun(t_cub *cub)
+{
+	cub->gun_img[0].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_0.xpm",
+			       &cub->gun_img[0].width, &cub->gun_img[0].height);
+	if(!cub->gun_img[0].mlx_img)
+		return(__putstr_fd("Failed to load texture 1\n", 2), 0);
+	cub->gun_img[0].addr = mlx_get_data_addr(cub->gun_img[0].mlx_img, &cub->gun_img[0].bits_per_pixel,
+			&cub->gun_img[0].line_length, &cub->gun_img[0].endian);
+
+	cub->gun_img[1].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_1.xpm",
+			       &cub->gun_img[1].width, &cub->gun_img[1].height);
+	if(!cub->gun_img[1].mlx_img)
+		return(__putstr_fd("Failed to load texture 2\n", 2), 0);
+	cub->gun_img[1].addr = mlx_get_data_addr(cub->gun_img[1].mlx_img, &cub->gun_img[1].bits_per_pixel,
+			&cub->gun_img[1].line_length, &cub->gun_img[1].endian);
+
+	cub->gun_img[2].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_2.xpm",
+			       &cub->gun_img[2].width, &cub->gun_img[2].height);
+	if(!cub->gun_img[2].mlx_img)
+		return(__putstr_fd("Failed to load texture 3\n", 2), 0);
+	cub->gun_img[2].addr = mlx_get_data_addr(cub->gun_img[2].mlx_img, &cub->gun_img[2].bits_per_pixel,
+			&cub->gun_img[2].line_length, &cub->gun_img[2].endian);
+
+	cub->gun_img[3].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_3.xpm",
+			       &cub->gun_img[3].width, &cub->gun_img[3].height);
+	if(!cub->gun_img[3].mlx_img)
+		return(__putstr_fd("Failed to load textur 4\n", 2), 0);
+	cub->gun_img[3].addr = mlx_get_data_addr(cub->gun_img[3].mlx_img, &cub->gun_img[3].bits_per_pixel,
+			&cub->gun_img[3].line_length, &cub->gun_img[3].endian);
+	return (1);
+}
 int	load_textures(t_cub *cub)
 {
 
@@ -29,6 +60,8 @@ int	load_textures(t_cub *cub)
 			return(__putstr_fd("Not valid texture size\n", 2), 0);
 		cub->door_img.addr = mlx_get_data_addr(cub->door_img.mlx_img, &cub->door_img.bits_per_pixel,
 			   &cub->door_img.line_length, &cub->door_img.endian);
+		load_gun(cub);
+			
 	}
 	return (1);
 }
