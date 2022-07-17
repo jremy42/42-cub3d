@@ -65,7 +65,7 @@ int	render_frame(t_cub *cub)
 	//if (!next_frame)
 	//	first_get_time = current_time;
 	//printf("current time =  %lu\n", current_time);
-	DEBUG && printf("Rendering : time ok\n");
+	(DEBUG == 2) && printf("Rendering : time ok\n");
 	if (current_time >= next_frame)
 	{
 		while (++i < 5)
@@ -90,6 +90,12 @@ int	render_frame(t_cub *cub)
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 		gun++;
+		calculate_sprite_info(cub, &cub->sprite1);
+		clear_screen();
+		DEBUG && print_coord_hit(cub);
+		DEBUG && print_vector(cub);
+		DEBUG && print_debug_info(cub);
+		DEBUG && print_sprite_info(&cub->sprite1);
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}
 	// exit(0);

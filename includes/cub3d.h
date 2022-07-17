@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/17 12:19:11 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/17 22:08:10 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,9 +201,15 @@ void	__hookright(t_cub *cub);
 void	__hookdown(t_cub *cub);
 void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
-int	__key_release(int keycode, t_cub *cub);
+int		__key_release(int keycode, t_cub *cub);
 void	update_minimap(t_cub *cub);
-int		print_sprite_info(t_sprite *sprite);
+int	print_coord_hit(t_cub *cub);
+int	print_vector(t_cub *cub);
+
+// SPRITE AND VECTORE MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
 int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
+float	vector_det(float u_x, float u_y, float v_x, float v_y);
+float	vector_dot(float u_x, float u_y, float v_x, float v_y);
+int		print_sprite_info(t_sprite *sprite);
 #endif
