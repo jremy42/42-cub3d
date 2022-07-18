@@ -93,6 +93,11 @@ int	render_frame(t_cub *cub)
 		raycast(cub);
 		calculate_sprite_info(cub, &cub->sprite1);
 		draw_sprite(cub, &cub->sprite1);
+		if (cub->gun_animate == 1 && cub->sprite1.gun_hit)
+		{
+			cub->sprite1.do_not_display = 1;
+			cub->maps[(int)cub->sprite1.pos_y][(int)cub->sprite1.pos_x] = '0';
+		}
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");

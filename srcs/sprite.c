@@ -27,22 +27,22 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 	int		x;
 	int		true_x;
 	int		true_y;
-	int		offset_y;
 	
-	offset_y = (s->sprite_img.height/s->dir_proj);
 
 	color = 0;
-	x = s->screen_x - s->screen_width/2 - 1;
-	while (++x < WIDTH && x < s->screen_x + s->screen_width/2)
+	x = s->screen_x_start- 1;
+	if (s->do_not_display)
+		return ;
+	while (++x < WIDTH && x < s->screen_x_end)
 	{
-		true_x = (x - (s->screen_x - s->screen_width/2)) * s->sprite_img.width / s->screen_width; 
+		true_x = (x - s->screen_x_start )* s->sprite_img.width / s->screen_width; 
 		if (x < 0)
 			continue ;
 
-		y = HEIGHT/2 + offset_y - s->screen_height/2 -1;
-		while (++y < HEIGHT && y < HEIGHT/2 + offset_y + s->screen_height/2)
+		y = s->screen_y_start;
+		while (++y < HEIGHT && y < s->screen_y_end)
 		{
-			true_y = (y - (HEIGHT/2 + offset_y - s->screen_height/2)) * s->sprite_img.height / s->screen_height; 
+			true_y = (y - s->screen_y_start) * s->sprite_img.height / s->screen_height; 
 			if (y < 0)
 				continue ;
 			if (s->to_show && cub->player.perp_wall_dist[x] > s->norm)
@@ -50,6 +50,10 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 				color = get_color_from_mlx_img(true_x, true_y, &s->sprite_img);
 				if (color >= 0)
 					my_mlx_pixel_put(&cub->screen, x, y, color);
+				if (x == WIDTH/2 && y == HEIGHT/2 && color >= 0)
+					s->gun_hit = 1;
+				else if (x == WIDTH/2 && y == HEIGHT/2)
+					s->gun_hit = 0;
 			}
 		}
 	}
@@ -57,16 +61,25 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 {
+	if (sprite->do_not_display)
+		return ;
 	sprite->cam_pos_x = sprite->pos_x - cub->player.pos_x;
 	sprite->cam_pos_y = sprite->pos_y - cub->player.pos_y;
 	sprite->norm = sqrt(pow(sprite->cam_pos_x, 2) + pow(sprite->cam_pos_y, 2));
 	sprite->plane_proj = vector_dot(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->dir_proj = vector_det(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
+	sprite->offset_y = (sprite->sprite_img.height/sprite->dir_proj);
 	sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	sprite->screen_width = sprite->screen_height * ((float)sprite->sprite_img.width/sprite->sprite_img.height);
 	sprite->to_show = (sprite->dir_proj > 0);
+	sprite->screen_x_start = sprite->screen_x - sprite->screen_width/2;
+	sprite->screen_x_end = sprite->screen_x + sprite->screen_width/2;
+	sprite->screen_y_start = HEIGHT/2 + sprite->offset_y - sprite->screen_height/2;
+	sprite->screen_y_end = 	HEIGHT/2 + sprite->offset_y + sprite->screen_height/2;
+	
 }
+	
 
 int		print_sprite_info(t_sprite *sprite)
 {
@@ -74,5 +87,8 @@ int		print_sprite_info(t_sprite *sprite)
 	printf("cam pos_x/pos_y : [%f/%f]\n", sprite->cam_pos_x, sprite->cam_pos_y);
 	printf("norm/dir_proj/plane_proj : [%f/%f/%f]\n", sprite->norm, sprite->dir_proj, sprite->plane_proj);
 	printf("screen_x/screen_height/screen_width/to_show : [%d/%d/%d/%d]\n", sprite->screen_x, sprite->screen_height,sprite->screen_width, sprite->to_show);
+	printf(" screen_x_start/end: [%d][%d]\n", sprite->screen_x_start, sprite->screen_x_end);
+	printf(" screen_y_start/end: [%d][%d]\n", sprite->screen_y_start, sprite->screen_y_end);
+	printf("gun hit = [%d]\n", sprite->gun_hit);
 	return (1);
 }

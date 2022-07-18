@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/18 16:42:15 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/18 18:33:43 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,13 @@ typedef struct s_sprite
 	int		screen_width;
 	int		to_show;
 	t_img	sprite_img;
+	int		do_not_display;
+	int		offset_y;
+	int		screen_x_start;
+	int		screen_x_end;
+	int		screen_y_start;
+	int		screen_y_end;
+	int		gun_hit;
 }	t_sprite;
 
 
@@ -167,6 +174,8 @@ typedef struct s_cub
 	int			minimap_width;
 	t_sprite	sprite1;
 	int			last_key_press;
+	int			sprite_count;
+	int			*sprite_order;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
