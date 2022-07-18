@@ -152,7 +152,7 @@ int	dda(t_player *player, char **map, float **door_map)
 	return (hit);
 }
 
-void	calculate_wall_height(t_player *player)
+void	calculate_wall_height(t_player *player, int x)
 {
 	int		wall_height;
 	float	perpWallDist;
@@ -161,7 +161,7 @@ void	calculate_wall_height(t_player *player)
 		perpWallDist = (player->r_side_dist_x - player->r_delta_dist_x) * player->cos_alpha;
 	else
 		perpWallDist = (player->r_side_dist_y - player->r_delta_dist_y) * player->cos_alpha;
-	player->perp_wall_dist = perpWallDist;
+	player->perp_wall_dist[x] = perpWallDist;
 	wall_height = HEIGHT/perpWallDist;
 	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
@@ -254,7 +254,7 @@ int	raycast(t_cub *cub)
 		init_step_and_side_dist(&cub->player);
 		dda(&cub->player, cub->maps, cub->door_map);
 		update_cos(&cub->player);
-		calculate_wall_height(&cub->player);
+		calculate_wall_height(&cub->player, x);
 		draw_wall_hit(x, &cub->player, cub);
 		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
 	}

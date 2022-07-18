@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/18 12:59:41 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/18 15:52:30 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ typedef struct s_player
 	float	r_hit_y;
 	float	r_hit_coef;
 	int		wall_height;
-	int		perp_wall_dist;
+	int		perp_wall_dist[WIDTH];
 
 	int		sprite; // A RENOMMER -> CONFUSION !!!!!!!!!!
 }	t_player;
@@ -166,6 +166,7 @@ typedef struct s_cub
 	int			minimap_height;
 	int			minimap_width;
 	t_sprite	sprite1;
+	int			last_key_press;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -221,4 +222,5 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
+void 	draw_sprite(t_cub *cub, t_sprite *s);
 #endif

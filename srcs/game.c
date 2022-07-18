@@ -26,6 +26,7 @@ int	get_color_from_sprite(int y, int x, t_img *img, t_cub *cub)
 	//(DEBUG == 3)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
 	return(*(unsigned int*)dst);
 }
+
 void draw_gun(t_cub *cub)
 {
 	int x;
@@ -63,7 +64,6 @@ int	render_frame(t_cub *cub)
 	static size_t	next_frame = 0;
 	size_t			current_time;
 	int				i;
-	static int		gun = 0;
 
 	i = -1;
 	current_time = __get_time();
@@ -73,31 +73,33 @@ int	render_frame(t_cub *cub)
 	//printf("current time =  %lu\n", current_time);
 	(DEBUG == 2) && printf("Rendering : time ok\n");
 	if (current_time >= next_frame)
-	{
+	{		
+		clear_screen();
 		while (++i < 5)
 		{
 			if (cub->action & (1 << i))
 				cub->hook_fx[i](cub);
 		}
-		clear_screen();
 		DEBUG && print_coord_hit(cub);
 		DEBUG && print_vector(cub);
 		DEBUG && print_debug_info(cub);
-		calculate_sprite_info(cub, &cub->sprite1);
 		DEBUG && print_sprite_info(&cub->sprite1);
+		DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
 		__mouse_move(cub);
 		load_background(cub);
 		(DEBUG == 3) && printf("Rendering : background ok\n");
 		raycast(cub);
+		calculate_sprite_info(cub, &cub->sprite1);
+		draw_sprite(cub, &cub->sprite1);
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");
 		draw_gun(cub);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
-		gun++;
+
 
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);
 	}

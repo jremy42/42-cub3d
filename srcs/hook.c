@@ -334,7 +334,7 @@ int	__key_press(int keycode, t_cub *cub)
 			cub->action |= 1 << 3;
 	if (keycode == SPACE_BAR)
 			cub->action |= 1 << 4;
-	DEBUG && printf("Key pressed [%d]\n", keycode);
+	cub->last_key_press = keycode;
 	/*
 	load_background(cub);
 	raycast(cub);
