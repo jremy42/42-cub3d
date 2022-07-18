@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/18 15:52:30 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/18 16:42:15 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,8 @@ typedef struct s_img
 typedef struct s_sprite
 {
 	float	norm;
-	int		pos_x;
-	int		pos_y;
+	float	pos_x;
+	float	pos_y;
 	float	cam_pos_x;
 	float	cam_pos_y;
 	float	plane_proj;

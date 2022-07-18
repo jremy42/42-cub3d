@@ -42,7 +42,7 @@ int	load_gun(t_cub *cub)
 
 int load_sprites(t_cub *cub)
 {
-	cub->sprite1.sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/deco/xpm/knight.xpm",
+	cub->sprite1.sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/guard/xpm/f0.xpm",
 			       &cub->sprite1.sprite_img.width, &cub->sprite1.sprite_img.height);
 	if(!cub->sprite1.sprite_img.mlx_img)
 		return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
