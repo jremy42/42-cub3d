@@ -79,7 +79,7 @@ int	render_frame(t_cub *cub)
 		DEBUG && print_sprite_info(&cub->sprite1);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
-		//__mouse_move(cub);
+		__mouse_move(cub);
 		load_background(cub);
 		(DEBUG == 3) && printf("Rendering : background ok\n");
 		raycast(cub);

@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/15 19:20:57 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/18 09:35:03 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,15 +85,14 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 
 int __mouse_move(t_cub *cub)
 {
+	#ifdef __linux__
 	int x;
 	int y;
 
 	x = WIDTH/2;
 	y = 0;
 	y++;
-	#ifdef __linux__
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
-	#endif
 	if (x < WIDTH/2)
 		rotate(cub, ((-ROTATE_ANGLE) * 0.2));
 	else if ( x > WIDTH/2)
@@ -101,7 +100,6 @@ int __mouse_move(t_cub *cub)
 	else
 		return (1);
 	update_slope(cub);
-	#ifdef __linux__
 	mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
 	#endif
 	return (1);
@@ -150,15 +148,9 @@ int	main(int ac, char **av)
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
 	cub.minimap_height = HEIGHT/4;
 	cub.minimap_width = WIDTH/4;
-	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
-	//mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	DEBUG && printf("mlx hooking mouse ok\n");
-	#ifdef __linux__
-	mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
-	#endif
-	DEBUG && printf("mlx centering mouse ok\n");
 	mlx_mouse_hide(cub.mlx, cub.win);
 	DEBUG && printf("mlx mouse hiding ok\n");
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
