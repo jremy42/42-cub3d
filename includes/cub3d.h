@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/17 22:08:10 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/18 11:14:09 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define OPEN_DOOR 4
 # define WIDTH 1280
 # define HEIGHT 720
-# define SPEED 0.1f
+# define SPEED 0.05f
 # define SIZE_MINI_MAP 16
 # define SIZE_PLAYER 8
 # define ROTATE_ANGLE M_PI/32
@@ -43,7 +43,7 @@
 # define MINIMAP_EMPTY_COLOR 0x212e26
 # define MINIMAP_GROUND_COLOR 0xe6e6e6
 # define FPS 60
-# define SIZE_WEAPON 0.5
+# define SIZE_WEAPON 3
 
 enum {
 	NO,
@@ -138,7 +138,9 @@ typedef struct s_cub
 	void		*door;
 	void		*gun;
 	t_img		door_img;
-	t_img		gun_img[4];
+	t_img		gun_img[5];
+	int			gun_current_sprite;
+	int			gun_animate;
 	void		*color[2];
 	t_color		ceiling;
 	t_color		floor;

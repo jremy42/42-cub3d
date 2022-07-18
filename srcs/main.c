@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/18 09:35:03 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/18 11:03:13 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 	{
 		cub->player.fov -= 0.05;
 	}
+	if (button == 1)
+		cub->gun_animate = 1;
 	cub->player.plane_x = (- cub->player.dir_y) * cub->player.fov;
 	cub->player.plane_y = cub->player.dir_x * cub->player.fov;
 	//__key_press(2147483647, cub);
@@ -93,10 +95,8 @@ int __mouse_move(t_cub *cub)
 	y = 0;
 	y++;
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
-	if (x < WIDTH/2)
-		rotate(cub, ((-ROTATE_ANGLE) * 0.2));
-	else if ( x > WIDTH/2)
-		rotate(cub, ((ROTATE_ANGLE) * 0.2));
+	if (x != WIDTH/2)
+		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH/2)));
 	else
 		return (1);
 	update_slope(cub);
