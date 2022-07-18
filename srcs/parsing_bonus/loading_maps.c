@@ -133,6 +133,11 @@ int	check_maps(t_cub *cub)
 				return (print_maps_error(cub, i, j), 0);
 			if (cub->maps[i][j] == 'D')
 				cub->door_map[i][j] = 2;
+			if (cub->maps[i][j] == '2')
+			{
+				cub->sprite1.pos_x = j;
+				cub->sprite1.pos_y = i;
+			}
 			j++;
 		}
 		i++;

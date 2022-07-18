@@ -39,6 +39,17 @@ int	load_gun(t_cub *cub)
 			&cub->gun_img[4].line_length, &cub->gun_img[4].endian);
 	return (1);
 }
+
+int load_sprites(t_cub *cub)
+{
+	cub->sprite1.sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/deco/xpm/knight.xpm",
+			       &cub->sprite1.sprite_img.width, &cub->sprite1.sprite_img.height);
+	if(!cub->sprite1.sprite_img.mlx_img)
+		return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
+	cub->sprite1.sprite_img.addr = mlx_get_data_addr(cub->sprite1.sprite_img.mlx_img, &cub->sprite1.sprite_img.bits_per_pixel,
+			&cub->sprite1.sprite_img.line_length, &cub->sprite1.sprite_img.endian);
+	return (1);
+}
 int	load_textures(t_cub *cub)
 {
 
@@ -69,6 +80,9 @@ int	load_textures(t_cub *cub)
 			   &cub->door_img.line_length, &cub->door_img.endian);
 		if(!load_gun(cub))
 			return(__putstr_fd("Not valid gun sprites\n", 2), 0);
+		if(!load_sprites(cub))
+			return(__putstr_fd("Not valid enemy sprites\n", 2), 0);
+		
 	}
 	return (1);
 }

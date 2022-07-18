@@ -169,7 +169,7 @@ void	rotate(t_cub *cub, float angle)
 						-old_plane_y * sin(angle);
 	cub->player.plane_y = old_plane_x * sin(angle)
 						+old_plane_y * cos(angle);
-	cub->player.dir_norm = sqrt(pow(cub->player.dir_x, 2) + pow(cub->player.dir_y, 2));
+	//cub->player.dir_norm = sqrt(pow(cub->player.dir_x, 2) + pow(cub->player.dir_y, 2));
 	cub->player.plane_norm = sqrt(pow(cub->player.plane_x, 2) + pow(cub->player.plane_y, 2));
 }
 

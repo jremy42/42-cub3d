@@ -19,6 +19,10 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->norm = sqrt(pow(sprite->cam_pos_x, 2) + pow(sprite->cam_pos_y, 2));
 	sprite->plane_proj = vector_dot(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->dir_proj = vector_det(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
+	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
+	sprite->screen_height = HEIGHT / sprite->dir_proj;
+	sprite->screen_width = HEIGHT / sprite->dir_proj;
+	sprite->to_show = sprite->dir_proj > 0;
 }
 
 int		print_sprite_info(t_sprite *sprite)
@@ -26,5 +30,6 @@ int		print_sprite_info(t_sprite *sprite)
 	printf("world pos_x/pos_y : [%d/%d]\n", sprite->pos_x, sprite->pos_y);
 	printf("cam pos_x/pos_y : [%f/%f]\n", sprite->cam_pos_x, sprite->cam_pos_y);
 	printf("norm/dir_proj/plane_proj : [%f/%f/%f]\n", sprite->norm, sprite->dir_proj, sprite->plane_proj);
+	printf("screen_x/screen_height/screen_width/to_show : [%d/%d/%d/%d]\n", sprite->screen_x, sprite->screen_height,sprite->screen_width, sprite->to_show);
 	return (1);
 }

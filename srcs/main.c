@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/18 11:03:13 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/18 12:31:58 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,6 @@ int	main(int ac, char **av)
 	cub.hook_fx[RIGHT] = __hookright;
 	cub.hook_fx[OPEN_DOOR] = __switch_door;
 
-	//sprite test
-	cub.sprite1.pos_x = 5;
-	cub.sprite1.pos_y = 6;
-	//sprite test
 	if (ac != 2)
 	{
 		__putstr_fd("Error\nneed maps\n", 2);

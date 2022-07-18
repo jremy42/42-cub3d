@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/18 11:14:09 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/18 12:59:41 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,23 +58,13 @@ enum {
 	C
 };
 
-typedef struct s_sprite
-{
-	float	norm;
-	int		pos_x;
-	int		pos_y;
-	float	cam_pos_x;
-	float	cam_pos_y;
-	float	plane_proj;
-	float	dir_proj;
-}	t_sprite;
 
 typedef struct s_player
 {
 	char	start_orientation;
 	float	dir_x;
 	float	dir_y;
-	float	dir_norm;
+ 	//float	dir_norm;
 	float	slope_dir;
 	float	delta_dist_x;
 	float	delta_dist_y;
@@ -131,6 +121,23 @@ typedef struct s_img
 	int		height;
 	int		width;
 }				t_img;
+
+typedef struct s_sprite
+{
+	float	norm;
+	int		pos_x;
+	int		pos_y;
+	float	cam_pos_x;
+	float	cam_pos_y;
+	float	plane_proj;
+	float	dir_proj;
+	int		screen_x;
+	int		screen_height;
+	int		screen_width;
+	int		to_show;
+	t_img	sprite_img;
+}	t_sprite;
+
 
 typedef struct s_cub
 {
