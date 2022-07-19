@@ -6,11 +6,11 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 17:30:20 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 17:36:55 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sprite.h"
+#include "sprites.h"
 
 #ifndef CUB3D_H
 # define CUB3D_H
