@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 17:36:55 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 20:46:48 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -195,7 +195,13 @@ void	parsing(char **av, t_cub *cub);
 int		check_wall(char **maps, int i, int j, int nb_l);
 int		load_maps(t_list *input, t_cub *cub);
 int		check_maps(t_cub *cub);
+t_list	*adjust_input(t_list *input);
+int		maps_size(char **maps);
+int		check_player(t_cub *cub, int i, int j, int nb_l);
 
+void	__exit_error(char *error, t_cub *cub);
+void	__exit_error_get_input(char *error, t_list *lst, int fd);
+void	destroy_cub_data(t_cub *cub);
 //DEBUG PARSING 
 void	clear_screen(void);
 int		print_debug_info(t_cub *cub);
@@ -215,16 +221,16 @@ int		create_cub_images(t_cub *cub);
 int		game(t_cub *cub);
 int		__quit(t_cub *cub);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int raycast(t_cub *cub);
+int		raycast(t_cub *cub);
 void	update_minimap(t_cub *cub);
-int	load_textures(t_cub *cub);
+int		load_textures(t_cub *cub);
 
 void	rotate(t_cub *cub, float angle);
 void	update_minimap(t_cub *cub);
 void	update_slope(t_cub *cub);
 size_t	__get_time(void);
 int		render_frame(t_cub *cub);
-int __mouse_move(t_cub *cub);
+int		__mouse_move(t_cub *cub);
 void	load_background(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
@@ -235,8 +241,8 @@ void	__hookup(t_cub *cub);
 void	__switch_door(t_cub *cub);
 int		__key_release(int keycode, t_cub *cub);
 void	update_minimap(t_cub *cub);
-int	print_coord_hit(t_cub *cub);
-int	print_vector(t_cub *cub);
+int		print_coord_hit(t_cub *cub);
+int		print_vector(t_cub *cub);
 
 // SPRITE AND VECTOR MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
@@ -246,5 +252,6 @@ float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
 void 	draw_sprite(t_cub *cub, t_sprite *s);
 void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order);
-
+void	get_info(t_list *input, t_cub *cub);
+void	load_player_info(t_cub *cub);
 #endif

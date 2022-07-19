@@ -2,11 +2,10 @@
 #include "cub3d.h"
 #include "mlx.h"
 
-
 float	sq_dist(float x1, float y1, float x2, float y2)
 {
-	float dist_x;
-	float dist_y;
+	float	dist_x;
+	float	dist_y;
 
 	dist_x = pow(x1 - x2, 2);
 	dist_y = pow(y1 - y2, 2);
@@ -98,6 +97,6 @@ void	update_minimap(t_cub *cub)
 		}
 		pixel_y++;
 	}
-	player_square_put(&cub->minimap, cub->minimap_width /2 - 4, cub->minimap_height/2 - 4, MINIMAP_PLAYER_COLOR);
+	player_square_put(&cub->minimap, cub->minimap_width / 2 - 4,
+		cub->minimap_height / 2 - 4, MINIMAP_PLAYER_COLOR);
 }
-

@@ -20,14 +20,13 @@ int	get_color_from_mlx_img(int x, int y, t_img *img)
 	return(*(unsigned int*)dst);
 }
 
-void 	draw_sprite(t_cub *cub, t_sprite *s)
+void	draw_sprite(t_cub *cub, t_sprite *s)
 {
 	int		color;
 	int		y;
 	int		x;
 	int		true_x;
 	int		true_y;
-	
 
 	color = 0;
 	x = s->screen_x_start- 1;
@@ -128,3 +127,4 @@ void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order)
 		i++;
 	}
 }
+
