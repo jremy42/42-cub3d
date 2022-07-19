@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 11:56:14 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 12:01:17 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void handle_sprite(t_cub *cub)
 	int i;
 	int true_sprite;
 
-	i = 0;
+	i = cub->sprite_count - 1;
 
-	while (i < cub->sprite_count)
+	while ( i >= 0)
 	{
 		true_sprite = cub->sprite_order[i];
 		printf("true_sprite : [%d]\n", true_sprite);
@@ -88,8 +88,7 @@ void handle_sprite(t_cub *cub)
 			cub->sprite_tab[true_sprite].do_not_display = 1;
 			cub->maps[(int)cub->sprite_tab[true_sprite].pos_y][(int)cub->sprite_tab[true_sprite].pos_x] = '0';
 		}
-		i++;
-
+		i--;
 	}
 	// calculate_sprite_info(cub, &cub->sprite1);
 	// draw_sprite(cub, &cub->sprite1);
