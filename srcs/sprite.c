@@ -74,7 +74,8 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/(sprite->dir_proj * cub->player.plane_norm));
 	// v2 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
 	// v1 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->norm);
-	sprite->offset_y = (sprite->sprite_img.height/sprite->norm) / cub->player.plane_norm;
+	sprite->offset_y = (sprite->sprite_img.height/sprite->dir_proj) * cub->player.plane_norm;
+	// v2 moyen OKsprite->offset_y = (sprite->sprite_img.height/sprite->norm) / cub->player.plane_norm;
 	// v1 sprite->offset_y = (sprite->sprite_img.height/sprite->norm);
 	sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	//sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
