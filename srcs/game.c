@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 16:37:24 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 16:47:11 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void handle_sprite(t_cub *cub)
 		if (cub->gun_current_sprite == 1 && cub->sprite_tab[true_sprite].gun_hit
 			&& !cub->sprite_tab[true_sprite].do_not_display)
 			to_kill = true_sprite;
+		cub->sprite_tab[true_sprite].gun_hit = 0;
 		i--;
 	}
 	// calculate_sprite_info(cub, &cub->sprite1);
