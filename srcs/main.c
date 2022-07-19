@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/18 12:31:58 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/19 08:41:59 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,9 @@ int __mouse_move(t_cub *cub)
 		return (1);
 	update_slope(cub);
 	mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
+	#endif
+	#ifdef __MACH__
+	(void)cub;
 	#endif
 	return (1);
 }
