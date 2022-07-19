@@ -72,12 +72,13 @@ void    draw_minimap(t_cub *cub, int pixel_x, int pixel_y)
         my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_EMPTY_COLOR);
     else
     {
-        if (cub->maps[(int)floor(y)][(int)floor(x)] == '0')
-            my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_GROUND_COLOR);
+       
         if (cub->maps[(int)floor(y)][(int)floor(x)] == '1')
             my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_WALL_COLOR);
         if (cub->maps[(int)floor(y)][(int)floor(x)] == 'D')
             my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_DOOR_COLOR);
+		 if (cub->maps[(int)floor(y)][(int)floor(x)] == '0' || cub->maps[(int)floor(y)][(int)floor(x)] == 'G')
+            my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_GROUND_COLOR);
     }
 }
 
