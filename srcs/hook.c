@@ -175,25 +175,21 @@ void	rotate(t_cub *cub, float angle)
 
 void	__hookleft(t_cub *cub)
 {
-	#ifdef __linux__
 	__move(cub, -cub->player.plane_x, -cub->player.plane_y);
-	#endif
-	#ifdef __MACH__
+	/*
 	rotate(cub, -0.1f);
 	update_slope(cub);
-	#endif
+	*/
     (DEBUG == 2) && printf("left\n");
 }
 
 void	__hookright(t_cub *cub)
 {
-	#ifdef __linux__
 	__move(cub, cub->player.plane_x, cub->player.plane_y);
-	#endif
-	#ifdef __MACH__
+	/*
 	rotate(cub, 0.1f);
 	update_slope(cub);
-	#endif
+	*/
     (DEBUG == 2) && printf("right\n");
 
 }

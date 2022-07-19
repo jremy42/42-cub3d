@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/19 08:41:59 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 09:00:14 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,23 +87,28 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 
 int __mouse_move(t_cub *cub)
 {
-	#ifdef __linux__
 	int x;
 	int y;
 
 	x = WIDTH/2;
 	y = 0;
 	y++;
+	#ifdef __linux__
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
+	#endif
+	#ifdef __MACH__
+	mlx_mouse_get_pos(cub->win, &x, &y);
+	#endif
 	if (x != WIDTH/2)
 		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH/2)));
 	else
 		return (1);
 	update_slope(cub);
+	#ifdef __linux__
 	mlx_mouse_move(cub->mlx, cub->win, WIDTH/2, HEIGHT/2);
 	#endif
 	#ifdef __MACH__
-	(void)cub;
+	mlx_mouse_move(cub->win, WIDTH/2, HEIGHT/2);
 	#endif
 	return (1);
 }

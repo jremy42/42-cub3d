@@ -2,7 +2,6 @@
 #include "mlx.h"
 #include "math.h"
 
-
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
 	char	*dst;

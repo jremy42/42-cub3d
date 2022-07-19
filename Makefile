@@ -16,7 +16,7 @@ SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/
 
-IFLAGS =  -I includes/ -I libft/includes
+IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
 CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
@@ -24,6 +24,7 @@ MLX_MAC = ./minilibx_opengl
 
 EXTERN_LIB = -L /usr/X11/include/../lib -lXext -lX11
 EXTERN_MACLIB = -framework OpenGL -framework AppKit
+IFLAGS_MAC = -I includes/ -I libft/includes -I mlx_headers/mac
 
 SRCS = $(addprefix $(SRC_DIR), $(SRC_LIST))
 OBJS = $(addprefix $(OBJS_DIR), $(SRC_LIST:.c=.o))
@@ -53,6 +54,7 @@ endif
 ifeq ($(shell uname -s), Darwin)
 MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
+IFLAGS = ${IFLAGS_MAC}
 endif
 
 all: 
