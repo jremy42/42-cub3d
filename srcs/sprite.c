@@ -46,7 +46,9 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 			if (y < 0)
 				continue ;
 			if (s->to_show && cub->player.perp_wall_dist[x] > s->dir_proj)
-			//if (s->to_show && cub->player.perp_wall_dist[x] > s->norm)
+			// v3 OK ! if (s->to_show && cub->player.true_wall_dist[x] > s->dir_proj)
+			// v2 if (s->to_show && cub->player.perp_wall_dist[x] > s->dir_proj)
+			// v1 if (s->to_show && cub->player.perp_wall_dist[x] > s->norm)
 			{
 				color = get_color_from_mlx_img(true_x, true_y, &s->sprite_img);
 				if (color >= 0)
@@ -73,6 +75,7 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	//sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->norm);
 	sprite->offset_y = (sprite->sprite_img.height/sprite->norm);
 	sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
+	//sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	sprite->screen_width = sprite->screen_height * ((float)sprite->sprite_img.width/sprite->sprite_img.height);
 	sprite->to_show = (sprite->dir_proj > 0);
 	sprite->screen_x_start = sprite->screen_x - sprite->screen_width/2;

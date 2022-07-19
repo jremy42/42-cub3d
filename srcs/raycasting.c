@@ -156,12 +156,15 @@ void	calculate_wall_height(t_player *player, int x)
 {
 	int		wall_height;
 	float	perpWallDist;
+	float	trueWallDist;;
 
 	if (player->r_side_hit == X_HIT)
-		perpWallDist = (player->r_side_dist_x - player->r_delta_dist_x) * player->cos_alpha;
+		trueWallDist = (player->r_side_dist_x - player->r_delta_dist_x);
 	else
-		perpWallDist = (player->r_side_dist_y - player->r_delta_dist_y) * player->cos_alpha;
+		trueWallDist = (player->r_side_dist_y - player->r_delta_dist_y);
+	perpWallDist = trueWallDist * player->cos_alpha;
 	player->perp_wall_dist[x] = perpWallDist;
+	player->true_wall_dist[x] = trueWallDist;
 	wall_height = HEIGHT/perpWallDist;
 	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);

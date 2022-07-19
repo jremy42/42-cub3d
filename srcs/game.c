@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 12:20:35 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 14:02:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,6 @@ int	render_frame(t_cub *cub)
 		// DEBUG && print_sprite_info(&cub->sprite1);
 		printf("\n");
 		DEBUG && print_sprite_info(&cub->sprite_tab[0]);
-
 		DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
@@ -137,7 +136,6 @@ int	render_frame(t_cub *cub)
 		raycast(cub);
 		update_sprite_order(cub, cub->sprite_tab, cub->sprite_count, cub->sprite_order);
 		handle_sprite(cub);
-		
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");

@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 12:19:40 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 14:28:10 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,10 @@ typedef struct s_player
 	float	r_hit_y;
 	float	r_hit_coef;
 	int		wall_height;
-	int		perp_wall_dist[WIDTH];
+	// form int to float
+	float	perp_wall_dist[WIDTH];
+	// check if needed;
+	float	true_wall_dist[WIDTH];
 
 	int		sprite; // A RENOMMER -> CONFUSION !!!!!!!!!!
 }	t_player;
