@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 10:03:58 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 10:42:52 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,6 +173,7 @@ typedef struct s_cub
 	int			minimap_height;
 	int			minimap_width;
 	t_sprite	sprite1;
+	t_sprite	*sprite_tab;
 	int			last_key_press;
 	int			sprite_count;
 	int			*sprite_order;

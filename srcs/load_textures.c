@@ -1,39 +1,40 @@
 #include "cub3d.h"
 #include "mlx.h"
+#include "sprites.h"
 
 int	load_gun(t_cub *cub)
 {
-	cub->gun_img[0].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_0.xpm",
+	cub->gun_img[0].mlx_img = mlx_xpm_file_to_image(cub->mlx, PISTOL_0,
 			       &cub->gun_img[0].width, &cub->gun_img[0].height);
 	if(!cub->gun_img[0].mlx_img)
 		return(__putstr_fd("Failed to load sprite 1\n", 2), 0);
 	cub->gun_img[0].addr = mlx_get_data_addr(cub->gun_img[0].mlx_img, &cub->gun_img[0].bits_per_pixel,
 			&cub->gun_img[0].line_length, &cub->gun_img[0].endian);
 
-	cub->gun_img[1].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_1.xpm",
+	cub->gun_img[1].mlx_img = mlx_xpm_file_to_image(cub->mlx, PISTOL_1,
 			       &cub->gun_img[1].width, &cub->gun_img[1].height);
 	if(!cub->gun_img[1].mlx_img)
 		return(__putstr_fd("Failed to load sprite 2\n", 2), 0);
 	cub->gun_img[1].addr = mlx_get_data_addr(cub->gun_img[1].mlx_img, &cub->gun_img[1].bits_per_pixel,
 			&cub->gun_img[1].line_length, &cub->gun_img[1].endian);
 
-	cub->gun_img[2].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_2.xpm",
+	cub->gun_img[2].mlx_img = mlx_xpm_file_to_image(cub->mlx, PISTOL_2,
 			       &cub->gun_img[2].width, &cub->gun_img[2].height);
 	if(!cub->gun_img[2].mlx_img)
 		return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
 	cub->gun_img[2].addr = mlx_get_data_addr(cub->gun_img[2].mlx_img, &cub->gun_img[2].bits_per_pixel,
 			&cub->gun_img[2].line_length, &cub->gun_img[2].endian);
 
-	cub->gun_img[3].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_3.xpm",
+	cub->gun_img[3].mlx_img = mlx_xpm_file_to_image(cub->mlx, PISTOL_3,
 			       &cub->gun_img[3].width, &cub->gun_img[3].height);
 	if(!cub->gun_img[3].mlx_img)
 		return(__putstr_fd("Failed to load sprite 4\n", 2), 0);
 	cub->gun_img[3].addr = mlx_get_data_addr(cub->gun_img[3].mlx_img, &cub->gun_img[3].bits_per_pixel,
 			&cub->gun_img[3].line_length, &cub->gun_img[3].endian);
 
-	cub->gun_img[4].mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/gun/pistol_1.xpm",
+	cub->gun_img[4].mlx_img = mlx_xpm_file_to_image(cub->mlx, PISTOL_1,
 			       &cub->gun_img[4].width, &cub->gun_img[4].height);
-	if(!cub->gun_img[2].mlx_img)
+	if(!cub->gun_img[4].mlx_img)
 		return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
 	cub->gun_img[4].addr = mlx_get_data_addr(cub->gun_img[4].mlx_img, &cub->gun_img[4].bits_per_pixel,
 			&cub->gun_img[4].line_length, &cub->gun_img[4].endian);
@@ -42,12 +43,26 @@ int	load_gun(t_cub *cub)
 
 int load_sprites(t_cub *cub)
 {
-	cub->sprite1.sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/guard/xpm/f0.xpm",
-			       &cub->sprite1.sprite_img.width, &cub->sprite1.sprite_img.height);
-	if(!cub->sprite1.sprite_img.mlx_img)
-		return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
-	cub->sprite1.sprite_img.addr = mlx_get_data_addr(cub->sprite1.sprite_img.mlx_img, &cub->sprite1.sprite_img.bits_per_pixel,
-			&cub->sprite1.sprite_img.line_length, &cub->sprite1.sprite_img.endian);
+	// cub->sprite1.sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/guard/xpm/f0.xpm",
+	// 		       &cub->sprite1.sprite_img.width, &cub->sprite1.sprite_img.height);
+	// if(!cub->sprite1.sprite_img.mlx_img)
+	// 	return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
+	// cub->sprite1.sprite_img.addr = mlx_get_data_addr(cub->sprite1.sprite_img.mlx_img, &cub->sprite1.sprite_img.bits_per_pixel,
+	// 		&cub->sprite1.sprite_img.line_length, &cub->sprite1.sprite_img.endian);
+	int i;
+
+	i = 0;
+
+	while (i < cub->sprite_count)
+	{
+		cub->sprite_tab[i].sprite_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, "./sprites/guard/xpm/f0.xpm",
+			       &cub->sprite_tab[i].sprite_img.width, &cub->sprite_tab[i].sprite_img.height);
+		if(!cub->sprite_tab[i].sprite_img.mlx_img)
+			return(__putstr_fd("Failed to load sprite 3\n", 2), 0);
+		cub->sprite_tab[i].sprite_img.addr = mlx_get_data_addr(cub->sprite_tab[i].sprite_img.mlx_img, &cub->sprite_tab[i].sprite_img.bits_per_pixel,
+				&cub->sprite_tab[i].sprite_img.line_length, &cub->sprite_tab[i].sprite_img.endian);
+		i++;
+	}
 	return (1);
 }
 int	load_textures(t_cub *cub)

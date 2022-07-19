@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fle-blay <{fle-blay}@student.42.fr>        +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 10:10:54 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 11:46:54 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,34 @@ void draw_gun(t_cub *cub)
 	}
 }
 
+void handle_sprite(t_cub *cub)
+{
+	int i;
+
+	i = 0;
+
+	while (i < cub->sprite_count)
+	{
+		calculate_sprite_info(cub, &cub->sprite_tab[i]);
+		draw_sprite(cub, &cub->sprite_tab[i]);
+		if (cub->gun_animate == 1 && cub->sprite_tab[i].gun_hit)
+		 {
+			cub->sprite_tab[i].do_not_display = 1;
+			cub->maps[(int)cub->sprite_tab[i].pos_y][(int)cub->sprite_tab[i].pos_x] = '0';
+		}
+		i++;
+
+	}
+	// calculate_sprite_info(cub, &cub->sprite1);
+	// draw_sprite(cub, &cub->sprite1);
+	// if (cub->gun_animate == 1 && cub->sprite1.gun_hit)
+	//  {
+	// 	cub->sprite1.do_not_display = 1;
+	// 	cub->maps[(int)cub->sprite1.pos_y][(int)cub->sprite1.pos_x] = '0';
+	// }
+	
+}
+
 int	render_frame(t_cub *cub)
 {
 	static size_t	next_frame = 0;
@@ -94,7 +122,11 @@ int	render_frame(t_cub *cub)
 		DEBUG && print_coord_hit(cub);
 		DEBUG && print_vector(cub);
 		DEBUG && print_debug_info(cub);
-		DEBUG && print_sprite_info(&cub->sprite1);
+		printf("\n");
+		// DEBUG && print_sprite_info(&cub->sprite1);
+		printf("\n");
+		DEBUG && print_sprite_info(&cub->sprite_tab[0]);
+
 		DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
@@ -102,13 +134,8 @@ int	render_frame(t_cub *cub)
 		load_background(cub);
 		(DEBUG == 3) && printf("Rendering : background ok\n");
 		raycast(cub);
-		calculate_sprite_info(cub, &cub->sprite1);
-		draw_sprite(cub, &cub->sprite1);
-		if (cub->gun_animate == 1 && cub->sprite1.gun_hit)
-		{
-			cub->sprite1.do_not_display = 1;
-			cub->maps[(int)cub->sprite1.pos_y][(int)cub->sprite1.pos_x] = '0';
-		}
+		handle_sprite(cub);
+		
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");

@@ -107,6 +107,41 @@ int	maps_size(char **maps)
 	return (i);
 }
 
+int get_enemy_postion(t_cub *cub, int nb_l)
+{
+	int i;
+	int j;
+	int k;
+
+	i = 0;
+	k = 0;
+	printf("sprite_count = [%d]\n", cub->sprite_count);
+	cub->sprite_tab = malloc(sizeof(t_sprite) * cub->sprite_count);
+	if (!cub->sprite_tab)
+		return(printf("1\n"), 0);
+	__memset(cub->sprite_tab, 0, sizeof(t_sprite) * cub->sprite_count);
+	cub->sprite_order = malloc(sizeof(int) * cub->sprite_count);
+	if (!cub->sprite_order)
+		return(printf("2\n"), 0);
+	while (i < nb_l && cub->maps[i])
+	{			
+		j = 0;
+		while (cub->maps[i][j])
+		{
+			if (cub->maps[i][j] == 'G')
+			{
+				cub->sprite_order[k] = k;
+				cub->sprite_tab[k].pos_x = j + 0.5f;
+				cub->sprite_tab[k].pos_y = i+ 0.5f;
+				k++;
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int	check_maps(t_cub *cub)
 {
 	int	nb_l;
@@ -124,17 +159,18 @@ int	check_maps(t_cub *cub)
 		j = 0;
 		while (cub->maps[i][j])
 		{
-			if (!__strchr(" D3210NSEW", cub->maps[i][j]))
+			if (!__strchr(" GD3210NSEW", cub->maps[i][j]))
 				return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
 			if (__strchr("NSEW", cub->maps[i][j]) && !check_player(cub, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);
-			else if(cub->maps[i][j] == '0'
+			else if((cub->maps[i][j] == '0' || cub->maps[i][j] == 'G' || cub->maps[i][j] == 'D')
 				&& !check_wall(cub->maps, i, j, nb_l))
 				return (print_maps_error(cub, i, j), 0);
 			if (cub->maps[i][j] == 'D')
 				cub->door_map[i][j] = 2;
-			if (cub->maps[i][j] == '2')
+			if (cub->maps[i][j] == 'G')
 			{
+				cub->sprite_count++;
 				cub->sprite1.pos_x = j + 0.5f;
 				cub->sprite1.pos_y = i+ 0.5f;
 			}
@@ -142,6 +178,8 @@ int	check_maps(t_cub *cub)
 		}
 		i++;
 	}
+	if (!get_enemy_postion(cub, nb_l))
+		return (__putstr_fd("Malloc error\n", 2), 0);
 	if (!cub->player.start_orientation)
 		return (__putstr_fd("missing player\n", 2),  0);
 	return (1);
