@@ -71,9 +71,11 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->norm = sqrt(pow(sprite->cam_pos_x, 2) + pow(sprite->cam_pos_y, 2));
 	sprite->plane_proj = vector_dot(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->dir_proj = vector_det(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
-	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
-	//sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->norm);
-	sprite->offset_y = (sprite->sprite_img.height/sprite->norm);
+	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/(sprite->dir_proj * cub->player.plane_norm));
+	// v2 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
+	// v1 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->norm);
+	sprite->offset_y = (sprite->sprite_img.height/sprite->norm) / cub->player.plane_norm;
+	// v1 sprite->offset_y = (sprite->sprite_img.height/sprite->norm);
 	sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	//sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	sprite->screen_width = sprite->screen_height * ((float)sprite->sprite_img.width/sprite->sprite_img.height);
