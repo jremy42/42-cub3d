@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 16:36:09 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 16:37:24 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,19 +94,18 @@ void handle_sprite(t_cub *cub)
 {
 	int i;
 	int true_sprite;
+	int	to_kill;
 
 	i = cub->sprite_count - 1;
-
+	to_kill = -1;
 	while ( i >= 0)
 	{
 		true_sprite = cub->sprite_order[i];
 		printf("true_sprite : [%d]\n", true_sprite);
 		draw_sprite(cub, &cub->sprite_tab[true_sprite]);
-		if (cub->gun_animate == 1 && cub->sprite_tab[true_sprite].gun_hit)
-		 {
-			cub->sprite_tab[true_sprite].do_not_display = 1;
-			cub->maps[(int)cub->sprite_tab[true_sprite].pos_y][(int)cub->sprite_tab[true_sprite].pos_x] = '0';
-		}
+		if (cub->gun_current_sprite == 1 && cub->sprite_tab[true_sprite].gun_hit
+			&& !cub->sprite_tab[true_sprite].do_not_display)
+			to_kill = true_sprite;
 		i--;
 	}
 	// calculate_sprite_info(cub, &cub->sprite1);
@@ -116,7 +115,11 @@ void handle_sprite(t_cub *cub)
 	// 	cub->sprite1.do_not_display = 1;
 	// 	cub->maps[(int)cub->sprite1.pos_y][(int)cub->sprite1.pos_x] = '0';
 	// }
-	
+	if (to_kill >= 0)
+	{
+		cub->sprite_tab[to_kill].do_not_display = 1;
+		cub->maps[(int)floor(cub->sprite_tab[to_kill].pos_y)][(int)floor(cub->sprite_tab[to_kill].pos_x)] = '0';
+	}
 }
 
 int	render_frame(t_cub *cub)
