@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 10:42:52 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 12:19:40 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,6 +233,6 @@ float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
 void 	draw_sprite(t_cub *cub, t_sprite *s);
-void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
+void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order);
 
 #endif

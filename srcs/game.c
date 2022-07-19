@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 12:01:17 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/19 12:20:35 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void handle_sprite(t_cub *cub)
 	{
 		true_sprite = cub->sprite_order[i];
 		printf("true_sprite : [%d]\n", true_sprite);
-		calculate_sprite_info(cub, &cub->sprite_tab[true_sprite]);
 		draw_sprite(cub, &cub->sprite_tab[true_sprite]);
 		if (cub->gun_animate == 1 && cub->sprite_tab[true_sprite].gun_hit)
 		 {
@@ -136,7 +135,7 @@ int	render_frame(t_cub *cub)
 		load_background(cub);
 		(DEBUG == 3) && printf("Rendering : background ok\n");
 		raycast(cub);
-		update_sprite_order(cub->sprite_tab, cub->sprite_count, cub->sprite_order);
+		update_sprite_order(cub, cub->sprite_tab, cub->sprite_count, cub->sprite_order);
 		handle_sprite(cub);
 		
 		(DEBUG == 3) && printf("Rendering : raycasting ok\n");
