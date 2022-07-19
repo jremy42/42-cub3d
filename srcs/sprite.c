@@ -77,7 +77,6 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->screen_x_end = sprite->screen_x + sprite->screen_width/2;
 	sprite->screen_y_start = HEIGHT/2 + sprite->offset_y - sprite->screen_height/2;
 	sprite->screen_y_end = 	HEIGHT/2 + sprite->offset_y + sprite->screen_height/2;
-	
 }
 	
 
@@ -91,4 +90,31 @@ int		print_sprite_info(t_sprite *sprite)
 	printf(" screen_y_start/end: [%d][%d]\n", sprite->screen_y_start, sprite->screen_y_end);
 	printf("gun hit = [%d]\n", sprite->gun_hit);
 	return (1);
+}
+
+void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order)
+{
+	int	i;
+	int	j;
+	int	tmp;
+
+	i = -1;
+	while (++i < s_count)
+		s_order[i] = i;
+	i = 0;
+	while (i < s_count)
+	{
+		j = i + 1;
+		while (j < s_count)
+		{
+			if (s_tab[s_order[j]].norm < s_tab[s_order[i]].norm)
+			{
+				tmp = s_order[i];
+				s_order[i] = s_order[j];
+				s_order[j] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
 }

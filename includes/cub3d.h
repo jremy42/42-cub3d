@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/18 18:33:43 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/19 10:03:58 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,11 +225,13 @@ void	update_minimap(t_cub *cub);
 int	print_coord_hit(t_cub *cub);
 int	print_vector(t_cub *cub);
 
-// SPRITE AND VECTORE MATH
+// SPRITE AND VECTOR MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
-int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
+int		get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
 void 	draw_sprite(t_cub *cub, t_sprite *s);
+void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
+
 #endif
