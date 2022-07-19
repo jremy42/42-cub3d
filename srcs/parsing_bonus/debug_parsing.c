@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/06 14:00:18 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 17:33:21 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	print_debug_info(t_cub *cub)
 	printf("dir_x/dir_y: (%f:%f)\n", p->dir_x, p->dir_y);
 	printf("plane_x/plane_y: (%f:%f)\n", p->plane_x, p->plane_y);
 	printf("pente y/x : (%f)\n", p->slope_dir);
-	printf("delta_dist_x/delta_dist_y: (%f:%f)\n", p->delta_dist_x, p->delta_dist_y);
+	printf("delta_dist_x/delta_dist_y: (%f:%f)\n",
+		p->delta_dist_x, p->delta_dist_y);
 	return (1);
 }
 
@@ -50,9 +51,12 @@ int	print_cub(t_cub *cub)
 	i = -1;
 	while (++i < 2)
 		printf("color[%d] %s\n", i, (char *)cub->color[i]);
-	printf("Color ceiling r:[%d] g:[%d] b:[%d]\n", cub->ceiling.r, cub->ceiling.g, cub->ceiling.b);
-	printf("Color floor r:[%d] g:[%d] b:[%d]\n", cub->floor.r, cub->floor.g, cub->floor.b);
-	printf("Player start status : [%c] @ (%f:%f)\n", cub->player.start_orientation, cub->player.pos_x, cub->player.pos_y);
+	printf("Color ceiling r:[%d] g:[%d] b:[%d]\n", cub->ceiling.r,
+		cub->ceiling.g, cub->ceiling.b);
+	printf("Color floor r:[%d] g:[%d] b:[%d]\n",
+		cub->floor.r, cub->floor.g, cub->floor.b);
+	printf("Player start status : [%c] @ (%f:%f)\n", cub->player.start_orientation,
+		cub->player.pos_x, cub->player.pos_y);
 	print_maps(cub);
 	return (1);
 }
@@ -72,7 +76,6 @@ int	print_maps_error(t_cub *cub, int error_i, int error_j)
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (cub->maps[i])
 	{
 		j = 0;
