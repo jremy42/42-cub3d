@@ -31,11 +31,9 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 
 	color = 0;
 	x = s->screen_x_start- 1;
+	s->gun_hit = 0;
 	if (s->do_not_display)
-	{
-		s->gun_hit = 0;
 		return ;
-	}
 	while (++x < WIDTH && x < s->screen_x_end)
 	{
 		true_x = (x - s->screen_x_start )* s->sprite_img.width / s->screen_width; 
@@ -58,8 +56,6 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 					my_mlx_pixel_put(&cub->screen, x, y, color);
 				if (x == WIDTH/2 && y == HEIGHT/2 && color >= 0)
 					s->gun_hit = 1;
-				else if (x == WIDTH/2 && y == HEIGHT/2)
-					s->gun_hit = 0;
 			}
 		}
 	}
