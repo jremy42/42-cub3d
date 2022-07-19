@@ -306,15 +306,15 @@ void	__update_door_value(t_cub *cub)
 int	__key_release(int keycode, t_cub *cub)
 {
 	if (keycode == KEY_L || keycode == ARROW_LEFT)
-		cub->action -= 1 << 0;
+		cub->action &= ~(1 << 0);
 	if (keycode == KEY_D || keycode == ARROW_DOWN)
-			cub->action -= 1 << 1;
+			cub->action &= ~(1 << 1);
 	if (keycode == KEY_R || keycode == ARROW_RIGHT)
-			cub->action -= 1 << 2;
+			cub->action &= ~(1 << 2);
 	if (keycode == KEY_U || keycode == ARROW_UP)
-			cub->action -= 1 << 3;
+			cub->action &= ~(1 << 3);
 	if (keycode == SPACE_BAR)
-			cub->action -= 1 << 4;
+			cub->action &= ~(1 << 4);
 	return (1);
 }
 
