@@ -1,5 +1,3 @@
-
-
 #include "cub3d.h"
 
 int	load_maps(t_list *input, t_cub *cub)
@@ -30,8 +28,7 @@ int	load_maps(t_list *input, t_cub *cub)
 			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
 		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
 		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
-		// MALLOC CHECK
-		
+		// MALLOC CHECK	
 		input = input->next;
 		i++;
 	}
@@ -107,22 +104,22 @@ int	maps_size(char **maps)
 	return (i);
 }
 
-int get_enemy_postion(t_cub *cub, int nb_l)
+int	get_enemy_postion(t_cub *cub, int nb_l)
 {
-	int i;
-	int j;
-	int k;
+	int	i;
+	int	j;
+	int	k;
 
 	i = 0;
 	k = 0;
 	printf("sprite_count = [%d]\n", cub->sprite_count);
 	cub->sprite_tab = malloc(sizeof(t_sprite) * cub->sprite_count);
 	if (!cub->sprite_tab)
-		return(printf("1\n"), 0);
+		return (0);
 	__memset(cub->sprite_tab, 0, sizeof(t_sprite) * cub->sprite_count);
 	cub->sprite_order = malloc(sizeof(int) * cub->sprite_count);
 	if (!cub->sprite_order)
-		return(printf("2\n"), 0);
+		return(0);
 	while (i < nb_l && cub->maps[i])
 	{			
 		j = 0;
@@ -132,7 +129,7 @@ int get_enemy_postion(t_cub *cub, int nb_l)
 			{
 				cub->sprite_order[k] = k;
 				cub->sprite_tab[k].pos_x = j + 0.5f;
-				cub->sprite_tab[k].pos_y = i+ 0.5f;
+				cub->sprite_tab[k].pos_y = i + 0.5f;
 				k++;
 			}
 			j++;
