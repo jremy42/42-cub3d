@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 14:02:36 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 16:36:09 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,26 @@ void draw_gun(t_cub *cub)
 			color = get_color_from_sprite(y, x, &(cub->gun_img[(cub->gun_current_sprite/2)%5]), cub);
 			if (color >= 0)
 				my_mlx_pixel_put(&cub->screen, x +  offset_x, y + offset_y, color);
+			x++;
+		}
+		y++;
+	}
+}
+
+void draw_target(t_cub *cub)
+{
+	int x;
+	int y;
+
+
+	y = HEIGHT/2 - 4;
+	while (y < HEIGHT/2 + 4)
+	{
+		x = WIDTH/2 - 4;
+		while(x < WIDTH/2 + 4)
+		{
+			
+			my_mlx_pixel_put(&cub->screen, x, y, 0xFF00000);
 			x++;
 		}
 		y++;
@@ -140,6 +160,7 @@ int	render_frame(t_cub *cub)
 		update_minimap(cub);
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");
 		draw_gun(cub);
+		draw_target(cub);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
 
