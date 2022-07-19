@@ -6,9 +6,11 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 14:28:10 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 17:30:20 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "sprite.h"
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -101,7 +103,6 @@ typedef struct s_player
 	float	perp_wall_dist[WIDTH];
 	// check if needed;
 	float	true_wall_dist[WIDTH];
-
 	int		sprite; // A RENOMMER -> CONFUSION !!!!!!!!!!
 }	t_player;
 
@@ -138,7 +139,12 @@ typedef struct s_sprite
 	int		screen_height;
 	int		screen_width;
 	int		to_show;
+	//old
 	t_img	sprite_img;
+	/*
+	t_img	(*sprite_img_tab)[];
+	int		current_frame;
+	*/
 	int		do_not_display;
 	int		offset_y;
 	int		screen_x_start;
@@ -156,6 +162,10 @@ typedef struct s_cub
 	void		*gun;
 	t_img		door_img;
 	t_img		gun_img[5];
+	//to_add
+	/*
+	t_img		guard_img[GUARD_SPRITE_COUNT];
+	*/
 	int			gun_current_sprite;
 	int			gun_animate;
 	void		*color[2];
@@ -175,7 +185,6 @@ typedef struct s_cub
 	int			action;
 	int			minimap_height;
 	int			minimap_width;
-	t_sprite	sprite1;
 	t_sprite	*sprite_tab;
 	int			last_key_press;
 	int			sprite_count;

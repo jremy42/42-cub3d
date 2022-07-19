@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SPRITES.h                                           :+:      :+:    :+:   */
+/*   sprites.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fle-blay <{fle-blay}@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 09:12:16 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/06 09:13:15 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/19 17:27:17 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,7 @@
 # define GUARD_D3 "./sprites/xpm/guard/d3.xpm"
 # define GUARD_D4 "./sprites/xpm/guard/d4.xpm"
 # define GUARD_D5 "./sprites/xpm/guard/d5.xpm"
+
+# define GUARD_SPRITE_COUNT 9;
+
 #endif
