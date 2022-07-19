@@ -32,7 +32,10 @@ void 	draw_sprite(t_cub *cub, t_sprite *s)
 	color = 0;
 	x = s->screen_x_start- 1;
 	if (s->do_not_display)
+	{
+		s->gun_hit = 0;
 		return ;
+	}
 	while (++x < WIDTH && x < s->screen_x_end)
 	{
 		true_x = (x - s->screen_x_start )* s->sprite_img.width / s->screen_width; 
