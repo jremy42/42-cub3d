@@ -48,7 +48,6 @@ int set_img_array_address_for_guard_sprites(t_cub *cub)
 }
 int	load_textures(t_cub *cub)
 {
-
 	int	i;
 
 	i = 0;
@@ -77,7 +76,6 @@ int	load_textures(t_cub *cub)
 		if(!load_gun_img(cub) || !load_guard_img(cub))
 			return(__putstr_fd("Error loading game sprites\n", 2), 0);
 		set_img_array_address_for_guard_sprites(cub);
-		
 	}
 	return (1);
 }

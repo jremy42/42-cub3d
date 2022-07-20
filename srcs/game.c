@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 11:13:41 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 13:12:18 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,10 @@ void handle_sprite(t_cub *cub)
 	while ( i >= 0)
 	{
 		true_sprite = cub->sprite_order[i];
-		printf("true_sprite : [%d]\n", true_sprite);
+		//printf("true_sprite : [%d]\n", true_sprite);
 		draw_sprite(cub, &cub->sprite_tab[true_sprite]);
 		if (cub->gun_current_sprite == 1 && cub->sprite_tab[true_sprite].gun_hit
-			&& !cub->sprite_tab[true_sprite].do_not_display)
+			&& !cub->sprite_tab[true_sprite].do_not_display && cub->sprite_tab[true_sprite].animate < 2)
 			to_kill = true_sprite;
 		i--;
 	}
@@ -117,7 +117,9 @@ void handle_sprite(t_cub *cub)
 	// }
 	if (to_kill >= 0)
 	{
-		cub->sprite_tab[to_kill].do_not_display = 1;
+		cub->sprite_tab[to_kill].animate = 2;
+		cub->sprite_tab[to_kill].count_animate = 0;
+		//cub->sprite_tab[to_kill].do_not_display = 1;
 		cub->maps[(int)floor(cub->sprite_tab[to_kill].pos_y)][(int)floor(cub->sprite_tab[to_kill].pos_x)] = '0';
 	}
 }

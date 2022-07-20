@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 10:32:59 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 12:29:54 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,8 @@ typedef struct s_sprite
 	//NEW
 	t_img	(*sprite_img_tab)[];
 	int		current_frame;
+	int		animate;
+	int		count_animate;
 	//NEW
 	int		do_not_display;
 	int		offset_y;
