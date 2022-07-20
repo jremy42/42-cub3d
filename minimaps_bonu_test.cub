@@ -3,7 +3,6 @@ SO ./textures/hres_xpm/red_brick.xpm
 WE ./textures/hres_xpm/red_brick.xpm
 EA ./textures/hres_xpm/red_brick.xpm
 D ./textures/hres_xpm/door.xpm
-G ./sprites/gun/pistol_0.xpm
 
 F 81,81,81
 C 120,120,120

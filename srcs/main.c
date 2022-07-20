@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/19 09:00:14 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/20 10:12:14 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	destroy_text_tab(void *mlx, t_img text_img[], int size)
 	int	i;
 
 	i = 0;
-	while(i < size)
+	while (i < size)
 	{
 		if (mlx && text_img[i].mlx_img)
-			mlx_destroy_image(mlx, text_img[i].mlx_img);	
+			mlx_destroy_image(mlx, text_img[i].mlx_img);
 		i++;
 	}
 }
@@ -54,7 +54,6 @@ void	destroy_mlx_data(t_cub *cub)
 	exit(0);
 }
 
-
 int	__quit(t_cub *cub)
 {
 	destroy_cub_data(cub);
@@ -63,7 +62,7 @@ int	__quit(t_cub *cub)
 	return (0);
 }
 
-int __mouse_hook(int button, int x, int y, t_cub *cub)
+int	__mouse_hook(int button, int x, int y, t_cub *cub)
 {
 	printf("button pressed : [%d]\n", button);
 	printf("Mouse coordinates x/y : (%d:%d)\n", x, y);
@@ -87,10 +86,10 @@ int __mouse_hook(int button, int x, int y, t_cub *cub)
 
 int __mouse_move(t_cub *cub)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
-	x = WIDTH/2;
+	x = WIDTH / 2;
 	y = 0;
 	y++;
 	#ifdef __linux__

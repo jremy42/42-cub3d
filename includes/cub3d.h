@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 20:46:48 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/20 10:10:21 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@
 # define Y_HIT 2
 # define X_HIT_COLOR 0xEA6A36
 # define Y_HIT_COLOR 0xf08c25
-# define MINIMAP_WALL_COLOR 0xFFFFFF
-# define MINIMAP_DOOR_COLOR 0x7a7a7a
-# define MINIMAP_PLAYER_COLOR 0x7e0b80
-# define MINIMAP_EMPTY_COLOR 0x212e26
-# define MINIMAP_GROUND_COLOR 0xe6e6e6
+# define MINIMAP_WC 0xFFFFFF
+# define MINIMAP_DC 0x7a7a7a
+# define MINIMAP_PC 0x7e0b80
+# define MINIMAP_EC 0x212e26
+# define MINIMAP_GC 0xe6e6e6
 # define FPS 60
+# define VIEW_MM 1.0f / SIZE_MINI_MAP
 # define SIZE_WEAPON 3
 
 enum {

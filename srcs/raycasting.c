@@ -34,7 +34,7 @@ void	init_step_and_side_dist(t_player *player)
 {
 	player->r_map_x = (int)floor(player->pos_x);
 	player->r_map_y = (int)floor(player->pos_y);
-	if (player->r_dir_x < 0)	
+	if (player->r_dir_x < 0)
 	{
 		player->r_step_x = -1;
 		player->r_side_dist_x = (player->pos_x - player->r_map_x) * player->r_delta_dist_x;
@@ -44,7 +44,7 @@ void	init_step_and_side_dist(t_player *player)
 		player->r_step_x = 1;
 		player->r_side_dist_x = (player->r_map_x + 1 - player->pos_x) * player->r_delta_dist_x;
 	}
-	if (player->r_dir_y < 0)	
+	if (player->r_dir_y < 0)
 	{
 		player->r_step_y = -1;
 		player->r_side_dist_y = (player->pos_y - player->r_map_y) * player->r_delta_dist_y;
