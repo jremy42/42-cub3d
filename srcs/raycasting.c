@@ -164,7 +164,7 @@ void	calculate_wall_height(t_player *player, int x)
 		trueWallDist = (player->r_side_dist_y - player->r_delta_dist_y);
 	perpWallDist = trueWallDist * player->cos_alpha;
 	player->perp_wall_dist[x] = perpWallDist;
-	player->true_wall_dist[x] = trueWallDist;
+	//player->true_wall_dist[x] = trueWallDist;
 	wall_height = HEIGHT/perpWallDist;
 	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
