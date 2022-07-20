@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 17:15:10 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 18:52:27 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	destroy_mlx_data(t_cub *cub)
 		mlx_destroy_image(cub->mlx, cub->screen.mlx_img);
 	if (cub->minimap.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);
-	destroy_text_tab(cub->mlx, cub->text_img, 4);
+	destroy_text_tab(cub->mlx, cub->text_img[0], 4);
 	if (cub->win)
 		mlx_destroy_window(cub->mlx, cub->win);
 	mlx_do_key_autorepeaton(cub->mlx);

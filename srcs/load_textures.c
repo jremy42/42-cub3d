@@ -49,19 +49,27 @@ int set_img_array_address_for_guard_sprites(t_cub *cub)
 int	load_textures(t_cub *cub)
 {
 	int	i;
+	int j;
 
 	i = 0;
+	j = 0;
 	while (i < 4)
 	{
-		cub->text_img[i].mlx_img = mlx_xpm_file_to_image(cub->mlx, cub->text[i],
-			       &cub->text_img[i].width, &cub->text_img[i].height);
-		if(!cub->text_img[i].mlx_img)
-			return(__putstr_fd("Failed to load texture\n", 2), 0);
-		if (cub->text_img[i].width != cub->text_img[i].height)
-			return(__putstr_fd("Not valid texture size\n", 2), 0);
-		cub->text_img[i].addr = mlx_get_data_addr(cub->text_img[i].mlx_img, &cub->text_img[i].bits_per_pixel,
-			   &cub->text_img[i].line_length, &cub->text_img[i].endian);
-		i++;
+		j = 0;
+		while (j < 4)
+		{
+			printf("i/j %d/%d\n", i, j);
+			cub->text_img[i][j].mlx_img = mlx_xpm_file_to_image(cub->mlx, cub->text[i][j],
+				       &cub->text_img[i][j].width, &cub->text_img[i][j].height);
+			if(!cub->text_img[i][j].mlx_img)
+				return(__putstr_fd("Failed to load texture\n", 2), 0);
+			if (cub->text_img[i][j].width != cub->text_img[i][j].height)
+				return(__putstr_fd("Not valid texture size\n", 2), 0);
+			cub->text_img[i][j].addr = mlx_get_data_addr(cub->text_img[i][j].mlx_img, &cub->text_img[i][j].bits_per_pixel,
+				   &cub->text_img[i][j].line_length, &cub->text_img[i][j].endian);
+			j++;
+		}
+			i++;
 	}
 	if (BONUS)
 	{

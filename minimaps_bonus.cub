@@ -1,8 +1,8 @@
-NO ./textures/hres_xpm/brick_german_flag.xpm
-SO ./textures/hres_xpm/red_brick.xpm
-WE ./textures/hres_xpm/red_brick.xpm
-EA ./textures/hres_xpm/red_brick.xpm
-D ./textures/hres_xpm/door.xpm
+NO ./textures/hres_xpm/brick_german_flag.xpm ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/stones.xpm
+SO ./textures/hres_xpm/brick_german_flag.xpm ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/stones.xpm 
+WE ./textures/hres_xpm/brick_german_flag.xpm ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/stones.xpm
+EA ./textures/hres_xpm/brick_german_flag.xpm ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/stones.xpm
+D ./textures/hres_xpm/wrong_brick.xpm
 
 F 81,81,81
 C 120,120,120
@@ -12,10 +12,10 @@ C 120,120,120
 1011000001110000000000001000111
 100D000000D00000000000001000D01
 1D11000001110000000000001000111
-10010100001100000111011110001
+10010100001100000111011110004
 11010111111111011100000010001
-11D11111111111011111D1111D111
-11000000110101D11100011110001
-10000000000000001100011100011
-1000N000000000G0110000D00001
-11111111111111111111111111111
+14D12341111111011111D1111D111
+13000000110101D11100011110001
+20000000000000002100011100011
+1000N000000000G0310000D000G01
+12341234123411111111111111111

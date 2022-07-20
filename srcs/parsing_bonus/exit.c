@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:53:59 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 18:54:52 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/20 18:26:07 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,18 @@ void	__exit_error_get_input(char *error, t_list *lst, int fd)
 void	destroy_cub_data(t_cub *cub)
 {
 	int	i;
+	int j;
 
 	i = -1;
 	while (++i < 2)
 		free(cub->color[i]);
 	i = -1;
 	while (++i < 4)
-		free(cub->text[i]);
+	{
+		j = -1;
+		while(++j < 4)
+			free(cub->text[i][j]);
+	}
 	free(cub->maps);
 	__lstclear(&cub->input, free);
 	DEBUG && printf("Cub data successfully destroyed\n");

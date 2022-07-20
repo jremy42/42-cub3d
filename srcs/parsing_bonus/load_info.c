@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load_info.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 20:43:05 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/20 18:47:36 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,19 @@ int	get_pos(char **ret)
 	return (pos);
 }
 
+int load_texture_path(void *text[4], char **ret)
+{
+	int	i;
+
+	i = 1;
+	while (ret[i])
+	{
+		text[i - 1] = ret[i];
+		i++;
+	}
+	return (1);
+}
+
 int	load_info(char **ret, t_cub *cub)
 {
 	int	pos;
@@ -57,19 +70,21 @@ int	load_info(char **ret, t_cub *cub)
 	pos = get_pos(ret);
 	if (!pos)
 		return (__putstr_fd("No such a info\n", 2), 0);
-	if (pos == 7)
-		cub->door = ret[1];
 	else if (pos > 0 && pos < 5)
 	{
-		if (cub->text[pos - 1])
+		if (cub->text[pos - 1][0])
 			return (__putstr_fd("Too many info\n", 2), 0);
-		cub->text[pos - 1] = ret[1];
+		load_texture_path(cub->text[pos - 1], ret);
+		//cub->text[pos - 1] = ret[1];
 	}
-	else if (pos >= 5 && pos < 7)
+	else if (pos >= 5 && pos <=7)
 	{
-		if (cub->color[pos - 5])
-			return (__putstr_fd("Too many info\n", 2), 0);
-		cub->color[pos - 5] = ret[1];
+		if (cub->color[pos - 5] || size_split(ret) != 2)
+			return (__putstr_fd("Too many info for ceiling or floor or door\n", 2), 0);
+		if (pos == 7)
+			cub->door = ret[1];
+		else 
+			cub->color[pos - 5] = ret[1];
 	}
 	free(ret[0]);
 	ret[0] = NULL;
@@ -120,7 +135,7 @@ void	get_info(t_list *input, t_cub *cub)
 			input = input->next;
 			continue ;
 		}
-		if (size_split(ret) != 2)
+		if (size_split(ret) < 2 || size_split(ret) > 5)
 			return (printf("[%s]\n", ret[0]), free_split(ret),
 				__exit_error("wrong info format", cub));
 		if (!load_info(ret, cub))

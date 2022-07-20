@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/20 10:34:37 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 18:41:15 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	get_enemy_postion(t_cub *cub, int nb_l)
 
 int	check_char_maps(int i, int j, int nb_l, t_cub *cub)
 {
-	if (!__strchr(" GD10NSEW", cub->maps[i][j]))
+	if (!__strchr(" GD43210NSEW", cub->maps[i][j]))
 		return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
 	if (__strchr("NSEW", cub->maps[i][j]) && !check_player(cub, i, j, nb_l))
 		return (print_maps_error(cub, i, j), 0);

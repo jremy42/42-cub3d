@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:42 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 11:07:29 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 19:16:51 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
 	else
 	{
 		current_char = cub->maps[(int)floor(y)][(int)floor(x)];
-		if (current_char == '1')
+		if (current_char == '1' || current_char == '2' || current_char == '3' || current_char == '4')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_WC);
 		else if (current_char == 'D')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_DC);
