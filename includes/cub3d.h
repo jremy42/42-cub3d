@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 10:24:54 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 10:32:59 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,6 +171,7 @@ typedef struct s_cub
 
 	int			gun_current_sprite;
 	int			gun_animate;
+	int			nb_l_maps;
 	void		*color[2];
 	t_color		ceiling;
 	t_color		floor;

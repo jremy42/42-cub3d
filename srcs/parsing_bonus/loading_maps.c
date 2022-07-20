@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   loading_maps.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 18:55:36 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/20 10:34:37 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ int	check_maps(t_cub *cub)
 
 	i = -1;
 	nb_l = maps_size(cub->maps);
+	cub->nb_l_maps = nb_l;
 	if (nb_l == 0)
 		return (__putstr_fd("empty map\n", 2), 0);
 	if (nb_l < 0)

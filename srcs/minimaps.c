@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:42 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 10:10:43 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 11:07:29 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,27 +61,29 @@ void	player_square_put(t_img *img, int x, int y, int color)
 	}
 }
 
-void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y)
+void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
 {
 	float	x;
 	float	y;
+	char	current_char;
 
 	x = cub->player.pos_x - ((VIEW_MM) * (cub->minimap_width / 2 - pixel_x));
 	y = cub->player.pos_y - ((VIEW_MM) * (cub->minimap_height / 2 - pixel_y));
 	if (x < 0 || y < 0)
 		my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_EC);
-	else if ((int)y > size_split(cub->maps) - 1)
+	else if ((int)y > cub->nb_l_maps)
 		my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_EC);
-	else if ((int)floor(x) > (int)__strlen(cub->maps[(int)floor(y)]) - 1)
+	else if (size_current_l == -1 || (int)floor(x) > size_current_l)
 		my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_EC);
 	else
 	{
-		if (cub->maps[(int)floor(y)][(int)floor(x)] == '1')
+		current_char = cub->maps[(int)floor(y)][(int)floor(x)];
+		if (current_char == '1')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_WC);
-		else if (cub->maps[(int)floor(y)][(int)floor(x)] == 'D')
+		else if (current_char == 'D')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_DC);
-		else if (cub->maps[(int)floor(y)][(int)floor(x)] == '0'
-			|| cub->maps[(int)floor(y)][(int)floor(x)] == 'G')
+		else if (current_char == '0'
+			|| current_char == 'G')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_GC);
 		else
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_EC);
@@ -92,14 +94,21 @@ void	update_minimap(t_cub *cub)
 {
 	int	pixel_x;
 	int	pixel_y;
+	int	size_current_l;
+	float y;
 
 	pixel_y = 0;
 	while (pixel_y < cub->minimap_height - 1)
 	{
 		pixel_x = 0;
+		y = cub->player.pos_y - ((VIEW_MM) * (cub->minimap_height / 2 - pixel_y));
+		if (y > 0 && y < cub->nb_l_maps)
+			size_current_l = (int)__strlen(cub->maps[(int)floor(y)] ) - 1;
+		else 
+			size_current_l = -1;
 		while (pixel_x < cub->minimap_width - 1)
 		{
-			draw_minimap(cub, pixel_x, pixel_y);
+			draw_minimap(cub, pixel_x, pixel_y, size_current_l);
 			pixel_x++;
 		}
 		pixel_y++;

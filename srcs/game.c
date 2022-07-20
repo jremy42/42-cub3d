@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/19 16:56:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/20 11:13:41 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,9 +147,9 @@ int	render_frame(t_cub *cub)
 		DEBUG && print_vector(cub);
 		DEBUG && print_debug_info(cub);
 		printf("\n");
-		// DEBUG && print_sprite_info(&cub->sprite1);
+		//DEBUG && print_sprite_info(&cub->sprite1);
 		printf("\n");
-		DEBUG && print_sprite_info(&cub->sprite_tab[0]);
+		DEBUG && cub->sprite_count && print_sprite_info(&cub->sprite_tab[0]);
 		DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
