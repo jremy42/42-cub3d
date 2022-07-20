@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 10:12:14 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 10:24:32 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,16 +112,41 @@ int __mouse_move(t_cub *cub)
 	return (1);
 }
 
+void	set_ressources_file_names(t_cub *cub)
+{
+	cub->gun_img_file[0] = PISTOL_0;
+	cub->gun_img_file[1] = PISTOL_1;
+	cub->gun_img_file[2] = PISTOL_2;
+	cub->gun_img_file[3] = PISTOL_3;
+	cub->gun_img_file[4] = PISTOL_4;
+
+	cub->guard_img_file[0] = GUARD_W;
+	cub->guard_img_file[1] = GUARD_F1;
+	cub->guard_img_file[2] = GUARD_F2;
+	cub->guard_img_file[3] = GUARD_F3;
+	cub->guard_img_file[4] = GUARD_D1;
+	cub->guard_img_file[5] = GUARD_D2;
+	cub->guard_img_file[6] = GUARD_D3;
+	cub->guard_img_file[7] = GUARD_D4;
+	cub->guard_img_file[8] = GUARD_D5;
+}
+
+void	set_hook_fx(t_cub *cub)
+{
+	cub->hook_fx[UP] = __hookup;
+	cub->hook_fx[DOWN] = __hookdown;
+	cub->hook_fx[LEFT] = __hookleft;
+	cub->hook_fx[RIGHT] = __hookright;
+	cub->hook_fx[OPEN_DOOR] = __switch_door;
+}
+
 int	main(int ac, char **av)
 {
 	t_cub	cub;
 
 	__memset(&cub, 0, sizeof(cub));
-	cub.hook_fx[UP] = __hookup;
-	cub.hook_fx[DOWN] = __hookdown;
-	cub.hook_fx[LEFT] = __hookleft;
-	cub.hook_fx[RIGHT] = __hookright;
-	cub.hook_fx[OPEN_DOOR] = __switch_door;
+	set_hook_fx(&cub);
+	set_ressources_file_names(&cub);
 
 	if (ac != 2)
 	{

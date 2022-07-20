@@ -35,14 +35,14 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 		return ;
 	while (++x < WIDTH && x < s->screen_x_end)
 	{
-		true_x = (x - s->screen_x_start )* s->sprite_img.width / s->screen_width; 
+		true_x = (x - s->screen_x_start ) * (*s->sprite_img_tab)[0].width / s->screen_width; 
 		if (x < 0)
 			continue ;
 
 		y = s->screen_y_start - 1;
 		while (++y < HEIGHT && y < s->screen_y_end)
 		{
-			true_y = (y - s->screen_y_start) * s->sprite_img.height / s->screen_height; 
+			true_y = (y - s->screen_y_start) * (*s->sprite_img_tab)[0].height / s->screen_height; 
 			if (y < 0)
 				continue ;
 			if (s->to_show && cub->player.perp_wall_dist[x] > s->dir_proj)
@@ -50,7 +50,7 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 			// v2 if (s->to_show && cub->player.perp_wall_dist[x] > s->dir_proj)
 			// v1 if (s->to_show && cub->player.perp_wall_dist[x] > s->norm)
 			{
-				color = get_color_from_mlx_img(true_x, true_y, &s->sprite_img);
+				color = get_color_from_mlx_img(true_x, true_y, &(*s->sprite_img_tab)[0]);
 				if (color >= 0)
 					my_mlx_pixel_put(&cub->screen, x, y, color);
 				if (x == WIDTH/2 && y == HEIGHT/2 && color >= 0)
@@ -72,12 +72,12 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/(sprite->dir_proj * cub->player.plane_norm));
 	// v2 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->dir_proj);
 	// v1 sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/sprite->norm);
-	sprite->offset_y = (sprite->sprite_img.height/sprite->dir_proj) * cub->player.plane_norm;
+	sprite->offset_y = ((*sprite->sprite_img_tab)[0].height/sprite->dir_proj) * cub->player.plane_norm;
 	// v2 moyen OKsprite->offset_y = (sprite->sprite_img.height/sprite->norm) / cub->player.plane_norm;
 	// v1 sprite->offset_y = (sprite->sprite_img.height/sprite->norm);
 	sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
 	//sprite->screen_height = (HEIGHT / (sprite->norm * 1.2f));
-	sprite->screen_width = sprite->screen_height * ((float)sprite->sprite_img.width/sprite->sprite_img.height);
+	sprite->screen_width = sprite->screen_height * ((float)(*sprite->sprite_img_tab)[0].width/(*sprite->sprite_img_tab)[0].height);
 	sprite->to_show = (sprite->dir_proj > 0);
 	sprite->screen_x_start = sprite->screen_x - sprite->screen_width/2;
 	sprite->screen_x_end = sprite->screen_x + sprite->screen_width/2;

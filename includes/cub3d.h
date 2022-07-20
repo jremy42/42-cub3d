@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 10:10:21 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 10:24:54 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ typedef struct s_player
 	char	start_orientation;
 	float	dir_x;
 	float	dir_y;
- 	//float	dir_norm;
 	float	slope_dir;
 	float	delta_dist_x;
 	float	delta_dist_y;
@@ -103,7 +102,7 @@ typedef struct s_player
 	// form int to float
 	float	perp_wall_dist[WIDTH];
 	// check if needed;
-	float	true_wall_dist[WIDTH];
+	//float	true_wall_dist[WIDTH];
 	int		sprite; // A RENOMMER -> CONFUSION !!!!!!!!!!
 }	t_player;
 
@@ -141,11 +140,11 @@ typedef struct s_sprite
 	int		screen_width;
 	int		to_show;
 	//old
-	t_img	sprite_img;
-	/*
+	//t_img	sprite_img;
+	//NEW
 	t_img	(*sprite_img_tab)[];
 	int		current_frame;
-	*/
+	//NEW
 	int		do_not_display;
 	int		offset_y;
 	int		screen_x_start;
@@ -162,11 +161,14 @@ typedef struct s_cub
 	void		*door;
 	void		*gun;
 	t_img		door_img;
-	t_img		gun_img[5];
-	//to_add
-	/*
+	char		*gun_img_file[GUN_SPRITE_COUNT];
+	t_img		gun_img[GUN_SPRITE_COUNT];
+
+	//NEW
+	char		*guard_img_file[GUARD_SPRITE_COUNT];
 	t_img		guard_img[GUARD_SPRITE_COUNT];
-	*/
+	//NEW
+
 	int			gun_current_sprite;
 	int			gun_animate;
 	void		*color[2];
