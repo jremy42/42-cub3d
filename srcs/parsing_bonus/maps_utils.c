@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   maps_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:16:24 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 18:55:44 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/20 13:24:13 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	check_player(t_cub *cub, int i, int j, int nb_l)
 		|| cub->maps[i + 1][j - 1] == ' ')
 		return (__putstr_fd("space near player\n", 2), 0);
 	cub->player.start_orientation = cub->maps[i][j];
-	cub->player.pos_x = j;
-	cub->player.pos_y = i;
+	cub->player.pos_x = j + 0.5;
+	cub->player.pos_y = i + 0.5;
 	cub->maps[i][j] = '0';
 	return (1);
 }
