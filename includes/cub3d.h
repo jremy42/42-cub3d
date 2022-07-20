@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 12:29:54 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 16:33:49 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@
 # define FPS 60
 # define VIEW_MM 1.0f / SIZE_MINI_MAP
 # define SIZE_WEAPON 3
+# define RED_HEX 0x00ff0000
+# define YELLOW_HEX 0x00777700
 
 enum {
 	NO,
@@ -195,6 +197,7 @@ typedef struct s_cub
 	int			last_key_press;
 	int			sprite_count;
 	int			*sprite_order;
+	int			hit_by_guard;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -260,4 +263,5 @@ void 	draw_sprite(t_cub *cub, t_sprite *s);
 void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order);
 void	get_info(t_list *input, t_cub *cub);
 void	load_player_info(t_cub *cub);
+int		get_color_from_mlx_img(int x, int y, t_img *img);
 #endif

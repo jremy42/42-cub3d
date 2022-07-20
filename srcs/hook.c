@@ -11,7 +11,7 @@ void __move(t_cub *cub, float move_dir_x, float move_dir_y)
 	float	door_value;
 
 	next_pos_x = cub->player.pos_x + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_x;
-	next_pos_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER/2))* move_dir_y;
+	next_pos_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_y;
 	// type_pos = cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
 	// door_value = cub->door_map[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
 	type_pos = cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)];

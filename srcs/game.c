@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 13:12:18 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 18:10:00 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,30 @@ void handle_sprite(t_cub *cub)
 	}
 }
 
+void color_screen(t_cub *cub, int color_hex)
+{
+	unsigned int x;
+	unsigned int y;
+	unsigned int color;
+	
+	y = 0;
+	while (y < HEIGHT - 1)
+	{
+		x = 0;
+		while(x < WIDTH - 1)
+		{
+			color = get_color_from_mlx_img( x,y, &cub->screen);
+			color |= color_hex;
+				//printf("[%x]\n", (((color_hex >> 16) & (~x)) << 16));
+			my_mlx_pixel_put(&cub->screen, x, y, color);
+			x++;
+		}
+		//exit(1);
+		y++;
+	}
+
+}
+
 int	render_frame(t_cub *cub)
 {
 	static size_t	next_frame = 0;
@@ -151,7 +175,7 @@ int	render_frame(t_cub *cub)
 		printf("\n");
 		//DEBUG && print_sprite_info(&cub->sprite1);
 		printf("\n");
-		DEBUG && cub->sprite_count && print_sprite_info(&cub->sprite_tab[0]);
+		//DEBUG && cub->sprite_count && print_sprite_info(&cub->sprite_tab[0]);
 		DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 		next_frame = current_time + 1000/FPS;
 		__update_door_value(cub);
@@ -166,8 +190,16 @@ int	render_frame(t_cub *cub)
 		(DEBUG == 3) && printf("Rendering : minimap ok\n");
 		draw_gun(cub);
 		draw_target(cub);
+		if (cub->gun_current_sprite == 1)
+		{
+			color_screen(cub, YELLOW_HEX);
+			__putstr_fd("\a", 1);
+		}
+		else if (cub->hit_by_guard)
+			color_screen(cub, RED_HEX);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
 		mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
+		cub->hit_by_guard = 0;
 
 
 		//printf("next_frame = [%lu]\n", next_frame - first_get_time);

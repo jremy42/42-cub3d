@@ -31,10 +31,11 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 	color = 0;
 	x = s->screen_x_start- 1;
 	s->gun_hit = 0;
-	if (s->do_not_display)
+	if (s->do_not_display || s->dir_proj < 0)
 		return ;
 	while (++x < WIDTH && x < s->screen_x_end)
 	{
+		//printf("start x loop with x / screen_x_end [%d][%d]\n", x, s->screen_x_end);
 		true_x = (x - s->screen_x_start ) * (*s->sprite_img_tab)[s->current_frame].width / s->screen_width; 
 		if (x < 0)
 			continue ;
@@ -58,8 +59,20 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 				if (x == WIDTH/2 && y == HEIGHT/2 && color >= 0)
 					s->gun_hit = 1;					
 			}
+			else if (s->animate == 1)
+			{
+				//printf("killing animate with x/y : %d/%d\n", x, y);
+				s->animate = 0;
+				s->current_frame = 0;
+				s->count_animate = 0;
+				//while(1);
+			}
+			//printf("end of y loop\n");
 		}
+		//printf("exiting y loop\n");
+		//printf("end of x loop\n");
 	}
+	printf("end of x loop\n");
 }
 
 void	get_sprite_frame(t_sprite *sprite)
@@ -93,6 +106,7 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->cam_pos_x = sprite->pos_x - cub->player.pos_x;
 	sprite->cam_pos_y = sprite->pos_y - cub->player.pos_y;
 	sprite->norm = sqrt(pow(sprite->cam_pos_x, 2) + pow(sprite->cam_pos_y, 2));
+	//printf("plane x/y [%f][%f] plane_norm [%f]\n", cub->player.plane_x, cub->player.plane_y, cub->player.plane_norm);
 	sprite->plane_proj = vector_dot(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->dir_proj = vector_det(sprite->cam_pos_x, sprite->cam_pos_y, cub->player.plane_x, cub->player.plane_y) / cub->player.plane_norm;
 	sprite->screen_x = (WIDTH/2) * (1 + sprite->plane_proj/(sprite->dir_proj * cub->player.plane_norm));
@@ -110,6 +124,9 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	sprite->screen_y_start = HEIGHT/2 + sprite->offset_y - sprite->screen_height/2;
 	sprite->screen_y_end = 	HEIGHT/2 + sprite->offset_y + sprite->screen_height/2;
 	get_sprite_frame(sprite);
+	if (sprite->current_frame == 3 && ((sprite->count_animate) % 15 > 7 ))
+		cub->hit_by_guard = 1 * (sprite->animate == 1);
+
 }
 	
 
@@ -122,6 +139,8 @@ int		print_sprite_info(t_sprite *sprite)
 	printf(" screen_x_start/end: [%d][%d]\n", sprite->screen_x_start, sprite->screen_x_end);
 	printf(" screen_y_start/end: [%d][%d]\n", sprite->screen_y_start, sprite->screen_y_end);
 	printf("gun hit = [%d]\n", sprite->gun_hit);
+	printf("animate/current_frame/count_animage : [%d][%d][%d]\n", sprite->animate, sprite->current_frame, sprite->count_animate);
+	printf("to show : [%d]\n", sprite->to_show);
 	return (1);
 }
 
@@ -135,6 +154,7 @@ void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order)
 	while (++i < s_count)
 	{
 		calculate_sprite_info(cub, &s_tab[i]);
+		print_sprite_info(&s_tab[i]);
 		s_order[i] = i;
 	}
 	i = 0;

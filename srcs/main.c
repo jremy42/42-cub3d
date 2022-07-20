@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 10:24:32 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/20 17:15:10 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -191,6 +191,13 @@ int	main(int ac, char **av)
 	DEBUG && printf("mlx autorepeat off ok\n");
 	mlx_loop_hook(cub.mlx, render_frame, &cub);
 	DEBUG && printf("mlx rendering loop hook ok\n");
+	#ifdef __linux__
+	mlx_mouse_move(cub.mlx, cub.win, WIDTH/2, HEIGHT/2);
+	#endif
+	#ifdef __MACH__
+	mlx_mouse_move(cub.win, WIDTH/2, HEIGHT/2);
+	#endif
+	rotate(&cub, 0.01f);
 	mlx_loop(cub.mlx);
 	DEBUG && printf("mlx looping done (this should not occur)\n");
 	return (0);
