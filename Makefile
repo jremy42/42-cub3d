@@ -6,6 +6,7 @@ SRC_LIST = main.c\
 	parsing_bonus/maps_utils.c\
 	parsing_bonus/exit.c\
 	parsing_bonus/load_info.c\
+	parsing_bonus/info_utils.c\
 	create_img.c\
 	raycasting.c\
 	game.c\

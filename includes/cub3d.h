@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:17:37 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/21 12:24:29 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,7 +208,11 @@ int		check_maps(t_cub *cub);
 t_list	*adjust_input(t_list *input);
 int		maps_size(char **maps);
 int		check_player(t_cub *cub, int i, int j, int nb_l);
-
+void	load_player_info(t_cub *cub);
+int		load_info(char **ret, t_cub *cub);
+int		load_texture_path(void *text[6], char **ret);
+int		get_pos(char **ret);
+int		missing_info_cub(t_cub *cub);
 void	__exit_error(char *error, t_cub *cub);
 void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	destroy_cub_data(t_cub *cub);
@@ -265,8 +269,12 @@ void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 void	get_info(t_list *input, t_cub *cub);
 void	load_player_info(t_cub *cub);
 int		get_color_from_mlx_img(int x, int y, t_img *img);
+<<<<<<< HEAD
+int		load_images(t_cub *cub);
+=======
 
 
 // MLX UTILS
 int	get_color_from_sprite(int y, int x, t_img *img);
+>>>>>>> 59f462b42aa76f4ebfabb2b97368eee73f41f880
 #endif

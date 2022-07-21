@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 11:19:05 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 11:53:54 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,12 +114,11 @@ int	check_maps(t_cub *cub)
 		return (__putstr_fd("info after map end\n", 2), 0);
 	while (++i < nb_l && cub->maps[i])
 	{			
-		j = 0;
-		while (cub->maps[i][j])
+		j = -1;
+		while (cub->maps[i][++j])
 		{
 			if (!check_char_maps(i, j, nb_l, cub))
 				return (0);
-			j++;
 		}
 	}
 	if (!get_enemy_postion(cub, nb_l))

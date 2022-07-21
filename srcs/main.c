@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/20 18:52:27 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:23:06 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,7 @@ int	main(int ac, char **av)
 	if (!create_cub_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
 	DEBUG && printf("mlx image loading ok\n");
-	if (!load_textures(&cub))
+	if (!load_images(&cub))
 		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
 	cub.minimap_height = HEIGHT/4;
 	cub.minimap_width = WIDTH/4;
