@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:34:39 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 16:37:55 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ int	render_frame(t_cub *c)
 
 	current_time = __get_time();
 	if (current_time >= next_frame)
-	{		
+	{
 		do_actions(c);
 		DEBUG && print_render_frame_debug_info(c);
 		next_frame = current_time + 1000 / FPS;
