@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 16:40:59 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:01:31 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 1
+# define DEBUG 4
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
@@ -275,7 +275,7 @@ int		print_vector(t_cub *cub);
 
 // SPRITE AND VECTOR MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
-int		get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
+int		get_color_from_text(float step, float r_hit_coef, t_img *img);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);

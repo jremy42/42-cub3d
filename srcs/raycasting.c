@@ -181,15 +181,11 @@ void	calculate_wall_height(t_player *player, int x)
 	*/
 }
 
-int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
+int	get_color_from_text(float step, float r_hit_coef, t_img *img)
 {
 	char	*dst;
 	int 	x;
 	int		y;
-
-	(void)cub;
-
-	
 
 	x = (r_hit_coef) * (img->width - 0);
 	// check x value;
@@ -198,7 +194,7 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 	y = (int)floor(step);
 	//printf("x = [%d] y =  [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
-	(DEBUG == 3)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
+	(DEBUG == 4)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
 	return(*(unsigned int*)dst);
 }
 
@@ -226,13 +222,14 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 			if (player->current_orientation == DO)
 			{
 				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);			
+				if (cub->player.r_hit_coef >= 0)
+				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img);			
 
 			}
 			else
 			{
 				step = (y - player->r_wall_y_start) * (cub->text_img[player->current_orientation][player->current_text].height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->current_orientation][player->current_text], cub);
+				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->current_orientation][player->current_text]);
 			}
 			if (player->r_side_hit == Y_HIT)
 			{
