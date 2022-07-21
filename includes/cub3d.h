@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:22:48 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:24:29 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@
 # define MINIMAP_GC 0xe6e6e6
 # define FPS 60
 # define VIEW_MM 1.0f / SIZE_MINI_MAP
-# define SIZE_WEAPON 3
+# define GUN_SIZE 3
 # define RED_HEX 0x00ff0000
 # define YELLOW_HEX 0x00777700
 
@@ -174,7 +174,7 @@ typedef struct s_cub
 	t_img		guard_img[GUARD_SPRITE_COUNT];
 	//NEW
 
-	int			gun_current_sprite;
+	int			gun_frame;
 	int			gun_animate;
 	int			nb_l_maps;
 	void		*color[2];
@@ -265,9 +265,16 @@ float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
 void 	draw_sprite(t_cub *cub, t_sprite *s);
-void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order);
+void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 void	get_info(t_list *input, t_cub *cub);
 void	load_player_info(t_cub *cub);
 int		get_color_from_mlx_img(int x, int y, t_img *img);
+<<<<<<< HEAD
 int		load_images(t_cub *cub);
+=======
+
+
+// MLX UTILS
+int	get_color_from_sprite(int y, int x, t_img *img);
+>>>>>>> 59f462b42aa76f4ebfabb2b97368eee73f41f880
 #endif

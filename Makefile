@@ -14,6 +14,7 @@ SRC_LIST = main.c\
 	time.c\
 	minimaps.c\
 	sprite.c\
+	mlx_img_utils.c\
 	hook.c
 
 SRC_DIR = ./srcs/
