@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 17:01:31 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 18:12:34 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 4
+# define DEBUG 1
 # ifndef DEBUG
 #  define DEBUG 0
 # endif

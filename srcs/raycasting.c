@@ -225,9 +225,7 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 			if (player->current_orientation == DO)
 			{
 				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
-				if (cub->player.r_hit_coef >= 0)
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img);			
-
+				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img);
 			}
 			else
 			{
