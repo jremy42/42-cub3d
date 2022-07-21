@@ -56,9 +56,8 @@ int	load_textures(t_cub *cub)
 	while (i < 4)
 	{
 		j = 0;
-		while (j < 4)
+		while (j < 6)
 		{
-			printf("i/j %d/%d\n", i, j);
 			cub->text_img[i][j].mlx_img = mlx_xpm_file_to_image(cub->mlx, cub->text[i][j],
 				       &cub->text_img[i][j].width, &cub->text_img[i][j].height);
 			if(!cub->text_img[i][j].mlx_img)

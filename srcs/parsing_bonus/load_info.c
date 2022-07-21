@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/20 18:47:36 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 11:29:59 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	get_pos(char **ret)
 	return (pos);
 }
 
-int load_texture_path(void *text[4], char **ret)
+int load_texture_path(void *text[6], char **ret)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ int	load_info(char **ret, t_cub *cub)
 	else if (pos > 0 && pos < 5)
 	{
 		if (cub->text[pos - 1][0])
-			return (__putstr_fd("Too many info\n", 2), 0);
+			return (__putstr_fd("--Too many info\n", 2), 0);
 		load_texture_path(cub->text[pos - 1], ret);
 		//cub->text[pos - 1] = ret[1];
 	}
@@ -135,7 +135,7 @@ void	get_info(t_list *input, t_cub *cub)
 			input = input->next;
 			continue ;
 		}
-		if (size_split(ret) < 2 || size_split(ret) > 5)
+		if (size_split(ret) < 2 || size_split(ret) > 7)
 			return (printf("[%s]\n", ret[0]), free_split(ret),
 				__exit_error("wrong info format", cub));
 		if (!load_info(ret, cub))
