@@ -144,9 +144,8 @@ int	dda(t_player *player, char **map, float **door_map)
 		{
 			find_coef(player);
 			door_value = door_map[player->r_map_y][player->r_map_x];
-			//si pas fermee et float entre 0 et 1 OU 
 			if (player->r_hit_coef < door_value - floor(door_value)
-				|| (door_value != 0 && door_value == floor(door_value)))
+				|| (door_value == 2 ))
 			{	
 				hit = 1;
 				player->r_hit_coef -= door_value - floor(door_value);
@@ -230,7 +229,6 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 			{
 				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
 				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);			
-
 			}
 			else
 			{
