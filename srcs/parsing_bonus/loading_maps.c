@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 11:53:54 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 15:53:52 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	load_maps(t_list *input, t_cub *cub)
 	i = 0;
 	input = adjust_input(input);
 	size = __lstsize(input);
+	cub->size_door_map = size;
 	cub->maps = malloc(sizeof(char *) * (size + 1));
 	cub->maps[size] = NULL;
 	cub->door_map = malloc (sizeof(float *) * (size + 1));
