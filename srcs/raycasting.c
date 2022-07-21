@@ -144,9 +144,8 @@ int	dda(t_player *player, char **map, float **door_map)
 		{
 			find_coef(player);
 			door_value = door_map[player->r_map_y][player->r_map_x];
-			//si pas fermee et float entre 0 et 1 OU 
 			if (player->r_hit_coef < door_value - floor(door_value)
-				|| (door_value != 0 && door_value == floor(door_value)))
+				|| (door_value == 2 ))
 			{	
 				hit = 1;
 				player->r_hit_coef -= door_value - floor(door_value);
@@ -190,6 +189,8 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img)
 	int 	x;
 	int		y;
 
+	if (r_hit_coef < 0)
+		r_hit_coef = 1 - fabs(r_hit_coef);
 	x = (r_hit_coef) * (img->width - 0);
 	// check x value;
 	//if (cub->player.r_side_hit == X_HIT)
@@ -197,10 +198,9 @@ int	get_color_from_text(float step, float r_hit_coef, t_img *img)
 	y = (int)floor(step);
 	//printf("x = [%d] y =  [%d]\n", x, y);
 	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
-	(DEBUG == 4)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
+	//(DEBUG == 4)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
 	return(*(unsigned int*)dst);
 }
-
 
 void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 {
@@ -211,7 +211,6 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 	y = player->r_wall_y_start;
 	y = 0;
 	step = 0;
-
 	if (player->r_side_hit == X_HIT)
 		color = X_HIT_COLOR;
 	else

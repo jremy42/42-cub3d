@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 13:56:26 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 18:03:08 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/21 19:07:13 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -244,20 +244,20 @@ void	__switch_door(t_cub *cub)
 	x_try = floor(cub->player.pos_x);
 	y_try = floor(cub->player.pos_y);
 	i = -1;
-	while (i < 2)
+	while (++i < 2)
 	{
 		j = -1;
-		while (j < 2)
+		while (++j < 2)
 		{
+			if (!i && !j)
+				continue ;
 			if (cub->maps[y_try + i][x_try + j] == 'D'
 				&& cub->door_map[y_try + i][x_try + j] == 2.0f)
 				cub->door_map[y_try + i][x_try + j] = 1.99f;
 			if (cub->maps[y_try + i][x_try + j] == 'D'
 				&& cub->door_map[y_try + i][x_try + j] == 0.0f)
 				cub->door_map[y_try + i][x_try + j] = 0.01f;
-			j++;
 		}
-		i++;
 	}
 	DEBUG && printf("open\n");
 }
