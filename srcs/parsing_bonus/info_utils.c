@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 11:57:53 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:29:26 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	load_info(char **ret, t_cub *cub)
 	else if (pos > 0 && pos < 5)
 	{
 		if (cub->text[pos - 1][0])
-			return (__putstr_fd("--Too many info\n", 2), 0);
+			return (__putstr_fd("Too many info\n", 2), 0);
 		load_texture_path(cub->text[pos - 1], ret);
 	}
 	else if (pos >= 5 && pos <= 7)

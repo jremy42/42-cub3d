@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 12:23:06 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:36:08 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ void	set_ressources_file_names(t_cub *cub)
 	cub->gun_img_file[2] = PISTOL_2;
 	cub->gun_img_file[3] = PISTOL_3;
 	cub->gun_img_file[4] = PISTOL_4;
-
 	cub->guard_img_file[0] = GUARD_W;
 	cub->guard_img_file[1] = GUARD_F1;
 	cub->guard_img_file[2] = GUARD_F2;
