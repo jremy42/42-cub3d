@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:42 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 11:37:57 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:30:56 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
 	else
 	{
 		current_char = cub->maps[(int)floor(y)][(int)floor(x)];
-		if (current_char == '1' || current_char == '2' || current_char == '3' || current_char == '4' || current_char == '5'|| current_char == '6')
+		if (current_char >= '1' && current_char <= '6')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_WC);
 		else if (current_char == 'D')
 			my_mlx_pixel_put(&cub->minimap, pixel_x, pixel_y, MINIMAP_DC);
@@ -92,19 +92,20 @@ void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
 
 void	update_minimap(t_cub *cub)
 {
-	int	pixel_x;
-	int	pixel_y;
-	int	size_current_l;
-	float y;
+	int		pixel_x;
+	int		pixel_y;
+	int		size_current_l;
+	float	y;
 
 	pixel_y = 0;
 	while (pixel_y < cub->minimap_height - 1)
 	{
 		pixel_x = 0;
-		y = cub->player.pos_y - ((VIEW_MM) * (cub->minimap_height / 2 - pixel_y));
+		y = cub->player.pos_y - ((VIEW_MM)
+				* (cub->minimap_height / 2 - pixel_y));
 		if (y > 0 && y < cub->nb_l_maps)
-			size_current_l = (int)__strlen(cub->maps[(int)floor(y)] ) - 1;
-		else 
+			size_current_l = (int)__strlen(cub->maps[(int)floor(y)]) - 1;
+		else
 			size_current_l = -1;
 		while (pixel_x < cub->minimap_width - 1)
 		{

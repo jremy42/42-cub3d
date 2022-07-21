@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:16:11 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/21 12:34:39 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,8 @@ void	handle_sprite(t_cub *cub)
 	{
 		cub->sprite_tab[to_kill].animate = 2;
 		cub->sprite_tab[to_kill].count_animate = 0;
+		cub->maps[(int)floor(cub->sprite_tab[to_kill].pos_y)]
+		[(int)floor(cub->sprite_tab[to_kill].pos_x)] = '0';
 	}
 }
 
