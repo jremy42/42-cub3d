@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 13:56:26 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 15:56:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/21 18:03:08 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,6 +252,9 @@ void	__switch_door(t_cub *cub)
 			if (cub->maps[y_try + i][x_try + j] == 'D'
 				&& cub->door_map[y_try + i][x_try + j] == 2.0f)
 				cub->door_map[y_try + i][x_try + j] = 1.99f;
+			if (cub->maps[y_try + i][x_try + j] == 'D'
+				&& cub->door_map[y_try + i][x_try + j] == 0.0f)
+				cub->door_map[y_try + i][x_try + j] = 0.01f;
 			j++;
 		}
 		i++;
