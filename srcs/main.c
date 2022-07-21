@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 18:18:00 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 19:18:34 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,13 +121,13 @@ int	main(int ac, char **av)
 	DEBUG && printf("mlx init ok\n");
 	cub.win = mlx_new_window(cub.mlx, WIDTH, HEIGHT, "My little cube");
 	if (!cub.win)
-		return (destroy_mlx_data(&cub), __exit_error("Mlx init", &cub), 1);
+		return (__quit(&cub), __exit_error("Mlx init", &cub), 1);
 	DEBUG && printf("mlx win ok\n");
 	if (!create_cub_images(&cub))
-		return (destroy_mlx_data(&cub), __exit_error("Create img failed", &cub), 1);
+		return (__quit(&cub), __exit_error("Create img failed", &cub), 1);
 	DEBUG && printf("mlx image loading ok\n");
 	if (!load_images(&cub))
-		return (destroy_mlx_data(&cub), __exit_error("Create texture failed", &cub), 1);
+		return (__quit(&cub), __exit_error("Create texture failed", &cub), 1);
 	cub.minimap_height = HEIGHT/4;
 	cub.minimap_width = WIDTH/4;
 	DEBUG && printf("mlx textures loading ok\n");
