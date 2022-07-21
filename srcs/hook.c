@@ -5,40 +5,32 @@
 
 void __move(t_cub *cub, float move_dir_x, float move_dir_y)
 {
-	float	next_pos_x;
-	float	next_pos_y;
+	float	try_x;
+	float	try_y;
 	char	type_pos;
 	float	door_value;
 
-	next_pos_x = cub->player.pos_x + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_x;
-	next_pos_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_y;
-	// type_pos = cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
-	// door_value = cub->door_map[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
-	type_pos = cub->maps[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
-	door_value = cub->door_map[(int)floor(next_pos_y)][(int)floor(next_pos_x)];
-	
-	printf("move_dir_x:[%f]\n", move_dir_x);
-	printf("move_dir_y:[%f]\n", move_dir_y);
-	printf("next_pos_x/y: [%f][%f]\n", next_pos_x, next_pos_y);
-	printf("floor next_pos_x/y: [%d][%d]\n", (int)round(next_pos_x), (int)round(next_pos_y));
-
-	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
-	{	
-		cub->player.pos_x = next_pos_x;
-		cub->player.pos_y = next_pos_y;
-		return ;
-	}
-	type_pos = cub->maps[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)];
-	door_value = cub->door_map[(int)floor(cub->player.pos_y)][(int)floor(next_pos_x)];
+	try_x = cub->player.pos_x + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_x;
+	try_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_y;
+	type_pos = cub->maps[(int)floor(try_y)][(int)floor(try_x)];
+	door_value = cub->door_map[(int)floor(try_y)][(int)floor(try_x)];
 	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
 	{
-		cub->player.pos_x = next_pos_x;
+		cub->player.pos_x = try_x;
+		cub->player.pos_y = try_y;
 		return ;
 	}
-	type_pos = cub->maps[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)];
-	door_value = cub->door_map[(int)floor(next_pos_y)][(int)floor(cub->player.pos_x)];
+	type_pos = cub->maps[(int)floor(cub->player.pos_y)][(int)floor(try_x)];
+	door_value = cub->door_map[(int)floor(cub->player.pos_y)][(int)floor(try_x)];
 	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
-		cub->player.pos_y = next_pos_y;
+	{
+		cub->player.pos_x = try_x;
+		return ;
+	}
+	type_pos = cub->maps[(int)floor(try_y)][(int)floor(cub->player.pos_x)];
+	door_value = cub->door_map[(int)floor(try_y)][(int)floor(cub->player.pos_x)];
+	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
+		cub->player.pos_y = try_y;
 }
 
 int	print_vector(t_cub *cub)
