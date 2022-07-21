@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:28:33 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 15:53:28 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,6 @@ typedef struct s_cub
 	char		*guard_img_file[GUARD_SPRITE_COUNT];
 	t_img		guard_img[GUARD_SPRITE_COUNT];
 	//NEW
-
 	int			gun_frame;
 	int			gun_animate;
 	int			nb_l_maps;
@@ -182,6 +181,7 @@ typedef struct s_cub
 	t_color		floor;
 	char		**maps;
 	float		**door_map;
+	int			size_door_map;
 	t_player	player;
 	t_list		*input;
 	void		*mlx;
@@ -274,4 +274,10 @@ int		load_images(t_cub *cub);
 
 // MLX UTILS
 int	get_color_from_sprite(int y, int x, t_img *img);
+
+// exit
+
+int		__quit(t_cub *cub);
+void	destroy_mlx_data(t_cub *cub);
+void	destroy_cub_text(t_cub *cub);
 #endif

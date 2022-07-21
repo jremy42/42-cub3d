@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 12:36:08 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 15:59:40 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,51 +16,6 @@
 #include "keycodes.h"
 #include "math.h"
 
-void	destroy_text_tab(void *mlx, t_img text_img[], int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (mlx && text_img[i].mlx_img)
-			mlx_destroy_image(mlx, text_img[i].mlx_img);
-		i++;
-	}
-}
-
-void	destroy_mlx_data(t_cub *cub)
-{
-	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n", cub->mlx, cub->win);
-	if (cub->backgd.mlx_img)
-		mlx_destroy_image(cub->mlx, cub->backgd.mlx_img);
-	if (cub->screen.mlx_img)
-		mlx_destroy_image(cub->mlx, cub->screen.mlx_img);
-	if (cub->minimap.mlx_img)
-		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);
-	destroy_text_tab(cub->mlx, cub->text_img[0], 4);
-	if (cub->win)
-		mlx_destroy_window(cub->mlx, cub->win);
-	mlx_do_key_autorepeaton(cub->mlx);
-	#ifdef __linux__
-	if (cub->mlx)
-	{
-		DEBUG && printf("LINUX : Destroying display\n");
-		mlx_destroy_display(cub->mlx);
-	}
-	#endif
-	free(cub->mlx);
-	DEBUG && printf("Mlx data successfully destroyed\n");
-	exit(0);
-}
-
-int	__quit(t_cub *cub)
-{
-	destroy_cub_data(cub);
-	destroy_mlx_data(cub);
-	//destroy texture1
-	return (0);
-}
 
 int	__mouse_hook(int button, int x, int y, t_cub *cub)
 {

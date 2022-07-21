@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:53:59 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 12:07:59 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 15:54:16 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,12 @@ void	destroy_cub_data(t_cub *cub)
 		while (++j < 6)
 			free(cub->text[i][j]);
 	}
+	i = -1;
+	while (++i < cub->size_door_map)
+		free(cub->door_map[i]);
+	free(cub->door_map);
 	free(cub->maps);
-	__lstclear(&cub->input, free);
+	if (cub->input)
+		__lstclear(&cub->input, free);
 	DEBUG && printf("Cub data successfully destroyed\n");
 }
