@@ -114,6 +114,7 @@ int	dda(t_player *player, char **map, float **door_map)
 {
 	int	hit;
 	char map_text;
+	float	door_value;
 
 	hit = 0;
 	while (!hit)
@@ -139,14 +140,16 @@ int	dda(t_player *player, char **map, float **door_map)
 			player->current_text = map_text - 49;
 			hit = 1;
 		}
-		else if (map[player->r_map_y][player->r_map_x] == 'D')
+		else if (map_text == 'D')
 		{
 			find_coef(player);
-			if (player->r_hit_coef <  door_map[player->r_map_y][player->r_map_x] - floor(door_map[player->r_map_y][player->r_map_x])
-				|| (door_map[player->r_map_y][player->r_map_x] != 0 && door_map[player->r_map_y][player->r_map_x] == floor(door_map[player->r_map_y][player->r_map_x])))
+			door_value = door_map[player->r_map_y][player->r_map_x];
+			//si pas fermee et float entre 0 et 1 OU 
+			if (player->r_hit_coef < door_value - floor(door_value)
+				|| (door_value != 0 && door_value == floor(door_value)))
 			{	
 				hit = 1;
-				player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - floor(door_map[player->r_map_y][player->r_map_x]);
+				player->r_hit_coef -= door_value - floor(door_value);
 				//player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - 1;
 			}
 			player->current_orientation = DO;
