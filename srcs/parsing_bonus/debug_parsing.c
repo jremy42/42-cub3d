@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   debug_parsing.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/19 17:35:07 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/21 12:08:37 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <libft.h>
-
-void	printer(void *content)
-{
-	__putstr_fd((char *) content, 2);
-}
 
 void	clear_screen(void)
 {

@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:53:59 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 11:24:18 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 12:07:59 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	__exit_error_get_input(char *error, t_list *lst, int fd)
 void	destroy_cub_data(t_cub *cub)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = -1;
 	while (++i < 2)
@@ -43,7 +43,7 @@ void	destroy_cub_data(t_cub *cub)
 	while (++i < 4)
 	{
 		j = -1;
-		while(++j < 4)
+		while (++j < 6)
 			free(cub->text[i][j]);
 	}
 	free(cub->maps);
