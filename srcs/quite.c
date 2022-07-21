@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:01:59 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 15:59:01 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 16:08:26 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 void	destroy_mlx_data(t_cub *cub)
 {
-	printf("sprite_count = %d\n", cub->sprite_count);
 	free(cub->sprite_tab);
 	free(cub->sprite_order);
 	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n",
