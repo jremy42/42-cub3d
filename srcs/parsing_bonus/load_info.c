@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 15:30:27 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 16:02:31 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	get_info(t_list *input, t_cub *cub)
 		if (!load_info(ret, cub))
 			return (free_split(ret), __exit_error("parsing error", cub));
 		input = input->next;
-		free_split(ret);
 	}
 	if (!load_maps(input, cub))
 		return (__exit_error("malloc error", cub));

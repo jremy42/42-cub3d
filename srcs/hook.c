@@ -1,36 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hook.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/21 13:56:26 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/07/21 15:53:03 by fle-blay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 #include "mlx.h"
 #include "keycodes.h"
 #include "math.h"
 
-void __move(t_cub *cub, float move_dir_x, float move_dir_y)
+int	try_move_x_and_y_axis(t_cub *cub, float try_x, float try_y)
 {
-	float	try_x;
-	float	try_y;
 	char	type_pos;
 	float	door_value;
 
-	try_x = cub->player.pos_x + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_x;
-	try_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER/2)) * move_dir_y;
 	type_pos = cub->maps[(int)floor(try_y)][(int)floor(try_x)];
 	door_value = cub->door_map[(int)floor(try_y)][(int)floor(try_x)];
 	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
 	{
 		cub->player.pos_x = try_x;
 		cub->player.pos_y = try_y;
-		return ;
+		return (1);
 	}
+	return (0);
+}
+
+int	try_move_x_axis(t_cub *cub, float try_x)
+{
+	char	type_pos;
+	float	door_val;
+
 	type_pos = cub->maps[(int)floor(cub->player.pos_y)][(int)floor(try_x)];
-	door_value = cub->door_map[(int)floor(cub->player.pos_y)][(int)floor(try_x)];
-	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
+	door_val = cub->door_map[(int)floor(cub->player.pos_y)][(int)floor(try_x)];
+	if (type_pos == '0' || (type_pos == 'D' && door_val == 0.0f))
 	{
 		cub->player.pos_x = try_x;
-		return ;
+		return (1);
 	}
+	return (0);
+}
+
+int	try_move_y_axis(t_cub *cub, float try_y)
+{
+	char	type_pos;
+	float	door_val;
+
 	type_pos = cub->maps[(int)floor(try_y)][(int)floor(cub->player.pos_x)];
-	door_value = cub->door_map[(int)floor(try_y)][(int)floor(cub->player.pos_x)];
-	if (type_pos == '0' || (type_pos == 'D' && door_value == 0.0f))
+	door_val = cub->door_map[(int)floor(try_y)][(int)floor(cub->player.pos_x)];
+	if (type_pos == '0' || (type_pos == 'D' && door_val == 0.0f))
+	{
 		cub->player.pos_y = try_y;
+		return (1);
+	}
+	return (0);
+}
+
+void	__move(t_cub *cub, float move_dir_x, float move_dir_y)
+{
+	float	try_x;
+	float	try_y;
+
+	try_x = cub->player.pos_x + (SPEED + (0.05 * SIZE_PLAYER / 2)) * move_dir_x;
+	try_y = cub->player.pos_y + (SPEED + (0.05 * SIZE_PLAYER / 2)) * move_dir_y;
+	if (try_move_x_and_y_axis(cub, try_x, try_y))
+		return ;
+	if (try_move_x_axis(cub, try_x))
+		return ;
+	if (try_move_y_axis(cub, try_y))
+		return ;
 }
 
 int	print_vector(t_cub *cub)
@@ -44,24 +87,12 @@ int	print_vector(t_cub *cub)
 		j = 0;
 		while (j < 9)
 		{
-			if(cub->player.vector[i][j] == 42)
-			{
-				printf("\e[34m");
-				printf("0 ");
-				printf("\e[0m");
-			}
-			else if(cub->player.vector[i][j] > 0)
-			{
-				printf("\e[32m");
-				printf("%d ",abs(cub->player.vector[i][j]));
-				printf("\e[0m");
-			}
-			else if(cub->player.vector[i][j] < 0 )
-			{
-				printf("\e[33m");
-				printf("%d ",abs(cub->player.vector[i][j]));
-				printf("\e[0m");
-			}
+			if (cub->player.vector[i][j] == 42)
+				printf("\e[34m0 \e[0m");
+			else if (cub->player.vector[i][j] > 0)
+				printf("\e[32m%d \e[0m", abs(cub->player.vector[i][j]));
+			else if (cub->player.vector[i][j] < 0)
+				printf("\e[33m%d \e[0m", abs(cub->player.vector[i][j]));
 			else
 				printf("0 ");
 			j++;
@@ -69,76 +100,70 @@ int	print_vector(t_cub *cub)
 		printf("\n");
 		i++;
 	}
-	return(printf("\n"));
+	return (printf("\n"));
+}
+
+void	update_hit_vector_attributes(t_cub *cub)
+{
+	if (cub->player.dir_x > 0)
+		cub->hit_vector.step_x = 1;
+	else
+		cub->hit_vector.step_x = -1;
+	if (cub->player.dir_y > 0)
+		cub->hit_vector.step_y = 1;
+	else
+		cub->hit_vector.step_y = -1;
+	cub->hit_vector.side_dist_x = cub->player.delta_dist_x;
+	cub->hit_vector.side_dist_y = cub->player.delta_dist_y;
+	cub->hit_vector.coord_x = 0;
+	cub->hit_vector.coord_y = 0;
+	cub->hit_vector.hit = 0;
+	__memset(cub->player.vector, 0, sizeof(cub->player.vector));
+	cub->player.vector[4][4] = 42;
+}
+
+void	go_to_next_closest_line_or_column(t_cub *cub)
+{
+	if (cub->hit_vector.side_dist_x < cub->hit_vector.side_dist_y)
+	{
+		cub->hit_vector.coord_x += cub->hit_vector.step_x;
+		cub->hit_vector.side_dist_x += cub->player.delta_dist_x;
+		cub->hit_vector.side = -1;
+	}
+	else
+	{
+		cub->hit_vector.coord_y += cub->hit_vector.step_y;
+		cub->hit_vector.side_dist_y += cub->player.delta_dist_y;
+		cub->hit_vector.side = 1;
+	}
 }
 
 int	print_coord_hit(t_cub *cub)
 {
-	int		hit;
-	float	side_dist_x;
-	float	side_dist_y;
-	float	coord_x;
-	float	coord_y;
-	int		tab_coord_x;
-	int		tab_coord_y;
-	int		step_y;
-	int		step_x;
-	int		side;
-
-	t_player	*p;
-	p = &cub->player;
-	if (p->dir_x > 0)
-		step_x = 1;
-	else
-		step_x = -1;
-	if (p->dir_y > 0)
-		step_y = 1;
-	else
-		step_y = -1;
-
-	side_dist_x = p->delta_dist_x;
-	side_dist_y = p->delta_dist_y;
-
-	coord_x = 0;
-	coord_y = 0;
-	hit = 0;
-
-	__memset(p->vector, 0, sizeof(p->vector));
-
-	p->vector[4][4] = 42;
+	update_hit_vector_attributes(cub);
 	while (1)
 	{
-		//printf("side dist_x/side_dist_y : (%f:%f)\n", side_dist_x, side_dist_y);
-		if (side_dist_x < side_dist_y)
-		{
-			//printf("next hit is on x side with %d\n", hit+1);
-			coord_x += step_x;
-			side_dist_x += p->delta_dist_x;
-			side = -1;
-		}
-		else
-		{
-			//printf("next hit is on y side with %d\n", hit+1);
-			coord_y += step_y;
-			side_dist_y += p->delta_dist_y;
-			side = 1;
-		}
-		tab_coord_x = (int)floor(coord_x);
-		tab_coord_y = (int)floor(coord_y);
-		if (tab_coord_x > 4 || tab_coord_y > 4 || tab_coord_x < -4 || tab_coord_y < - 4)
+		go_to_next_closest_line_or_column(cub);
+		cub->hit_vector.tab_coord_x = (int)floor(cub->hit_vector.coord_x);
+		cub->hit_vector.tab_coord_y = (int)floor(cub->hit_vector.coord_y);
+		if (cub->hit_vector.tab_coord_x > 4
+			|| cub->hit_vector.tab_coord_y > 4
+			|| cub->hit_vector.tab_coord_x < -4
+			|| cub->hit_vector.tab_coord_y < -4)
 			break ;
-		//printf("fill in %d:%d\n", tab_coord_x + 4, tab_coord_y + 4);
-		p->vector[tab_coord_y + 4 ][tab_coord_x + 4 ] = (hit + 1) * side;
-		hit++;
+		cub->player.vector[cub->hit_vector.tab_coord_y + 4]
+		[cub->hit_vector.tab_coord_x + 4]
+			= (cub->hit_vector.hit + 1) * cub->hit_vector.side;
+		cub->hit_vector.hit++;
 	}
-	return(1);
+	return (1);
 }
 
 void	update_slope(t_cub *cub)
 {
 	cub->player.slope_dir = cub->player.dir_y / cub->player.dir_x;
-	cub->player.delta_dist_x = sqrt(1 + pow(cub->player.slope_dir,2));
-	cub->player.delta_dist_y = sqrt(1 + pow(1/cub->player.slope_dir,2));
+	cub->player.delta_dist_x = sqrt(1 + pow(cub->player.slope_dir, 2));
+	cub->player.delta_dist_y = sqrt(1 + pow(1 / cub->player.slope_dir, 2));
 }
 
 void	rotate(t_cub *cub, float angle)
@@ -152,58 +177,43 @@ void	rotate(t_cub *cub, float angle)
 	old_dir_y = cub->player.dir_y;
 	old_plane_x = cub->player.plane_x;
 	old_plane_y = cub->player.plane_y;
-
 	cub->player.dir_x = old_dir_x * cos(angle)
-						-old_dir_y * sin(angle);
+		- old_dir_y * sin(angle);
 	cub->player.dir_y = old_dir_x * sin(angle)
-						+old_dir_y * cos(angle);
+		+ old_dir_y * cos(angle);
 	cub->player.plane_x = old_plane_x * cos(angle)
-						-old_plane_y * sin(angle);
+		- old_plane_y * sin(angle);
 	cub->player.plane_y = old_plane_x * sin(angle)
-						+old_plane_y * cos(angle);
-	//cub->player.dir_norm = sqrt(pow(cub->player.dir_x, 2) + pow(cub->player.dir_y, 2));
-	cub->player.plane_norm = sqrt(pow(cub->player.plane_x, 2) + pow(cub->player.plane_y, 2));
+		+ old_plane_y * cos(angle);
+	cub->player.plane_norm = sqrt(pow(cub->player.plane_x, 2)
+			+ pow(cub->player.plane_y, 2));
 }
 
 void	__hookleft(t_cub *cub)
 {
 	__move(cub, -cub->player.plane_x, -cub->player.plane_y);
-	/*
-	rotate(cub, -0.1f);
-	update_slope(cub);
-	*/
-    (DEBUG == 2) && printf("left\n");
+	(DEBUG == 2) && printf("left\n");
 }
 
 void	__hookright(t_cub *cub)
 {
 	__move(cub, cub->player.plane_x, cub->player.plane_y);
-	/*
-	rotate(cub, 0.1f);
-	update_slope(cub);
-	*/
-    (DEBUG == 2) && printf("right\n");
-
+	(DEBUG == 2) && printf("right\n");
 }
-
-
 
 void	__hookdown(t_cub *cub)
 {
-  	__move(cub, -cub->player.dir_x, -cub->player.dir_y);
-
+	__move(cub, -cub->player.dir_x, -cub->player.dir_y);
 	(DEBUG == 2) && printf("down\n");
-
 }
 
 void	__hookup(t_cub *cub)
 {
-  	__move(cub, cub->player.dir_x, cub->player.dir_y);
+	__move(cub, cub->player.dir_x, cub->player.dir_y);
 	(DEBUG == 2) && printf("up\n");
-
 }
 
-void load_background(t_cub *cub)
+void	load_background(t_cub *cub)
 {
 	int	x;
 	int	y;
@@ -214,8 +224,8 @@ void load_background(t_cub *cub)
 		x = 0;
 		while (x < WIDTH)
 		{
-			if(y < HEIGHT/2)
-				my_mlx_pixel_put(&cub->screen,x, y, cub->ceiling.trgb);
+			if (y < HEIGHT / 2)
+				my_mlx_pixel_put(&cub->screen, x, y, cub->ceiling.trgb);
 			else
 				my_mlx_pixel_put(&cub->screen, x, y, cub->floor.trgb);
 			x++;
@@ -227,71 +237,54 @@ void load_background(t_cub *cub)
 void	__switch_door(t_cub *cub)
 {
 	int	x_try;
-	int y_try;
+	int	y_try;
+	int	i;
+	int	j;
 
 	x_try = floor(cub->player.pos_x);
 	y_try = floor(cub->player.pos_y);
-
-
-	//if (cub->maps[y_try][x_try] == 'D' && cub->door_map[y_try][x_try] == 2.0f)
-			//cub->door_map[y_try][x_try] = 1.99f;
-	if (cub->maps[y_try - 1][x_try] == 'D' && cub->door_map[y_try - 1][x_try] == 2.0f)
-			cub->door_map[y_try - 1][x_try] = 1.99f;
-	if (cub->maps[y_try][x_try - 1] == 'D' && cub->door_map[y_try][x_try - 1] == 2.0f)
-			cub->door_map[y_try][x_try - 1] = 1.99f;
-	if (cub->maps[y_try - 1][x_try - 1] == 'D' && cub->door_map[y_try - 1][x_try - 1] == 2.0f)
-			cub->door_map[y_try - 1][x_try - 1] = 1.99f;
-	if (cub->maps[y_try + 1][x_try] == 'D' && cub->door_map[y_try + 1][x_try] == 2.0f)
-			cub->door_map[y_try + 1][x_try] = 1.99f;
-	if (cub->maps[y_try][x_try + 1] == 'D' && cub->door_map[y_try][x_try + 1] == 2.0f)
-			cub->door_map[y_try][x_try + 1] = 1.99f;
-	if (cub->maps[y_try + 1][x_try + 1] == 'D' && cub->door_map[y_try + 1][x_try + 1] == 2.0f)
-			cub->door_map[y_try + 1][x_try + 1] = 1.99f;
-
-	//if (cub->maps[y_try][x_try] == 'D' && cub->door_map[y_try][x_try] == 0.0f)
-			//cub->door_map[y_try][x_try] = 0.01f;
-	if (cub->maps[y_try - 1][x_try] == 'D' && cub->door_map[y_try - 1][x_try] == 0.0f)
-			cub->door_map[y_try - 1][x_try] = 0.01f;
-	if (cub->maps[y_try][x_try - 1] == 'D' && cub->door_map[y_try][x_try - 1] == 0.0f)
-			cub->door_map[y_try][x_try - 1] = 0.01f;
-	if (cub->maps[y_try - 1][x_try - 1] == 'D' && cub->door_map[y_try - 1][x_try - 1] == 0.0f)
-			cub->door_map[y_try - 1][x_try - 1] = 0.01f;
-	if (cub->maps[y_try + 1][x_try] == 'D' && cub->door_map[y_try + 1][x_try] == 0.0f)
-			cub->door_map[y_try + 1][x_try] = 0.01f;
-	if (cub->maps[y_try][x_try + 1] == 'D' && cub->door_map[y_try][x_try + 1] == 0.0f)
-			cub->door_map[y_try][x_try + 1] = 0.01f;
-	if (cub->maps[y_try + 1][x_try + 1] == 'D' && cub->door_map[y_try + 1][x_try + 1] == 0.0f)
-			cub->door_map[y_try + 1][x_try + 1] = 0.01f;
+	i = -1;
+	while (i < 2)
+	{
+		j = -1;
+		while (j < 2)
+		{
+			if (cub->maps[y_try + i][x_try + i] == 'D'
+				&& cub->door_map[y_try + i][x_try + i] == 2.0f)
+				cub->door_map[y_try + i][x_try + i] = 1.99f;
+			j++;
+		}
+		i++;
+	}
 	DEBUG && printf("open\n");
 }
 
 void	__update_door_value(t_cub *cub)
 {
 	int	x;
-	int y;
+	int	y;
 
-	y = 0;
-
-	while (cub->maps[y])
+	y = -1;
+	while (cub->maps[++y])
 	{
-		x = 0;
-		while (cub->maps[y][x])
+		x = -1;
+		while (cub->maps[y][++x])
 		{
-			if (cub->maps[y][x] == 'D' && cub->door_map[y][x] < 2.0f && cub->door_map[y][x] >= 1.0f)
+			if (cub->maps[y][x] == 'D' && cub->door_map[y][x] < 2.0f
+				&& cub->door_map[y][x] >= 1.0f)
 			{
 				cub->door_map[y][x] -= 0.02f;
 				if (cub->door_map[y][x] < 1.0f)
 					cub->door_map[y][x] = 0.0f;
 			}
-			if (cub->maps[y][x] == 'D' && cub->door_map[y][x] <= 1.0f && cub->door_map[y][x] > 0.0f)
+			if (cub->maps[y][x] == 'D' && cub->door_map[y][x] <= 1.0f
+				&& cub->door_map[y][x] > 0.0f)
 			{
 				cub->door_map[y][x] += 0.02f;
 				if (cub->door_map[y][x] > 1.0f)
 					cub->door_map[y][x] = 2.0f;
 			}
-			x++;
 		}
-		y++;
 	}
 }
 
@@ -323,14 +316,6 @@ int	__key_press(int keycode, t_cub *cub)
 	if (keycode == SPACE_BAR)
 			cub->action |= 1 << 4;
 	cub->last_key_press = keycode;
-	/*
-	load_background(cub);
-	raycast(cub);
-	update_minimap(cub);
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->screen.mlx_img, 0, 0);
-	
-	mlx_put_image_to_window(cub->mlx,cub->win, cub->minimap.mlx_img, 0, 0);
-	*/
 	if (keycode == KEY_ESC)
 		return (__quit(cub));
 	return (1);

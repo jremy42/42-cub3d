@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 15:53:28 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 16:00:54 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,19 @@ typedef struct s_sprite
 	int		gun_hit;
 }	t_sprite;
 
+typedef struct	s_vector
+{
+	int		hit;
+	float	side_dist_x;
+	float	side_dist_y;
+	float	coord_x;
+	float	coord_y;
+	int		tab_coord_x;
+	int		tab_coord_y;
+	int		step_y;
+	int		step_x;
+	int		side;
+}	t_vector;
 
 typedef struct s_cub
 {
@@ -199,6 +212,7 @@ typedef struct s_cub
 	int			sprite_count;
 	int			*sprite_order;
 	int			hit_by_guard;
+	t_vector	hit_vector;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
