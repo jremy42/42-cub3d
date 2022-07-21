@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 12:24:29 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 14:26:40 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,19 @@ typedef struct s_sprite
 	int		gun_hit;
 }	t_sprite;
 
+typedef struct	s_vector
+{
+	int		hit;
+	float	side_dist_x;
+	float	side_dist_y;
+	float	coord_x;
+	float	coord_y;
+	int		tab_coord_x;
+	int		tab_coord_y;
+	int		step_y;
+	int		step_x;
+	int		side;
+}	t_vector;
 
 typedef struct s_cub
 {
@@ -199,6 +212,7 @@ typedef struct s_cub
 	int			sprite_count;
 	int			*sprite_order;
 	int			hit_by_guard;
+	t_vector	hit_vector;
 }	t_cub;
 
 void	parsing(char **av, t_cub *cub);
@@ -269,12 +283,9 @@ void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 void	get_info(t_list *input, t_cub *cub);
 void	load_player_info(t_cub *cub);
 int		get_color_from_mlx_img(int x, int y, t_img *img);
-<<<<<<< HEAD
 int		load_images(t_cub *cub);
-=======
 
 
 // MLX UTILS
 int	get_color_from_sprite(int y, int x, t_img *img);
->>>>>>> 59f462b42aa76f4ebfabb2b97368eee73f41f880
 #endif
