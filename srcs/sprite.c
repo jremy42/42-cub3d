@@ -144,19 +144,12 @@ int		print_sprite_info(t_sprite *sprite)
 	return (1);
 }
 
-void	update_sprite_order(t_cub *cub, t_sprite *s_tab, int s_count, int *s_order)
+void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order)
 {
 	int	i;
 	int	j;
 	int	tmp;
 
-	i = -1;
-	while (++i < s_count)
-	{
-		calculate_sprite_info(cub, &s_tab[i]);
-		//print_sprite_info(&s_tab[i]);
-		s_order[i] = i;
-	}
 	i = 0;
 	while (i < s_count)
 	{
