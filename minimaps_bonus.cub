@@ -1,30 +1,30 @@
-NO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm
-SO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm
-WE ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm
-EA ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm
+NO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+SO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+WE ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+EA ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
 D ./textures/hres_xpm/door.xpm
 F 81,81,81
 C 120,120,120
 
-334343343434343333434343434343434343434343
-300000D00G00000D0GGGGGGGGGGGGGGGGGGGGGGGG4
-400G00343434343333434343434343434343434343
-30000033000000000000040003
-40G000D0000000000G000D0003
-30000033000000000000040003
-334D4333334D43333333330003
-330000330000003      30003
-300GG0300G0G003      40004
-300000030000003      30003
+334343343434343333434343434343434343434343666666666666
+300000D00G00000D0GGGGGGGGGGGGGGGGGGGGGGGND000000000006
+400G00343434343333434343434343434343434343666666666D66
+30000033000000000000040003555555555555555555555555505555555555555555555555
+40G000D0000000000G000D0003500000000000000000000000000000000000000000000005
+300000330000000000000400035005050505050505050505050505050500000005555555D5
+334D4333334D43333333330003500G0G0G0G0G0G0G0G0G0G0G0G0G0G0G0000000556543201
+330000330000003      30003500505050505050505050505050505050000000540000002
+300GG0300G0G003      40004500000000000000000000000000000000000000530000003
+300000030000003      30003555555555555555555555555555555555555555521234565
 3000000200G000333333334D43333333333
 3000000300G000300000000000000000003
 3000000300G0003000000000000000000034443
 3300003300000030043300000000003400D0G03
 333333333333333003G00000000000G30030003
               3000000000000000000040004
-              30000000G0G00000000030003
-              30000000000000000000D0004
-              30000000G0G00000000030003
+              30000000G0G000000000300036666666
+              30000000000000000000D0000D0000G6
+              30000000G0G000000000300036666666
               3000000000000000000040004
               3003G00000000000G30030003
               3004300000000000340040004
@@ -53,7 +53,7 @@ C 120,120,120
   1000G00020002    133D34343433
   1000000G10001    300000000003
   1111111120002    400G00000004
-    10S01 10G01    300000000003
+    10001 10G01    300000000003
     10001111D11    40000G000004
     10000000001    300000000003
     11111111111    343434343434

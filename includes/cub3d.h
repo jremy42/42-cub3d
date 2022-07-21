@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/20 19:04:30 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/21 11:30:50 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,7 +162,7 @@ typedef struct s_sprite
 
 typedef struct s_cub
 {
-	void		*text[4][4];
+	void		*text[4][6];
 	void		*door;
 	void		*gun;
 	t_img		door_img;
@@ -189,7 +189,7 @@ typedef struct s_cub
 	t_img		screen;
 	t_img		minimap;
 	t_img		backgd;
-	t_img		text_img[4][4];
+	t_img		text_img[4][6];
 	void		(*hook_fx[5])();
 	int			action;
 	int			minimap_height;

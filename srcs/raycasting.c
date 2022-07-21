@@ -132,7 +132,7 @@ int	dda(t_player *player, char **map, float **door_map)
 			player->r_side_hit = Y_HIT;
 		}
 		map_text = map[player->r_map_y][player->r_map_x];
-		if (map_text == '1' || map_text == '2' || map_text == '3' || map_text == '4')
+		if (map_text == '1' || map_text == '2' || map_text == '3' || map_text == '4' || map_text == '5' || map_text == '6')
 		{
 			find_coef(player);
 			player->current_orientation = find_orientation(player);
