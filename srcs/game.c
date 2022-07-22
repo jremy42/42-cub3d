@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 12:32:48 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/22 16:25:34 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,39 +69,6 @@ void	draw_target(t_cub *cub)
 	}
 }
 
-void	handle_sprite(t_cub *cub)
-{
-	int	i;
-	int	true_sprite;
-	int	to_kill;
-	int	current_screen_x;
-
-	i = cub->sprite_count - 1;
-	to_kill = -1;
-	while (i >= 0)
-	{
-		true_sprite = cub->sprite_order[i];
-		draw_sprite(cub, &cub->sprite_tab[true_sprite]);
-		if (cub->gun_frame == 1 && cub->sprite_tab[true_sprite].gun_hit
-			/*&& !cub->sprite_tab[true_sprite].do_not_display*/
-			&& cub->sprite_tab[true_sprite].animate < 2)
-			to_kill = true_sprite;
-		if( !cub->sprite_tab[true_sprite].to_show)
-		{
-			cub->sprite_tab[true_sprite].animate = 0;
-			cub->sprite_tab[true_sprite].count_animate = 0;
-		}
-		i--;
-	}
-	if (to_kill >= 0)
-	{
-		cub->sprite_tab[to_kill].animate = 2;
-		cub->sprite_tab[to_kill].count_animate = 0;
-		cub->maps[(int)floor(cub->sprite_tab[to_kill].pos_y)]
-		[(int)floor(cub->sprite_tab[to_kill].pos_x)] = '0';
-	}
-}
-
 void	color_screen(t_cub *cub, int color_hex)
 {
 	unsigned int	x;
@@ -157,19 +124,6 @@ void	colorize_screen(t_cub *cub)
 	cub->hit_by_guard = 0;
 }
 
-void	calculate_all_sprite_info(t_cub *cub)
-{
-	int	i;
-
-	i = -1;
-	while (++i < cub->sprite_count)
-	{
-		calculate_sprite_info(cub, &cub->sprite_tab[i]);
-		(DEBUG == 2) && print_sprite_info(&cub->sprite_tab[i]);
-		cub->sprite_order[i] = i;
-	}
-}
-
 int	render_frame(t_cub *c)
 {
 	static size_t	next_frame = 0;
@@ -194,7 +148,6 @@ int	render_frame(t_cub *c)
 		draw_target(c);
 		colorize_screen(c);
 		mlx_put_image_to_window(c->mlx, c->win, c->screen.mlx_img, 0, 0);
-		mlx_put_image_to_window(c->mlx, c->win, c->minimap.mlx_img, 0, 0);
 	}
 	return (1);
 }

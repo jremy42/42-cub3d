@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 12:32:40 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/22 17:52:55 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@
 # define GUN_SIZE 3
 # define RED_HEX 0x00ff0000
 # define YELLOW_HEX 0x00777700
-# define GUARD_DETECT_DIST 10
+# define G_DETECT_DIST 10
 # define MOUSE_HIDE 1
 
 enum {
@@ -202,7 +202,6 @@ typedef struct s_cub
 	void		*mlx;
 	void		*win;
 	t_img		screen;
-	t_img		minimap;
 	t_img		backgd;
 	t_img		text_img[4][6];
 	void		(*hook_fx[5])();
@@ -232,6 +231,9 @@ int		missing_info_cub(t_cub *cub);
 void	__exit_error(char *error, t_cub *cub);
 void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	destroy_cub_data(t_cub *cub);
+
+int	__mouse_hook(int button, int x, int y, t_cub *cub);
+int	__mouse_move(t_cub *cub);
 //DEBUG PARSING 
 void	clear_screen(void);
 int		print_debug_info(t_cub *cub);
@@ -286,14 +288,24 @@ void	get_info(t_list *input, t_cub *cub);
 void	load_player_info(t_cub *cub);
 int		get_color_from_mlx_img(int x, int y, t_img *img);
 int		load_images(t_cub *cub);
-
-
+int		print_sprite_info(t_sprite *sprite);
+void	get_sprite_frame(t_sprite *sprite);
+float	vector_det(float u_x, float u_y, float v_x, float v_y);
+float	vector_dot(float u_x, float u_y, float v_x, float v_y);
+void	calculate_all_sprite_info(t_cub *cub);
+void	handle_sprite(t_cub *cub);
 // MLX UTILS
-int	get_color_from_sprite(int y, int x, t_img *img);
+int		get_color_from_sprite(int y, int x, t_img *img);
 
 // exit
 
 int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
+
+//init
+
+void	set_ressources_file_names(t_cub *cub);
+void	set_hook_fx(t_cub *cub);
+int		init_game(t_cub *cub);
 #endif

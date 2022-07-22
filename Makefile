@@ -16,14 +16,18 @@ SRC_LIST = main.c\
 	sprite.c\
 	mlx_img_utils.c\
 	quite.c\
-	hook.c
+	draw_sprite.c\
+	sprite_utils.c\
+	hook.c\
+	handle_mouse.c\
+	init.c
 
 SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
-CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl

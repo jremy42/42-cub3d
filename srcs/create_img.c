@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 10:53:50 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/19 10:09:12 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:39:06 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,5 @@ int	create_cub_images(t_cub *cub)
 	if (!create_image(cub, &cub->backgd, WIDTH, HEIGHT))
 		return (0);
 	DEBUG && printf("backgd mlx image ok\n");
-	if (!create_image(cub, &cub->minimap, WIDTH / 4, HEIGHT / 4))
-		return (0);
-	DEBUG && printf("minimap mlx image ok\n");
 	return (1);
 }

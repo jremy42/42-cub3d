@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fle-blay <{fle-blay}@student.42.fr>        +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:39:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 11:56:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:37:46 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	calculate_ray_features(t_player *player, int x)
 	player->r_delta_dist_y = sqrt(1 + pow(1 / player->r_slope_dir, 2));
 }
 
-void	init_step_and_side_dist(t_p *p)
+void	init_step_and_side_dist(t_player *p)
 {
 	p->r_map_x = (int)floor(p->pos_x);
 	p->r_map_y = (int)floor(p->pos_y);
