@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 19:18:34 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/22 11:09:05 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ int	main(int ac, char **av)
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub.win, &__mouse_hook, &cub);
 	DEBUG && printf("mlx hooking mouse ok\n");
-	//mlx_mouse_hide(cub.mlx, cub.win);
+	MOUSE_HIDE && mlx_mouse_hide(cub.mlx, cub.win);
 	DEBUG && printf("mlx mouse hiding ok\n");
 	mlx_hook(cub.win, 17, 1L << 1, &__quit, &cub);
 	DEBUG && printf("mlx hook quit ok\n");

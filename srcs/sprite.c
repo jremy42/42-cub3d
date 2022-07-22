@@ -54,7 +54,7 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 				color = get_color_from_mlx_img(true_x, true_y, &(*s->sprite_img_tab)[s->current_frame]);
 				if (color >= 0)
 					my_mlx_pixel_put(&cub->screen, x, y, color);
-				if (x == s->screen_x && s->norm < 5 && s->animate == 0)
+				if (x == s->screen_x && s->norm < GUARD_DETECT_DIST && s->animate == 0)
 						s->animate = 1;
 				if (x == WIDTH/2 && y == HEIGHT/2 && color >= 0)
 					s->gun_hit = 1;					

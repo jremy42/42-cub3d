@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 13:56:26 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 19:07:13 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/22 11:03:16 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,10 +243,10 @@ void	__switch_door(t_cub *cub)
 
 	x_try = floor(cub->player.pos_x);
 	y_try = floor(cub->player.pos_y);
-	i = -1;
+	i = -2;
 	while (++i < 2)
 	{
-		j = -1;
+		j = -2;
 		while (++j < 2)
 		{
 			if (!i && !j)

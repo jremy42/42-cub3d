@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 10:58:44 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:08:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@
 # define GUN_SIZE 3
 # define RED_HEX 0x00ff0000
 # define YELLOW_HEX 0x00777700
-# define NO_LEAKS 1
+# define GUARD_DETECT_DIST 10
+# define MOUSE_HIDE 1
 
 enum {
 	NO,
