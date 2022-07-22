@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 12:30:48 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/22 12:32:48 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	handle_sprite(t_cub *cub)
 		true_sprite = cub->sprite_order[i];
 		draw_sprite(cub, &cub->sprite_tab[true_sprite]);
 		if (cub->gun_frame == 1 && cub->sprite_tab[true_sprite].gun_hit
-			&& !cub->sprite_tab[true_sprite].do_not_display
+			/*&& !cub->sprite_tab[true_sprite].do_not_display*/
 			&& cub->sprite_tab[true_sprite].animate < 2)
 			to_kill = true_sprite;
 		if( !cub->sprite_tab[true_sprite].to_show)

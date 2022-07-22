@@ -1,21 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   raycasting.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: fle-blay <{fle-blay}@student.42.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/22 11:39:06 by fle-blay          #+#    #+#             */
+/*   Updated: 2022/07/22 11:56:46 by fle-blay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 #include "mlx.h"
 #include "math.h"
 #include "colors.h"
 
-void	update_cos(t_player *player)
+void	update_cos_of_r_dir_and_dir(t_player *p)
 {
-	player->cos_alpha = (player->r_dir_x * player->dir_x + player->r_dir_y * player->dir_y) /
-						(sqrt(player->r_dir_x * player->r_dir_x + player->r_dir_y * player->r_dir_y) *
-						sqrt(player->dir_x * player->dir_x + player->dir_y * player->dir_y));
+	float	r_dir_dot_dir;
+	float	r_dir_norm;
+	float	dir_norm;
+
+	r_dir_dot_dir = vector_dot(p->r_dir_x, p->r_dir_y,
+			p->dir_x, p->dir_y);
+	r_dir_norm = sqrt(p->r_dir_x * p->r_dir_x + p->r_dir_y * p->r_dir_y);
+	dir_norm = sqrt(p->dir_x * p->dir_x + p->dir_y * p->dir_y);
+	p->cos_alpha = r_dir_dot_dir / (r_dir_norm * dir_norm);
 }
 
 int	print_ray_info(t_cub *cub)
 {
 	printf("cam_x coeff : %f\n", cub->player.cam_x);
-	printf("r_dir_x/r_dir_y : %f:%f\n", cub->player.r_dir_x, cub->player.r_dir_y);
+	printf("r_dir_x/r_dir_y : %f:%f\n", cub->player.r_dir_x,
+		cub->player.r_dir_y);
 	printf("r_slope : %f\n", cub->player.r_slope_dir);
-	printf("r_delta_dist_x/r_delta_dist_y : %f:%f\n", cub->player.r_delta_dist_x, cub->player.r_delta_dist_y);
+	printf("r_delta_dist_x/r_delta_dist_y : %f:%f\n", cub->player.r_delta_dist_x,
+		cub->player.r_delta_dist_y);
 	return (1);
 }
 
@@ -25,69 +45,55 @@ void	calculate_ray_features(t_player *player, int x)
 	player->r_dir_x = player->dir_x + player->plane_x * player->cam_x;
 	player->r_dir_y = player->dir_y + player->plane_y * player->cam_x;
 	player->r_slope_dir = player->r_dir_y / player->r_dir_x;
-	player->r_delta_dist_x = sqrt(1 + pow(player->r_slope_dir,2));
-	player->r_delta_dist_y = sqrt(1 + pow(1/player->r_slope_dir,2));
-	//DEBUG && printf("delta_dist_x/delta_dist_y : %f:%f\n", player->r_delta_dist_x, player->delta_dist_y);
+	player->r_delta_dist_x = sqrt(1 + pow(player->r_slope_dir, 2));
+	player->r_delta_dist_y = sqrt(1 + pow(1 / player->r_slope_dir, 2));
 }
 
-void	init_step_and_side_dist(t_player *player)
+void	init_step_and_side_dist(t_p *p)
 {
-	player->r_map_x = (int)floor(player->pos_x);
-	player->r_map_y = (int)floor(player->pos_y);
-	if (player->r_dir_x < 0)
+	p->r_map_x = (int)floor(p->pos_x);
+	p->r_map_y = (int)floor(p->pos_y);
+	if (p->r_dir_x < 0)
 	{
-		player->r_step_x = -1;
-		player->r_side_dist_x = (player->pos_x - player->r_map_x) * player->r_delta_dist_x;
+		p->r_step_x = -1;
+		p->r_side_dist_x = (p->pos_x - p->r_map_x) * p->r_delta_dist_x;
 	}
 	else
 	{
-		player->r_step_x = 1;
-		player->r_side_dist_x = (player->r_map_x + 1 - player->pos_x) * player->r_delta_dist_x;
+		p->r_step_x = 1;
+		p->r_side_dist_x = (p->r_map_x + 1 - p->pos_x) * p->r_delta_dist_x;
 	}
-	if (player->r_dir_y < 0)
+	if (p->r_dir_y < 0)
 	{
-		player->r_step_y = -1;
-		player->r_side_dist_y = (player->pos_y - player->r_map_y) * player->r_delta_dist_y;
+		p->r_step_y = -1;
+		p->r_side_dist_y = (p->pos_y - p->r_map_y) * p->r_delta_dist_y;
 	}
 	else
 	{
-		player->r_step_y = 1;
-		player->r_side_dist_y = (player->r_map_y + 1 - player->pos_y) * player->r_delta_dist_y;
+		p->r_step_y = 1;
+		p->r_side_dist_y = (p->r_map_y + 1 - p->pos_y) * p->r_delta_dist_y;
 	}
 }
 
 void	find_coef(t_player *player)
 {
-	//printf("hit = [%f] \n", player->r_side_hit);
 	if (player->r_side_hit == Y_HIT)
 	{
 		player->r_hit_y = (float)player->r_map_y;
 		if (player->r_dir_y < 0)
 			player->r_hit_y += 1;
-
-		//player->r_hit_y = (float)player->r_map_y;
-		player->r_hit_x = (player->r_hit_y - player->pos_y ) / player->r_slope_dir + player->pos_x;
-		//printf("\e[31m r_hit_x = ( %f - %f) / %f + %f \e[0m\n",player->r_hit_y, player->pos_y, player->r_slope_dir, player->pos_x);
-
-		//printf("\e[31mr_hit_y = [%f] | dir_y [%f] | r_slope_dir [%f] | dir_x = [%f]| r_hit_x/y :[%f][%f]\e[0m\n",player->r_hit_y, player->dir_y,player->r_slope_dir, player->dir_x, player->r_hit_x, player->r_hit_y);
+		player->r_hit_x = (player->r_hit_y - player->pos_y)
+			/ player->r_slope_dir + player->pos_x;
 		player->r_hit_coef = player->r_hit_x - floor(player->r_hit_x);
-		//if (player->r_dir_y > 0)
-		//	player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 	else
 	{
-		//player->r_hit_x = (float)player->r_map_x - player->r_step_x;
 		player->r_hit_x = (float)player->r_map_x;
 		if (player->r_dir_x < 0)
 			player->r_hit_x += 1;
-		//printf("\e[32m r_map_x = [%d] - r_step_x [%f] \e[0m\n",player->r_map_x, player->r_step_x);
-		player->r_hit_y = (player->r_hit_x - player->pos_x ) * player->r_slope_dir + player->pos_y;
-		//printf("\e[32m r_hit_y = ( %f - %f) * %f + %f \e[0m\n",player->r_hit_x, player->pos_x, player->r_slope_dir, player->pos_y);
+		player->r_hit_y = (player->r_hit_x - player->pos_x)
+			* player->r_slope_dir + player->pos_y;
 		player->r_hit_coef = player->r_hit_y - floor(player->r_hit_y);
-		//printf("\e[32mr_hit_y = [%f] | pos_y [%f] | r_slope_dir [%f] | pos_x = [%f]| r_hit_x/y :[%f][%f]\e[0m\n",player->r_hit_y, player->pos_y,player->r_slope_dir, player->pos_x, player->r_hit_x, player->r_hit_y);
-
-		//if (player->r_dir_x < 0)
-		//	player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 }
 
@@ -95,31 +101,29 @@ int	find_orientation(t_player *player)
 {
 	if (player->r_side_hit == X_HIT)
 	{
-		if(player->r_dir_x < 0)
+		if (player->r_dir_x < 0)
 			return (EA);
 		else
 			return (WE);
 	}
 	else
 	{
-		if(player->r_dir_y < 0)
-		{
+		if (player->r_dir_y < 0)
 			return (SO);
-		}
 		else
 			return (NO);
 	}
 }
+
 int	dda(t_player *player, char **map, float **door_map)
 {
-	int	hit;
-	char map_text;
+	int		hit;
+	char	map_text;
 	float	door_value;
 
 	hit = 0;
 	while (!hit)
 	{
-	
 		if (player->r_side_dist_x < player->r_side_dist_y)
 		{
 			player->r_side_dist_x += player->r_delta_dist_x;
@@ -146,10 +150,7 @@ int	dda(t_player *player, char **map, float **door_map)
 			door_value = door_map[player->r_map_y][player->r_map_x];
 			if (player->r_hit_coef < door_value - floor(door_value)
 				|| (door_value == 2 ))
-			{	
 				hit = 1;
-				//printf("r_hit_coef : [%f], door_value : [%f]\n", player->r_hit_coef, door_value - floor(door_value));
-			}
 			player->current_orientation = DO;
 		}
 	}
@@ -263,7 +264,7 @@ int	raycast(t_cub *cub)
 		calculate_ray_features(&cub->player, x);
 		init_step_and_side_dist(&cub->player);
 		dda(&cub->player, cub->maps, cub->door_map);
-		update_cos(&cub->player);
+		update_cos_of_r_dir_and_dir(&cub->player);
 		calculate_wall_height(&cub->player, x);
 		draw_wall_hit(x, &cub->player, cub);
 		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
