@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 16:37:55 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/22 12:30:48 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ void	handle_sprite(t_cub *cub)
 	int	i;
 	int	true_sprite;
 	int	to_kill;
+	int	current_screen_x;
 
 	i = cub->sprite_count - 1;
 	to_kill = -1;
@@ -85,6 +86,11 @@ void	handle_sprite(t_cub *cub)
 			&& !cub->sprite_tab[true_sprite].do_not_display
 			&& cub->sprite_tab[true_sprite].animate < 2)
 			to_kill = true_sprite;
+		if( !cub->sprite_tab[true_sprite].to_show)
+		{
+			cub->sprite_tab[true_sprite].animate = 0;
+			cub->sprite_tab[true_sprite].count_animate = 0;
+		}
 		i--;
 	}
 	if (to_kill >= 0)

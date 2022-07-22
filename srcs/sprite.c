@@ -29,7 +29,7 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 	int		true_y;
 
 	color = 0;
-	x = s->screen_x_start- 1;
+	x = s->screen_x_start - 1;
 	s->gun_hit = 0;
 	if (s->do_not_display || s->dir_proj < 0)
 		return ;
