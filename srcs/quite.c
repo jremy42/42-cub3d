@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quite.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:01:59 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 16:55:24 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/22 11:22:30 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,17 @@ void	destroy_mlx_data(t_cub *cub)
 void	destroy_mlx_data(t_cub *cub)
 {
 	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n", cub->mlx, cub->win);
+	free(cub->sprite_tab);
+	free(cub->sprite_order);
+	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n",
+		cub->mlx, cub->win);
 	if (cub->backgd.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->backgd.mlx_img);
 	if (cub->screen.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->screen.mlx_img);
 	if (cub->minimap.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->minimap.mlx_img);
+	//mlx_mouse_show(cub->mlx, cub->win);
 	if (cub->win)
 		mlx_destroy_window(cub->mlx, cub->win);
 	mlx_do_key_autorepeaton(cub->mlx);
@@ -75,11 +80,12 @@ void	destroy_cub_text(t_cub *cub)
 		j = -1;
 		while (++j < 6)
 		{
-			if (&cub->text_img[i][j])
+			if (cub->text_img[i][j].mlx_img)
 				mlx_destroy_image(cub->mlx, cub->text_img[i][j].mlx_img);
 		}	
 	}
-	mlx_destroy_image(cub->mlx, cub->door_img.mlx_img);
+	if (cub->door_img.mlx_img)
+		mlx_destroy_image(cub->mlx, cub->door_img.mlx_img);
 }
 
 void	destroy_cub_sprite(t_cub *cub)
@@ -89,13 +95,13 @@ void	destroy_cub_sprite(t_cub *cub)
 	i = -1;
 	while (++i < GUARD_SPRITE_COUNT)
 	{
-		if (&cub->guard_img[i])
+		if (cub->guard_img[i].mlx_img)
 			mlx_destroy_image(cub->mlx, cub->guard_img[i].mlx_img);
 	}
 	i = -1;
 	while (++i < GUN_SPRITE_COUNT)
 	{
-		if (&cub->gun_img[i])
+		if (cub->gun_img[i].mlx_img)
 			mlx_destroy_image(cub->mlx, cub->gun_img[i].mlx_img);
 	}
 }
