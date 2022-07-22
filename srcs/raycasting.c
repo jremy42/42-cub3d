@@ -148,8 +148,7 @@ int	dda(t_player *player, char **map, float **door_map)
 				|| (door_value == 2 ))
 			{	
 				hit = 1;
-				player->r_hit_coef -= door_value - floor(door_value);
-				//player->r_hit_coef -= door_map[player->r_map_y][player->r_map_x] - 1;
+				//printf("r_hit_coef : [%f], door_value : [%f]\n", player->r_hit_coef, door_value - floor(door_value));
 			}
 			player->current_orientation = DO;
 		}
@@ -183,15 +182,23 @@ void	calculate_wall_height(t_player *player, int x)
 	*/
 }
 
-int	get_color_from_text(float step, float r_hit_coef, t_img *img)
+int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
 {
 	char	*dst;
 	int 	x;
 	int		y;
+	float	door_value;
 
+	/*
 	if (r_hit_coef < 0)
 		r_hit_coef = 1 - fabs(r_hit_coef);
 	x = (r_hit_coef) * (img->width - 0);
+	*/
+	door_value = cub->door_map[cub->player.r_map_y][cub->player.r_map_x];
+	if (cub->player.current_orientation == DO && door_value != 2)
+		x = (r_hit_coef + 1 - door_value + floor(door_value))* img->width;
+	else
+		x = r_hit_coef * img->width;
 	// check x value;
 	//if (cub->player.r_side_hit == X_HIT)
 		//printf("x = [%d] | r_hit_coef[%f] img->width = [%d]\n",x, r_hit_coef, img->width);
@@ -224,12 +231,12 @@ void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
 			if (player->current_orientation == DO)
 			{
 				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img);
+				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);
 			}
 			else
 			{
 				step = (y - player->r_wall_y_start) * (cub->text_img[player->current_orientation][player->current_text].height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->current_orientation][player->current_text]);
+				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->current_orientation][player->current_text], cub);
 			}
 			if (player->r_side_hit == Y_HIT)
 			{

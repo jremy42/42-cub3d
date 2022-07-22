@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/21 18:12:34 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/22 10:58:44 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -275,7 +275,7 @@ int		print_vector(t_cub *cub);
 
 // SPRITE AND VECTOR MATH
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
-int		get_color_from_text(float step, float r_hit_coef, t_img *img);
+int		get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
