@@ -31,8 +31,10 @@ void	draw_sprite(t_cub *cub, t_sprite *s)
 	color = 0;
 	x = s->screen_x_start- 1;
 	s->gun_hit = 0;
-	if (s->do_not_display || s->dir_proj < 0)
+	if (/*s->do_not_display ||*/ s->dir_proj < 0)
+	{
 		return ;
+	}
 	while (++x < WIDTH && x < s->screen_x_end)
 	{
 		//printf("start x loop with x / screen_x_end [%d][%d]\n", x, s->screen_x_end);
@@ -101,8 +103,8 @@ void	get_sprite_frame(t_sprite *sprite)
 
 void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 {
-	if (sprite->do_not_display)
-		return ;
+	//if (sprite->do_not_display)
+	//	return ;
 	sprite->cam_pos_x = sprite->pos_x - cub->player.pos_x;
 	sprite->cam_pos_y = sprite->pos_y - cub->player.pos_y;
 	sprite->norm = sqrt(pow(sprite->cam_pos_x, 2) + pow(sprite->cam_pos_y, 2));
@@ -126,7 +128,6 @@ void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 	get_sprite_frame(sprite);
 	if (sprite->current_frame == 3 && ((sprite->count_animate) % 15 > 7 ))
 		cub->hit_by_guard = 1 * (sprite->animate == 1);
-
 }
 	
 

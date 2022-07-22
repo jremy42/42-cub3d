@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 11:08:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/22 11:35:48 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ typedef struct s_sprite
 	int		animate;
 	int		count_animate;
 	//NEW
-	int		do_not_display;
+	//int		do_not_display;
 	int		offset_y;
 	int		screen_x_start;
 	int		screen_x_end;
