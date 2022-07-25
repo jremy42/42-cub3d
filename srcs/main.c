@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 09:58:29 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:31:16 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #ifdef __linux__
 
-void	__game_loop(t_cub *cub)
+static void	__game_loop(t_cub *cub)
 {
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub->win, &__mouse_hook, cub);
@@ -44,7 +44,7 @@ void	__game_loop(t_cub *cub)
 
 #ifdef __MACH__
 
-void	__game_loop(t_cub *cub)
+static void	__game_loop(t_cub *cub)
 {
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub->win, &__mouse_hook, cub);

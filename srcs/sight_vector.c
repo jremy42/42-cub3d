@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:01:11 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 13:10:19 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:11:23 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ static int	calculate_sight_vector_hit(t_cub *cub)
 	}
 	return (1);
 }
-
 
 int	print_sight_vector(t_cub *cub)
 {
