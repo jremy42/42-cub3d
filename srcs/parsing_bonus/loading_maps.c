@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 16:49:13 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:52:09 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ int	check_maps(t_cub *cub)
 	if (nb_l < 0)
 		return (__putstr_fd("info after map end\n", 2), 0);
 	while (++i < nb_l && cub->maps[i])
-	{			
+	{
 		j = -1;
 		while (cub->maps[i][++j])
 		{
@@ -128,4 +128,3 @@ int	load_maps(t_list *input, t_cub *cub)
 	}
 	return (1);
 }
-

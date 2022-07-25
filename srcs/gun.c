@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 15:14:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 16:08:50 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:51:19 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	colorize_screen(t_cub *cub)
 	cub->hit_by_guard = 0;
 }
 
-
 void	draw_target(t_cub *cub)
 {
 	int	x;
@@ -65,7 +64,6 @@ void	draw_target(t_cub *cub)
 		y++;
 	}
 }
-
 
 static void	update_gun_frame(t_cub *cub)
 {

@@ -6,14 +6,14 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 16:58:14 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:06:49 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "sprites.h"
 
 #ifndef CUB3D_H
 # define CUB3D_H
+#include "sprites.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -32,9 +32,11 @@
 # define HEIGHT 720
 # define SPEED 0.05f
 # define SIZE_MINI_MAP 16
+# define VIEW_MM 0.0625f
 # define SIZE_PLAYER 8
-# define ROTATE_ANGLE M_PI / 32
+# define ROTATE_ANGLE 0.1f
 # define FOV 0.9f
+# define FOV_MODIFIABLE 0
 # define X_HIT 1
 # define Y_HIT 2
 # define MINIMAP_WC 0xFFFFFF
@@ -43,7 +45,6 @@
 # define MINIMAP_EC 0x212e26
 # define MINIMAP_GC 0xe6e6e6
 # define FPS 60
-# define VIEW_MM 1.0f / SIZE_MINI_MAP
 # define GUN_SIZE 3
 # define RED_HEX 0x00ff0000
 # define YELLOW_HEX 0x00777700
