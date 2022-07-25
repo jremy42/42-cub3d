@@ -23,7 +23,11 @@ SRC_LIST = main.c\
 	init.c\
 	raycasting_utils.c\
 	colors.c\
-	dda.c
+	dda.c\
+	hook_move.c\
+	sight_vector.c\
+	hook_door.c\
+	hook_key_action.c
 
 SRC_DIR = ./srcs/
 

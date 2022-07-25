@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 12:52:59 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:15:07 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -259,7 +259,6 @@ void	update_minimap(t_cub *cub);
 void	update_slope(t_cub *cub);
 size_t	__get_time(void);
 int		render_frame(t_cub *cub);
-int		__mouse_move(t_cub *cub);
 void	load_background(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
@@ -321,4 +320,20 @@ int	print_ray_info(t_cub *cub);
 
 // raycast
 int		raycast(t_cub *cub);
+
+//HOOK MOVE
+void	__move(t_cub *cub, float move_dir_x, float move_dir_y);
+
+// SIGHT_VECTOR
+int	print_sight_vector(t_cub *cub);
+
+//HOOK DOOR
+void	__switch_door(t_cub *cub);
+void	__update_door_value(t_cub *cub);
+
+// hook key action
+
+int	__key_release(int keycode, t_cub *cub);
+int	__key_press(int keycode, t_cub *cub);
+
 #endif

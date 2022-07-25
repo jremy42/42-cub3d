@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 16:25:34 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 13:09:31 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,7 @@ void	color_screen(t_cub *cub, int color_hex)
 int	print_render_frame_debug_info(t_cub *cub)
 {
 	clear_screen();
-	DEBUG && print_coord_hit(cub);
-	DEBUG && print_vector(cub);
+	DEBUG && print_sight_vector(cub);
 	DEBUG && print_debug_info(cub);
 	DEBUG && printf("last key pressed : [%d]\n", cub->last_key_press);
 	return (1);
