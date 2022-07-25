@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 13:16:41 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:48:43 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -297,13 +297,13 @@ int		get_color_from_sprite(int y, int x, t_img *img);
 int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
+void	__print_error(char *error);
 
 //init
 
 void	set_ressources_file_names(t_cub *cub);
 void	set_hook_fx(t_cub *cub);
 int		init_game(t_cub *cub);
-
 
 // DDA
 

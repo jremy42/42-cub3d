@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 19:10:53 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 14:57:52 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	get_info(t_list *input, t_cub *cub)
 		curent_string = (char *)input->content;
 		ret = __split_charset(curent_string, " \f\t\n\r\v");
 		if (__strlen(curent_string) && !ret)
-			__exit_error("malloc error", cub);
+			__exit_error("Malloc error", cub);
 		if (size_split(ret) == 0)
 		{
 			free_split(ret);
@@ -31,12 +31,12 @@ void	get_info(t_list *input, t_cub *cub)
 			continue ;
 		}
 		if (size_split(ret) < 2 || size_split(ret) > 7)
-			return (printf("[%s]\n", ret[0]), free_split(ret),
-				__exit_error("wrong info format", cub));
+			return (free_split(ret),
+				__exit_error("Wrong info format", cub));
 		if (!load_info(ret, cub))
-			return (free_split(ret), __exit_error("parsing error", cub));
+			return (free_split(ret), __exit_error("Parsing error", cub));
 		input = input->next;
 	}
 	if (!load_maps(input, cub))
-		return (__exit_error("malloc error", cub));
+		return (__exit_error("Malloc error", cub));
 }

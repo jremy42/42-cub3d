@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 11:42:35 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 14:58:49 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,18 +71,18 @@ int	load_info(char **ret, t_cub *cub)
 
 	pos = get_pos(ret);
 	if (!pos)
-		return (__putstr_fd("No such a info\n", 2), 0);
+		return (__print_error("No such a info"), 0);
 	else if (pos > 0 && pos < 5)
 	{
 		if (cub->text[pos - 1][0])
-			return (__putstr_fd("Too many info\n", 2), 0);
+			return (__print_error("Too many info"), 0);
 		load_texture_path(cub->text[pos - 1], ret);
 	}
 	else if (pos >= 5 && pos <= 7)
 	{
 		if (cub->color[pos - 5] || size_split(ret) != 2)
-			return (__putstr_fd("Too many info for ceiling, floor or door\n",
-					2), 0);
+			return (__print_error("Too many info for ceiling, floor or door\n")
+				, 0);
 		if (pos == 7)
 			cub->door = ret[1];
 		else

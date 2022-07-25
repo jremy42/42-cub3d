@@ -6,18 +6,27 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:53:59 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 11:01:56 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 15:00:05 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "cub3d.h"
 
-void	__exit_error(char *error, t_cub *cub)
+void	__print_error(char *error)
 {
-	destroy_cub_data(cub);
 	__putendl_fd("Error", 2);
 	__putendl_fd(error, 2);
+}
+
+void	__exit_error(char *error, t_cub *cub)
+{
+	if (error)
+	{
+		__putendl_fd("Error", 2);
+		__putendl_fd(error, 2);
+	}
+	destroy_cub_data(cub);
 	exit(1);
 }
 

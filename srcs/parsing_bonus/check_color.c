@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_color.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:52:56 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 18:55:26 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 15:01:10 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,20 @@ int	load_color(char *color_str, t_color *color_struct)
 		return (0);
 	if (!__isdigit(color_str[0])
 		|| !__isdigit(color_str[__strlen(color_str) - 1]))
-		return (__putendl_fd("Wrong color format", 2), 0);
+		return (__print_error("Wrong color format"), 0);
 	if (count_char_in_str(color_str, ',') != 2)
-		return (__putendl_fd("Too many/few separator in color", 2), 0);
+		return (__print_error("Too many/few separator in color"), 0);
 	split_color = __split(color_str, ',');
 	if (!split_color)
-		return (__putendl_fd("Malloc error", 2), 0);
+		return (__print_error("Malloc error"), 0);
 	if (size_split(split_color) != 3)
 		return (free_split(split_color),
-			__putendl_fd("Wrong color component amount", 2), 0);
+			__print_error("Wrong color component amount"), 0);
 	if (!__atobyte(split_color[0], &color_struct->r)
 		|| !__atobyte(split_color[1], &color_struct->g)
 		|| !__atobyte(split_color[2], &color_struct->b))
 		return (free_split(split_color),
-			__putendl_fd("Wrong color component", 2), 0);
+			__print_error("Wrong color component"), 0);
 	return (free_split(split_color), 1);
 }
 

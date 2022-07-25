@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 15:53:52 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 14:57:14 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	load_maps(t_list *input, t_cub *cub)
 			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
 		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
 		if (!cub->door_map[i])
-			return (__putstr_fd("Malloc error\n", 2), 0);
+			return (__print_error("Malloc error"), 0);
 		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
 		input = input->next;
 		i++;
@@ -85,7 +85,7 @@ int	get_enemy_postion(t_cub *cub, int nb_l)
 int	check_char_maps(int i, int j, int nb_l, t_cub *cub)
 {
 	if (!__strchr(" GD6543210NSEW", cub->maps[i][j]))
-		return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
+		return (__print_error("Wrong char"), print_maps_error(cub, i, j), 0);
 	if (__strchr("NSEW", cub->maps[i][j]) && !check_player(cub, i, j, nb_l))
 		return (print_maps_error(cub, i, j), 0);
 	else if ((cub->maps[i][j] == '0'
@@ -110,9 +110,9 @@ int	check_maps(t_cub *cub)
 	nb_l = maps_size(cub->maps);
 	cub->nb_l_maps = nb_l;
 	if (nb_l == 0)
-		return (__putstr_fd("empty map\n", 2), 0);
+		return (__print_error("Empty map"), 0);
 	if (nb_l < 0)
-		return (__putstr_fd("info after map end\n", 2), 0);
+		return (__print_error("Info after map end"), 0);
 	while (++i < nb_l && cub->maps[i])
 	{			
 		j = -1;
@@ -123,8 +123,8 @@ int	check_maps(t_cub *cub)
 		}
 	}
 	if (!get_enemy_postion(cub, nb_l))
-		return (__putstr_fd("Malloc error\n", 2), 0);
+		return (__print_error("Malloc error"), 0);
 	if (!cub->player.start_orientation)
-		return (__putstr_fd("missing player\n", 2), 0);
+		return (__print_error("Missing player"), 0);
 	return (1);
 }
