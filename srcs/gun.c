@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 15:14:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 15:36:44 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:08:50 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	draw_gun(t_cub *cub)
 		x = 0;
 		while (x < cub->gun_img[(cub->gun_frame / 2) % 5].width * GUN_SIZE - 1)
 		{
-			color = get_color_from_mlx_img(y / GUN_SIZE, x / GUN_SIZE,
+			color = get_color_from_mlx_img(x / GUN_SIZE, y / GUN_SIZE,
 					&(cub->gun_img[(cub->gun_frame / 2) % 5]));
 			if (color >= 0)
 				my_mlx_pixel_put(&cub->screen, x + x1, y + y1, color);
