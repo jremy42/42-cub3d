@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:42 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/22 12:36:49 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 15:32:17 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "cub3d.h"
 #include "mlx.h"
 
-float	sq_dist(float x1, float y1, float x2, float y2)
+static float	sq_dist(float x1, float y1, float x2, float y2)
 {
 	float	dist_x;
 	float	dist_y;
@@ -24,7 +24,7 @@ float	sq_dist(float x1, float y1, float x2, float y2)
 	return (dist_x + dist_y);
 }
 
-int	is_in_circle(float x, float y)
+static int	is_in_circle(float x, float y)
 {
 	float	distance;
 	float	distance_sqrt;
@@ -40,7 +40,7 @@ int	is_in_circle(float x, float y)
 	return (0);
 }
 
-void	player_square_put(t_img *img, int x, int y, int color)
+static void	player_square_put(t_img *img, int x, int y, int color)
 {
 	int		offset_y;
 	int		offset_x;
@@ -61,7 +61,7 @@ void	player_square_put(t_img *img, int x, int y, int color)
 	}
 }
 
-void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
+static void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
 {
 	float	x;
 	float	y;

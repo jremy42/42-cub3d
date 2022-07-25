@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 12:33:48 by deus              #+#    #+#             */
-/*   Updated: 2022/07/22 12:33:54 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 15:30:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 #include "mlx.h"
 #include "sprites.h"
 
-int	load_gun_img(t_cub *cub)
+static int	set_img_array_address_for_guard_sprites(t_cub *cub)
+{
+	int	i;
+
+	i = -1;
+	while (++i < cub->sprite_count)
+		cub->sprite_tab[i].sprite_img_tab = &cub->guard_img;
+	return (1);
+}
+
+static int	load_gun_img(t_cub *cub)
 {
 	int	i;
 
@@ -34,7 +44,7 @@ int	load_gun_img(t_cub *cub)
 	return (1);
 }
 
-int	load_guard_img(t_cub *cub)
+static int	load_guard_img(t_cub *cub)
 {
 	int	i;
 
@@ -54,17 +64,7 @@ int	load_guard_img(t_cub *cub)
 	return (1);
 }
 
-int	set_img_array_address_for_guard_sprites(t_cub *cub)
-{
-	int	i;
-
-	i = -1;
-	while (++i < cub->sprite_count)
-		cub->sprite_tab[i].sprite_img_tab = &cub->guard_img;
-	return (1);
-}
-
-int	load_textures(t_cub *cub)
+static int	load_textures(t_cub *cub)
 {
 	int	i;
 	int	j;

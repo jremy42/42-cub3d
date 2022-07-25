@@ -18,7 +18,6 @@ SRC_LIST = main.c\
 	quite.c\
 	draw_sprite.c\
 	sprite_utils.c\
-	hook.c\
 	handle_mouse.c\
 	init.c\
 	raycasting_utils.c\
@@ -27,7 +26,9 @@ SRC_LIST = main.c\
 	hook_move.c\
 	sight_vector.c\
 	hook_door.c\
-	hook_key_action.c
+	hook_key_action.c\
+	hook_direction.c\
+	gun.c
 
 SRC_DIR = ./srcs/
 

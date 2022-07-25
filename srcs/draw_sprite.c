@@ -6,21 +6,21 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 16:26:49 by deus              #+#    #+#             */
-/*   Updated: 2022/07/22 16:47:26 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 15:24:28 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "mlx.h"
 
-void	update_animate(t_sprite *s)
+static void	update_animate(t_sprite *s)
 {
 	s->animate = 0;
 	s->current_frame = 0;
 	s->count_animate = 0;
 }
 
-void	draw_pixel_in_screen(t_cub *cub, t_sprite *s, int true_x, int x)
+static void	draw_pixel_in_screen(t_cub *cub, t_sprite *s, int true_x, int x)
 {
 	int	y;
 	int	true_y;

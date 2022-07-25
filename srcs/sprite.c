@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 12:45:23 by deus              #+#    #+#             */
-/*   Updated: 2022/07/22 17:53:15 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 15:43:32 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "mlx.h"
 #include "math.h"
 
-void	calculate_draw_info(t_cub *cub, t_sprite *sprite)
+static void	calculate_draw_info(t_cub *cub, t_sprite *sprite)
 {
 	sprite->screen_x_start = sprite->screen_x - sprite->screen_width / 2;
 	sprite->screen_x_end = sprite->screen_x + sprite->screen_width / 2;
@@ -27,7 +27,7 @@ void	calculate_draw_info(t_cub *cub, t_sprite *sprite)
 		cub->hit_by_guard = 1 * (sprite->animate == 1);
 }
 
-void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
+static void	calculate_sprite_info(t_cub *cub, t_sprite *sprite)
 {
 	sprite->cam_pos_x = sprite->pos_x - cub->player.pos_x;
 	sprite->cam_pos_y = sprite->pos_y - cub->player.pos_y;
@@ -61,7 +61,7 @@ void	calculate_all_sprite_info(t_cub *cub)
 	}
 }
 
-void	update_death_guard_info(t_cub *cub, t_sprite *s)
+static void	update_death_guard_info(t_cub *cub, t_sprite *s)
 {
 	s->animate = 2;
 	s->count_animate = 0;

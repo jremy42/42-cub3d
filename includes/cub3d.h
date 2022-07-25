@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 13:16:41 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 15:50:48 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,14 +251,10 @@ int		game(t_cub *cub);
 int		__quit(t_cub *cub);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 void	update_minimap(t_cub *cub);
-int		load_textures(t_cub *cub);
 
-void	rotate(t_cub *cub, float angle);
 void	update_minimap(t_cub *cub);
-void	update_slope(t_cub *cub);
 size_t	__get_time(void);
 int		render_frame(t_cub *cub);
-void	load_background(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
 void	__hookleft(t_cub *cub);
@@ -272,7 +268,6 @@ int		print_coord_hit(t_cub *cub);
 int		print_vector(t_cub *cub);
 
 // SPRITE AND VECTOR MATH
-void	calculate_sprite_info(t_cub *cub, t_sprite *sprite);
 int		get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
@@ -287,10 +282,19 @@ int		print_sprite_info(t_sprite *sprite);
 void	get_sprite_frame(t_sprite *sprite);
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
-void	calculate_all_sprite_info(t_cub *cub);
 void	handle_sprite(t_cub *cub);
+
+
+
+									 //SORTED
+
+
+
+
 // MLX UTILS
-int		get_color_from_sprite(int y, int x, t_img *img);
+int	get_color_from_mlx_img(int x, int y, t_img *img);
+void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
+int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub);
 
 // exit
 
@@ -298,12 +302,15 @@ int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 
-//init
+
+//MINIMAP
+void	update_minimap(t_cub *cub);
+
+//INIT
 
 void	set_ressources_file_names(t_cub *cub);
 void	set_hook_fx(t_cub *cub);
 int		init_game(t_cub *cub);
-
 
 // DDA
 
@@ -315,9 +322,9 @@ int	dim_color(int *color_ptr);
 // RAYCASTING UTILS
 void	update_cos_of_r_dir_and_dir(t_player *p);
 void	calculate_ray_features(t_player *player, int x);
-int	print_ray_info(t_cub *cub);
+int		print_ray_info(t_cub *cub);
 
-// raycast
+// RAYCAST
 int		raycast(t_cub *cub);
 
 //HOOK MOVE
@@ -330,9 +337,59 @@ int	print_sight_vector(t_cub *cub);
 void	__switch_door(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
-// hook key action
+// HOOK KEY ACTION
 
 int	__key_release(int keycode, t_cub *cub);
 int	__key_press(int keycode, t_cub *cub);
+
+// HOOK DIRECTION
+
+void	__hookleft(t_cub *cub);
+void	__hookright(t_cub *cub);
+void	__hookdown(t_cub *cub);
+void	__hookup(t_cub *cub);
+
+//HANDLE MOUSE
+void	rotate(t_cub *cub, float angle);
+int	__mouse_hook(int button, int x, int y, t_cub *cub);
+int	__mouse_move(t_cub *cub);
+
+
+//GUN
+void	draw_target(t_cub *cub);
+void	draw_gun(t_cub *cub);
+void	colorize_screen(t_cub *cub);
+
+//GAME
+int	render_frame(t_cub *c);
+
+//CREATE IMG
+int	create_image(t_cub *cub, t_img *img, int width, int height);
+int	create_cub_images(t_cub *cub);
+
+//DRAW SPRITE
+void	draw_sprite(t_cub *cub, t_sprite *s);
+
+//LOAD TEXTURES
+int	load_images(t_cub *cub);
+
+//QUIT
+int	__quit(t_cub *cub);
+void	destroy_cub_sprite(t_cub *cub);
+void	destroy_cub_text(t_cub *cub);
+void	destroy_mlx_data(t_cub *cub);
+
+//SPRITE
+void	calculate_all_sprite_info(t_cub *cub);
+void	handle_sprite(t_cub *cub);
+
+//SPRITE UTILS
+float	vector_det(float u_x, float u_y, float v_x, float v_y);
+float	vector_dot(float u_x, float u_y, float v_x, float v_y);
+int	print_sprite_info(t_sprite *sprite);
+void	get_sprite_frame(t_sprite *sprite);
+
+//TIME
+size_t	__get_time(void);
 
 #endif
