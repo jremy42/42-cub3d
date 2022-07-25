@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 13:15:07 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 13:16:41 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define SPEED 0.05f
 # define SIZE_MINI_MAP 16
 # define SIZE_PLAYER 8
-# define ROTATE_ANGLE M_PI/32
+# define ROTATE_ANGLE M_PI / 32
 # define FOV 0.9f
 # define X_HIT 1
 # define Y_HIT 2
@@ -62,7 +62,6 @@ enum {
 	F,
 	C
 };
-
 
 typedef struct s_player
 {
