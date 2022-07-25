@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 19:06:49 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:23:13 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -224,6 +224,7 @@ int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub)
 int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
+void	__print_error(char *error);
 
 
 //MINIMAP
@@ -309,7 +310,7 @@ void	handle_sprite(t_cub *cub);
 //SPRITE UTILS
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
-int	print_sprite_info(t_sprite *sprite);
+int		print_sprite_info(t_sprite *sprite);
 void	get_sprite_frame(t_sprite *sprite);
 void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 

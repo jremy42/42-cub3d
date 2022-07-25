@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_mouse.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 19:08:58 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 19:22:33 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ void	rotate(t_cub *cub, float angle)
 
 int	__mouse_hook(int button, int x, int y, t_cub *cub)
 {
-	printf("button pressed : [%d]\n", button);
-	printf("Mouse coordinates x/y : (%d:%d)\n", x, y);
-	printf("cub player = %p\n", &cub->player);
-	printf("cub player.fov = %f\n", cub->player.fov);
+	DEBUG && printf("button pressed : [%d]\n", button);
+	DEBUG && printf("Mouse coordinates x/y : (%d:%d)\n", x, y);
+	DEBUG && printf("cub player = %p\n", &cub->player);
+	DEBUG && printf("cub player.fov = %f\n", cub->player.fov);
 	if (button == SCROLL_UP)
 	{
 		cub->player.fov += 0.05;
