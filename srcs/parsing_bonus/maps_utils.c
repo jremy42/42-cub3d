@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:16:24 by deus              #+#    #+#             */
-/*   Updated: 2022/07/20 13:24:13 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 11:24:37 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,8 @@ t_list	*adjust_input(t_list *input)
 {
 	while (input)
 	{
-		if (!__strcmp((char *)input->content, "\n"))
-		{
-			input = input->next;
+		if (input->content && __strcmp((char *)input->content, "\n"))
 			break ;
-		}
 		input = input->next;
 	}
 	return (input);

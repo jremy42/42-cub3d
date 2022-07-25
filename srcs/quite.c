@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quite.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:01:59 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/22 16:22:04 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 11:45:23 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 void	destroy_mlx_data(t_cub *cub)
 {
-	free(cub->sprite_tab);
-	free(cub->sprite_order);
 	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n",
 		cub->mlx, cub->win);
 	if (cub->backgd.mlx_img)

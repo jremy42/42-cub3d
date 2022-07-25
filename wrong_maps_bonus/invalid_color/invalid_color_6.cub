@@ -1,0 +1,19 @@
+NO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+SO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+WE ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+EA ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+D ./textures/hres_xpm/door.xpm
+
+F 255,0,
+C 255,0,140
+
+ 11111  111111
+110001  100001
+111111  100N11
+        11111
+1111111111111
+111111111
+111111
+111111
+1111
+

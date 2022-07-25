@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 12:29:26 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 11:42:35 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@
 int	missing_info_cub(t_cub *cub)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (i < 4)
+	i = -1;
+	while (++i < 4)
 	{
-		if (!cub->text[i])
-			return (1);
-		i++;
+		j = -1;
+		while (++j < 6)
+			if (!cub->text[i][j])
+				return (1);
 	}
 	i = 0;
 	while (i < 2)
