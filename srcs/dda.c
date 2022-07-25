@@ -6,7 +6,7 @@
 /*   By: fle-blay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 12:47:27 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 12:55:09 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:33:08 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	find_coef(t_player *player)
 		player->r_hit_x = (player->r_hit_y - player->pos_y)
 			/ player->r_slope_dir + player->pos_x;
 		player->r_hit_coef = player->r_hit_x - floor(player->r_hit_x);
+		if (player->r_dir_y > 0)
+			player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 	else
 	{
@@ -34,6 +36,8 @@ static void	find_coef(t_player *player)
 		player->r_hit_y = (player->r_hit_x - player->pos_x)
 			* player->r_slope_dir + player->pos_y;
 		player->r_hit_coef = player->r_hit_y - floor(player->r_hit_y);
+		if (player->r_dir_x < 0)
+			player->r_hit_coef = 1 - player->r_hit_coef;
 	}
 }
 
