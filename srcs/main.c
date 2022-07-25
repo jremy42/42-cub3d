@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/22 17:57:07 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 09:58:29 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	__game_loop(t_cub *cub)
 	DEBUG && printf("mlx autorepeat off ok\n");
 	mlx_loop_hook(cub->mlx, render_frame, cub);
 	DEBUG && printf("mlx rendering loop hook ok\n");
-	mlx_mouse_move(cub.mlx, cub.win, WIDTH / 2, HEIGHT / 2);
+	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
 	rotate(cub, 0.01f);
 	mlx_loop(cub->mlx);
 	DEBUG && printf("mlx looping done (this should not occur)\n");
