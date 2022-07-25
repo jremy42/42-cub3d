@@ -20,7 +20,10 @@ SRC_LIST = main.c\
 	sprite_utils.c\
 	hook.c\
 	handle_mouse.c\
-	init.c
+	init.c\
+	raycasting_utils.c\
+	colors.c\
+	dda.c
 
 SRC_DIR = ./srcs/
 
