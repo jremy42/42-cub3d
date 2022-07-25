@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 14:57:52 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 19:29:33 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	get_info(t_list *input, t_cub *cub)
 			return (free_split(ret),
 				__exit_error("Wrong info format", cub));
 		if (!load_info(ret, cub))
-			return (free_split(ret), __exit_error("Parsing error", cub));
+			return (free_split(ret), __exit_error(NULL, cub));
 		input = input->next;
 	}
 	if (!load_maps(input, cub))
