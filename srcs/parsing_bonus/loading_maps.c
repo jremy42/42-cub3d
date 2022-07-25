@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 17:00:11 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 19:22:18 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int	check_maps(t_cub *cub)
 	if (nb_l < 0)
 		return (__print_error("Info after map end"), 0);
 	while (++i < nb_l && cub->maps[i])
-	{			
+	{
 		j = -1;
 		while (cub->maps[i][++j])
 		{
@@ -128,33 +128,3 @@ int	check_maps(t_cub *cub)
 		return (__print_error("Missing player"), 0);
 	return (1);
 }
-
-int	load_maps(t_list *input, t_cub *cub)
-{
-	int	size;
-	int	i;
-
-	i = 0;
-	input = adjust_input(input);
-	size = __lstsize(input);
-	cub->size_door_map = size;
-	cub->maps = malloc(sizeof(char *) * (size + 1));
-	cub->maps[size] = NULL;
-	cub->door_map = malloc (sizeof(float *) * (size + 1));
-	if (!cub->maps || !cub->door_map)
-		return (free(cub->maps), free(cub->door_map), 0);
-	while (input)
-	{
-		cub->maps[i] = (char *)input->content;
-		if (__strlen(cub->maps[i]) > 1 && __strrchr(cub->maps[i], '\n'))
-			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
-		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
-		if (!cub->door_map[i])
-			return (__putstr_fd("Malloc error\n", 2), 0);
-		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
-		input = input->next;
-		i++;
-	}
-	return (1);
-}
-

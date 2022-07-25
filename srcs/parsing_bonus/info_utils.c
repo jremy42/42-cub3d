@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 16:59:54 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 19:22:01 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static int	load_texture_path(void *text[6], char **ret)
 	}
 	return (1);
 }
-
 
 int	missing_info_cub(t_cub *cub)
 {

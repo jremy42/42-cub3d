@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 16:00:27 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 19:22:33 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,11 @@ int	__mouse_hook(int button, int x, int y, t_cub *cub)
 	}
 	if (button == 1)
 		cub->gun_animate = 1;
-	cub->player.plane_x = (-cub->player.dir_y) * cub->player.fov;
-	cub->player.plane_y = cub->player.dir_x * cub->player.fov;
+	if (FOV_MODIFIABLE)
+	{
+		cub->player.plane_x = (-cub->player.dir_y) * cub->player.fov;
+		cub->player.plane_y = cub->player.dir_x * cub->player.fov;
+	}
 	return (1);
 }
 
