@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:39:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/22 12:37:46 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 11:50:30 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,59 +97,63 @@ void	find_coef(t_player *player)
 	}
 }
 
-int	find_orientation(t_player *player)
+void	find_orientation(t_player *player, char map_char)
 {
+	player->current_text = map_char - 49;
 	if (player->r_side_hit == X_HIT)
 	{
 		if (player->r_dir_x < 0)
-			return (EA);
+			player->current_orientation = EA;
 		else
-			return (WE);
+			player->current_orientation = WE;
 	}
 	else
 	{
 		if (player->r_dir_y < 0)
-			return (SO);
+			player->current_orientation = SO;
 		else
-			return (NO);
+			player->current_orientation = NO;
+	}
+}
+
+void	go_to_next_line_or_column(t_player *player)
+{
+	if (player->r_side_dist_x < player->r_side_dist_y)
+	{
+		player->r_side_dist_x += player->r_delta_dist_x;
+		player->r_map_x += player->r_step_x;
+		player->r_side_hit = X_HIT;
+	}
+	else
+	{
+		player->r_side_dist_y += player->r_delta_dist_y;
+		player->r_map_y += player->r_step_y;
+		player->r_side_hit = Y_HIT;
 	}
 }
 
 int	dda(t_player *player, char **map, float **door_map)
 {
 	int		hit;
-	char	map_text;
+	char	map_char;
 	float	door_value;
 
 	hit = 0;
 	while (!hit)
 	{
-		if (player->r_side_dist_x < player->r_side_dist_y)
+		go_to_next_line_or_column(player);
+		map_char = map[player->r_map_y][player->r_map_x];
+		find_coef(player);
+		if (map_char >= '1' && map_char <= '6')
 		{
-			player->r_side_dist_x += player->r_delta_dist_x;
-			player->r_map_x += player->r_step_x;
-			player->r_side_hit = X_HIT;
-		}
-		else
-		{
-			player->r_side_dist_y += player->r_delta_dist_y;
-			player->r_map_y += player->r_step_y;
-			player->r_side_hit = Y_HIT;
-		}
-		map_text = map[player->r_map_y][player->r_map_x];
-		if (map_text == '1' || map_text == '2' || map_text == '3' || map_text == '4' || map_text == '5' || map_text == '6')
-		{
-			find_coef(player);
-			player->current_orientation = find_orientation(player);
-			player->current_text = map_text - 49;
+			find_orientation(player, map_char);
 			hit = 1;
 		}
-		else if (map_text == 'D')
+		else if (map_char == 'D')
 		{
-			find_coef(player);
 			door_value = door_map[player->r_map_y][player->r_map_x];
 			if (player->r_hit_coef < door_value - floor(door_value)
-				|| (door_value == 2 ))
+				|| (door_value == 2))
 				hit = 1;
 			player->current_orientation = DO;
 		}
@@ -160,97 +164,70 @@ int	dda(t_player *player, char **map, float **door_map)
 void	calculate_wall_height(t_player *player, int x)
 {
 	int		wall_height;
-	float	perpWallDist;
-	float	trueWallDist;;
+	float	perp_wall_dist;
+	float	true_wall_dist;
 
 	if (player->r_side_hit == X_HIT)
-		trueWallDist = (player->r_side_dist_x - player->r_delta_dist_x);
+		true_wall_dist = (player->r_side_dist_x - player->r_delta_dist_x);
 	else
-		trueWallDist = (player->r_side_dist_y - player->r_delta_dist_y);
-	perpWallDist = trueWallDist * player->cos_alpha;
-	player->perp_wall_dist[x] = perpWallDist;
-	//player->true_wall_dist[x] = trueWallDist;
-	wall_height = HEIGHT/perpWallDist;
+		true_wall_dist = (player->r_side_dist_y - player->r_delta_dist_y);
+	perp_wall_dist = true_wall_dist * player->cos_alpha;
+	player->perp_wall_dist[x] = perp_wall_dist;
+	wall_height = HEIGHT / perp_wall_dist;
 	player->wall_height = wall_height;
 	player->r_wall_y_start = (HEIGHT / 2) - (wall_height / 2);
 	player->r_wall_y_end = (HEIGHT / 2) + (wall_height / 2);
-	/*
-	if (player->r_wall_y_start < 0)
-		player->r_wall_y_start = 0;
-
-	if (player->r_wall_y_end > HEIGHT -1)
-		player->r_wall_y_end = HEIGHT - 1;
-	*/
 }
 
-int	get_color_from_text(float step, float r_hit_coef, t_img *img, t_cub *cub)
+int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub)
 {
 	char	*dst;
-	int 	x;
-	int		y;
+	int		x;
 	float	door_value;
 
-	/*
-	if (r_hit_coef < 0)
-		r_hit_coef = 1 - fabs(r_hit_coef);
-	x = (r_hit_coef) * (img->width - 0);
-	*/
 	door_value = cub->door_map[cub->player.r_map_y][cub->player.r_map_x];
 	if (cub->player.current_orientation == DO && door_value != 2)
-		x = (r_hit_coef + 1 - door_value + floor(door_value))* img->width;
+		x = (r_hit_coef + 1 - door_value + floor(door_value)) * img->width;
 	else
 		x = r_hit_coef * img->width;
-	// check x value;
-	//if (cub->player.r_side_hit == X_HIT)
-		//printf("x = [%d] | r_hit_coef[%f] img->width = [%d]\n",x, r_hit_coef, img->width);
-	y = (int)floor(step);
-	//printf("x = [%d] y =  [%d]\n", x, y);
-	dst = img->addr + (y * img->line_length + x * (img->bits_per_pixel /8));
-	//(DEBUG == 4)  && printf("x : [%d], y : [%d] step : [%f] r_hit_coef : [%f] img->width [%d]\n", x , y, step, r_hit_coef, img->width);
-	return(*(unsigned int*)dst);
+	dst = img->addr + (y_in_text * img->line_length + x
+			* (img->bits_per_pixel / 8));
+	return (*(unsigned int *)dst);
 }
 
-void 	draw_wall_hit(int x, t_player *player, t_cub *cub)
+int	dim_color(int *color_ptr)
+{
+	*color_ptr >>= 1;
+	*color_ptr &= (127 << 16 | 127 << 8 | 127);
+	return (1);
+}
+
+void	draw_wall_hit(int x, t_player *player, t_cub *cub)
 {
 	int		color;
 	int		y;
-	float	step;
+	float	y_in_text;
+	t_img	*text;
 
-	y = player->r_wall_y_start;
-	y = 0;
-	step = 0;
-	if (player->r_side_hit == X_HIT)
-		color = X_HIT_COLOR;
-	else
-		color = Y_HIT_COLOR;
-	(DEBUG == 3) && printf("r_wall_y_start/end (%d/%d) | y : %d\n", player->r_wall_y_start, player->r_wall_y_end, y);
-	while (y < player->r_wall_y_end && y < HEIGHT)
+	y = -1;
+	(DEBUG >= 3) && printf("r_wall_y_start/end (%d/%d) | y : %d\n",
+		player->r_wall_y_start, player->r_wall_y_end, y);
+	while (++y < player->r_wall_y_end && y < HEIGHT)
 	{
-
-		if (y >= player->r_wall_y_start && y >= 0 && y < HEIGHT)
+		if (y >= 0 && y > player->r_wall_y_start)
 		{
 			if (player->current_orientation == DO)
-			{
-				step = (y - player->r_wall_y_start) * (cub->door_img.height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->door_img, cub);
-			}
+				text = &cub->door_img;
 			else
-			{
-				step = (y - player->r_wall_y_start) * (cub->text_img[player->current_orientation][player->current_text].height - 0) * 1.0f / (cub->player.wall_height - 0);
-				color = get_color_from_text(step, cub->player.r_hit_coef, &cub->text_img[player->current_orientation][player->current_text], cub);
-			}
-			if (player->r_side_hit == Y_HIT)
-			{
-				color >>= 1;
-				color &= (127 << 16 | 127 << 8 | 127);
-			}
+				text = &cub->text_img[player->current_orientation]
+				[player->current_text];
+			y_in_text = (y - player->r_wall_y_start)
+				* (float)text->height / cub->player.wall_height;
+			color = get_color_from_text(y_in_text, cub->player.r_hit_coef,
+					text, cub);
+			(player->r_side_hit == Y_HIT) && dim_color(&color);
 			my_mlx_pixel_put(&cub->screen, x, y, color);
-			//if (y == HEIGHT/2)
-			//	DEBUG && printf(" x: [%d] | r_wall_y_start [%d] | text_img.height [%d]  / wall_height: [%d] step = [%f] r_hit_coef[%f]\n",x , player->r_wall_y_start, cub->text_img[0].height, cub->player.wall_height, step, cub->player.r_hit_coef);
 		}
-		//else
-		//	my_mlx_pixel_put(&cub->screen, x, y,0);
-		y++;
 	}
 }
 
@@ -267,9 +244,9 @@ int	raycast(t_cub *cub)
 		update_cos_of_r_dir_and_dir(&cub->player);
 		calculate_wall_height(&cub->player, x);
 		draw_wall_hit(x, &cub->player, cub);
-		//DEBUG && printf("side:[%f] | X:[%d] | hit_coef: %f\n",cub->player.r_side_hit, x, cub->player.r_hit_coef);
+		(DEBUG >= 2) && printf("side:[%f] | X:[%d] | hit_coef: %f\n",
+			cub->player.r_side_hit, x, cub->player.r_hit_coef);
 	}
-	(DEBUG == 2) && printf("dda done for x\n");
+	(DEBUG >= 2) && printf("dda done for x\n");
 	return (0);
 }
-
