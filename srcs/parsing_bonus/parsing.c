@@ -6,14 +6,14 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:53:18 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 15:01:38 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:00:22 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "libft.h"
 
-t_list	*get_input(char **av)
+static t_list	*get_input(char **av)
 {
 	t_list	*new_input;
 	t_list	*input;

@@ -6,12 +6,40 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 20:41:12 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 14:58:49 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 16:59:54 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "libft.h"
+
+static int	get_pos(char **ret)
+{
+	int	pos;
+
+	pos = !__strcmp(ret[0], "NO") * 1
+		+ !__strcmp(ret[0], "SO") * 2
+		+ !__strcmp(ret[0], "EA") * 3
+		+ !__strcmp(ret[0], "WE") * 4
+		+ !__strcmp(ret[0], "C") * 5
+		+ !__strcmp(ret[0], "F") * 6
+		+ !__strcmp(ret[0], "D") * 7;
+	return (pos);
+}
+
+static int	load_texture_path(void *text[6], char **ret)
+{
+	int	i;
+
+	i = 1;
+	while (ret[i])
+	{
+		text[i - 1] = ret[i];
+		i++;
+	}
+	return (1);
+}
+
 
 int	missing_info_cub(t_cub *cub)
 {
@@ -36,33 +64,6 @@ int	missing_info_cub(t_cub *cub)
 	if (!cub->door)
 		return (1);
 	return (0);
-}
-
-int	get_pos(char **ret)
-{
-	int	pos;
-
-	pos = !__strcmp(ret[0], "NO") * 1
-		+ !__strcmp(ret[0], "SO") * 2
-		+ !__strcmp(ret[0], "EA") * 3
-		+ !__strcmp(ret[0], "WE") * 4
-		+ !__strcmp(ret[0], "C") * 5
-		+ !__strcmp(ret[0], "F") * 6
-		+ !__strcmp(ret[0], "D") * 7;
-	return (pos);
-}
-
-int	load_texture_path(void *text[6], char **ret)
-{
-	int	i;
-
-	i = 1;
-	while (ret[i])
-	{
-		text[i - 1] = ret[i];
-		i++;
-	}
-	return (1);
 }
 
 int	load_info(char **ret, t_cub *cub)

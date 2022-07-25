@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 16:16:31 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 17:00:45 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,84 +213,6 @@ typedef struct s_cub
 	t_vector	hit_vector;
 }	t_cub;
 
-void	parsing(char **av, t_cub *cub);
-int		check_wall(char **maps, int i, int j, int nb_l);
-int		load_maps(t_list *input, t_cub *cub);
-int		check_maps(t_cub *cub);
-t_list	*adjust_input(t_list *input);
-int		maps_size(char **maps);
-int		check_player(t_cub *cub, int i, int j, int nb_l);
-void	load_player_info(t_cub *cub);
-int		load_info(char **ret, t_cub *cub);
-int		load_texture_path(void *text[6], char **ret);
-int		get_pos(char **ret);
-int		missing_info_cub(t_cub *cub);
-void	__exit_error(char *error, t_cub *cub);
-void	__exit_error_get_input(char *error, t_list *lst, int fd);
-void	destroy_cub_data(t_cub *cub);
-
-int	__mouse_hook(int button, int x, int y, t_cub *cub);
-int	__mouse_move(t_cub *cub);
-//DEBUG PARSING 
-void	clear_screen(void);
-int		print_debug_info(t_cub *cub);
-int		print_cub(t_cub *cub);
-void	printer(void *content);
-int		print_maps(t_cub *cub);
-int		print_maps_error(t_cub *cub, int error_j, int error_i);
-void	destroy_cub_data(t_cub *cub);
-
-void	__exit_error_get_input(char *error, t_list *lst, int fd);
-void	__exit_error(char *error, t_cub *cub);
-
-int		check_color(t_cub *cub);
-int		__key_press(int keycode, t_cub *cub);
-
-int		create_cub_images(t_cub *cub);
-int		game(t_cub *cub);
-int		__quit(t_cub *cub);
-void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-void	update_minimap(t_cub *cub);
-
-void	update_minimap(t_cub *cub);
-size_t	__get_time(void);
-int		render_frame(t_cub *cub);
-void	__update_door_value(t_cub *cub);
-
-void	__hookleft(t_cub *cub);
-void	__hookright(t_cub *cub);
-void	__hookdown(t_cub *cub);
-void	__hookup(t_cub *cub);
-void	__switch_door(t_cub *cub);
-int		__key_release(int keycode, t_cub *cub);
-void	update_minimap(t_cub *cub);
-int		print_coord_hit(t_cub *cub);
-int		print_vector(t_cub *cub);
-
-// SPRITE AND VECTOR MATH
-int		get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub);
-float	vector_det(float u_x, float u_y, float v_x, float v_y);
-float	vector_dot(float u_x, float u_y, float v_x, float v_y);
-int		print_sprite_info(t_sprite *sprite);
-void 	draw_sprite(t_cub *cub, t_sprite *s);
-void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
-void	get_info(t_list *input, t_cub *cub);
-void	load_player_info(t_cub *cub);
-int		get_color_from_mlx_img(int x, int y, t_img *img);
-int		load_images(t_cub *cub);
-int		print_sprite_info(t_sprite *sprite);
-void	get_sprite_frame(t_sprite *sprite);
-float	vector_det(float u_x, float u_y, float v_x, float v_y);
-float	vector_dot(float u_x, float u_y, float v_x, float v_y);
-void	handle_sprite(t_cub *cub);
-
-
-
-									 //SORTED
-
-
-
-
 // MLX UTILS
 int	get_color_from_mlx_img(int x, int y, t_img *img);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
@@ -389,8 +311,43 @@ float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
 int		print_sprite_info(t_sprite *sprite);
 void	get_sprite_frame(t_sprite *sprite);
+void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 
 //TIME
 size_t	__get_time(void);
 
+//COLOR
+int	check_color(t_cub *cub);
+
+//DEBUG PARSING
+void	clear_screen(void);
+int	print_maps_error(t_cub *cub, int error_i, int error_j);
+int	print_debug_info(t_cub *cub);
+int	print_cub(t_cub *cub);
+
+//PARSING EXIT
+void	__exit_error(char *error, t_cub *cub);
+void	__exit_error_get_input(char *error, t_list *lst, int fd);
+void	destroy_cub_data(t_cub *cub);
+
+//PARSING INFO UTILS
+int	missing_info_cub(t_cub *cub);
+int	load_info(char **ret, t_cub *cub);
+void	load_player_info(t_cub *cub);
+
+//PARSING LOAD_INFO
+void	get_info(t_list *input, t_cub *cub);
+
+//PARSING LOADING MAPG
+int	load_maps(t_list *input, t_cub *cub);
+int	check_maps(t_cub *cub);
+
+//PARSING MAP UTILS
+t_list	*adjust_input(t_list *input);
+int	maps_size(char **maps);
+int	check_player(t_cub *cub, int i, int j, int nb_l);
+int	check_wall(char **maps, int i, int j, int nb_l);
+
+//PARSING
+void	parsing(char **av, t_cub *cub);
 #endif
