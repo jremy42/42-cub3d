@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 12:39:58 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 13:01:53 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@
 # define FOV 0.9f
 # define X_HIT 1
 # define Y_HIT 2
-# define X_HIT_COLOR 0xEA6A36
-# define Y_HIT_COLOR 0xf08c25
 # define MINIMAP_WC 0xFFFFFF
 # define MINIMAP_DC 0x7a7a7a
 # define MINIMAP_PC 0x7e0b80
@@ -252,7 +250,6 @@ int		create_cub_images(t_cub *cub);
 int		game(t_cub *cub);
 int		__quit(t_cub *cub);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int		raycast(t_cub *cub);
 void	update_minimap(t_cub *cub);
 int		load_textures(t_cub *cub);
 
@@ -307,4 +304,20 @@ void	destroy_cub_text(t_cub *cub);
 void	set_ressources_file_names(t_cub *cub);
 void	set_hook_fx(t_cub *cub);
 int		init_game(t_cub *cub);
+
+
+// DDA
+
+int	dda(t_player *player, char **map, float **door_map);
+
+// COLORS
+int	dim_color(int *color_ptr);
+
+// RAYCASTING UTILS
+void	update_cos_of_r_dir_and_dir(t_player *p);
+void	calculate_ray_features(t_player *player, int x);
+int	print_ray_info(t_cub *cub);
+
+// raycast
+int		raycast(t_cub *cub);
 #endif
