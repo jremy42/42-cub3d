@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/21 12:08:37 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 12:38:18 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	print_cub(t_cub *cub)
 
 	i = -1;
 	while (++i < 4)
-		printf("text[%d] %s\n", i, (char *)cub->text[i]);
+		printf("text[%d] %s\n", i, (char *)cub->text[i][0]);
 	i = -1;
 	while (++i < 2)
 		printf("color[%d] %s\n", i, (char *)cub->color[i]);
