@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimaps.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 10:10:42 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 15:32:17 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:14:36 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ static void	player_square_put(t_img *img, int x, int y, int color)
 	}
 }
 
-static void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y, int size_current_l)
+static void	draw_minimap(t_cub *cub, int pixel_x, int pixel_y,
+	int size_current_l)
 {
 	float	x;
 	float	y;

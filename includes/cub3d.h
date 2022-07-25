@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 16:00:44 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 16:16:31 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -387,7 +387,7 @@ void	handle_sprite(t_cub *cub);
 //SPRITE UTILS
 float	vector_det(float u_x, float u_y, float v_x, float v_y);
 float	vector_dot(float u_x, float u_y, float v_x, float v_y);
-int	print_sprite_info(t_sprite *sprite);
+int		print_sprite_info(t_sprite *sprite);
 void	get_sprite_frame(t_sprite *sprite);
 
 //TIME
