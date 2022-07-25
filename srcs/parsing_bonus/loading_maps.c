@@ -6,43 +6,14 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:21:04 by deus              #+#    #+#             */
-/*   Updated: 2022/07/21 15:53:52 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 16:49:13 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <libft.h>
 
-int	load_maps(t_list *input, t_cub *cub)
-{
-	int	size;
-	int	i;
-
-	i = 0;
-	input = adjust_input(input);
-	size = __lstsize(input);
-	cub->size_door_map = size;
-	cub->maps = malloc(sizeof(char *) * (size + 1));
-	cub->maps[size] = NULL;
-	cub->door_map = malloc (sizeof(float *) * (size + 1));
-	if (!cub->maps || !cub->door_map)
-		return (free(cub->maps), free(cub->door_map), 0);
-	while (input)
-	{
-		cub->maps[i] = (char *)input->content;
-		if (__strlen(cub->maps[i]) > 1 && __strrchr(cub->maps[i], '\n'))
-			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
-		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
-		if (!cub->door_map[i])
-			return (__putstr_fd("Malloc error\n", 2), 0);
-		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
-		input = input->next;
-		i++;
-	}
-	return (1);
-}
-
-int	init_sprite_tab(t_cub *cub)
+static int	init_sprite_tab(t_cub *cub)
 {
 	cub->sprite_tab = malloc(sizeof(t_sprite) * cub->sprite_count);
 	if (!cub->sprite_tab)
@@ -54,7 +25,7 @@ int	init_sprite_tab(t_cub *cub)
 	return (1);
 }
 
-int	get_enemy_postion(t_cub *cub, int nb_l)
+static int	get_enemy_postion(t_cub *cub, int nb_l)
 {
 	int	i;
 	int	j;
@@ -82,7 +53,7 @@ int	get_enemy_postion(t_cub *cub, int nb_l)
 	return (1);
 }
 
-int	check_char_maps(int i, int j, int nb_l, t_cub *cub)
+static int	check_char_maps(int i, int j, int nb_l, t_cub *cub)
 {
 	if (!__strchr(" GD6543210NSEW", cub->maps[i][j]))
 		return (__putstr_fd("wrong char\n", 2), print_maps_error(cub, i, j), 0);
@@ -128,3 +99,33 @@ int	check_maps(t_cub *cub)
 		return (__putstr_fd("missing player\n", 2), 0);
 	return (1);
 }
+
+int	load_maps(t_list *input, t_cub *cub)
+{
+	int	size;
+	int	i;
+
+	i = 0;
+	input = adjust_input(input);
+	size = __lstsize(input);
+	cub->size_door_map = size;
+	cub->maps = malloc(sizeof(char *) * (size + 1));
+	cub->maps[size] = NULL;
+	cub->door_map = malloc (sizeof(float *) * (size + 1));
+	if (!cub->maps || !cub->door_map)
+		return (free(cub->maps), free(cub->door_map), 0);
+	while (input)
+	{
+		cub->maps[i] = (char *)input->content;
+		if (__strlen(cub->maps[i]) > 1 && __strrchr(cub->maps[i], '\n'))
+			cub->maps[i][__strlen(cub->maps[i]) - 1] = 0;
+		cub->door_map[i] = malloc (sizeof(float) * __strlen(cub->maps[i]));
+		if (!cub->door_map[i])
+			return (__putstr_fd("Malloc error\n", 2), 0);
+		__memset(cub->door_map[i], 0, __strlen(cub->maps[i]));
+		input = input->next;
+		i++;
+	}
+	return (1);
+}
+

@@ -69,7 +69,7 @@ int	missing_info_cub(t_cub *cub)
 	return (0);
 }
 
-int	load_info(char **ret, t_cub *cub)
+static int	load_info(char **ret, t_cub *cub)
 {
 	int	pos;
 
@@ -99,7 +99,7 @@ int	load_info(char **ret, t_cub *cub)
 	return (1);
 }
 
-void	get_info(t_list *input, t_cub *cub)
+static void	get_info(t_list *input, t_cub *cub)
 {
 	char	**ret;
 	char	*curent_string;
@@ -141,7 +141,7 @@ void	destroy_cub_data(t_cub *cub)
 	DEBUG && printf("Cub data successfully destroyed\n");
 }
 
-void	load_player_info(t_cub *cub)
+static void	load_player_info(t_cub *cub)
 {
 	if (cub->player.start_orientation == 'N')
 	{

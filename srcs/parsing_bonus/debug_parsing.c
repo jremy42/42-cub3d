@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 09:46:35 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 12:38:18 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/25 16:35:11 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ void	clear_screen(void)
 {
 	__putstr_fd("\x1b[2J", 1);
 	__putstr_fd("\x1b[1;1H", 1);
+}
+
+static int	print_maps(t_cub *cub)
+{
+	int	i;
+
+	i = 0;
+	while (cub->maps[i])
+		printf("%s\n", cub->maps[i++]);
+	return (1);
 }
 
 int	print_debug_info(t_cub *cub)
@@ -54,16 +64,6 @@ int	print_cub(t_cub *cub)
 		cub->player.start_orientation,
 		cub->player.pos_x, cub->player.pos_y);
 	print_maps(cub);
-	return (1);
-}
-
-int	print_maps(t_cub *cub)
-{
-	int	i;
-
-	i = 0;
-	while (cub->maps[i])
-		printf("%s\n", cub->maps[i++]);
 	return (1);
 }
 

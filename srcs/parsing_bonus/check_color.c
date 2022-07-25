@@ -6,14 +6,14 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:52:56 by deus              #+#    #+#             */
-/*   Updated: 2022/07/19 18:55:26 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/25 16:25:45 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include <libft.h>
 
-int	count_char_in_str(char *str, char to_find)
+static int	count_char_in_str(char *str, char to_find)
 {
 	int	count;
 
@@ -23,7 +23,12 @@ int	count_char_in_str(char *str, char to_find)
 	return (count);
 }
 
-int	load_color(char *color_str, t_color *color_struct)
+static int	create_color(t_color color)
+{
+	return (color.t << 24 | color.r << 16 | color.g << 8 | color.b);
+}
+
+static int	load_color(char *color_str, t_color *color_struct)
 {
 	char	**split_color;
 
@@ -46,11 +51,6 @@ int	load_color(char *color_str, t_color *color_struct)
 		return (free_split(split_color),
 			__putendl_fd("Wrong color component", 2), 0);
 	return (free_split(split_color), 1);
-}
-
-int	create_color(t_color color)
-{
-	return (color.t << 24 | color.r << 16 | color.g << 8 | color.b);
 }
 
 int	check_color(t_cub *cub)
