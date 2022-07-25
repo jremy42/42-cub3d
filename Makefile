@@ -15,7 +15,7 @@ SRC_LIST = main.c\
 	minimaps.c\
 	sprite.c\
 	mlx_img_utils.c\
-	quite.c\
+	quit.c\
 	draw_sprite.c\
 	sprite_utils.c\
 	handle_mouse.c\
