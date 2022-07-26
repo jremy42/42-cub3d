@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:21:59 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 11:45:16 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 18:15:26 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,18 @@ int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub)
 		x = (r_hit_coef + 1 - door_value + floor(door_value)) * img->width;
 	else
 		x = r_hit_coef * img->width;
-	dst = img->addr + (y_in_text * img->line_length + x
-			* (img->bits_per_pixel / 8));
-	return (*(unsigned int *)dst);
+	if (x >= 0 && x < img->width && y_in_text >= 0 && y_in_text < img->height)
+	{
+		dst = img->addr + (y_in_text * img->line_length + x
+				* (img->bits_per_pixel / 8));
+		return (*(unsigned int *)dst);
+	}
+	else
+	{
+		printf("Overflow [y_in_text/r_hit_coef/x] : [%d/%f/%d]\n",
+			y_in_text, r_hit_coef, x);
+		printf("[img->width/img->height] : [%d/%d]\n",
+			img->width, img->height);
+		return (0);
+	}
 }
