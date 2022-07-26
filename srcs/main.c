@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 15:31:16 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 12:02:05 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ static void	__game_loop(t_cub *cub)
 static void	__game_loop(t_cub *cub)
 {
 	DEBUG && printf("mlx textures loading ok\n");
-	mlx_mouse_hook(cub->win, &__mouse_hook, cub);
+	BONUS && mlx_mouse_hook(cub->win, &__mouse_hook, cub);
 	DEBUG && printf("mlx hooking mouse ok\n");
-	MOUSE_HIDE && mlx_mouse_hide(cub->mlx, cub->win);
+	BONUS && MOUSE_HIDE && mlx_mouse_hide(cub->mlx, cub->win);
 	DEBUG && printf("mlx mouse hiding ok\n");
 	mlx_hook(cub->win, 17, 1L << 1, &__quit, cub);
 	DEBUG && printf("mlx hook quit ok\n");
@@ -61,7 +61,7 @@ static void	__game_loop(t_cub *cub)
 	DEBUG && printf("mlx autorepeat off ok\n");
 	mlx_loop_hook(cub->mlx, render_frame, cub);
 	DEBUG && printf("mlx rendering loop hook ok\n");
-	mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
+	BONUS && mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
 	rotate(cub, 0.01f);
 	mlx_loop(cub->mlx);
 	DEBUG && printf("mlx looping done (this should not occur)\n");

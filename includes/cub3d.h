@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 11:19:30 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 11:59:47 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 # define OPEN_DOOR 4
 # define ROTATE_LEFT 5
 # define ROTATE_RIGHT 6
-# define WIDTH 640
-# define HEIGHT 480
+# define WIDTH 1280
+# define HEIGHT 720
 # define SPEED 0.05f
 # define SIZE_MINI_MAP 16
 # define VIEW_MM 0.0625f

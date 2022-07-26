@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 11:55:11 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 12:05:07 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,8 @@ int	render_frame(t_cub *c)
 		DEBUG && print_render_frame_debug_info(c);
 		next_frame = current_time + 1000 / FPS;
 		__update_door_value(c);
-		__mouse_move(c);
+		if (BONUS)
+			__mouse_move(c);
 		load_background(c);
 		raycast(c);
 		calculate_all_sprite_info(c);
