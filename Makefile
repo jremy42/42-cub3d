@@ -41,7 +41,6 @@ PARSING_MANDATORY = parsing_mandatory/parsing.c\
 	parsing_mandatory/load_info.c\
 	parsing_mandatory/info_utils.c
 
-
 SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/
@@ -91,7 +90,6 @@ else
 	SRC_LIST += ${PARSING_MANDATORY}
 endif
 
-
 ifeq ($(shell uname -s), Darwin)
 MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
@@ -101,9 +99,13 @@ endif
 MAKEFLAGS += -j
 
 all:  $(NAME)
+	@printf "Done\n"
 dbonus : $(NAME)
+	@printf "Done\n"
 bonus : $(NAME)
+	@printf "Done\n"
 debug: $(NAME)
+	@printf "Done\n"
 
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 		mkdir -p $(dir $@)
