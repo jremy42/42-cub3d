@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 10:09:45 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:19:30 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -212,7 +212,6 @@ int		get_color_from_text(int y_txt, float r_hit_coef, t_img *img, t_cub *c);
 
 // exit
 
-int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 void	__print_error(char *error);
@@ -291,7 +290,7 @@ void	draw_sprite(t_cub *cub, t_sprite *s);
 int		load_images(t_cub *cub);
 
 //QUIT
-int		__quit(t_cub *cub);
+int		__quit(t_cub *cub, int ret_code);
 void	destroy_cub_sprite(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);

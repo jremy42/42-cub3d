@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   gun.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 15:14:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 19:22:29 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/26 11:56:50 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ static void	color_screen(t_cub *cub, int color_hex)
 
 void	colorize_screen(t_cub *cub)
 {
-	if (cub->gun_frame == 1)
+	if (BONUS && cub->gun_frame == 1)
 	{
 		color_screen(cub, YELLOW_HEX);
 		__putstr_fd("\a", 1);
 	}
-	else if (cub->hit_by_guard)
+	else if (BONUS && cub->hit_by_guard)
 		color_screen(cub, RED_HEX);
 	cub->hit_by_guard = 0;
 }
@@ -52,6 +52,8 @@ void	draw_target(t_cub *cub)
 	int	x;
 	int	y;
 
+	if (!BONUS)
+		return ;
 	y = HEIGHT / 2 - 2;
 	while (y < HEIGHT / 2 + 2)
 	{
@@ -84,6 +86,8 @@ void	draw_gun(t_cub *cub)
 	int	x1;
 	int	y1;
 
+	if (!BONUS)
+		return ;
 	update_gun_frame(cub);
 	y = 0;
 	x1 = (WIDTH - cub->gun_img[(cub->gun_frame / 2) % 5].width * GUN_SIZE) / 2;

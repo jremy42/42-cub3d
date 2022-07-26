@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   hook_key_action.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 13:13:45 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 09:30:53 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:19:44 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ int	__key_press(int keycode, t_cub *cub)
 		cub->action |= 1 << 6;
 	cub->last_key_press = keycode;
 	if (keycode == KEY_ESC)
-		return (__quit(cub), exit(0), 1);
+		return (__quit(cub, 0), 1);
 	return (1);
 }

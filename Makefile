@@ -1,12 +1,4 @@
 SRC_LIST = main.c\
-	parsing_bonus/parsing.c\
-	parsing_bonus/debug_parsing.c\
-	parsing_bonus/loading_maps.c\
-	parsing_bonus/check_color.c\
-	parsing_bonus/maps_utils.c\
-	parsing_bonus/exit.c\
-	parsing_bonus/load_info.c\
-	parsing_bonus/info_utils.c\
 	create_img.c\
 	raycasting.c\
 	game.c\
@@ -31,12 +23,31 @@ SRC_LIST = main.c\
 	hook_direction_2.c\
 	gun.c
 
+PARSING_BONUS = parsing_bonus/parsing.c\
+	parsing_bonus/debug_parsing.c\
+	parsing_bonus/loading_maps.c\
+	parsing_bonus/check_color.c\
+	parsing_bonus/maps_utils.c\
+	parsing_bonus/exit.c\
+	parsing_bonus/load_info.c\
+	parsing_bonus/info_utils.c\
+
+PARSING_MANDATORY = parsing_mandatory/parsing.c\
+	parsing_mandatory/debug_parsing.c\
+	parsing_mandatory/loading_maps.c\
+	parsing_mandatory/check_color.c\
+	parsing_mandatory/maps_utils.c\
+	parsing_mandatory/exit.c\
+	parsing_mandatory/load_info.c\
+	parsing_mandatory/info_utils.c
+
+
 SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
-CFLAGS = -MMD -Wall -Wextra -Werror -g3
+CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
@@ -73,6 +84,13 @@ endif
 
 ifeq ($(MAKECMDGOALS), bonus)
 CFLAGS += -D BONUS=1
+SRC_LIST += ${PARSING_BONUS}
+endif
+
+ifeq ($(MAKECMDGOALS), bonus)
+SRC_LIST += ${PARSING_BONUS}
+else
+SRC_LIST += ${PARSING_MANDATORY}
 endif
 
 ifeq ($(MAKECMDGOALS), dbonus)

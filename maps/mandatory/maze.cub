@@ -1,10 +1,11 @@
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture				
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
-
+NO ./textures/hres_xpm/red_brick.xpm
+SO ./textures/hres_xpm/brick_german_flag.xpm
+WE ./textures/hres_xpm/stones.xpm
+EA ./textures/hres_xpm/wood.xpm
 F 220,100,0
 C 15,219,239
+
+
 
 111111111111111111111111111111111111111111111
 1E0000100010000010000000100000000010100000001
