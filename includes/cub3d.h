@@ -6,14 +6,13 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 19:23:13 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/26 09:06:01 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef CUB3D_H
 # define CUB3D_H
-#include "sprites.h"
+# include "sprites.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -96,17 +95,13 @@ typedef struct s_player
 	int		r_wall_y_end;
 	float	cos_alpha;
 	float	fov;
-	//texture
 	float	r_hit_x;
 	float	r_hit_y;
 	float	r_hit_coef;
 	int		wall_height;
-	// form int to float
 	float	perp_wall_dist[WIDTH];
-	// check if needed;
-	//float	true_wall_dist[WIDTH];
 	int		current_orientation;
-	int		current_text; // A RENOMMER -> CONFUSION !!!!!!!!!!
+	int		current_text;
 }	t_player;
 
 typedef struct s_color
@@ -142,15 +137,10 @@ typedef struct s_sprite
 	int		screen_height;
 	int		screen_width;
 	int		to_show;
-	//old
-	//t_img	sprite_img;
-	//NEW
 	t_img	(*sprite_img_tab)[];
 	int		current_frame;
 	int		animate;
 	int		count_animate;
-	//NEW
-	//int		do_not_display;
 	int		offset_y;
 	int		screen_x_start;
 	int		screen_x_end;
@@ -159,7 +149,7 @@ typedef struct s_sprite
 	int		gun_hit;
 }	t_sprite;
 
-typedef struct	s_vector
+typedef struct s_vector
 {
 	int		hit;
 	float	side_dist_x;
@@ -182,10 +172,8 @@ typedef struct s_cub
 	char		*gun_img_file[GUN_SPRITE_COUNT];
 	t_img		gun_img[GUN_SPRITE_COUNT];
 
-	//NEW
 	char		*guard_img_file[GUARD_SPRITE_COUNT];
 	t_img		guard_img[GUARD_SPRITE_COUNT];
-	//NEW
 	int			gun_frame;
 	int			gun_animate;
 	int			nb_l_maps;
@@ -215,9 +203,9 @@ typedef struct s_cub
 }	t_cub;
 
 // MLX UTILS
-int	get_color_from_mlx_img(int x, int y, t_img *img);
+int		get_color_from_mlx_img(int x, int y, t_img *img);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub);
+int		get_color_from_text(int y_txt, float r_hit_coef, t_img *img, t_cub *c);
 
 // exit
 
@@ -225,7 +213,6 @@ int		__quit(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 void	__print_error(char *error);
-
 
 //MINIMAP
 void	update_minimap(t_cub *cub);
@@ -238,10 +225,10 @@ int		init_game(t_cub *cub);
 
 // DDA
 
-int	dda(t_player *player, char **map, float **door_map);
+int		dda(t_player *player, char **map, float **door_map);
 
 // COLORS
-int	dim_color(int *color_ptr);
+int		dim_color(int *color_ptr);
 
 // RAYCASTING UTILS
 void	update_cos_of_r_dir_and_dir(t_player *p);
@@ -255,7 +242,7 @@ int		raycast(t_cub *cub);
 void	__move(t_cub *cub, float move_dir_x, float move_dir_y);
 
 // SIGHT_VECTOR
-int	print_sight_vector(t_cub *cub);
+int		print_sight_vector(t_cub *cub);
 
 //HOOK DOOR
 void	__switch_door(t_cub *cub);
@@ -263,8 +250,8 @@ void	__update_door_value(t_cub *cub);
 
 // HOOK KEY ACTION
 
-int	__key_release(int keycode, t_cub *cub);
-int	__key_press(int keycode, t_cub *cub);
+int		__key_release(int keycode, t_cub *cub);
+int		__key_press(int keycode, t_cub *cub);
 
 // HOOK DIRECTION
 
@@ -275,9 +262,8 @@ void	__hookup(t_cub *cub);
 
 //HANDLE MOUSE
 void	rotate(t_cub *cub, float angle);
-int	__mouse_hook(int button, int x, int y, t_cub *cub);
-int	__mouse_move(t_cub *cub);
-
+int		__mouse_hook(int button, int x, int y, t_cub *cub);
+int		__mouse_move(t_cub *cub);
 
 //GUN
 void	draw_target(t_cub *cub);
@@ -285,20 +271,20 @@ void	draw_gun(t_cub *cub);
 void	colorize_screen(t_cub *cub);
 
 //GAME
-int	render_frame(t_cub *c);
+int		render_frame(t_cub *c);
 
 //CREATE IMG
-int	create_image(t_cub *cub, t_img *img, int width, int height);
-int	create_cub_images(t_cub *cub);
+int		create_image(t_cub *cub, t_img *img, int width, int height);
+int		create_cub_images(t_cub *cub);
 
 //DRAW SPRITE
 void	draw_sprite(t_cub *cub, t_sprite *s);
 
 //LOAD TEXTURES
-int	load_images(t_cub *cub);
+int		load_images(t_cub *cub);
 
 //QUIT
-int	__quit(t_cub *cub);
+int		__quit(t_cub *cub);
 void	destroy_cub_sprite(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 void	destroy_mlx_data(t_cub *cub);
@@ -318,13 +304,13 @@ void	update_sprite_order(t_sprite *s_tab, int s_count, int *s_order);
 size_t	__get_time(void);
 
 //COLOR
-int	check_color(t_cub *cub);
+int		check_color(t_cub *cub);
 
 //DEBUG PARSING
 void	clear_screen(void);
-int	print_maps_error(t_cub *cub, int error_i, int error_j);
-int	print_debug_info(t_cub *cub);
-int	print_cub(t_cub *cub);
+int		print_maps_error(t_cub *cub, int error_i, int error_j);
+int		print_debug_info(t_cub *cub);
+int		print_cub(t_cub *cub);
 
 //PARSING EXIT
 void	__exit_error(char *error, t_cub *cub);
@@ -332,22 +318,22 @@ void	__exit_error_get_input(char *error, t_list *lst, int fd);
 void	destroy_cub_data(t_cub *cub);
 
 //PARSING INFO UTILS
-int	missing_info_cub(t_cub *cub);
-int	load_info(char **ret, t_cub *cub);
+int		missing_info_cub(t_cub *cub);
+int		load_info(char **ret, t_cub *cub);
 void	load_player_info(t_cub *cub);
 
 //PARSING LOAD_INFO
 void	get_info(t_list *input, t_cub *cub);
 
 //PARSING LOADING MAPG
-int	load_maps(t_list *input, t_cub *cub);
-int	check_maps(t_cub *cub);
+int		load_maps(t_list *input, t_cub *cub);
+int		check_maps(t_cub *cub);
 
 //PARSING MAP UTILS
 t_list	*adjust_input(t_list *input);
-int	maps_size(char **maps);
-int	check_player(t_cub *cub, int i, int j, int nb_l);
-int	check_wall(char **maps, int i, int j, int nb_l);
+int		maps_size(char **maps);
+int		check_player(t_cub *cub, int i, int j, int nb_l);
+int		check_wall(char **maps, int i, int j, int nb_l);
 
 //PARSING
 void	parsing(char **av, t_cub *cub);
