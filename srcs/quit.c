@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:01:59 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 19:37:41 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/26 11:18:45 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void	destroy_mlx_data(t_cub *cub)
 	}
 	free(cub->mlx);
 	DEBUG && printf("Mlx data successfully destroyed\n");
-	exit(0);
 }
 #endif
 
@@ -45,8 +44,6 @@ void	destroy_mlx_data(t_cub *cub)
 {
 	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n",
 		cub->mlx, cub->win);
-	free(cub->sprite_tab);
-	free(cub->sprite_order);
 	DEBUG && printf("mlx pointer = [%p], win pointer = [%p]\n",
 		cub->mlx, cub->win);
 	if (cub->backgd.mlx_img)
@@ -59,7 +56,6 @@ void	destroy_mlx_data(t_cub *cub)
 	mlx_do_key_autorepeaton(cub->mlx);
 	free(cub->mlx);
 	DEBUG && printf("Mlx data successfully destroyed\n");
-	exit(0);
 }
 
 #endif
@@ -79,7 +75,7 @@ void	destroy_cub_text(t_cub *cub)
 				mlx_destroy_image(cub->mlx, cub->text_img[i][j].mlx_img);
 		}	
 	}
-	if (cub->door_img.mlx_img)
+	if (BONUS && cub->door_img.mlx_img)
 		mlx_destroy_image(cub->mlx, cub->door_img.mlx_img);
 }
 
@@ -101,11 +97,13 @@ void	destroy_cub_sprite(t_cub *cub)
 	}
 }
 
-int	__quit(t_cub *cub)
+int	__quit(t_cub *cub, int ret_code)
 {
 	destroy_cub_data(cub);
 	destroy_cub_text(cub);
-	destroy_cub_sprite(cub);
+	if (BONUS)
+		destroy_cub_sprite(cub);
 	destroy_mlx_data(cub);
+	exit(ret_code);
 	return (0);
 }

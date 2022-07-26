@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
+/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:50:36 by deus              #+#    #+#             */
-/*   Updated: 2022/07/26 09:41:15 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 11:21:49 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ int	init_game(t_cub *cub)
 	DEBUG && printf("mlx init ok\n");
 	cub->win = mlx_new_window(cub->mlx, WIDTH, HEIGHT, "My little cube");
 	if (!cub->win)
-		return (__quit(cub), __exit_error("Mlx init", cub), 0);
+		return (__print_error("Mlx init"), __quit(cub, 1), 0);
 	DEBUG && printf("mlx win ok\n");
 	if (!create_cub_images(cub))
-		return (__quit(cub), __exit_error("Create img failed", cub), 0);
+		return (__print_error("Create img failed"), __quit(cub, 1), 0);
 	DEBUG && printf("mlx image loading ok\n");
 	if (!load_images(cub))
-		return (__quit(cub), __exit_error("Create texture failed", cub), 0);
+		return (__print_error("Create texture failed"), __quit(cub, 1), 0);
 	cub->minimap_height = HEIGHT / 4;
 	cub->minimap_width = WIDTH / 4;
 	return (1);
