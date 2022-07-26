@@ -66,7 +66,6 @@ CC = cc
 
 NAME = cub3d
 
-#MAKEFLAGS += -j
 ifeq ($(MAKECMDGOALS), debug)
 CFLAGS += -D DEBUG=1
 endif
@@ -86,14 +85,12 @@ EXTERN_LIB = ${EXTERN_MACLIB}
 IFLAGS = ${IFLAGS_MAC}
 endif
 
+MAKEFLAGS += -j
+
+all:  $(NAME)
 dbonus : $(NAME)
 bonus : $(NAME)
-
-all: 
-	make -j -s $(NAME)
-	@printf "Done\n"
-	
-debug: fclean $(NAME)
+debug: $(NAME)
 
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 		mkdir -p $(dir $@)
