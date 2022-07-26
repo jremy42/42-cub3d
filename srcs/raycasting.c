@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 11:39:06 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 18:02:59 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:25:57 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ static void	draw_wall_hit(int x, t_player *player, t_cub *cub)
 				text = &cub->text_img[player->current_orientation]
 				[player->current_text];
 			y_in_text = (y - player->r_wall_y_start)
-				* (float)text->height / cub->player.wall_height;
+				* (float)(text->height - 1) / cub->player.wall_height;
 			color = get_color_from_text(y_in_text, cub->player.r_hit_coef,
 					text, cub);
 			(player->r_side_hit == Y_HIT) && dim_color(&color);
