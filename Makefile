@@ -77,25 +77,20 @@ CC = cc
 
 NAME = cub3d
 
-ifeq ($(MAKECMDGOALS), debug)
-CFLAGS += -D DEBUG=1
-endif
-
 ifeq ($(MAKECMDGOALS), bonus)
-CFLAGS += -D BONUS=1
-SRC_LIST += ${PARSING_BONUS}
-endif
-
-ifeq ($(MAKECMDGOALS), bonus)
-SRC_LIST += ${PARSING_BONUS}
+	CFLAGS += -D BONUS=1
+	SRC_LIST += ${PARSING_BONUS}
+else ifeq ($(MAKECMDGOALS), dbonus)
+	CFLAGS += -D DEBUG=1
+	CFLAGS += -D BONUS=1
+	SRC_LIST += ${PARSING_BONUS}
+else ifeq ($(MAKECMDGOALS), debug)
+	CFLAGS += -D DEBUG=1
+	SRC_LIST += ${PARSING_MANDATORY}
 else
-SRC_LIST += ${PARSING_MANDATORY}
+	SRC_LIST += ${PARSING_MANDATORY}
 endif
 
-ifeq ($(MAKECMDGOALS), dbonus)
-CFLAGS += -D DEBUG=1
-CFLAGS += -D BONUS=1
-endif
 
 ifeq ($(shell uname -s), Darwin)
 MLX_DIR = ${MLX_MAC}
