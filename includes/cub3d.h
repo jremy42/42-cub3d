@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 11:59:47 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 15:43:46 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -343,4 +343,8 @@ int		check_wall(char **maps, int i, int j, int nb_l);
 
 //PARSING
 void	parsing(char **av, t_cub *cub);
+
+//MAIN
+int		center_mouse(t_cub *cub);
+
 #endif

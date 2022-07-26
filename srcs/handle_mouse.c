@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 09:42:22 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 15:43:00 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,48 +70,21 @@ int	__mouse_hook(int button, int x, int y, t_cub *cub)
 	return (1);
 }
 
-#ifdef __linux__
-
 int	__mouse_move(t_cub *cub)
 {
 	int	x;
 	int	y;
 
-	x = WIDTH / 2;
-	y = 0;
-	y++;
-	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
-	if (x != WIDTH / 2)
-	{
-		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH / 2)));
-		update_slope(cub);
-	}
-	else
-		return (1);
-	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
-	return (1);
-}
-#endif
-
-#ifdef __MACH__
-
-int	__mouse_move(t_cub *cub)
-{
-	int	x;
-	int	y;
-
-	x = WIDTH / 2;
-	y = 0;
-	y++;
 	mlx_mouse_get_pos(cub->win, &x, &y);
-	if (x != WIDTH / 2)
+	if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
+		cub->action = 0;
+	if (BONUS && x != WIDTH / 2)
 	{
 		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH / 2)));
 		update_slope(cub);
 	}
 	else
 		return (1);
-	mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
+	center_mouse(cub);
 	return (1);
 }
-#endif

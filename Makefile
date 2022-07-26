@@ -46,8 +46,8 @@ SRC_DIR = ./srcs/
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
-#CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
-CFLAGS = -MMD -Wall -Wextra -Werror
+CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+#CFLAGS = -MMD -Wall -Wextra -Werror
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl

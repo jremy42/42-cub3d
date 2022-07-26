@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 12:02:05 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 15:43:42 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,36 +18,27 @@
 
 #ifdef __linux__
 
+int	center_mouse(t_cub *cub)
+{
+	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
+	return (1);
+}
+
+#endif
+#ifdef __MACH__
+
+int	center_mouse(t_cub *cub)
+{
+	mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
+	return (1);
+}
+
+#endif
+
 static void	__game_loop(t_cub *cub)
 {
 	DEBUG && printf("mlx textures loading ok\n");
 	mlx_mouse_hook(cub->win, &__mouse_hook, cub);
-	DEBUG && printf("mlx hooking mouse ok\n");
-	MOUSE_HIDE && mlx_mouse_hide(cub->mlx, cub->win);
-	DEBUG && printf("mlx mouse hiding ok\n");
-	mlx_hook(cub->win, 17, 1L << 1, &__quit, cub);
-	DEBUG && printf("mlx hook quit ok\n");
-	mlx_hook(cub->win, 2, 1L << 0, &__key_press, cub);
-	DEBUG && printf("mlx key press ok\n");
-	mlx_hook(cub->win, 3, 1L << 0, &__key_release, cub);
-	DEBUG && printf("mlx key release ok\n");
-	mlx_do_key_autorepeatoff(cub->mlx);
-	DEBUG && printf("mlx autorepeat off ok\n");
-	mlx_loop_hook(cub->mlx, render_frame, cub);
-	DEBUG && printf("mlx rendering loop hook ok\n");
-	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
-	rotate(cub, 0.01f);
-	mlx_loop(cub->mlx);
-	DEBUG && printf("mlx looping done (this should not occur)\n");
-}
-#endif
-
-#ifdef __MACH__
-
-static void	__game_loop(t_cub *cub)
-{
-	DEBUG && printf("mlx textures loading ok\n");
-	BONUS && mlx_mouse_hook(cub->win, &__mouse_hook, cub);
 	DEBUG && printf("mlx hooking mouse ok\n");
 	BONUS && MOUSE_HIDE && mlx_mouse_hide(cub->mlx, cub->win);
 	DEBUG && printf("mlx mouse hiding ok\n");
@@ -61,12 +52,10 @@ static void	__game_loop(t_cub *cub)
 	DEBUG && printf("mlx autorepeat off ok\n");
 	mlx_loop_hook(cub->mlx, render_frame, cub);
 	DEBUG && printf("mlx rendering loop hook ok\n");
-	BONUS && mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
+	BONUS && center_mouse(cub);
 	rotate(cub, 0.01f);
-	mlx_loop(cub->mlx);
 	DEBUG && printf("mlx looping done (this should not occur)\n");
 }
-#endif
 
 int	main(int ac, char **av)
 {
@@ -88,5 +77,7 @@ int	main(int ac, char **av)
 	if (!init_game(&cub))
 		return (1);
 	__game_loop(&cub);
+	mlx_loop(cub.mlx);
+	DEBUG && printf("mlx looping done (this should not occur)\n");
 	return (0);
 }
