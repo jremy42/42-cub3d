@@ -96,7 +96,7 @@ EXTERN_LIB = ${EXTERN_MACLIB}
 IFLAGS = ${IFLAGS_MAC}
 endif
 
-MAKEFLAGS += -j
+MAKEFLAGS += -j -s
 
 all:  $(NAME)
 	@printf "Done\n"
