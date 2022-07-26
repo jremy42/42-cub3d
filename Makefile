@@ -66,8 +66,18 @@ CC = cc
 
 NAME = cub3d
 
+#MAKEFLAGS += -j
 ifeq ($(MAKECMDGOALS), debug)
 CFLAGS += -D DEBUG=1
+endif
+
+ifeq ($(MAKECMDGOALS), bonus)
+CFLAGS += -D BONUS=1
+endif
+
+ifeq ($(MAKECMDGOALS), dbonus)
+CFLAGS += -D DEBUG=1
+CFLAGS += -D BONUS=1
 endif
 
 ifeq ($(shell uname -s), Darwin)
@@ -75,6 +85,9 @@ MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
 IFLAGS = ${IFLAGS_MAC}
 endif
+
+dbonus : $(NAME)
+bonus : $(NAME)
 
 all: 
 	make -j -s $(NAME)

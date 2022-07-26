@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 09:47:25 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:09:45 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft.h"
-# define DEBUG 1
 # ifndef DEBUG
 #  define DEBUG 0
 # endif
-# define BONUS 1
+# ifndef BONUS
+#  define BONUS 0
+# endif
 # define UP 3
 # define DOWN 1
 # define STRAFE_LEFT 0
