@@ -41,13 +41,13 @@ PARSING_MANDATORY = parsing_mandatory/parsing.c\
 	parsing_mandatory/load_info.c\
 	parsing_mandatory/info_utils.c
 
-
 SRC_DIR = ./srcs/
 
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
-CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+#CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -MMD -Wall -Wextra -Werror
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
@@ -91,19 +91,22 @@ else
 	SRC_LIST += ${PARSING_MANDATORY}
 endif
 
-
 ifeq ($(shell uname -s), Darwin)
 MLX_DIR = ${MLX_MAC}
 EXTERN_LIB = ${EXTERN_MACLIB}
 IFLAGS = ${IFLAGS_MAC}
 endif
 
-MAKEFLAGS += -j
+MAKEFLAGS += -j -s
 
 all:  $(NAME)
+	@printf "Done\n"
 dbonus : $(NAME)
+	@printf "Done\n"
 bonus : $(NAME)
+	@printf "Done\n"
 debug: $(NAME)
+	@printf "Done\n"
 
 $(OBJS_DIR)%.o: $(SRC_DIR)%.c
 		mkdir -p $(dir $@)
