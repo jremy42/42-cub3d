@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 15:43:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:35:42 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,6 @@
 #include "mlx.h"
 #include "keycodes.h"
 #include "math.h"
-
-#ifdef __linux__
-
-int	center_mouse(t_cub *cub)
-{
-	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
-	return (1);
-}
-
-#endif
-#ifdef __MACH__
-
-int	center_mouse(t_cub *cub)
-{
-	mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
-	return (1);
-}
-
-#endif
 
 static void	__game_loop(t_cub *cub)
 {

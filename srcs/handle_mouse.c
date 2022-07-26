@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 15:43:00 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:40:54 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	__mouse_move(t_cub *cub)
 	int	x;
 	int	y;
 
-	mlx_mouse_get_pos(cub->win, &x, &y);
+	wrapper_mouse_get_pos(cub, &x, &y);
 	if (x < 0 || y < 0 || x > WIDTH || y > HEIGHT)
 		cub->action = 0;
 	if (BONUS && x != WIDTH / 2)
