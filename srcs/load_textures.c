@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 12:33:48 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 18:51:02 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 17:11:38 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	load_gun_img(t_cub *cub)
 				cub->gun_img_file[i], &cub->gun_img[i].width,
 				&cub->gun_img[i].height);
 		if (!cub->gun_img[i].mlx_img)
-			return (__putstr_fd("Failed to load a gun img\n", 2), 0);
+			return (__putstr_fd("Error\n Failed to load a gun img\n", 2), 0);
 		cub->gun_img[i].addr = mlx_get_data_addr(cub->gun_img[i].mlx_img,
 				&cub->gun_img[i].bits_per_pixel,
 				&cub->gun_img[i].line_length,
@@ -55,7 +55,7 @@ static int	load_guard_img(t_cub *cub)
 				cub->guard_img_file[i], &cub->guard_img[i].width,
 				&cub->guard_img[i].height);
 		if (!cub->guard_img[i].mlx_img)
-			return (__putstr_fd("Failed to load a guard img\n", 2), 0);
+			return (__putstr_fd("Error\n Failed to load a guard img\n", 2), 0);
 		cub->guard_img[i].addr = mlx_get_data_addr(cub->guard_img[i].mlx_img,
 				&cub->guard_img[i].bits_per_pixel,
 				&cub->guard_img[i].line_length,
@@ -79,9 +79,9 @@ static int	load_textures(t_cub *cub)
 					cub->text[i][j], &cub->text_img[i][j].width,
 					&cub->text_img[i][j].height);
 			if (!cub->text_img[i][j].mlx_img)
-				return (__putstr_fd("Failed to load texture\n", 2), 0);
+				return (__putstr_fd("Error \nFailed to load texture\n", 2), 0);
 			if (cub->text_img[i][j].width != cub->text_img[i][j].height)
-				return (__putstr_fd("Not valid texture size\n", 2), 0);
+				return (__putstr_fd("Error \nNot valid texture size\n", 2), 0);
 			cub->text_img[i][j].addr = mlx_get_data_addr(
 					cub->text_img[i][j].mlx_img,
 					&cub->text_img[i][j].bits_per_pixel,
@@ -101,14 +101,14 @@ int	load_images(t_cub *cub)
 		cub->door_img.mlx_img = mlx_xpm_file_to_image(cub->mlx, cub->door,
 				&cub->door_img.width, &cub->door_img.height);
 		if (!cub->door_img.mlx_img)
-			return (__putstr_fd("Failed to load texture\n", 2), 0);
+			return (__putstr_fd("Error \n Failed to load texture\n", 2), 0);
 		if (cub->door_img.width != cub->door_img.height)
-			return (__putstr_fd("Not valid texture size\n", 2), 0);
+			return (__putstr_fd("Error \n Not valid texture size\n", 2), 0);
 		cub->door_img.addr = mlx_get_data_addr(cub->door_img.mlx_img,
 				&cub->door_img.bits_per_pixel,
 				&cub->door_img.line_length, &cub->door_img.endian);
 		if (!load_gun_img(cub) || !load_guard_img(cub))
-			return (__putstr_fd("Error loading game sprites\n", 2), 0);
+			return (__putstr_fd("Error \nloading game sprites\n", 2), 0);
 		set_img_array_address_for_guard_sprites(cub);
 	}
 	return (1);

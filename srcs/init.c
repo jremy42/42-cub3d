@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:50:36 by deus              #+#    #+#             */
-/*   Updated: 2022/07/26 11:21:49 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 17:11:59 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	init_game(t_cub *cub)
 		return (__print_error("Create img failed"), __quit(cub, 1), 0);
 	DEBUG && printf("mlx image loading ok\n");
 	if (!load_images(cub))
-		return (__print_error("Create texture failed"), __quit(cub, 1), 0);
+		return (__print_error("Load img failed"), __quit(cub, 1), 0);
 	cub->minimap_height = HEIGHT / 4;
 	cub->minimap_width = WIDTH / 4;
 	return (1);

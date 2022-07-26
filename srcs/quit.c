@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 14:01:59 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 11:18:45 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 12:37:56 by deus             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,9 @@ int	__quit(t_cub *cub, int ret_code)
 	if (BONUS)
 		destroy_cub_sprite(cub);
 	destroy_mlx_data(cub);
-	exit(ret_code);
+	if (ret_code == 1)
+		exit(ret_code);
+	else
+		exit(0);
 	return (0);
 }
