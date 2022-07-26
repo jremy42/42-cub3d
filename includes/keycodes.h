@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 10:17:20 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/15 17:18:36 by deus             ###   ########.fr       */
+/*   Updated: 2022/07/26 09:30:54 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define KEYCODES_H
 
 # ifdef __MACH__
-#  define KEY_R 2
-#  define KEY_L 0
-#  define KEY_D 1
-#  define KEY_U 13
+#  define KEY_D 2
+#  define KEY_A 0
+#  define KEY_S 1
+#  define KEY_W 13
 #  define ARROW_UP 126
 #  define ARROW_DOWN 125
 #  define ARROW_LEFT 123
@@ -29,10 +29,10 @@
 # endif
 
 # ifdef __linux__
-#  define KEY_R 100
-#  define KEY_L 97
-#  define KEY_D 115
-#  define KEY_U 119
+#  define KEY_D 100
+#  define KEY_A 97
+#  define KEY_S 115
+#  define KEY_W 119
 #  define ARROW_UP 65362
 #  define ARROW_DOWN 65364
 #  define ARROW_LEFT 65361

@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 10:10:34 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/25 15:20:47 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:43:36 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	do_actions(t_cub *cub)
 	int	i;
 
 	i = -1;
-	while (++i < 5)
+	while (++i < 7)
 	{
 		if (cub->action & (1 << i))
 			cub->hook_fx[i](cub);

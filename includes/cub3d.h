@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 09:06:01 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:47:25 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@
 # define BONUS 1
 # define UP 3
 # define DOWN 1
-# define LEFT 0
-# define RIGHT 2
+# define STRAFE_LEFT 0
+# define STRAFE_RIGHT 2
 # define OPEN_DOOR 4
-# define WIDTH 1280
-# define HEIGHT 720
+# define ROTATE_LEFT 5
+# define ROTATE_RIGHT 6
+# define WIDTH 640
+# define HEIGHT 480
 # define SPEED 0.05f
 # define SIZE_MINI_MAP 16
 # define VIEW_MM 0.0625f
@@ -190,7 +192,7 @@ typedef struct s_cub
 	t_img		screen;
 	t_img		backgd;
 	t_img		text_img[4][6];
-	void		(*hook_fx[5])();
+	void		(*hook_fx[7])();
 	int			action;
 	int			minimap_height;
 	int			minimap_width;
@@ -254,13 +256,17 @@ int		__key_release(int keycode, t_cub *cub);
 int		__key_press(int keycode, t_cub *cub);
 
 // HOOK DIRECTION
-
 void	__hookleft(t_cub *cub);
 void	__hookright(t_cub *cub);
 void	__hookdown(t_cub *cub);
 void	__hookup(t_cub *cub);
 
+// HOOK DIRECTION 2
+void	__hook_rotate_left(t_cub *cub);
+void	__hook_rotate_right(t_cub *cub);
+
 //HANDLE MOUSE
+void	update_slope(t_cub *cub);
 void	rotate(t_cub *cub, float angle);
 int		__mouse_hook(int button, int x, int y, t_cub *cub);
 int		__mouse_move(t_cub *cub);

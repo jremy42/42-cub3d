@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/25 19:22:33 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/26 09:42:22 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "keycodes.h"
 #include "math.h"
 
-static void	update_slope(t_cub *cub)
+void	update_slope(t_cub *cub)
 {
 	cub->player.slope_dir = cub->player.dir_y / cub->player.dir_x;
 	cub->player.delta_dist_x = sqrt(1 + pow(cub->player.slope_dir, 2));
@@ -82,10 +82,12 @@ int	__mouse_move(t_cub *cub)
 	y++;
 	mlx_mouse_get_pos(cub->mlx, cub->win, &x, &y);
 	if (x != WIDTH / 2)
+	{
 		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH / 2)));
+		update_slope(cub);
+	}
 	else
 		return (1);
-	update_slope(cub);
 	mlx_mouse_move(cub->mlx, cub->win, WIDTH / 2, HEIGHT / 2);
 	return (1);
 }
@@ -103,10 +105,12 @@ int	__mouse_move(t_cub *cub)
 	y++;
 	mlx_mouse_get_pos(cub->win, &x, &y);
 	if (x != WIDTH / 2)
+	{
 		rotate(cub, ((ROTATE_ANGLE) * 0.02 * (x - WIDTH / 2)));
+		update_slope(cub);
+	}
 	else
 		return (1);
-	update_slope(cub);
 	mlx_mouse_move(cub->win, WIDTH / 2, HEIGHT / 2);
 	return (1);
 }

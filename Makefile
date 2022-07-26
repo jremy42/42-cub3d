@@ -28,6 +28,7 @@ SRC_LIST = main.c\
 	hook_door.c\
 	hook_key_action.c\
 	hook_direction.c\
+	hook_direction_2.c\
 	gun.c
 
 SRC_DIR = ./srcs/

@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 17:50:36 by deus              #+#    #+#             */
-/*   Updated: 2022/07/25 15:06:45 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/26 09:41:15 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,11 @@ void	set_hook_fx(t_cub *cub)
 {
 	cub->hook_fx[UP] = __hookup;
 	cub->hook_fx[DOWN] = __hookdown;
-	cub->hook_fx[LEFT] = __hookleft;
-	cub->hook_fx[RIGHT] = __hookright;
+	cub->hook_fx[STRAFE_LEFT] = __hookleft;
+	cub->hook_fx[STRAFE_RIGHT] = __hookright;
 	cub->hook_fx[OPEN_DOOR] = __switch_door;
+	cub->hook_fx[ROTATE_LEFT] = __hook_rotate_left;
+	cub->hook_fx[ROTATE_RIGHT] = __hook_rotate_right;
 }
 
 int	init_game(t_cub *cub)
