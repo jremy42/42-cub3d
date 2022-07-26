@@ -6,7 +6,7 @@
 /*   By: fle-blay <fle-blay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 17:35:30 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 17:40:46 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:31:40 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,3 @@ void	wrapper_mouse_get_pos(t_cub *cub, int *x, int *y)
 }
 
 #endif
-

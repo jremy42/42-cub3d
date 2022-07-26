@@ -6,7 +6,7 @@
 /*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 11:21:59 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 18:25:03 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/26 18:31:27 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int	get_color_from_text(int y_in_text, float r_hit_coef, t_img *img, t_cub *cub)
 
 	door_value = cub->door_map[cub->player.r_map_y][cub->player.r_map_x];
 	if (cub->player.current_orientation == DO && door_value != 2)
-		x = (r_hit_coef + 1 - door_value + floor(door_value)) * (img->width - 1);
+		x = (r_hit_coef + 1 - door_value + floor(door_value))
+			* (img->width - 1);
 	else
 		x = r_hit_coef * (img->width - 1);
 	if (x >= 0 && x < img->width && y_in_text >= 0 && y_in_text < img->height)
