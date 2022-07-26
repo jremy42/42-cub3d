@@ -139,4 +139,4 @@ re : fclean
 
 -include $(DEPS)
 
-.PHONY:  clean fclean re all bonus
+.PHONY:  clean fclean re all bonus dbonus debug
