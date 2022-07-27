@@ -85,6 +85,11 @@ else ifeq ($(MAKECMDGOALS), dbonus)
 	CFLAGS += -D DEBUG=1
 	CFLAGS += -D BONUS=1
 	SRC_LIST += ${PARSING_BONUS}
+else ifeq ($(MAKECMDGOALS), mdbonus)
+	CFLAGS += -D DEBUG=1
+	CFLAGS += -D BONUS=1
+	CFLAGS += -D MOUSE_HIDE=1
+	SRC_LIST += ${PARSING_BONUS}
 else ifeq ($(MAKECMDGOALS), debug)
 	CFLAGS += -D DEBUG=1
 	SRC_LIST += ${PARSING_MANDATORY}
@@ -93,9 +98,9 @@ else
 endif
 
 ifeq ($(shell uname -s), Darwin)
-MLX_DIR = ${MLX_MAC}
-EXTERN_LIB = ${EXTERN_MACLIB}
-IFLAGS = ${IFLAGS_MAC}
+	MLX_DIR = ${MLX_MAC}
+	EXTERN_LIB = ${EXTERN_MACLIB}
+	IFLAGS = ${IFLAGS_MAC}
 endif
 
 MAKEFLAGS += -j
@@ -103,6 +108,8 @@ MAKEFLAGS += -j
 all:  $(NAME)
 	@printf "Done\n"
 dbonus : $(NAME)
+	@printf "Done\n"
+mdbonus : $(NAME)
 	@printf "Done\n"
 bonus : $(NAME)
 	@printf "Done\n"

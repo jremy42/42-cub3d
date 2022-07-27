@@ -6,7 +6,7 @@
 /*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/27 10:09:34 by jremy            ###   ########.fr       */
+/*   Updated: 2022/07/27 10:52:26 by fle-blay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # ifndef BONUS
 #  define BONUS 0
 #  define USE_TIME
+# endif
+# ifndef MOUSE_HIDE
+#  define MOUSE_HIDE 0
 # endif
 # define UP 3
 # define DOWN 1
@@ -52,7 +55,6 @@
 # define RED_HEX 0x00ff0000
 # define YELLOW_HEX 0x00777700
 # define G_DETECT_DIST 10
-# define MOUSE_HIDE 1
 
 enum {
 	NO,
