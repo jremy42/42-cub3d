@@ -47,8 +47,8 @@ SRC_DIR = ./srcs/
 OBJS_DIR = ./objs/
 
 IFLAGS =  -I includes/ -I libft/includes -I mlx_headers/linux
-CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
-#CFLAGS = -MMD -Wall -Wextra -Werror
+#CFLAGS = -MMD -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -MMD -Wall -Wextra -Werror -g3
 
 MLX_DIR = ./minilibx_linux
 MLX_MAC = ./minilibx_opengl
@@ -98,7 +98,7 @@ EXTERN_LIB = ${EXTERN_MACLIB}
 IFLAGS = ${IFLAGS_MAC}
 endif
 
-MAKEFLAGS += -j -s
+MAKEFLAGS += -j
 
 all:  $(NAME)
 	@printf "Done\n"

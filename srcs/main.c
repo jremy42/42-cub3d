@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:35:04 by jremy             #+#    #+#             */
-/*   Updated: 2022/07/26 17:35:42 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/27 09:38:41 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(int ac, char **av)
 		__putstr_fd("Error\nneed maps\n", 2);
 		exit(1);
 	}
-	if (__strlen(av[1]) < 5
+	if (__strlen(av[1]) < 4
 		|| !__strstr(av[1], ".cub")
 		|| __strcmp(av[1] + __strlen(av[1]) - 4, ".cub"))
 		return (__putstr_fd("Error\nWrong map name extension\n", 2), 1);

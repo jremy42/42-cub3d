@@ -5,7 +5,12 @@ EA ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  
 D ./textures/hres_xpm/door.xpm
 F 81,81,81
 C 120,120,120
-111
-1W1
-1D1
-111
+11111
+1D001
+10001
+10001
+10001
+10001
+10101
+1E011
+11111

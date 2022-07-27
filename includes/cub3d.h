@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: deus <deus@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jremy <jremy@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 10:21:44 by fle-blay          #+#    #+#             */
-/*   Updated: 2022/07/26 17:38:13 by fle-blay         ###   ########.fr       */
+/*   Updated: 2022/07/27 10:09:34 by jremy            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # endif
 # ifndef BONUS
 #  define BONUS 0
+#  define USE_TIME
 # endif
 # define UP 3
 # define DOWN 1
@@ -80,7 +81,6 @@ typedef struct s_player
 	float	pos_x;
 	float	pos_y;
 	int		vector[9][9];
-
 	float	r_dir_x;
 	float	r_dir_y;
 	float	r_slope_dir;
@@ -174,7 +174,6 @@ typedef struct s_cub
 	t_img		door_img;
 	char		*gun_img_file[GUN_SPRITE_COUNT];
 	t_img		gun_img[GUN_SPRITE_COUNT];
-
 	char		*guard_img_file[GUARD_SPRITE_COUNT];
 	t_img		guard_img[GUARD_SPRITE_COUNT];
 	int			gun_frame;
@@ -211,7 +210,6 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int		get_color_from_text(int y_txt, float r_hit_coef, t_img *img, t_cub *c);
 
 // exit
-
 void	destroy_mlx_data(t_cub *cub);
 void	destroy_cub_text(t_cub *cub);
 void	__print_error(char *error);
@@ -220,13 +218,11 @@ void	__print_error(char *error);
 void	update_minimap(t_cub *cub);
 
 //INIT
-
 void	set_ressources_file_names(t_cub *cub);
 void	set_hook_fx(t_cub *cub);
 int		init_game(t_cub *cub);
 
 // DDA
-
 int		dda(t_player *player, char **map, float **door_map);
 
 // COLORS
@@ -251,7 +247,6 @@ void	__switch_door(t_cub *cub);
 void	__update_door_value(t_cub *cub);
 
 // HOOK KEY ACTION
-
 int		__key_release(int keycode, t_cub *cub);
 int		__key_press(int keycode, t_cub *cub);
 
