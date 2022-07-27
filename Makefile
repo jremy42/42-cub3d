@@ -76,7 +76,7 @@ _END=\033[0m
 
 CC = cc
 
-NAME = cub3d
+NAME = cub3D
 
 ifeq ($(MAKECMDGOALS), bonus)
 	CFLAGS += -D BONUS=1

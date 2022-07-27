@@ -9,7 +9,7 @@ test "$#" -ne 1 && echo "1 and only 1 arg needed !" && exit 1
 for i in $(ls ${MAP_DIR}/**/*)
 do
 	echo -e "\e[32mTesting [$i]\e[0m"
-	OUTPUT=$($VALGRIND ./cub3d $i 2>&1)
+	OUTPUT=$($VALGRIND ./cub3D $i 2>&1)
 	RET=$?
 	echo "$OUTPUT"
 	test "$RET" -lt 128 || echo -e "\e[31mSIGNALED on [$i]\e[0m"
