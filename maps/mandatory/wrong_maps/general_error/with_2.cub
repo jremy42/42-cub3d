@@ -1,0 +1,13 @@
+NO ./textures/hres_xpm/red_brick.xpm
+SO ./textures/hres_xpm/brick_german_flag.xpm
+WE ./textures/hres_xpm/stones.xpm
+EA ./textures/hres_xpm/wood.xpm
+
+F 81,81,81
+C 120,120,120
+
+    22222
+    20002
+    200E2
+    20002
+    22222

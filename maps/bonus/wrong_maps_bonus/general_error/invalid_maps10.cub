@@ -1,0 +1,9 @@
+NO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+SO ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+WE ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+EA ./textures/hres_xpm/red_brick.xpm ./textures/hres_xpm/brick_german_flag.xpm  ./textures/hres_xpm/stones.xpm ./textures/hres_xpm/german_flag.xpm ./textures/hres_xpm/wrong_brick.xpm ./textures/hres_xpm/wood.xpm
+D ./textures/hres_xpm/door.xpm
+F 81,81,81
+C 120,120,120
+
+E

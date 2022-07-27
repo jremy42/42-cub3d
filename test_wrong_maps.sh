@@ -2,7 +2,7 @@
 
 MAP_DIR="$1"
 VALGRIND="valgrind"
-VALGRIND=""
+#VALGRIND=""
 
 test "$#" -ne 1 && echo "1 and only 1 arg needed !" && exit 1
 
