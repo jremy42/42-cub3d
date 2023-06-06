@@ -3,10 +3,8 @@
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>
-42-cub3d
-  
+42-cub3d  <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483" alt="jremy's 42 cub3d Score" /></a>
 </h1>
-  <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483" alt="jremy's 42 cub3d Score" /></a>
 <h3 align="center">📍 Get lost in the world of 42-cub3d-where code and creativity collide!</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
 
@@ -32,8 +30,12 @@ For more information check: https://httpstatuses.com/400
 
 ## 💫 Features
 
-Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
-For more information check: https://httpstatuses.com/400
+- Collision with walls for a more realistic gaming experience.
+- Mini-map to visualize the structure of the maze.
+- Openable/closable doors to add interactions.
+- Animations with animated sprites to bring the game to life.
+- View rotation using the mouse for a more immersive exploration.
+- Enemis
 
 ---
 
@@ -245,9 +247,12 @@ for check map parsing :
 
 ---
 
-
-## 👏 Acknowledgments
-
-> - [📌  List any resources, contributors, inspiration, etc.]
+## 👏 Acquired knowledge
+- ✅ Ray-casting: A technique used to create real-time 3D environments in games. It involves casting virtual rays from a player's perspective to determine what objects or walls are visible in the scene.
+- ✅ Manipulation of 3D graphics: Creating a realistic graphical representation of a maze using a subjective view. This includes rendering walls, floors, ceilings, and other objects to provide an immersive experience.
+- ✅ Utilization of the minilibX library: Using the minilibX library to develop simple graphical interfaces. This library provides functions for handling graphics, windows, and events in a minimalistic manner.
+- ✅ Reading configuration files (*.cub): Parsing configuration files to extract information about the maze's layout, textures, colors, and other parameters. These files define the characteristics of the game environment.
+- ✅ Mathematics and algorithms in ray-casting: The implementation of mathematical calculations and algorithms for ray-casting and 3D view calculations. This involves determining the intersections of rays with objects, calculating the distances, and rendering the scene accordingly.
+- ✅ Handling keyboard events: Managing keyboard input events to allow player movement within the maze. This includes detecting key presses, updating the player's position, and rendering the scene from the new perspective.
 
 ---
