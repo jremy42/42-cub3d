@@ -1,47 +1,29 @@
-# cub3d [![jremy's 42 cub3d Score](https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483)](https://github.com/JaeSeoKim/badge42)
-
-
-
-<p align="center">
-  <img src="./img/cub.png" width="538">
-</p>
-
 
 <div align="center">
 <h1 align="center">
 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
 <br>
 42-cub3d
+  
 </h1>
+  <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483" alt="jremy's 42 cub3d Score" /></a>
 <h3 align="center">📍 Get lost in the world of 42-cub3d-where code and creativity collide!</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
 
 <p align="center">
 <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="GNU%20Bash" />
 <img src="https://img.shields.io/badge/C-A8B9CC.svg?style=for-the-badge&logo=C&logoColor=black" alt="C" />
-<img src="https://img.shields.io/badge/Perl-39457E.svg?style=for-the-badge&logo=Perl&logoColor=white" alt="Perl" />
 <img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="Markdown" />
 </p>
 </div>
 
 ---
 
-## 📚 Table of Contents
-- [📚 Table of Contents](#-table-of-contents)
-- [📍 Overview](#-overview)
-- [💫 Features](#-features)
-- [📂 Project Structure](#project-structure)
-- [🧩 Modules](#modules)
-- [🚀 Getting Started](#-getting-started)
-- [🗺 Roadmap](#-roadmap)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-- [👏 Acknowledgments](#-acknowledgments)
-
----
-
-
 ## 📍 Overview
+
+<p align="center">
+  <img src="./img/cub.png" width="538">
+</p>
 
 Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
 For more information check: https://httpstatuses.com/400
