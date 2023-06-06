@@ -205,7 +205,7 @@ git clone https://github.com/jremy42/42-cub3d
 cd 42-cub3d
 ```
 
-3. Compile the project:
+3. Compiling the project:
 mandatory :
 ```sh
 make 
