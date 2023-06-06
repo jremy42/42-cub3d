@@ -22,10 +22,7 @@
 <p align="center">
   <img src="./img/cub.png" width="538">
 </p>
-
-Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
-For more information check: https://httpstatuses.com/400
-
+ Cub3D is a project inspired by the game Wolfenstein3D, which is considered the first-ever developed first-person shooter (FPS). It explores the technique of ray-casting and challenges you to create a dynamic view within a maze where you need to find your way.
 ---
 
 ## 💫 Features
@@ -35,7 +32,7 @@ For more information check: https://httpstatuses.com/400
 - Openable/closable doors to add interactions.
 - Animations with animated sprites to bring the game to life.
 - View rotation using the mouse for a more immersive exploration.
-- Enemis
+- Enemies
 
 ---
 
