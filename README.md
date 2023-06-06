@@ -1,351 +1,577 @@
 # cub3d [![jremy's 42 cub3d Score](https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483)](https://github.com/JaeSeoKim/badge42)
 
+
+
 <p align="center">
   <img src="./img/cub.png" width="538">
 </p>
 
-</details>
 
-<details closed><summary>Man3</summary>
+<div align="center">
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
+<br>
+42-cub3d
+</h1>
+<h3 align="center">📍 Get lost in the world of 42-cub3d-where code and creativity collide!</h3>
+<h3 align="center">⚙️ Developed with the software and tools below:</h3>
 
-| File             | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Module                                   |
-|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------|
-| mlx_pixel_put.3  | The code snippet provides two functions for drawing in a window using MiniLibX: mlx_pixel_put() for drawing pixels at specified coordinates with a specified color, and mlx_string_put() for displaying a string at specified coordinates with a specified color. The color parameter must be encoded as an integer with the RGB values for the desired color. The functions only draw in the specified window and cannot display anything outside of it or in another window.                                                                                          | minilibx_linux/man/man3/mlx_pixel_put.3  |
-| mlx_new_window.3 | This code snippet provides functions for managing windows using the MiniLibX library. The mlx_new_window() function creates a new window with a specified size and title, returning a window identifier. The mlx_clear_window() function clears the given window, while mlx_destroy_window() destroys it. All functions require the screen connection identifier as a parameter.                                                                                                                                                                                        | minilibx_linux/man/man3/mlx_new_window.3 |
-| mlx_new_image.3  | The provided code snippet contains functions that allow for manipulating and displaying images using MiniLibX. Users can create a new image, modify it, and place it in a specified window. The functions also include options for retrieving image data and working with XPM images. The return values of these functions indicate whether an error occurred or a non-null pointer as an image identifier.                                                                                                                                                             | minilibx_linux/man/man3/mlx_new_image.3  |
-| mlx_loop.3       | The code snippet is a set of functions that allow the program to handle events in MiniLibX, a library for creating graphical user interfaces. The functions include mlx_loop, mlx_key_hook, mlx_mouse_hook, mlx_expose_hook, and mlx_loop_hook. These functions allow the program to wait for different events, such as key presses, mouse clicks, and window redraws, and then call user-defined functions to handle those events. Additional information about the events, such as the keycode for a key press or the coordinates of a mouse click, is also provided. | minilibx_linux/man/man3/mlx_loop.3       |
-| mlx.3            | The provided code shows the documentation for the MiniLibX library, which is a simple X-Window interface library for creating graphical software without any X-Window programming knowledge. It provides functions for window creation, drawing, image manipulation, and basic events management. The code also provides information on linking the library and its return values.                                                                                                                                                                                      | minilibx_linux/man/man3/mlx.3            |
-
-</details>
-
-<details closed><summary>Mandatory</summary>
-
-| File         | Summary                                                                                                                                                                                                                                                                                                                                                                 | Module                      |
-|:-------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------|
-| .cub         | The code snippet contains a map layout and texture files. The map layout is represented by a grid of 1s and 0s. The "F" and "C" values define the floor and ceiling colors respectively. The texture files are referenced by their location and displayed as the north, south, east, and west walls of the map.                                                         | maps/mandatory/.cub         |
-| big.cub      | The provided code snippet is a configuration file for a 3D rendering engine. It initializes the game's textures, color, and map layout by specifying their file paths and parameters. The map is represented in a grid format with a border of 1s, where 0s indicate open space and 1s indicate walls.                                                                  | maps/mandatory/big.cub      |
-| maze.cub     | The code snippet specifies various textures and colors to be used in a game. The textures include red brick, German flag brick, stones, and wood. The colors for the floor and ceiling are also specified. Finally, a map is provided in the form of a binary matrix.                                                                                                   | maps/mandatory/maze.cub     |
-| minimaps.cub | The code snippet provides a map layout along with the corresponding textures for the walls in different directions (NO, SO, WE, EA), as well as the floor (F) and ceiling (C) colors. The map is represented using ASCII characters and includes the player's starting position marked by'E'. The xpm files for the textures are specified with their respective paths. | maps/mandatory/minimaps.cub |
-
-</details>
-
-<details closed><summary>Mem</summary>
-
-| File         | Summary                                                                                                                                                                                                                                                                                                                                                                                  | Module                 |
-|:-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------|
-| ft_memcmp.c  | This code snippet defines the "__memcmp" function which compares two memory buffers. It takes in two pointers to memory buffers and a size_t variable'n' which indicates the number of bytes to be compared. It then returns an integer indicating the difference between the two buffers, or 0 if they are identical.                                                                   | libft/mem/ft_memcmp.c  |
-| ft_bzero.c   | The provided code snippet defines a function called'__bzero' that takes a pointer and an integer count as arguments. The function sets the first'count' bytes of the memory area pointed to by'pt' to zero. It accomplishes this by iterating through each byte of the memory area and setting it to zero.                                                                               | libft/mem/ft_bzero.c   |
-| ft_memcpy.c  | The provided code snippet is a function called "__memcpy" that copies a specified number of bytes from a source buffer to a destination buffer. The function takes in three parameters: the destination buffer, the source buffer, and the number of bytes to copy. It returns a pointer to the destination buffer.                                                                      | libft/mem/ft_memcpy.c  |
-| ft_memchr.c  | The provided code is a function in the "libft.h" library that searches a memory block pointed to by a "buffer" parameter for the first occurrence of a character specified by "c" parameter. The search is performed for a number of bytes specified by "count" parameter. If the character is found, a pointer to its location is returned. If not, a NULL pointer is returned.         | libft/mem/ft_memchr.c  |
-| ft_memset.c  | The code provides a function called "__memset" that sets a specified number of bytes starting from a given memory address to a specified value. It does this by iterating through each byte and setting it to the specified value one at a time. The function takes in a void pointer, an integer value, and a size_t count as its arguments.                                            | libft/mem/ft_memset.c  |
-| ft_memmove.c | The code snippet defines the function __memmove that copies a specified number of bytes from one memory location to another. It handles overlap between the src and dst locations by reversing the order of copy if necessary. The function takes three arguments: a pointer to the destination, a pointer to the source, and the number of bytes to copy.                               | libft/mem/ft_memmove.c |
-| ft_calloc.c  | The provided code snippet defines a function called "__calloc" that mimics the behavior of the standard "calloc" function. The function takes two size parameters, allocates memory using the "malloc" function, initializes the memory to zero using the "__memset" function, and returns a pointer to the allocated memory. If the memory allocation fails, the function returns NULL. | libft/mem/ft_calloc.c  |
-
-</details>
-
-<details closed><summary>Minilibx_linux</summary>
-
-| File                         | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Module                                      |
-|:-----------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------|
-| mlx_flush_event.c            | The code provides a function called "mlx_flush_event" which uses the MiniLibX graphics library to clear all pending events in the X11 display. This is done by continuously looping through all the pending events and using the XNextEvent function to clear them. The function returns an integer value of 0 once all the events are cleared.                                                                                                                                                                   | minilibx_linux/mlx_flush_event.c            |
-| mlx_mouse_hook.c             | The code snippet provides a function called mlx_mouse_hook that takes in a window, a function pointer, and a parameter. This function allows for the execution of the provided function when a mouse button is pressed within the window. The hook function is stored in the window's hooks array, along with the corresponding mask and parameter.                                                                                                                                                               | minilibx_linux/mlx_mouse_hook.c             |
-| mlx.h                        | The provided code snippet is a header file for the MinilibX graphics library with core functionalities for creating and manipulating windows, images, and handling events such as mouse and keyboard interactions. It also includes functions for setting fonts, converting Xpm files to images, and destroying windows or images. Additionally, this header file provides a generic hook system for all events and MinilibX functions that can be hooked.                                                        | minilibx_linux/mlx.h                        |
-| mlx_key_hook.c               | The code snippet defines the mlx_key_hook function, which allows a user to set a function to be called when a key is released on a window. The function takes in a window and a function pointer as arguments and sets the appropriate hook in the window's hooks array. The function returns an integer value.                                                                                                                                                                                                   | minilibx_linux/mlx_key_hook.c               |
-| Makefile.mk                  | The provided code snippet is a Makefile for the MiniLibX library. It compiles the source files into object files, archives them into a static library called libmlx.a, and copies it to a platform-specific variant named libmlx_UNAME.a. The Makefile also has targets for cleaning and testing the library.                                                                                                                                                                                                     | minilibx_linux/Makefile.mk                  |
-| mlx_rgb.c                    | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                                                                     | minilibx_linux/mlx_rgb.c                    |
-|                              | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                                                                          |                                             |
-| mlx_init.c                   | The provided code is a part of the MiniLibX library and consists of two functions, mlx_init() and mlx_int_deal_shm(), which initialize a connection to the X server and deal with shared memory extensions. mlx_init() sets up various parameters such as screen, colormap, and visual, while mlx_int_deal_shm() handles XSharedMemory extension and returns the Pixmap format. Additionally, there is the mlx_int_rgb_conversion() function which is called by mlx_init() to set the red, green, and blue masks. | minilibx_linux/mlx_init.c                   |
-| mlx_int_do_nothing.c         | The provided code snippet is an empty function called mlx_int_do_nothing(). It takes in a void pointer as a parameter but does not execute any instructions within its body.                                                                                                                                                                                                                                                                                                                                      | minilibx_linux/mlx_int_do_nothing.c         |
-| mlx_expose_hook.c            | The provided code snippet is a C function for setting up an expose hook in the MiniLibX library. The function takes a window object, a function pointer, and a parameter as input and sets the appropriate values for the window object's hook, parameter, and mask properties to handle expose events.                                                                                                                                                                                                           | minilibx_linux/mlx_expose_hook.c            |
-| mlx_int_str_to_wordtab.c     | The provided code snippet contains three functions: mlx_int_str_str(), mlx_int_str_str_cote(), and mlx_int_str_to_wordtab(). The first two functions search for occurrences of a given string within another string and can account for quotation marks. The third function converts a string into an array of strings based on whitespace and tab delimiters. These functions are used in the MinilibX library for graphical user interface programming.                                                         | minilibx_linux/mlx_int_str_to_wordtab.c     |
-| mlx_int_set_win_event_mask.c | The provided code snippet sets the event mask for each window in a window list to ensure proper handling of events. It iterates through each window in the list, sets an event mask to 0, and then iterates through all the possible events to set the mask to the appropriate value for each event. Finally, it uses XChangeWindowAttributes to set the event mask of the window.                                                                                                                                | minilibx_linux/mlx_int_set_win_event_mask.c |
-| configure                    | This code is a shell script that helps configure and build the MinilibX library on UNIX systems. It searches for the appropriate X11 include path directory and generates two makefiles (one for the library and one for the tests) with the correct path. It also provides a cleanup command and help menu. The script uses logging functions to output information and errors.                                                                                                                                  | minilibx_linux/configure                    |
-| mlx_pixel_put.c              | The code snippet provides a function called'mlx_pixel_put' that takes in a window, position, and color value as parameters and draws a pixel on the specified window at the specified position with the given color. This function uses Xlib graphics functions to achieve this.                                                                                                                                                                                                                                  | minilibx_linux/mlx_pixel_put.c              |
-| mlx_int_anti_resize_win.c    | The code snippet is a C function used in MiniLibX library to prevent window resizing by setting the same value for maximum, minimum and current width and height. It does this by getting the normal hints of the window, updating the hints' size values and setting the new values.                                                                                                                                                                                                                             | minilibx_linux/mlx_int_anti_resize_win.c    |
-| Makefile                     | The code snippet provides a Makefile for MiniLibX, a graphics library in C. The Makefile includes functionalities for configuring, cleaning, and rebuilding the library. The'all' target runs the'do_configure' target, which executes the configure script. The'clean' target calls configure with the'clean' parameter, while the're' target runs'clean' then'all' targets in sequence.                                                                                                                         | minilibx_linux/Makefile                     |
-| mlx_set_font.c               | The provided code snippet is a C function that allows one to specify a font for the mlx_string_put function. It supports only fixed-width bitmap fonts and uses Xlib to load and set the font for a specified window. The function takes in a pointer to the X11 display, a window, and a string with the name of the font and updates the graphics context accordingly.                                                                                                                                          | minilibx_linux/mlx_set_font.c               |
-| mlx_loop.c                   | The code snippet is a part of MiniLibX, which is an open-source project for creating basic graphical user interfaces. The provided functions help to manage the event loop of the program, which is responsible for handling user inputs and updating the display accordingly. It includes functions for initializing the event loop, terminating it, and processing events such as client messages and window destruction.                                                                                       | minilibx_linux/mlx_loop.c                   |
-| mlx_screen_size.c            | The provided code retrieves the screen size of the root window using the X11 library. The function takes in a pointer to a structure holding the display and root window and two integer pointers to store the screen size values. The return value indicates success or failure in obtaining the screen size.                                                                                                                                                                                                    | minilibx_linux/mlx_screen_size.c            |
-| mlx_new_window.c             | The provided code snippet is for creating a new window using the MiniLibX library. It sets the window's attributes, creates a graphics context, adds the window to a list, sets event masks, and maps the window. The function also waits for the first exposure event.                                                                                                                                                                                                                                           | minilibx_linux/mlx_new_window.c             |
-| mlx_ext_randr.c              | The provided code snippet is a function called mlx_ext_fullscreen that takes in a window and determines the optimal screen resolution to fill the screen. If fullscreen is enabled, the function will set the window to the optimal resolution and grab the keyboard. If not, it will return the window to its previous resolution and release the keyboard.                                                                                                                                                      | minilibx_linux/mlx_ext_randr.c              |
-| mlx_put_image_to_window.c    | The provided code implements the function mlx_put_image_to_window, which is responsible for displaying an image on a given window. It takes as input parameters the window and image pointers, the coordinates of the top-left corner of the image, and the graphics context to be used. The function first sets the clipping region, then puts the image data onto the window using XShmPutImage or XPutImage depending on the image type, and finally copies the image area to the destination window.          | minilibx_linux/mlx_put_image_to_window.c    |
-| mlx_new_image.c              | The code provides functions for creating new images in MiniLibX, a simple graphics library used for creating graphical applications. Two functions,'mlx_int_new_xshm_image' and'mlx_int_new_image', create new images with and without shared memory, while'mlx_new_image' and'mlx_new_image2' provide a wrapper for these functions and also specify the image format as ZPixmap and XYPixmap respectively. The code handles X errors and allocates memory for the images.                                       | minilibx_linux/mlx_new_image.c              |
-| mlx_xpm.c                    | The provided code snippet contains functions for parsing XPM files and converting them to images. The functions extract the width, height, and color information from XPM files, create an image in memory, and set the appropriate color values for each pixel in the image. The resulting image can then be used for display or further image processing.                                                                                                                                                       | minilibx_linux/mlx_xpm.c                    |
-| mlx_destroy_display.c        | The provided code snippet defines a function "mlx_destroy_display" that takes an X11 display structure (t_xvar) as its input and closes/disconnects the display using the "XCloseDisplay" function. This function is used as part of the MLX library to interface with X11 displays and windows in graphics applications.                                                                                                                                                                                         | minilibx_linux/mlx_destroy_display.c        |
-| mlx_loop_hook.c              | The provided code snippet defines a function called "mlx_loop_hook" that takes in three parameters: a t_xvar struct pointer, a function pointer, and a void pointer. The function sets the loop hook and its parameters in the t_xvar struct, which is used in the main loop of the MiniLibX graphics library.                                                                                                                                                                                                    | minilibx_linux/mlx_loop_hook.c              |
-| mlx_hook.c                   | The provided code snippet is a part of the MiniLibX library and contains three functions. The mlx_hook() function is used to define a function to be called when a specific event occurs. mlx_do_key_autorepeatoff() and mlx_do_key_autorepeaton() functions turn off and on key auto-repeat respectively, while mlx_do_sync() is used to synchronize with the X server.                                                                                                                                          | minilibx_linux/mlx_hook.c                   |
-| mlx_lib_xpm.c                | The provided code snippet is a collection of functions used in the minilibX library for working with XPM images. It includes functions for creating XPM images from files or data, as well as functions for manipulating XImages. These functions are used to create and manage images in graphical user interfaces.                                                                                                                                                                                              | minilibx_linux/mlx_lib_xpm.c                |
-| mlx_int_wait_first_expose.c  | The provided code snippet is a function that waits for the first expose event to occur on a specified window in the X11 server. The function uses the XWindowEvent function to monitor the exposure mask of the window and puts back the event in the event queue after it occurs.                                                                                                                                                                                                                                | minilibx_linux/mlx_int_wait_first_expose.c  |
-| mlx_mouse.c                  | The provided code snippet includes four functions for handling mouse input in X11 window systems. The first function moves the mouse to a specified location within a window. The second function hides the mouse cursor within a window. The third function shows the mouse cursor within a window. The fourth function retrieves the current position of the mouse pointer within a specified window.                                                                                                           | minilibx_linux/mlx_mouse.c                  |
-| mlx_destroy_window.c         | The provided code snippet implements the function mlx_destroy_window, which allows for destruction of a window within the MinilibX graphics library. The function first removes the specified window from the linked list of windows and then frees its memory. Additionally, it frees the graphics context associated with the window and flushes the display if specified by a flag.                                                                                                                            | minilibx_linux/mlx_destroy_window.c         |
-| rgb2c.pl                     | The provided code converts color information from the XFree86 rgb.txt file into a C file with encoded color values. The output C file includes a struct array with color names and their associated RGB values.                                                                                                                                                                                                                                                                                                   | minilibx_linux/rgb2c.pl                     |
-| mlx_get_data_addr.c          | The code snippet provides a function called mlx_get_data_addr() that takes in a t_img structure and pointers to three integer variables. The function sets the values of these variables to the bits per pixel, size of each image line, and endianness of the t_img structure, respectively. The function returns the data pointer of the t_img structure.                                                                                                                                                       | minilibx_linux/mlx_get_data_addr.c          |
-| mlx_string_put.c             | The provided code snippet is a function called "mlx_string_put" that is used for drawing text on a MiniLibX window. It takes in parameters such as the window where the text will be drawn, the position of the text, the color of the text, and the actual text string. It uses XGCValues and XDrawString to draw the text and XFlush to display it on the screen.                                                                                                                                               | minilibx_linux/mlx_string_put.c             |
-| Makefile.gen                 | This code is for building the MiniLibX library. It compiles the source files and creates an object directory and object files. It also defines the compiler and flags used and includes a target to clean the directory. The library is created as a static library (.a) and a name is generated based on the operating system.                                                                                                                                                                                   | minilibx_linux/Makefile.gen                 |
-| mlx_get_color_value.c        | The provided code is part of the MiniLibX library, and it offers a function to retrieve the RGB color value of a pixel. The mlx_get_color_value() function takes two parameters: a pointer to the X11 display, and an integer representing the color value in hexadecimal. It then returns the pixel value in the display format. The mlx_int_get_good_color() function is a helper function that translates the input color value into the correct display pixel format.                                         | minilibx_linux/mlx_get_color_value.c        |
-| mlx_destroy_image.c          | The provided code snippet is a function for destroying a MiniLibX image. It takes in a pointer to a struct containing information about the image and the display. The function deallocates the memory associated with the image and frees the graphics context if it exists. Additionally, it detaches shared memory if the image type is shared memory and flushes the display.                                                                                                                                 | minilibx_linux/mlx_destroy_image.c          |
-| mlx_int.h                    | The provided code snippet is a header file for the MiniLibX graphics library, containing internal settings and data structures used by the library. It includes various standard libraries and X11 extensions and defines several constants and functions used for manipulating images, windows, and events in the graphical display. Some functions include converting RGB color values, dealing with shared memory, and setting event masks for windows.                                                        | minilibx_linux/mlx_int.h                    |
-| mlx_clear_window.c           | The code snippet provides a function called mlx_clear_window that clears the contents of a given window using the XClearWindow function. It also includes optional flushing of the display using XFlush if the do_flush flag is set in the provided xvar variable. The code relies on the mlx_int.h library.                                                                                                                                                                                                      | minilibx_linux/mlx_clear_window.c           |
-| mlx_int_param_event.c        | The provided code is a collection of functions that handle different X11 events, such as keypresses, mouse clicks, and motion events. These functions call hooks that have been set up to perform specific actions when these events occur. The mlx_int_param_event array maps the X11 event type to the corresponding function that should handle it.                                                                                                                                                            | minilibx_linux/mlx_int_param_event.c        |
-| mlx_int_get_visual.c         | The provided code snippet is a function used by the MinilibX library to get the visual information of the X Window System. It creates a private colormap for non-default visuals and sets the visual to true color. The function returns 0 if the visual is true color or-1 if there is an error.                                                                                                                                                                                                                 | minilibx_linux/mlx_int_get_visual.c         |
-| mlx_xpm.c.ok                 | The provided code snippet includes functions for reading and parsing XPM image files and creating images from them using the MinilibX library. It is capable of reading both XPM files and XPM data passed as a parameter. The code supports various color naming conventions and provides options for handling transparency and clipping.                                                                                                                                                                        | minilibx_linux/mlx_xpm.c.ok                 |
-
-</details>
-
-<details closed><summary>Minilibx_opengl</summary>
-
-| File                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Module                                   |
-|:-------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------|
-| mlx.h                    | This code snippet provides a C header file, `mlx.h`, for the MinilibX graphics library. It includes functions for initializing a new window, drawing pixels and images, handling events like mouse clicks and key presses, and destroying windows and images. The header file also includes platform-specific instructions for compiling on MacOSX and UNIX/Linux.                                                                                                                                                                                                                     | minilibx_opengl/mlx.h                    |
-| mlx_rgb.c                | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                                                                                                                                          | minilibx_opengl/mlx_rgb.c                |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                          |
-| mlx_int_str_to_wordtab.c | The provided code contains three functions: mlx_int_str_str, mlx_int_str_str_cote, and mlx_int_str_to_wordtab. The mlx_int_str_str functions search for a substring within a string, with or without quotes, and returns the position of the substring if found. The mlx_int_str_to_wordtab function splits a string into an array of words based on spaces and tabs. All three functions rely on standard C library functions such as strlen and malloc.                                                                                                                              | minilibx_opengl/mlx_int_str_to_wordtab.c |
-| mlx_opengl.m             | The provided code is a implementation of various functions for managing and rendering an OpenGL window using Apple's Cocoa framework. It includes functions for creating a new OpenGL window, swapping buffers, and setting the current OpenGL context for the window. The code also contains pre-defined attributes for the OpenGL pixel format such as depth size and double buffering.                                                                                                                                                                                              | minilibx_opengl/mlx_opengl.m             |
-| Makefile                 | The provided code snippet is a Makefile for compiling the libmlx.a library. The library consists of several source files, including mlx_shaders.c, mlx_new_window.m, mlx_init_loop.m, and others. The Makefile includes rules for compiling the object files and creating the library using the ar command. The all target builds the library, clean removes the object files and any files ending with “~”, and re cleans and rebuilds the library.                                                                                                                                   | minilibx_opengl/Makefile                 |
-| mlx_init_loop.m          | The code initializes an Objective-C application using Cocoa and OpenGL. It also loads a font and provides functions for putting pixels, synchronizing event handling, and setting a loop hook. The main loop is run using a Core Foundation run loop.                                                                                                                                                                                                                                                                                                                                  | minilibx_opengl/mlx_init_loop.m          |
-| font.c                   | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                                                                                                                                          | minilibx_opengl/font.c                   |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                          |
-| mlx_new_image.m          | This code snippet contains functions for creating and manipulating images in an OpenGL context using C and Objective-C. The mlx_new_image function creates a new image with a specified width and height and returns a pointer to it. The mlx_put_image_to_window function adds the image to a window and updates its texture, while mlx_get_data_addr and mlx_get_color_value return information about the image. Lastly, the mlx_destroy_image function removes an image from the context and frees up its memory.                                                                   | minilibx_opengl/mlx_new_image.m          |
-| mlx_new_window.m         | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                                                                                                                                          | minilibx_opengl/mlx_new_window.m         |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                          |
-| mlx_xpm.c                | The provided code snippet is a collection of functions written in C for parsing and rendering XPM image files. The code can read XPM image files from either a file or a character array, and it supports various formats of XPM files, including those with or without comments. The functions also support creating and manipulating an MXL image list, setting individual pixels within an image, and fetching the color of an individual pixel.                                                                                                                                    | minilibx_opengl/mlx_xpm.c                |
-| mlx_png.c                | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                                                                                                                                          | minilibx_opengl/mlx_png.c                |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |                                          |
-| mlx_opengl.h             | The provided code snippet includes three functions for creating and manipulating OpenGL windows using minilibx_macos. The `mlx_new_opengl_window` function creates a new window, while `mlx_opengl_swap_buffers` swaps the buffer of the double buffered window and `mlx_opengl_window_set_context` changes the active context in case multiple OpenGL windows are present. The functions also come with specific limitations and behaviors, including the inability to use `put_image`, `pixel_put`, and `string_put`, and `mlx_opengl_swap_buffers` automatically calls `glFlush()`. | minilibx_opengl/mlx_opengl.h             |
-| mlx_mouse.m              | This code provides functions for hiding and showing the mouse cursor, as well as moving the cursor and getting its current position within an OpenGL window created using the mlx library. It utilizes Cocoa and OpenGL libraries and functions to achieve these functionalities.                                                                                                                                                                                                                                                                                                      | minilibx_opengl/mlx_mouse.m              |
-| mlx_shaders.c            | The provided code defines three functions for creating and compiling vertex and fragment shaders in OpenGL. The "mlx_shaders" function calls these three functions to create shaders for pixels, images, and fonts. The code also includes a helper function for displaying any compilation errors that may occur during shader creation.                                                                                                                                                                                                                                              | minilibx_opengl/mlx_shaders.c            |
-| mlx_png.h                | The provided code snippet is a function called "mlx_png_file_to_image" that takes in three parameters: a void pointer to a graphics library, a string containing the name of a png file, and two integer pointers for width and height. The function returns a void pointer to an image object that can be further processed by other functions in the graphics library.                                                                                                                                                                                                               | minilibx_opengl/mlx_png.h                |
-| mlx_int.h                | The provided code snippet contains various structs and typedefs for graphics rendering with the MinilibX library. It also includes prototypes for functions related to handling images and XPM files, destroying images, and synchronization. Additionally, it defines some constants like maximum event and pixel values.                                                                                                                                                                                                                                                             | minilibx_opengl/mlx_int.h                |
-| mlx_new_window.h         | The code provides interfaces for NSOpenGLView and NSWindowEvent subclasses. NSWindowEvent provides functionality for handling window events while MlxWin handles OpenGL context creation and rendering. The classes also contain methods for setting event functions, enabling key repetition, and updating the context.                                                                                                                                                                                                                                                               | minilibx_opengl/mlx_new_window.h         |
-
-</details>
-
-<details closed><summary>Minilibx_opengl_20191021</summary>
-
-| File                     | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Module                                                            |
-|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
-| mlx.h                    | The provided code is the header file for the MinilibX library, with functions for initializing a window, handling events including mouse and key input as well as exposing hooks, drawing shapes and images on the window, and manipulating images. Additionally, it offers compatibility with both MacOSX and Unix/Linux systems and includes support for Xpm and PNG image formats.                                                                                 | minilibx_opengl/minilibx_opengl_20191021/mlx.h                    |
-| mlx_rgb.c                | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                         | minilibx_opengl/minilibx_opengl_20191021/mlx_rgb.c                |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                   |
-| mlx_int_str_to_wordtab.c | The provided code snippet contains three functions related to string manipulation. The mlx_int_str_str() function searches for a substring within a given string, while mlx_int_str_str_cote() performs the same search but takes into account quotation marks. The mlx_int_str_to_wordtab() function converts a string into an array of words separated by spaces or tabs. Overall, these functions aim to parse and manipulate strings in a useful way.             | minilibx_opengl/minilibx_opengl_20191021/mlx_int_str_to_wordtab.c |
-| mlx_opengl.m             | The code provides functions for creating a new OpenGL window using Cocoa and handling buffer swapping and context setting for that window. It uses various libraries including OpenGL and AppKit. The code also includes memory management and error checking for the window creation.                                                                                                                                                                                | minilibx_opengl/minilibx_opengl_20191021/mlx_opengl.m             |
-| Makefile                 | This code compiles a library called libmlx that includes various functions for creating and manipulating graphical windows and images using C and Objective-C. The library includes support for PNG images, XPM files, mouse input, and shader programs. The Makefile also defines rules for cleaning and rebuilding the library.                                                                                                                                     | minilibx_opengl/minilibx_opengl_20191021/Makefile                 |
-| mlx_init_loop.m          | The provided code is a component of the MLX graphics library and contains functions for initializing the library, drawing pixels on a window, running the main loop, and handling events. It also includes a function for setting a loop hook that gets called in each iteration of the main loop. The code leverages macOS-specific frameworks and APIs such as AppKit and OpenGL.                                                                                   | minilibx_opengl/minilibx_opengl_20191021/mlx_init_loop.m          |
-| font.c                   | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                         | minilibx_opengl/minilibx_opengl_20191021/font.c                   |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                   |
-| mlx_new_image.m          | The provided code snippet implements several functions related to image management in an OpenGL-based graphics environment. Specifically, it defines functions for creating and manipulating image objects, putting them onto windows, retrieving their data, and destroying them. Additionally, it includes functions for rendering text strings with a built-in font using OpenGL primitives.                                                                       | minilibx_opengl/minilibx_opengl_20191021/mlx_new_image.m          |
-| mlx_new_window.m         | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                         | minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.m         |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                   |
-| mlx_xpm.c                | The code snippet provides functions to parse and load XPM (X PixMap) files and data to create images in the MLX (MiniLibX) library for graphics programming. The functions extract information such as width, height, number of colors and color codes from the XPM file/data, and create an image in the MLX library using this information and the corresponding pixel data. The code also includes some helper functions to handle comments and color conversions. | minilibx_opengl/minilibx_opengl_20191021/mlx_xpm.c                |
-| mlx_png.c                | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                                                                                                         | minilibx_opengl/minilibx_opengl_20191021/mlx_png.c                |
-|                          | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                                                                                                              |                                                                   |
-| mlx_opengl.h             | This code snippet provides three functions that are designed specifically for the minilibx_macos library and provide functionality for creating an OpenGL window, swapping buffers in a double-buffered window, and changing the active context in the case of multiple OpenGL windows. These functions are not compatible with put_image, pixel_put, or string_put.                                                                                                  | minilibx_opengl/minilibx_opengl_20191021/mlx_opengl.h             |
-| mlx_mouse.m              | The provided code snippet includes functions for controlling the mouse cursor in a window created using the mlx library. These functions enable hiding and showing the cursor, moving the cursor within the window, and retrieving the current cursor position within the window. The implementation uses the Cocoa framework and OpenGL to interact with the mouse and render graphics.                                                                              | minilibx_opengl/minilibx_opengl_20191021/mlx_mouse.m              |
-| mlx_shaders.c            | The provided code snippet defines and compiles shaders for pixel, image, and font rendering using GLSL. It also includes helper functions for displaying any compilation errors that may occur. The final function, `mlx_shaders`, invokes the three shader functions and returns a single error code.                                                                                                                                                                | minilibx_opengl/minilibx_opengl_20191021/mlx_shaders.c            |
-| mlx_png.h                | The provided code snippet is a function in the mlx library that takes in a PNG file and converts it into an image. The function returns a void pointer to the image and provides the width and height of the image as output parameters.                                                                                                                                                                                                                              | minilibx_opengl/minilibx_opengl_20191021/mlx_png.h                |
-| mlx_int.h                | The provided code snippet includes various structs and functions that are part of the minilibx library, which is a basic graphics library used for creating basic window displays and simple graphics in C. The functions included are related to managing image and window lists, creating and destroying images, converting XPM data to images, and various other utility functions. The code also includes shader functions for OpenGL.                            | minilibx_opengl/minilibx_opengl_20191021/mlx_int.h                |
-| mlx_new_window.h         | The provided code snippet defines the core functionalities for a graphical user interface (GUI) based on Cocoa and OpenGL. It includes classes for creating a window, managing events and handling OpenGL rendering. The code also supports pixel manipulation, drawing images and text, and managing the OpenGL context.                                                                                                                                             | minilibx_opengl/minilibx_opengl_20191021/mlx_new_window.h         |
-
-</details>
-
-<details closed><summary>Parsing_bonus</summary>
-
-| File            | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Module                             |
-|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------|
-| parsing.c       | The provided code snippet includes functions for parsing input data, checking maps and colors, and loading player information. The main function, parsing(), retrieves input data from a file, stores it in a linked list, and passes it to other functions for further processing. The code uses the sget_next_line() function to read line by line from the file.                                                                                                                                                                                                     | srcs/parsing_bonus/parsing.c       |
-| loading_maps.c  | The provided code snippet contains functions that load and check the game map, initialize the sprite table, and get the position of the enemy on the map. The "load_maps" function adjusts the input, allocates memory for maps and door_map, and populates them with content from input. The "check_maps" function checks the validity of the map, counts the number of sprites, and allocates memory for the sprite table. Finally, the "get_enemy_position" function retrieves the position of the enemy on the map and initializes the sprite table.                | srcs/parsing_bonus/loading_maps.c  |
-| exit.c          | The provided code snippet contains functions that handle different types of errors and exit the program accordingly. These functions are __print_error(), __exit_error(), __exit_error_get_input(), and destroy_cub_data(). Some of these functions also free memory allocated by the program before exiting. The code also includes necessary header files.                                                                                                                                                                                                            | srcs/parsing_bonus/exit.c          |
-| maps_utils.c    | The provided code snippet contains four functions used in the implementation of a game called "cub3d".                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | srcs/parsing_bonus/maps_utils.c    |
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                    |
-|                 | The "check_wall" function checks for the presence of a wall or space near a location in a given map.                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                    |
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                    |
-|                 | The "check_player" function checks for the presence of a player and also a wall or space near the player's location in a given map.                                                                                                                                                                                                                                                                                                                                                                                                                                     |                                    |
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                    |
-|                 | The "maps_size" function returns the number of lines in a given map.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |                                    |
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                    |
-|                 | Finally, the "adjust_input" function removes any unwanted newlines at the start of a given input.                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                                    |
-| debug_parsing.c | This code snippet includes various functions for debugging purposes in the game "cub3d". The functions include clearing the screen, printing debug information such as player position and direction, printing game data such as colors and textures, and printing the game map with error highlighting. The code makes use of external libraries such as "libft".                                                                                                                                                                                                      | srcs/parsing_bonus/debug_parsing.c |
-| check_color.c   | The code snippet defines functions to load and check RGB color values from a configuration file for a 3D game. It checks that the color values are in the correct format and number, then converts them into integer values. The loaded colors are used to set the game's ceiling and floor color.                                                                                                                                                                                                                                                                      | srcs/parsing_bonus/check_color.c   |
-| info_utils.c    | The provided code includes various functions for loading and validating information about the game, such as textures, colors, and player orientation. The "load_info" function determines the type of information based on the input and stores it in the appropriate variables. The "missing_info_cub" function checks if any required information is missing. Lastly, the "load_player_info" function sets the initial player direction and field of view.                                                                                                            | srcs/parsing_bonus/info_utils.c    |
-| load_info.c     | The provided code snippet is a function named "get_info" that takes in two parameters, a linked list "input" and a struct "cub". It loops through the linked list while checking if important information in the "cub" struct is still missing. It uses a helper function "load_info" to load the information from the linked list into the "cub" struct, and then moves to the next node in the linked list until all important information has been obtained. Finally, it uses another helper function "load_maps" to load the map information into the "cub" struct. | srcs/parsing_bonus/load_info.c     |
-
-</details>
-
-<details closed><summary>Parsing_mandatory</summary>
-
-| File            | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Module                                 |
-|:----------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------|
-| parsing.c       | The code snippet provides functionalities for parsing input files in a game engine written in C. It reads an input file, handles errors, checks map validity, and loads player information. The code uses helper functions from "cub3d.h" and "libft.h" libraries.                                                                                                                                                                                                                                                                                                                                           | srcs/parsing_mandatory/parsing.c       |
-| loading_maps.c  | The provided code snippet contains two functions that handle loading and checking of maps in the game. The `load_maps` function takes a linked list of input values, adjusts it, and stores the maps in a two-dimensional array. The `check_maps` function checks the validity of the map by ensuring that all the characters are correct and that a player exists.                                                                                                                                                                                                                                          | srcs/parsing_mandatory/loading_maps.c  |
-| exit.c          | The code snippet contains functions related to error handling and program termination in a game called Cub3D. The functions print error messages to the standard error output, destroy allocated memory and exit the program with error status codes. The functions are called depending on the type of error encountered during the program's execution.                                                                                                                                                                                                                                                    | srcs/parsing_mandatory/exit.c          |
-| maps_utils.c    | The provided code snippet contains functions for checking the validity of a map in the game Cub3D. The check_wall function checks if a wall is surrounded by other walls. The check_player function checks if the player is properly placed on the map. The maps_size function calculates the size of the map, and the adjust_input function adjusts the input to ignore any initial newline characters.                                                                                                                                                                                                     | srcs/parsing_mandatory/maps_utils.c    |
-| debug_parsing.c | The provided code snippet is a debugging tool for a game called "cub3d." It includes functions to clear the screen, print debug information about the player's attributes and the game's settings, and print maps with special error formatting to help the developer identify issues. The code uses standard input and output libraries and includes custom color constants.                                                                                                                                                                                                                                | srcs/parsing_mandatory/debug_parsing.c |
-| check_color.c   | The provided code snippet contains functions to validate and load color values for the ceiling and floor of a 3D rendering. The count_char_in_str() function counts the number of occurrences of a given character in a string, and the create_color() function generates a single integer value from a given color structure. The load_color() function verifies and parses a color string into its component values, storing them in a color structure. The check_color() function calls the load_color() function for the ceiling and floor values, and sets their respective color values for rendering. | srcs/parsing_mandatory/check_color.c   |
-| info_utils.c    | The provided code snippet includes various helper functions used to load and validate game configuration data in a 3D game. The get_pos function assigns an integer to identify the nature of certain text data. The load_texture_path function helps load the necessary texture paths to create the game world. The load_info function validates and loads game configuration data. The load_player_info function ultimately sets the player's position and orientation within the game world.                                                                                                              | srcs/parsing_mandatory/info_utils.c    |
-| load_info.c     | The provided code defines a function that receives a linked list of input and a pointer to a struct. The function reads the input and assigns values to the fields of the struct until all necessary information is captured. The function then calls another function to load the maps from the remaining input. If any errors occur in the process, the program is exited and the error message is displayed.                                                                                                                                                                                              | srcs/parsing_mandatory/load_info.c     |
-
-</details>
-
-<details closed><summary>Print</summary>
-
-| File            | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                | Module                      |
-|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------|
-| ft_putstr_fd.c  | The code snippet is a function that writes a given string "s" to a specified file descriptor "fd", using the "write" system call and the "__strlen" function from a custom library "libft.h". It is designed to be a helper function for other programs that need to send output to a file or the terminal.                                                                                                                            | libft/print/ft_putstr_fd.c  |
-| ft_putnbr_fd.c  | The provided code defines a function called "__putnbr_fd" which takes an integer value and a file descriptor as input parameters. It prints the integer value to the specified file descriptor in a character string format using recursion and also handles negative numbers. This code is part of a larger library called "libft.h".                                                                                                 | libft/print/ft_putnbr_fd.c  |
-| ft_putendl_fd.c | The provided code is a function in the "libft.h" library that writes a string to a specified file descriptor followed by a newline character. It uses the "__putchar_fd" function to write each character of the string to the descriptor and then adds a newline character at the end by calling "__putchar_fd" again with'\n' as the argument. The function also checks if the input string is null before execution.                | libft/print/ft_putendl_fd.c |
-| ft_putchar_fd.c | The code snippet defines a function named __putchar_fd that takes a character and file descriptor as input, and writes that character to the specified file descriptor using the write system call. The function first checks if the file descriptor is negative, and if so, returns without performing any action. The code is included in a C library called libft that provides various functions for string and memory operations. | libft/print/ft_putchar_fd.c |
-
-</details>
-
-<details closed><summary>Root</summary>
-
-| File               | Summary                                                                                                                                                                                                                                                                                                                                                     | Module             |
-|:-------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------|
-| Makefile           | The code snippet defines a Makefile that compiles a program called cub3D. The Makefile includes options for bonus, debug, and debug with a hidden mouse cursor. It also specifies source files, object files, header files, and libraries required for the compilation. The Makefile can clean and remove all generated files by running'clean' or'fclean'. | Makefile           |
-| test_wrong_maps.sh | This is a bash script that runs a test suite on a file named "cub3D". It takes in a directory as an argument and tests all files in that directory and its subdirectories. It also uses valgrind to check for memory leaks. The script then prints out any errors and signals encountered during testing. Finally, it displays the end of the test message. | test_wrong_maps.sh |
-
-</details>
-
-<details closed><summary>Srcs</summary>
-
-| File               | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Module                  |
-|:-------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------|
-| hook_door.c        | The code snippet contains two functions that are used to handle opening and closing of doors in the game. The `__switch_door()` function checks the player's position and updates the `door_map` array accordingly, which determines if a door can be opened or not. The `__update_door_value()` function is used to update the `door_map` array and gradually opens or closes doors.                                                                                                                                                                  | srcs/hook_door.c        |
-| hook_direction_2.c | The provided code snippet defines two functions "__hook_rotate_left" and "__hook_rotate_right", which are called when the respective keys are pressed. These functions rotate the view angle of the player by ROTATE_ANGLE in the left or right direction respectively, update the slope of the player, and print a debug message if DEBUG is set to 2. The code assumes the existence of other functions and headers, such as "rotate", "update_slope", "cub3d.h", "mlx.h" and "keycodes.h".                                                          | srcs/hook_direction_2.c |
-| game.c             | The provided code snippet defines functions used in rendering the game in the Cub3D project. The `render_frame` function updates the screen based on player actions and renders the background, sprites, gun, and target. The `do_actions` function executes actions based on user input, and `load_background` sets the color of the top and bottom half of the screen. The `print_render_frame_debug_info` function prints debug information.                                                                                                        | srcs/game.c             |
-| handle_mouse.c     | The code snippet contains functions that handle mouse events and update player direction and field of view accordingly. The update_slope() function calculates the player's slope based on their direction. The rotate() function adjusts the player's direction and plane based on the given angle. The __mouse_hook() function modifies the field of view and gun animation based on the mouse button pressed. The __mouse_move() function updates the player's direction and slope based on mouse movement.                                         | srcs/handle_mouse.c     |
-| sight_vector.c     | The provided code snippet is a C function that calculates and prints the sight vector of a player in a 2D game world. It updates the attributes of a hit vector based on the player's direction, and uses a loop to update the hit vector coordinates until it hits a wall. The output is a 2D array that represents the player's field of vision, with different colors indicating the distance to obstacles.                                                                                                                                         | srcs/sight_vector.c     |
-| sprite.c           | The provided code snippet includes functions for handling sprite animation and drawing in a game. The "calculate_sprite_info" function calculates information about each sprite's position and size on the screen. The "handle_sprite" function draws and updates animations for each sprite, including the ability to kill enemies with a gun.                                                                                                                                                                                                        | srcs/sprite.c           |
-| create_img.c       | The code defines two functions that create images using the mlx library in the context of a Cub3D game. The `create_image` function takes in a t_cub struct, a t_img struct and the desired width and height of the image and returns 1 if the image is successfully created. The `create_cub_images` function calls `create_image` twice to create both a "screen" and "background" image for the game and returns 1 if both images are successfully created.                                                                                         | srcs/create_img.c       |
-| load_textures.c    | The provided code snippet contains functions for loading various textures, such as textures for walls and sprites, into a game engine. It uses the mlx_xpm_file_to_image function from the MLX library to load the textures from.xpm files and sets their corresponding properties. The load_images function calls these other functions to load all the required textures for the game. The code includes additional functionality for loading bonus textures, such as textures for doors and guns, and setting default properties for sprite images. | srcs/load_textures.c    |
-| dda.c              | The provided code snippet contains the implementation of a DDA algorithm used to render a raycasting engine in a 3D game. The code calculates the hit point of a ray with a wall or door in a 2D map and determines the orientation of the wall or door hit to display the corresponding texture. Additionally, the code takes into account the state of door objects in the map by checking the door map array to decide whether the door is open or closed.                                                                                          | srcs/dda.c              |
-| init.c             | The provided code snippet contains three functions: set_ressources_file_names, set_hook_fx, and init_game.                                                                                                                                                                                                                                                                                                                                                                                                                                             | srcs/init.c             |
-|                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                         |
-|                    | The set_ressources_file_names function sets file paths for various image files used in the game.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |                         |
-|                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                         |
-|                    | The set_hook_fx function sets callback functions for various game actions (e.g. moving forward, rotating left, etc.).                                                                                                                                                                                                                                                                                                                                                                                                                                  |                         |
-|                    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |                         |
-|                    | Lastly, the init_game function initializes the game, creating a window and loading images. It also sets up variables for the minimap.                                                                                                                                                                                                                                                                                                                                                                                                                  |                         |
-| gun.c              | The provided code snippet defines functions for drawing a gun in the game and colorizing the screen based on certain events. The "draw_gun" function uses images of a gun to draw it on the screen and update it as it is animated. The "colorize_screen" function changes the color of the screen based on whether the player is hit by a guard or has fired a weapon. Overall, these functions enhance the visual elements of the game.                                                                                                              | srcs/gun.c              |
-| minimaps.c         | The provided code snippet implements the core functionalities of a minimap for a 3D game built with the C programming language and the mlx library. It includes functions to draw the minimap, update it with the player's position and the surrounding environment, and signify the player's location through a colored square. Additionally, the code leverages the math library for distance and circle calculations.                                                                                                                               | srcs/minimaps.c         |
-| hook_move.c        | The code snippet provides three functions that allow a player to move within a 2D map by updating their X and Y positions based on user input. The try_move_x_axis and try_move_y_axis functions check whether the move is valid by verifying the player's position in the map and the door's value in the door_map. Finally, the __move function calculates the player's new position and checks whether the move is valid by calling the aforementioned functions.                                                                                   | srcs/hook_move.c        |
-| draw_sprite.c      | The provided code snippet defines the functionalities for drawing a sprite on the screen in a game engine. It includes functions for updating and animating the sprite, determining the pixels to draw on the screen according to the sprite's position and size, and coloring the screen pixels using the sprite's image data.                                                                                                                                                                                                                        | srcs/draw_sprite.c      |
-| quit.c             | The code provides several functions for destroying various components of the game such as images, sprites, and the window display using the mlx library. The "__quit" function uses these functions in a specific order to destroy all the game data and exit the program. The code also includes conditional compilation statements for different operating systems.                                                                                                                                                                                  | srcs/quit.c             |
-| main.c             | The code snippet defines the main function of a 3D game engine. It includes parsing the game map, initializing the game, setting up and handling various hooks (such as mouse, key, and rendering), and running the game loop until the user quits. The code also includes debugging statements and conditional compilation directives to enable/disable specific functionalities.                                                                                                                                                                     | srcs/main.c             |
-| time.c             | The code provides two implementations of a function called "__get_time" that returns the current time in milliseconds. One implementation uses the system's "gettimeofday" function, while the other implementation increments the time by one second every time it's called. The choice between the two implementations can be made by defining or undefining the preprocessor macro USE_TIME.                                                                                                                                                        | srcs/time.c             |
-| sprite_utils.c     | The code snippet defines several utility functions related to sprite rendering, such as printing sprite information, computing vector determinants and dot products, updating sprite animation frames, and sorting the order in which sprites are rendered. These functions are used in the main rendering loop of a game engine implemented in "cub3d.h".                                                                                                                                                                                             | srcs/sprite_utils.c     |
-| mlx_img_utils.c    | The code snippet provides functions for getting and setting individual pixels of an image and for getting the color at a particular position of an image. These functions are crucial in computer graphics and are used in the Cub3D game.                                                                                                                                                                                                                                                                                                             | srcs/mlx_img_utils.c    |
-| hook_key_action.c  | The provided code snippet contains two functions: __key_release() and __key_press(). They detect keyboard events and update a bitflag accordingly, which is stored in the t_cub struct. This bitflag represents the actions that the player has taken, such as moving forward or turning left. The code also includes constants for various keycodes and the necessary libraries.                                                                                                                                                                      | srcs/hook_key_action.c  |
-| raycasting.c       | The code snippet is a raycasting algorithm used to render a 3D world in a 2D game. It calculates the distance of walls from the player's position and renders them on the screen. The algorithm uses DDA (Digital Differential Analysis) to create the illusion of a 3D world and textures are added to the walls using basic image processing techniques.                                                                                                                                                                                             | srcs/raycasting.c       |
-| raycasting_utils.c | The provided code snippet contains functions related to raycasting in a 3D game environment. The functions calculate the direction of rays from the player's perspective, update the cosine of the angle between the direction and the camera plane, and print information about the rays. The code uses various mathematical calculations including dot products, slope, and distance formula to calculate the ray features.                                                                                                                          | srcs/raycasting_utils.c |
-| mouse_utils.c      | The provided code snippet contains two functions that handle mouse functionality in a game. The "center_mouse" function centers the mouse in the game window while the "wrapper_mouse_get_pos" function retrieves the current position of the mouse in the game window. The code also contains preprocessor directives that differentiate functionality based on the operating system used.                                                                                                                                                            | srcs/mouse_utils.c      |
-| hook_direction.c   | The code snippet defines four functions that handle keyboard input to control the movement direction of the player in a 3D game. These functions update the player's position based on the key pressed and output a debug message if enabled. The functions are called using event hooks from the MLX library.                                                                                                                                                                                                                                         | srcs/hook_direction.c   |
-| colors.c           | The provided code snippet defines a function "dim_color" that takes in a pointer to an integer representing a color, right-shifts it by one bit, replaces the least significant bit with 0, and returns 1. The purpose of this function is to darken a given color by reducing its intensity.                                                                                                                                                                                                                                                          | srcs/colors.c           |
-
-</details>
-
-<details closed><summary>Stdlib</summary>
-
-| File         | Summary                                                                                                                                                                                                                                                                                                                                                                                                                  | Module                    |
-|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------|
-| ft_atol.c    | The provided code snippet is a function in the C programming language that converts a string to a long integer. It checks for whitespace and determines whether the number is negative or positive. It also checks for overflow errors and returns 0 or 1 accordingly.                                                                                                                                                   | libft/stdlib/ft_atol.c    |
-| ft_atobyte.c | The code snippet provides a function that converts a string representation of a number into an integer. The function checks for overflow and invalid characters, and returns 0 if either are detected. If the string can be successfully converted to an integer, it is stored in the given pointer and the function returns 1.                                                                                          | libft/stdlib/ft_atobyte.c |
-| ft_atoi.c    | The code snippet is a part of the Libft library and defines a function named __atoi which takes in a character pointer as an argument and converts it to an integer. The function skips any white spaces at the beginning and checks for a positive or negative sign before performing the conversion. The result is then multiplied by the sign and returned as an integer.                                             | libft/stdlib/ft_atoi.c    |
-| ft_itoa.c    | This code provides an implementation of the `__itoa()` function which converts an integer to a string and returns a pointer to that string. It uses two helper functions, `__intsize()` to determine the size of the resulting string and whether the integer is negative, and `__itoa_recu()` to recursively convert the integer to the string representation. The resulting string is returned with a null terminator. | libft/stdlib/ft_itoa.c    |
-
-</details>
-
-<details closed><summary>String</summary>
-
-| File              | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Module                         |
-|:------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| ft_strnstr.c      | The provided code snippet includes three functions that locate a substring within a given string. The "__strnstr" function finds the substring up to a certain length. The "__strstr" function locates the substring in its entirety. The "__strrstr" function locates the rightmost occurrence of the substring within the string. All three functions use "__strncmp" and "__strlen" to perform their tasks.                                                                  | libft/string/ft_strnstr.c      |
-| ft_isdigit.c      | The provided code snippet contains a function named "__isdigit" that takes an integer argument and returns an integer value of either 1 or 0. The function checks whether the input argument is a digit between 0 and 9 inclusively, and returns 1 if it is, and 0 if it is not. This function is part of the "libft" library.                                                                                                                                                  | libft/string/ft_isdigit.c      |
-| ft_strlcpy.c      | The provided code snippet defines two functions,'__strlcpy' and'__strncpy', which are part of the'libft' library.'__strlcpy' copies a given string while respecting the specified size, and returns the length of the source string.'__strncpy' also copies a given string but allows for a count parameter to specify the maximum number of characters to copy.                                                                                                                | libft/string/ft_strlcpy.c      |
-| ft_strlen.c       | The code snippet provides two functions'__strlen' and'__strnlen', which take in a string and return its length.'__strlen' returns the length of the entire string, while'__strnlen' returns the length of the string up to a maximum of n characters. These functions are implemented using a while loop to iterate through the string and count the number of characters. The'libft.h' header file is included, which likely contains other utility functions for the program. | libft/string/ft_strlen.c       |
-| ft_strchr.c       | The provided code snippet defines the function "__strchr", which takes a source string and a character to search for as input. It then searches for the first occurrence of the character in the source string and returns a pointer to the location of that character in the string. If the character is not found, the function returns NULL. The function is defined in the "libft.h" library.                                                                               | libft/string/ft_strchr.c       |
-| ft_striteri.c     | The provided code is a function that iterates over a string and applies a given function to each element of the string along with its index. The function takes two arguments: a string's' and a function pointer'f' that takes two arguments: an unsigned int and a character pointer. If the string is NULL, the function does nothing.                                                                                                                                       | libft/string/ft_striteri.c     |
-| ft_strjoin.c      | The code provides functions to join two or three strings together and return the resulting string. It includes __strcpy() and __strcat() helper functions to copy and concatenate strings respectively, and __calloc() to allocate memory for the resulting string. There are also error handling statements to return NULL if any of the input strings are NULL or if memory allocation fails.                                                                                 | libft/string/ft_strjoin.c      |
-| ft_isascii.c      | This code is a function that checks whether a given character is a valid ASCII character or not. If the character is between 0 and 127, the function returns 1, otherwise, it returns 0. It is a part of the "libft" library.                                                                                                                                                                                                                                                   | libft/string/ft_isascii.c      |
-| ft_isprint.c      | The code snippet provides an implementation of the __isprint function from the libft library. The function checks if the given character is printable or not and returns a value of 1 if it is, 0 otherwise. The character is considered printable if it has an ASCII value between 32 and 126.                                                                                                                                                                                 | libft/string/ft_isprint.c      |
-| ft_toupper.c      | This code snippet is a function that takes a character as input and converts it to its uppercase equivalent. If the input character is already uppercase, the function returns the same character. It is part of a larger library called "libft.h".                                                                                                                                                                                                                             | libft/string/ft_toupper.c      |
-| ft_size_split.c   | The provided code snippet contains a function named "size_split", which takes in an array of strings as an argument and returns the size of that array. If the input argument is NULL, the function returns-1. This code is part of a larger library named "libft.h".                                                                                                                                                                                                           | libft/string/ft_size_split.c   |
-| ft_split.c        | The provided code snippet contains a function named'__split' that splits a string into an array of strings based on a given delimiter. The function uses helper functions such as'__count_word' and'__getnextstr' to count the number of words in the string and extract each word respectively. The result is returned as a dynamically allocated array of strings.                                                                                                            | libft/string/ft_split.c        |
-| ft_strrchr.c      | The provided code snippet is a function that searches for the last occurrence of a specified character in a given string and returns a pointer to the location of that character. The function takes in two parameters, a pointer to the string to be searched and an integer representing the character to be found. The function iterates through the string from the end and returns a pointer to the location of the character when found, otherwise, it returns NULL.      | libft/string/ft_strrchr.c      |
-| ft_isalpha.c      | The code snippet is a function that checks whether a given character is an alphabetic character. It does this by checking if the character is within the ASCII range for lowercase and uppercase letters. If the character is an alphabetic character, it returns a value of 1, otherwise, it returns a value of 0.                                                                                                                                                             | libft/string/ft_isalpha.c      |
-| ft_substr.c       | The provided code snippet defines a function named "__substr" that takes in a string, a starting index, and a length. It returns a substring of the given length starting from the given index of the input string. If the input string is null or if memory allocation fails, it returns null. The function is implemented using library functions from "libft.h".                                                                                                             | libft/string/ft_substr.c       |
-| ft_strncmp.c      | The provided code is a function named "__strncmp" which compares two strings up to a certain size. The function takes in three arguments: two const pointers to the strings being compared, and a size_t variable that indicates the maximum number of characters to compare. The function returns an integer value that represents the difference between the compared strings up to the given size.                                                                           | libft/string/ft_strncmp.c      |
-| ft_free_split.c   | The provided code snippet defines a function called free_split that takes in an array of strings and frees the memory allocated to each string in the array before finally freeing the memory allocated to the array itself. This is done to prevent memory leaks when working with dynamically allocated memory in C.                                                                                                                                                          | libft/string/ft_free_split.c   |
-| ft_splitcharset.c | The provided code snippet is a C function that splits a string into an array of strings using a given set of delimiter characters. It first counts the number of strings to be created, then allocates memory for the result array. It then iterates through the original string, extracting and copying each substring until it has created all the required strings. Finally, the function returns a null-terminated array of strings.                                        | libft/string/ft_splitcharset.c |
-| ft_strmapi.c      | The provided code snippet is a function named "__strmapi" that takes a string and a function as input and returns a new string after applying the function to each character of the original string. The function creates a new string, applies the function to each character, and returns the new string. The function checks for null values and allocates sufficient memory for the new string.                                                                             | libft/string/ft_strmapi.c      |
-| ft_strtrim.c      | The provided code snippet contains a function called "__strtrim" that takes two arguments, a string and a set of characters. The function trims the string by removing any characters that are in the set at the beginning and end of the string. It then returns the trimmed string as a new string. The function uses helper functions to check if a character is in the set and to allocate memory for the new string.                                                       | libft/string/ft_strtrim.c      |
-| ft_strlcat.c      | The code defines a function called __strlcat that takes a destination string, a source string, and a size_t value as input parameters. The function appends the source string to the destination string and returns the length of the concatenated string. The function also checks for buffer overflow and ensures that the concatenated string is null-terminated.                                                                                                            | libft/string/ft_strlcat.c      |
-| ft_strdup.c       | The code provides two functions: `__strdup` and `__strndup`, both of which duplicate a given string. `__strdup` duplicates the entire string while `__strndup` does so up to a given length. Both functions allocate memory for the new strings using `malloc` and return a pointer to the duplicated string.                                                                                                                                                                   | libft/string/ft_strdup.c       |
-| ft_isalnum.c      | The code snippet is a function named "__isalnum" that checks whether a given character is alpha-numeric or not. The function calls two other functions "__isalpha" and "__isdigit" to check if the character is alphabetic or a digit respectively, and returns 1 if the character is either one of them, or 0 otherwise.                                                                                                                                                       | libft/string/ft_isalnum.c      |
-| ft_tolower.c      | The provided code contains a function "__tolower" that takes an integer as input and converts it to its lowercase equivalent. The function checks if the input is within the range of uppercase ASCII values and adds 32 to get the lowercase equivalent. Otherwise, it returns the input as is. The code includes the necessary header file "libft.h".                                                                                                                         | libft/string/ft_tolower.c      |
-| ft_strcmp.c       | The provided code snippet contains two functions for comparing strings: "__strcmp" and "__strcmp_ignore_case". The "__strcmp" function compares two strings character by character, returning the difference between the first pair that differs. The "__strcmp_ignore_case" function does the same, but ignores differences in case by calling an internal function "__tolower".                                                                                               | libft/string/ft_strcmp.c       |
-
-</details>
-
-<details closed><summary>Test</summary>
-
-| File         | Summary                                                                                                                                                                                                                                                                                                                                                                  | Module                           |
-|:-------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------|
-| Makefile.mk  | This code snippet is a Makefile written in GNU make language. It defines variables for compiler flags, library flags, source files, object files, and targets. The Makefile also includes conditional statements based on the operating system (e.g., Mac, FreeBSD, Linux, and others) and offers macros for cleaning the directory and compiling the program.           | minilibx_linux/test/Makefile.mk  |
-| open.xpm     | Prompt exceeds max token limit: 4548                                                                                                                                                                                                                                                                                                                                     | minilibx_linux/test/open.xpm     |
-| main.c       | The provided code snippet demonstrates the usage of the MinilibX library to create and manipulate graphical windows and images. The snippet includes functions for color mapping, exposing windows, and responding to user input such as mouse clicks and key presses. Overall, the code showcases basic functionality for graphical programming using MinilibX.         | minilibx_linux/test/main.c       |
-| run_tests.sh | This code snippet is a shell script that simulates user inputs for the CI. It uses logging functions to output status and error messages. It also includes a function that compiles code and runs a program in the background, and uses the xdotool utility to simulate mouse and keyboard inputs. The script sets up signal handlers to handle exit and SIGINT signals. | minilibx_linux/test/run_tests.sh |
-| Makefile.gen | This code snippet provides a Makefile to compile and link a C program called'mlx-test'. It includes flags for optimization, debugging and linking to libraries required by X11 graphics. The Makefile also includes a'show' target to display the compiler, flags, source and object files, and platform information.                                                    | minilibx_linux/test/Makefile.gen |
-| open24.xpm   | The provided code is a static representation of a graphical image in XPM format. It defines the dimensions, number of colors, and hexadecimal codes of each color used in the image. The image consists of multiple characters arranged in a grid pattern, forming a graphical representation of an object.                                                              | minilibx_linux/test/open24.xpm   |
-| open30.xpm   | Prompt exceeds max token limit: 4548                                                                                                                                                                                                                                                                                                                                     | minilibx_linux/test/open30.xpm   |
-| new_win.c    | This code initializes two windows, "win1" and "win2", and sets up a mouse event hook for each window using the function "gere_mouse". When the mouse is clicked, the function creates a new window with random dimensions and sets up a new mouse event hook for that window. The program continues in a loop until exited.                                              | minilibx_linux/test/new_win.c    |
-
-</details>
-
-<details closed><summary>Wrong_maps</summary>
-
-| File   | Summary                                                                                                                                                                                                                                                                  | Module                         |
-|:-------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------|
-| .cub   | The code snippet defines the paths to various textures for different directions. It also includes a map with a specified color scheme represented by numbers.                                                                                                            | maps/mandatory/wrong_maps/.cub |
-| .cub   | The code snippet defines the paths to four textures for the directions north, south, west, and east. Additionally, it creates a map with different characters and colors representing a grid. The "F" and "C" specify the colors of the floor and ceiling, respectively. | wrong_maps/.cub                |
-
-</details>
-
-<details closed><summary>Xpm</summary>
-
-| File            | Summary                                                                                                                                                                                                                                                                                                                                                                               | Module                       |
-|:----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------|
-| purplestone.xpm | The code snippet is a static XPM image represented as an array of strings, where each string represents a row of pixels. It includes a color palette and specific characters to represent each color. The image contains various symbols and shapes, such as patterns, letters, and geometric figures.                                                                                | textures/xpm/purplestone.xpm |
-| colorstone.xpm  | The code provides an XPM image that consists of 64x64 pixels and uses a total of 26 colors. Each character in the image corresponds to a specific color. The colors are defined using their hexadecimal codes, and the image is represented as a static array of characters.                                                                                                          | textures/xpm/colorstone.xpm  |
-| redbrick.xpm    | The code snippet is an XPM image data defined in a static char array. It contains 64x64 pixels represented by 26 different characters/colors. The image is a combination of letters, symbols, and numbers forming a pattern with varying shades of gray and red.                                                                                                                      | textures/xpm/redbrick.xpm    |
-| pillar.xpm      | The code defines an XPM image object consisting of a 64x64 matrix of various symbols and characters. The symbols are mapped to specific colors (e.g., "@" is gray, "#" is gray33). The XPM object can be used to display graphics and icons in a variety of programming contexts.                                                                                                     | textures/xpm/pillar.xpm      |
-| barrel.xpm      | The code snippet is defining a static XPM image with a color palette of 27 colors. The pixels of the image are represented using characters, with each character corresponding to a specific color in the palette. The resulting image appears as a 64x64 grid of characters representing various shades of gray, along with some colored shapes and patterns.                        | textures/xpm/barrel.xpm      |
-| greenlight.xpm  | The code snippet defines an XPM (X PixMap) image represented as an array of characters, with 64 columns and 64 rows. Each color is represented by a specific character code. The image depicts a green circle with various symbols around it, including letters, numbers, and punctuation marks.                                                                                      | textures/xpm/greenlight.xpm  |
-| bluestone.xpm   | The code defines an XPM image of a 64x64 pixel grid with a color palette of 20 shades of gray and blue. The image depicts a pattern of symbols and characters arranged in a rectangular shape.                                                                                                                                                                                        | textures/xpm/bluestone.xpm   |
-| wood.xpm        | The code snippet is a static XPM image file represented as a string array containing 64x64 pixels with 9 color values. The image appears to be a checkerboard with various symbols such as X, @, #, $, O, and + in different colors.                                                                                                                                                  | textures/xpm/wood.xpm        |
-| mossy.xpm       | The code snippet is a static XPM image in which each character represents a pixel color. The image contains 25 distinct colors, and is a combination of several characters including "@", "#", "$", "o", "X", etc.                                                                                                                                                                    | textures/xpm/mossy.xpm       |
-| greystone.xpm   | The code snippet is a static XPM graphical representation of a result. It utilizes a 22-color palette to create a 64x64 pixel image displaying characters, such as ".", "X", and "@", arranged in a pattern.                                                                                                                                                                          | textures/xpm/greystone.xpm   |
-| 512_wood.xpm    | Prompt exceeds max token limit: 193151                                                                                                                                                                                                                                                                                                                                                | textures/xpm/512_wood.xpm    |
-| eagle.xpm       | The code snippet provides an XPM image represented as a static character array with 64x64 pixels and 56 colors. Each pixel is assigned a specific color based on the hexadecimal code provided for each color. The image depicts a pattern of various shapes and colors in a grid-like formation.                                                                                     | textures/xpm/eagle.xpm       |
-| knight.xpm      | Prompt exceeds max token limit: 20355                                                                                                                                                                                                                                                                                                                                                 | sprites/deco/xpm/knight.xpm  |
-| d1.xpm          | The provided code snippet is an XPM image represented as a static array of color codes and pixel values. The image contains a 58x100 grid and uses 42 unique colors to portray a detailed artwork depicting a landscape in a low-resolution format.                                                                                                                                   | sprites/guard/xpm/d1.xpm     |
-| d3.xpm          | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                         | sprites/guard/xpm/d3.xpm     |
-|                 | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                              |                              |
-| d2.xpm          | The code provides an XPM image of a large text block, depicting a gradient color scheme from black to red, with various symbol placeholders taking shape and form across the design. The symbols feature a color palette that ranges from gray to gold, and the overall effect is a highly detailed and intricate composition that resembles a digital circuit board or city skyline. | sprites/guard/xpm/d2.xpm     |
-| d5.xpm          | The code snippet is a static XPM image represented as an array of color codes. This image has dimensions of 84 columns by 28 rows and consists of 50 different colors, including black, gray, and various shades of red and yellow. The pixel values are represented by characters and arranged in a pattern to create an image.                                                      | sprites/guard/xpm/d5.xpm     |
-| d4.xpm          | The code snippet is a static array containing a color palette in XPM format. It consists of 100 rows of 85 characters each, with 50 defined color codes and a few blank spaces designated as transparent. These colors are used to render images in various applications.                                                                                                             | sprites/guard/xpm/d4.xpm     |
-| f1.xpm          | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                         | sprites/guard/xpm/f1.xpm     |
-|                 | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                              |                              |
-| f0.xpm          | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                         | sprites/guard/xpm/f0.xpm     |
-|                 | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                              |                              |
-| f2.xpm          | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                         | sprites/guard/xpm/f2.xpm     |
-|                 | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                              |                              |
-| f3.xpm          | Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'                                                                                                                                                                                                                                                         | sprites/guard/xpm/f3.xpm     |
-|                 | For more information check: https://httpstatuses.com/400                                                                                                                                                                                                                                                                                                                              |                              |
-
-</details>
+<p align="center">
+<img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="GNU%20Bash" />
+<img src="https://img.shields.io/badge/C-A8B9CC.svg?style=for-the-badge&logo=C&logoColor=black" alt="C" />
+<img src="https://img.shields.io/badge/Perl-39457E.svg?style=for-the-badge&logo=Perl&logoColor=white" alt="Perl" />
+<img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="Markdown" />
+</p>
+</div>
 
 ---
+
+## 📚 Table of Contents
+- [📚 Table of Contents](#-table-of-contents)
+- [📍 Overview](#-overview)
+- [💫 Features](#-features)
+- [📂 Project Structure](#project-structure)
+- [🧩 Modules](#modules)
+- [🚀 Getting Started](#-getting-started)
+- [🗺 Roadmap](#-roadmap)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👏 Acknowledgments](#-acknowledgments)
+
+---
+
+
+## 📍 Overview
+
+Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://httpstatuses.com/400
+
+---
+
+## 💫 Features
+
+Error generating file summary. Exception: Client error '400 Bad Request' for url 'https://api.openai.com/v1/chat/completions'
+For more information check: https://httpstatuses.com/400
+
+---
+
+
+<img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-github-open.svg" width="80" />
+
+## 📂 Project Structure
+
+
+```bash
+repo
+├── Makefile
+├── README.md
+├── en.subject.pdf
+├── img
+│   └── cub.png
+├── includes
+│   ├── colors.h
+│   ├── cub3d.h
+│   ├── keycodes.h
+│   └── sprites.h
+├── libft
+│   ├── Makefile
+│   ├── gnl
+│   │   ├── get_next_line.c
+│   │   └── get_next_line_utils.c
+│   ├── includes
+│   │   ├── libft.h
+│   │   └── printf.h
+│   ├── list
+│   │   ├── ft_lstadd_back.c
+│   │   ├── ft_lstadd_front.c
+│   │   ├── ft_lstaddsort.c
+│   │   ├── ft_lstclear.c
+│   │   ├── ft_lstdelone.c
+│   │   ├── ft_lstiter.c
+│   │   ├── ft_lstlast.c
+│   │   ├── ft_lstmap.c
+│   │   ├── ft_lstnew.c
+│   │   └── ft_lstsize.c
+│   ├── math
+│   ├── mem
+│   │   ├── ft_bzero.c
+│   │   ├── ft_calloc.c
+│   │   ├── ft_memchr.c
+│   │   ├── ft_memcmp.c
+│   │   ├── ft_memcpy.c
+│   │   ├── ft_memmove.c
+│   │   └── ft_memset.c
+│   ├── print
+│   │   ├── ft_putchar_fd.c
+│   │   ├── ft_putendl_fd.c
+│   │   ├── ft_putnbr_fd.c
+│   │   └── ft_putstr_fd.c
+│   ├── stdlib
+│   │   ├── ft_atobyte.c
+│   │   ├── ft_atoi.c
+│   │   ├── ft_atol.c
+│   │   └── ft_itoa.c
+│   └── string
+│       ├── ft_free_split.c
+│       ├── ft_isalnum.c
+│       ├── ft_isalpha.c
+│       ├── ft_isascii.c
+│       ├── ft_isdigit.c
+│       ├── ft_isprint.c
+│       ├── ft_size_split.c
+│       ├── ft_split.c
+│       ├── ft_splitcharset.c
+│       ├── ft_strchr.c
+│       ├── ft_strcmp.c
+│       ├── ft_strdup.c
+│       ├── ft_striteri.c
+│       ├── ft_strjoin.c
+│       ├── ft_strlcat.c
+│       ├── ft_strlcpy.c
+│       ├── ft_strlen.c
+│       ├── ft_strmapi.c
+│       ├── ft_strncmp.c
+│       ├── ft_strnstr.c
+│       ├── ft_strrchr.c
+│       ├── ft_strtrim.c
+│       ├── ft_substr.c
+│       ├── ft_tolower.c
+│       └── ft_toupper.c
+├── maps
+│   ├── bonus
+│   │   ├── big.cub
+│   │   ├── maze.cub
+│   │   ├── mini.cub
+│   │   ├── minimaps_bonus.cub
+│   │   └── wrong_maps_bonus
+│   │       ├── bonus_exeption
+│   │       │   ├── 1.cub
+│   │       │   ├── 2.cub
+│   │       │   ├── 3.cub
+│   │       │   ├── 4.cub
+│   │       │   ├── n.cub
+│   │       │   ├── only_door.cub
+│   │       │   └── wrong_wall.cub
+│   │       ├── general_error
+│   │       │   ├── emptymap.cub
+│   │       │   ├── info_not_complete.cub
+│   │       │   ├── invalid_maps1.cub
+│   │       │   ├── invalid_maps10.cub
+│   │       │   ├── invalid_maps11.cub
+│   │       │   ├── invalid_maps12.cub
+│   │       │   ├── invalid_maps13.cub 
+│   │       │   ├── invalid_maps2.cub
+│   │       │   ├── invalid_maps3.cub
+│   │       │   ├── invalid_maps4.cub
+│   │       │   ├── invalid_maps5.cub
+│   │       │   ├── invalid_maps6.cub
+│   │       │   ├── invalid_maps7.cub
+│   │       │   ├── invalid_maps8.cub
+│   │       │   ├── invalid_maps9.cub
+│   │       │   ├── map_in_first.cub
+│   │       │   ├── minimaps.CUB
+│   │       │   ├── minimaps.cu
+│   │       │   ├── minimaps.cube
+│   │       │   ├── minimapsc.ube
+│   │       │   ├── no_all_info.cub
+│   │       │   ├── no_all_info_door.cub
+│   │       │   ├── no_color.cub
+│   │       │   ├── no_maps.cub
+│   │       │   ├── not_door_texture.cub
+│   │       │   ├── not_good_info.cub
+│   │       │   ├── one_color.cub
+│   │       │   ├── to_many_info.cub
+│   │       │   ├── to_many_info2.cub
+│   │       │   ├── two_door.cub
+│   │       │   ├── wrong_door.cub
+│   │       │   └── wrong_texture.cub
+│   │       └── invalid_color
+│   │           ├── invalid_color.cub
+│   │           ├── invalid_color_1.cub
+│   │           ├── invalid_color_2.cub
+│   │           ├── invalid_color_3.cub
+│   │           ├── invalid_color_4.cub
+│   │           ├── invalid_color_5.cub
+│   │           ├── invalid_color_6.cub
+│   │           ├── invalid_color_7.cub
+│   │           └── invalid_color_8.cub
+│   └── mandatory
+│       ├── big.cub
+│       ├── maze.cub
+│       ├── minimaps.cub
+│       └── wrong_maps
+│           ├── general_error
+│           │   ├── big_col.cub
+│           │   ├── emptymap.cub
+│           │   ├── info_not_complete.cub
+│           │   ├── invalid_maps1.cub
+│           │   ├── invalid_maps10.cub
+│           │   ├── invalid_maps11.cub
+│           │   ├── invalid_maps12.cub
+│           │   ├── invalid_maps13.cub
+│           │   ├── invalid_maps2.cub
+│           │   ├── invalid_maps3.cub
+│           │   ├── invalid_maps4.cub
+│           │   ├── invalid_maps5.cub
+│           │   ├── invalid_maps6.cub
+│           │   ├── invalid_maps7.cub
+│           │   ├── invalid_maps8.cub
+│           │   ├── invalid_maps9.cub
+│           │   ├── minimaps.CUB
+│           │   ├── minimaps.cu
+│           │   ├── minimaps.cube
+│           │   ├── minimapsc.ube
+│           │   ├── no_all_info.cub
+│           │   ├── no_maps.cub
+│           │   ├── not_good_info.cub
+│           │   ├── only4.cub
+│           │   ├── only_door.cub
+│           │   ├── only_space.cub
+│           │   ├── player_on_boarder.cub
+│           │   ├── too_many_info.cub
+│           │   ├── with_2.cub
+│           │   ├── with_door.cub
+│           │   ├── wrong_Texture.cub
+│           │   ├── wrong_info1.cub
+│           │   ├── wrong_wall.cub
+│           │   └── wrong_wall2.cub
+│           └── invalid_color
+│               ├── invalid_color.cub
+│               ├── invalid_color_1.cub
+│               ├── invalid_color_2.cub
+│               ├── invalid_color_3.cub
+│               ├── invalid_color_4.cub
+│               ├── invalid_color_5.cub
+│               ├── invalid_color_6.cub
+│               ├── invalid_color_7.cub
+│               └── invalid_color_8.cub
+├── minilibx_linux
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── Makefile.gen
+│   ├── Makefile.mk
+│   ├── README.md
+│   ├── configure
+│   ├── man
+│   │   ├── man1
+│   │   │   ├── mlx.1
+│   │   │   ├── mlx_loop.1
+│   │   │   ├── mlx_new_image.1
+│   │   │   ├── mlx_new_window.1
+│   │   │   └── mlx_pixel_put.1
+│   │   └── man3
+│   │       ├── mlx.3
+│   │       ├── mlx_loop.3
+│   │       ├── mlx_new_image.3
+│   │       ├── mlx_new_window.3
+│   │       └── mlx_pixel_put.3
+│   ├── mlx.h
+│   ├── mlx_clear_window.c
+│   ├── mlx_destroy_display.c
+│   ├── mlx_destroy_image.c
+│   ├── mlx_destroy_window.c
+│   ├── mlx_expose_hook.c
+│   ├── mlx_ext_randr.c
+│   ├── mlx_flush_event.c
+│   ├── mlx_get_color_value.c
+│   ├── mlx_get_data_addr.c
+│   ├── mlx_hook.c
+│   ├── mlx_init.c
+│   ├── mlx_int.h
+│   ├── mlx_int_anti_resize_win.c
+│   ├── mlx_int_do_nothing.c
+│   ├── mlx_int_get_visual.c
+│   ├── mlx_int_param_event.c
+│   ├── mlx_int_set_win_event_mask.c
+│   ├── mlx_int_str_to_wordtab.c
+│   ├── mlx_int_wait_first_expose.c
+│   ├── mlx_key_hook.c
+│   ├── mlx_lib_xpm.c
+│   ├── mlx_loop.c
+│   ├── mlx_loop_hook.c
+│   ├── mlx_mouse.c
+│   ├── mlx_mouse_hook.c
+│   ├── mlx_new_image.c
+│   ├── mlx_new_window.c
+│   ├── mlx_pixel_put.c
+│   ├── mlx_put_image_to_window.c
+│   ├── mlx_rgb.c
+│   ├── mlx_screen_size.c
+│   ├── mlx_set_font.c
+│   ├── mlx_string_put.c
+│   ├── mlx_xpm.c
+│   ├── mlx_xpm.c.ok
+│   ├── rgb2c.pl
+│   └── test
+│       ├── Makefile.gen
+│       ├── Makefile.mk
+│       ├── main.c
+│       ├── new_win.c
+│       ├── open.xpm
+│       ├── open24.xpm
+│       ├── open30.xpm
+│       └── run_tests.sh
+├── minilibx_opengl
+│   ├── Makefile
+│   ├── font.c
+│   ├── font.xcf
+│   ├── minilibx_opengl_20191021
+│   │   ├── Makefile
+│   │   ├── font.c
+│   │   ├── font.xcf
+│   │   ├── mlx.h
+│   │   ├── mlx_init_loop.m
+│   │   ├── mlx_int.h
+│   │   ├── mlx_int_str_to_wordtab.c
+│   │   ├── mlx_mouse.m
+│   │   ├── mlx_new_image.m
+│   │   ├── mlx_new_window.h
+│   │   ├── mlx_new_window.m
+│   │   ├── mlx_opengl.h
+│   │   ├── mlx_opengl.m
+│   │   ├── mlx_png.c
+│   │   ├── mlx_png.h
+│   │   ├── mlx_rgb.c
+│   │   ├── mlx_shaders.c
+│   │   └── mlx_xpm.c
+│   ├── mlx.h
+│   ├── mlx_init_loop.m
+│   ├── mlx_int.h
+│   ├── mlx_int_str_to_wordtab.c
+│   ├── mlx_mouse.m
+│   ├── mlx_new_image.m
+│   ├── mlx_new_window.h
+│   ├── mlx_new_window.m
+│   ├── mlx_opengl.h
+│   ├── mlx_opengl.m
+│   ├── mlx_png.c
+│   ├── mlx_png.h
+│   ├── mlx_rgb.c
+│   ├── mlx_shaders.c
+│   └── mlx_xpm.c
+├── mlx_headers
+│   ├── linux
+│   │   └── mlx.h
+│   └── mac
+│       └── mlx.h
+├── sprites
+│   ├── deco
+│   │   ├── png
+│   │   │   └── col2a0.png
+│   │   └── xpm
+│   │       └── knight.xpm
+│   ├── guard
+│   │   ├── png
+│   │   │   ├── d1.PNG
+│   │   │   ├── d2.PNG
+│   │   │   ├── d3.PNG
+│   │   │   ├── d4.PNG
+│   │   │   ├── d5.PNG
+│   │   │   ├── f0.PNG
+│   │   │   ├── f1.PNG
+│   │   │   ├── f2.PNG
+│   │   │   └── f3.PNG
+│   │   └── xpm
+│   │       ├── d1.xpm
+│   │       ├── d2.xpm
+│   │       ├── d3.xpm
+│   │       ├── d4.xpm
+│   │       ├── d5.xpm
+│   │       ├── f0.xpm
+│   │       ├── f1.xpm
+│   │       ├── f2.xpm
+│   │       └── f3.xpm
+│   └── gun
+│       ├── gun1.xpm
+│       ├── pistol_0.xpm
+│       ├── pistol_1.xpm
+│       ├── pistol_2.xpm
+│       └── pistol_3.xpm
+├── srcs
+│   ├── colors.c
+│   ├── create_img.c
+│   ├── dda.c
+│   ├── draw_sprite.c
+│   ├── game.c
+│   ├── gun.c
+│   ├── handle_mouse.c
+│   ├── hook_direction.c
+│   ├── hook_direction_2.c
+│   ├── hook_door.c
+│   ├── hook_key_action.c
+│   ├── hook_move.c
+│   ├── init.c
+│   ├── load_textures.c
+│   ├── main.c
+│   ├── minimaps.c
+│   ├── mlx_img_utils.c
+│   ├── mouse_utils.c
+│   ├── parsing_bonus
+│   │   ├── check_color.c
+│   │   ├── debug_parsing.c
+│   │   ├── exit.c
+│   │   ├── info_utils.c
+│   │   ├── load_info.c
+│   │   ├── loading_maps.c
+│   │   ├── maps_utils.c
+│   │   └── parsing.c
+│   ├── parsing_mandatory
+│   │   ├── check_color.c
+│   │   ├── debug_parsing.c
+│   │   ├── exit.c
+│   │   ├── info_utils.c
+│   │   ├── load_info.c
+│   │   ├── loading_maps.c
+│   │   ├── maps_utils.c
+│   │   └── parsing.c
+│   ├── quit.c
+│   ├── raycasting.c
+│   ├── raycasting_utils.c
+│   ├── sight_vector.c
+│   ├── sprite.c
+│   ├── sprite_utils.c
+│   └── time.c
+├── test_wrong_maps.sh
+├── textures
+│   ├── hres_xpm
+│   │   ├── abc.xpm
+│   │   ├── brick.xpm
+│   │   ├── brick_german_flag.xpm
+│   │   ├── door.xpm
+│   │   ├── german_flag.xpm
+│   │   ├── red_brick.xpm
+│   │   ├── stones.xpm
+│   │   ├── wood.xpm
+│   │   └── wrong_brick.xpm
+│   ├── new_png
+│   │   ├── BRICK5.png
+│   │   ├── ZDOORB1.png
+│   │   ├── ZZWOLF1.png
+│   │   ├── ZZWOLF11.png
+│   │   ├── ZZWOLF13.png
+│   │   ├── ZZWOLF3.png
+│   │   ├── ZZWOLF5.png
+│   │   └── ZZWOLF9.png
+│   ├── png
+│   │   ├── barrel.png
+│   │   ├── bluestone.png
+│   │   ├── colorstone.png
+│   │   ├── eagle.png
+│   │   ├── greenlight.png
+│   │   ├── greystone.png
+│   │   ├── mossy.png
+│   │   ├── pillar.png
+│   │   ├── purplestone.png
+│   │   ├── redbrick.png
+│   │   └── wood.png
+│   └── xpm
+│       ├── 512_wood.xpm
+│       ├── barrel.xpm
+│       ├── bluestone.xpm
+│       ├── colorstone.xpm
+│       ├── eagle.xpm
+│       ├── greenlight.xpm
+│       ├── greystone.xpm
+│       ├── mossy.xpm
+│       ├── pillar.xpm
+│       ├── purplestone.xpm
+│       ├── redbrick.xpm
+│       └── wood.xpm
+├── wrong_maps
+│   ├── general_error
+│   │   ├── big_col.cub
+│   │   ├── emptymap.cub
+│   │   ├── info_not_complete.cub
+│   │   ├── invalid_maps1.cub
+│   │   ├── invalid_maps10.cub
+│   │   ├── invalid_maps11.cub
+│   │   ├── invalid_maps12.cub
+│   │   ├── invalid_maps13.cub
+│   │   ├── invalid_maps2.cub
+│   │   ├── invalid_maps3.cub
+│   │   ├── invalid_maps4.cub
+│   │   ├── invalid_maps5.cub
+│   │   ├── invalid_maps6.cub
+│   │   ├── invalid_maps7.cub
+│   │   ├── invalid_maps8.cub
+│   │   ├── invalid_maps9.cub
+│   │   ├── minimaps.CUB
+│   │   ├── minimaps.cu
+│   │   ├── minimaps.cube
+│   │   ├── minimapsc.ube
+│   │   ├── no_all_info.cub
+│   │   ├── no_maps.cub
+│   │   ├── not_good_info.cub
+│   │   ├── only4.cub
+│   │   ├── only_door.cub
+│   │   ├── player_on_boarder.cub
+│   │   ├── too_many_info.cub
+│   │   ├── with_2.cub
+│   │   ├── with_door.cub
+│   │   ├── wrong_info1.cub
+│   │   ├── wrong_wall.cub
+│   │   └── wrong_wall2.cub
+│   └── invalid_color
+│       ├── invalid_color.cub
+│       ├── invalid_color_1.cub
+│       ├── invalid_color_2.cub
+│       ├── invalid_color_3.cub
+│       ├── invalid_color_4.cub
+│       ├── invalid_color_5.cub
+│       ├── invalid_color_6.cub
+│       ├── invalid_color_7.cub
+│       └── invalid_color_8.cub
+└── wrong_maps_bonus
+    ├── bonus_exeption
+    │   ├── 1.cub
+    │   ├── 2.cub
+    │   ├── 3.cub
+    │   ├── 4.cub
+    │   ├── n.cub
+    │   ├── only_door.cub
+    │   └── wrong_wall.cub
+    ├── general_error
+    │   ├── emptymap.cub
+    │   ├── info_not_complete.cub
+    │   ├── invalid_maps1.cub
+    │   ├── invalid_maps10.cub
+    │   ├── invalid_maps11.cub
+    │   ├── invalid_maps2.cub
+    │   ├── invalid_maps3.cub
+    │   ├── invalid_maps4.cub
+    │   ├── invalid_maps5.cub
+    │   ├── invalid_maps6.cub
+    │   ├── invalid_maps7.cub
+    │   ├── invalid_maps8.cub
+    │   ├── invalid_maps9.cub
+    │   ├── map_in_first.cub
+    │   ├── minimaps.CUB
+    │   ├── minimaps.cu
+    │   ├── minimaps.cube
+    │   ├── minimapsc.ube
+    │   ├── no_all_info.cub
+    │   ├── no_all_info_door.cub
+    │   ├── no_maps.cub
+    │   ├── not_door_texture.cub
+    │   ├── not_good_info.cub
+    │   ├── too_many_info.cub
+    │   ├── two_door.cub
+    │   ├── wrong_info1.cub
+    │   ├── wrong_texture.cub
+    │   └── wrong_texture2.cub
+    └── invalid_color
+        ├── invalid_color.cub
+        ├── invalid_color_1.cub
+        ├── invalid_color_2.cub
+        ├── invalid_color_3.cub
+        ├── invalid_color_4.cub
+        ├── invalid_color_5.cub
+        ├── invalid_color_6.cub
+        ├── invalid_color_7.cub
+        └── invalid_color_8.cub
+
+55 directories, 452 files
+```
 
 ## 🚀 Getting Started
 
@@ -379,44 +605,16 @@ cd 42-cub3d
 [📌  INSERT-DESCRIPTION]
 ```
 
+### 🧪 Running Tests
+```sh
+[📌  INSERT-DESCRIPTION]
+```
 
-## 🤝 Contributing
+---
 
-   1
-   2 <div align="center">
-   3 <h1 align="center">
-   4 <img src="https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/ec559a9f6bfd399b82bb44393651661b08aaf7ba/icons/folder-markdown-open.svg" width="100" />
-   5 <br>
-   6 42-cub3d
-   7 </h1>
-   8 <h3 align="center">📍 Get lost in the world of 42-cub3d-where code and creativity collide!</h3>
-   9 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
-  10
-  11 <p align="center">
-  12 <img src="https://img.shields.io/badge/GNU%20Bash-4EAA25.svg?style=for-the-badge&logo=GNU-Bash&logoColor=white" alt="GNU%20Bash" />
-  13 <img src="https://img.shields.io/badge/C-A8B9CC.svg?style=for-the-badge&logo=C&logoColor=black" alt="C" />
-  14 <img src="https://img.shields.io/badge/Perl-39457E.svg?style=for-the-badge&logo=Perl&logoColor=white" alt="Perl" />
-  15 <img src="https://img.shields.io/badge/Markdown-000000.svg?style=for-the-badge&logo=Markdown&logoColor=white" alt="Markdown" />
-  16 </p>
-  17 </div>
-  18
-  19 ---
-  20
-  21 ## 📚 Table of Contents
-  22 - [📚 Table of Contents](#-table-of-contents)
-  23 - [📍 Overview](#-overview)
-  24 - [💫 Features](#-features)
-  25 - [📂 Project Structure](#project-structure)
-  26 - [🧩 Modules](#modules)
-  27 - [🚀 Getting Started](#-getting-started)
-  28 - [🗺  Roadmap](#-roadmap)
-  29 - [🤝 Contributing](#-contributing)
-  30 - [📄 License](#-license)
-  31 - [👏 Acknowledgments](#-acknowledgments)
-  32
-  33 ---
-  34
-  35
-  36 ## 📍 Overview
-  37
-"README_cub3d.md" 1314L, 282221B                                                                                                                                                1,0-1        Haut
+
+## 👏 Acknowledgments
+
+> - [📌  List any resources, contributors, inspiration, etc.]
+
+---
