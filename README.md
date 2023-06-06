@@ -246,10 +246,15 @@ for check map parsing :
 
 ## 👏 Acquired knowledge
 - ✅ Ray-casting: A technique used to create real-time 3D environments in games. It involves casting virtual rays from a player's perspective to determine what objects or walls are visible in the scene.
+
 - ✅ Manipulation of 3D graphics: Creating a realistic graphical representation of a maze using a subjective view. This includes rendering walls, floors, ceilings, and other objects to provide an immersive experience.
+
 - ✅ Utilization of the minilibX library: Using the minilibX library to develop simple graphical interfaces. This library provides functions for handling graphics, windows, and events in a minimalistic manner.
+
 - ✅ Reading configuration files (*.cub): Parsing configuration files to extract information about the maze's layout, textures, colors, and other parameters. These files define the characteristics of the game environment.
+
 - ✅ Mathematics and algorithms in ray-casting: The implementation of mathematical calculations and algorithms for ray-casting and 3D view calculations. This involves determining the intersections of rays with objects, calculating the distances, and rendering the scene accordingly.
+
 - ✅ Handling keyboard events: Managing keyboard input events to allow player movement within the maze. This includes detecting key presses, updating the player's position, and rendering the scene from the new perspective.
 
 ---
