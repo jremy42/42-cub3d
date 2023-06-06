@@ -119,39 +119,7 @@ repo
 │       ├── ft_substr.c
 │       ├── ft_tolower.c
 │       └── ft_toupper.c
-├── sprites
-│   ├── deco
-│   │   ├── png
-│   │   │   └── col2a0.png
-│   │   └── xpm
-│   │       └── knight.xpm
-│   ├── guard
-│   │   ├── png
-│   │   │   ├── d1.PNG
-│   │   │   ├── d2.PNG
-│   │   │   ├── d3.PNG
-│   │   │   ├── d4.PNG
-│   │   │   ├── d5.PNG
-│   │   │   ├── f0.PNG
-│   │   │   ├── f1.PNG
-│   │   │   ├── f2.PNG
-│   │   │   └── f3.PNG
-│   │   └── xpm
-│   │       ├── d1.xpm
-│   │       ├── d2.xpm
-│   │       ├── d3.xpm
-│   │       ├── d4.xpm
-│   │       ├── d5.xpm
-│   │       ├── f0.xpm
-│   │       ├── f1.xpm
-│   │       ├── f2.xpm
-│   │       └── f3.xpm
-│   └── gun
-│       ├── gun1.xpm
-│       ├── pistol_0.xpm
-│       ├── pistol_1.xpm
-│       ├── pistol_2.xpm
-│       └── pistol_3.xpm
+├── sprites[..]
 ├── srcs
 │   ├── colors.c
 │   ├── create_img.c
@@ -196,51 +164,7 @@ repo
 │   ├── sprite.c
 │   ├── sprite_utils.c
 │   └── time.c
-├── textures
-    ├── hres_xpm
-    │   ├── abc.xpm
-    │   ├── brick.xpm
-    │   ├── brick_german_flag.xpm
-    │   ├── door.xpm
-    │   ├── german_flag.xpm
-    │   ├── red_brick.xpm
-    │   ├── stones.xpm
-    │   ├── wood.xpm
-    │   └── wrong_brick.xpm
-    ├── new_png
-    │   ├── BRICK5.png
-    │   ├── ZDOORB1.png
-    ├── ZZWOLF1.png
-    │   ├── ZZWOLF11.png
-    │   ├── ZZWOLF13.png
-    │   ├── ZZWOLF3.png
-    │   ├── ZZWOLF5.png
-    │   └── ZZWOLF9.png
-    ├── png
-    │   ├── barrel.png
-    │   ├── bluestone.png
-    │   ├── colorstone.png
-    │   ├── eagle.png
-    │   ├── greenlight.png
-    │   ├── greystone.png
-    │   ├── mossy.png
-    │   ├── pillar.png
-    │   ├── purplestone.png
-    │   ├── redbrick.png
-    │   └── wood.png
-    └── xpm
-        ├── 512_wood.xpm
-        ├── barrel.xpm
-        ├── bluestone.xpm
-        ├── colorstone.xpm
-        ├── eagle.xpm
-        ├── greenlight.xpm
-        ├── greystone.xpm
-        ├── mossy.xpm
-        ├── pillar.xpm
-        ├── purplestone.xpm
-        ├── redbrick.xpm
-        └── wood.xpm
+├── textures[...]
 
 
 ```
