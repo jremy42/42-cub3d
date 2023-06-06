@@ -257,4 +257,9 @@ for check map parsing :
 
 - ✅ Handling keyboard events: Managing keyboard input events to allow player movement within the maze. This includes detecting key presses, updating the player's position, and rendering the scene from the new perspective.
 
+## 😎 Team :
+
+[Fred](https://profile.intra.42.fr/users/fle-blay), [Jonathan](https://profile.intra.42.fr/users/jremy) 
+
+
 ---
