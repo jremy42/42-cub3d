@@ -174,9 +174,24 @@ repo
 ### ✅ Prerequisites
 
 Before you begin, ensure that you have the following prerequisites installed:
-> - [📌  PREREQUISITE-1]
-> - [📌  PREREQUISITE-2]
-> - ...
+
+Requirements for Linux : 
+
+- MinilibX only support TrueColor visual type (8,15,16,24 or 32 bits depth)
+- gcc
+- make
+- X11 include files (package xorg)
+- XShm extension must be present (package libxext-dev)
+- Utility functions from BSD systems - development files (package libbsd-dev)
+e.g. sudo apt-get install gcc make xorg libxext-dev libbsd-dev (Debian/Ubuntu)
+
+Requirements for MacOS
+
+Xquartz
+➜  ~ Brew install Xquartz
+➜  ~ reboot
+➜  ~ xeyes # run an hello world X11 app
+
 
 ### 🖥 Installation
 
@@ -190,10 +205,16 @@ git clone https://github.com/jremy42/42-cub3d
 cd 42-cub3d
 ```
 
-3. Install the dependencies:
+3. Compile the project:
+mandatory :
 ```sh
-[📌  INSERT-DESCRIPTION]
+make 
 ```
+bonus :
+```sh
+make bonus
+```
+
 
 ### 🤖 Using 42-cub3d
 
