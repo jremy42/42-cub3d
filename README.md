@@ -187,11 +187,12 @@ e.g. sudo apt-get install gcc make xorg libxext-dev libbsd-dev (Debian/Ubuntu)
 
 Requirements for MacOS
 
-Xquartz
-➜  ~ Brew install Xquartz
-➜  ~ reboot
-➜  ~ xeyes # run an hello world X11 app
-
+- Xquartz
+```sh
+Brew install Xquartz
+reboot
+xeyes # run an hello world X11 app
+```
 
 ### 🖥 Installation
 
@@ -218,13 +219,28 @@ make bonus
 
 ### 🤖 Using 42-cub3d
 
+Please compiling with the bonuses is much more fun !
 ```sh
-[📌  INSERT-DESCRIPTION]
+./cub3d [maps]
+```
+exemple :
+
+```sh
+./cub3d maps/bonus/minimaps_bonus.cub
 ```
 
+#### Keybindings
+
+- **Escape:** Quit the game
+- **Space:** Open doors
+- **Arrow keys (Up/Down/Left/Right):** Move character
+- **Left mouse click:** Shoot projectiles
+- **Mouse movement:** Adjust camera/view
+
 ### 🧪 Running Tests
+for check map parsing :
 ```sh
-[📌  INSERT-DESCRIPTION]
+./test_wrong_maps.sh
 ```
 
 ---
