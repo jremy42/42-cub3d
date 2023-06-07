@@ -5,7 +5,7 @@
 <br>
 42-cub3d  <a href="https://github.com/JaeSeoKim/badge42"><img src="https://badge42.vercel.app/api/v2/cl27cprhd001109mercwbbu5l/project/2609483" alt="jremy's 42 cub3d Score" /></a>
 </h1>
-<h3 align="center">📍 Get lost in the world of 42-cub3d-where code and creativity collide!</h3>
+<h3 align="center">📍 My Wolfenstein 3D game!</h3>
 <h3 align="center">⚙️ Developed with the software and tools below:</h3>
 
 <p align="center">
