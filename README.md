@@ -23,7 +23,6 @@
   <img src="./img/cub.png" width="538">
 </p>
  Cub3D is a project inspired by the game Wolfenstein3D, which is considered the first-ever developed first-person shooter (FPS). It explores the technique of ray-casting and challenges you to create a dynamic view within a maze where you need to find your way.
----
 
 ## 💫 Features
 
